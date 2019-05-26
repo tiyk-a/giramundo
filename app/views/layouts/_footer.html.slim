@@ -1,0 +1,34 @@
+.public_nav#footerTop
+  h1.text-center style="margin: 50px 0;text-shadow:2px 2px 2px darkgrey;" POWERED BY
+  .flex.text-center.align_bottom
+    .col-lg-2.text-center
+      = link_to "https://www.ticketmaster.com/", target: '_blank' do
+        =image_tag '/images/tmlogo_blue.png', size: '170x60'
+    .col-lg-2.text-center
+      = link_to "https://www.songkick.com/", target: '_blank' do
+        =image_tag '/images/by_Songkick_white.png', size: '165x50'
+    .col-lg-2.text-center
+      = link_to "https://www.google.com/maps", target: '_blank' do
+        =image_tag '/images/google_map.png', size: '170x60'
+    .col-lg-2.text-center
+      = link_to "https://musicbrainz.org/", target: '_blank' do
+        =image_tag '/images/MusicBrainz_Logo_Transparent.png', size: '100x80'
+
+/- if admin_user?
+  #adminNavBtn.text-right
+    p style="font-family: 'Righteous', cursive; font-size: 18px; padding: 5px 10px 5px 0; color: black; margin-top:55px;" ADMIN
+  .adm-nav-items#adminNav1.hidden
+    = link_to concerts_path, data: {"turbolinks" => false} do
+      i class="far fa-calendar-alt fa-2x" style="padding:8px;"
+  .adm-nav-items#adminNav2.hidden
+    = link_to artists_path, data: {"turbolinks" => false} do
+      i class="fab fa-napster fa-2x" style="padding:8px;"
+  .adm-nav-items#adminNav3.hidden
+    = link_to admin_path, data: {"turbolinks" => false} do
+      i class="fas fa-user-cog fa-2x" style="padding:8px;"
+  .adm-nav-items#adminNav4.hidden
+    = link_to users_path, data: {"turbolinks" => false} do
+      i class="fas fa-users fa-2x" style="padding:8px;"
+  .adm-nav-items#adminNav5.hidden
+    = link_to destroy_user_session_path, method: :delete do
+      i class="fas fa-sign-out-alt fa-2x" style="padding:8px;"
