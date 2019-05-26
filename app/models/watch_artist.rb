@@ -1,0 +1,2 @@
+class WatchArtist < ApplicationRecord
+end

@@ -1,0 +1,27 @@
+<%= form_with(model: watch_artist, local: true) do |form| %>
+  <% if watch_artist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(watch_artist.errors.count, "error") %> prohibited this watch_artist from being saved:</h2>
+
+      <ul>
+      <% watch_artist.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :artist_id %>
+    <%= form.number_field :artist_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
