@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Concert:</strong>
+  <%= @keep.concert_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @keep.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_keep_path(@keep) %> |
+<%= link_to 'Back', keeps_path %>

@@ -10,13 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_26_085109) do
+ActiveRecord::Schema.define(version: 2019_05_26_092044) do
 
   create_table "artists", force: :cascade do |t|
     t.string "artist_name"
     t.string "artist_image"
     t.datetime "deleted_at"
     t.string "mb_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "concerts", force: :cascade do |t|
+    t.string "concert_name"
+    t.text "source"
+    t.string "image"
+    t.string "tm_id"
+    t.datetime "date"
+    t.string "timezone"
+    t.string "local_date"
+    t.integer "venue_id"
+    t.integer "origin"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "keeps", force: :cascade do |t|
+    t.integer "concert_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "performers", force: :cascade do |t|
+    t.integer "concert_id"
+    t.integer "artist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

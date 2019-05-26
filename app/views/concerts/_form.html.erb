@@ -1,0 +1,67 @@
+<%= form_with(model: concert, local: true) do |form| %>
+  <% if concert.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(concert.errors.count, "error") %> prohibited this concert from being saved:</h2>
+
+      <ul>
+      <% concert.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :concert_name %>
+    <%= form.text_field :concert_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :source %>
+    <%= form.text_area :source %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.text_field :image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tm_id %>
+    <%= form.text_field :tm_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.datetime_select :date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :timezone %>
+    <%= form.text_field :timezone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :local_date %>
+    <%= form.text_field :local_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :venue_id %>
+    <%= form.number_field :venue_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :origin %>
+    <%= form.number_field :origin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :deleted_at %>
+    <%= form.datetime_select :deleted_at %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
