@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :entries
+  resources :feeds
   devise_for :users
   resources :watch_artists
   resources :venues
