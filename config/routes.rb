@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :watch_artists
   resources :venues
   resources :performers
