@@ -1,43 +1,81 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 text-center">
+    <h2>Edit <%= resource_name.to_s.humanize %></h2>
+    </div>
+  </div>
+</div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="container">
+  <div class="row field">
+    <%= f.label :email, class: "inline-block col-lg-3 text-right" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "inline-block col-lg-3 input-lg" %>
+    <div class="col-lg-3">
+    </div>
   </div>
+</div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
+ <div class="container">
+  <div class="row field">
+    <div class="inline-block col-lg-3 text-right">
+      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
+      <% if @minimum_password_length %>
+        <br />
+        <em><%= @minimum_password_length %> characters minimum</em>
+      <% end %>
+    </div>
+      <%= f.password_field :password, autocomplete: "new-password", class: "inline-block col-lg-3" %>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+ <div class="container">
+  <div class="row field">
+    <%= f.label :password_confirmation, class: "inline-block col-lg-3 text-right" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "inline-block col-lg-3 input-lg" %>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
+<div class="container">
+  <div class="row field">
+    <div class="inline-block col-lg-3 text-right">
+      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
+    </div>
+    <%= f.password_field :current_password, autocomplete: "current-password", class: "inline-block col-lg-3 input-lg" %>
   </div>
+</div>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3"></div>
+      <div class="col-lg-3 text-center actions">
+          <%= f.submit "Update", class: "btn btn-primary btn-lg" %>
+      </div>
+    </div>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-3 text-center">
+      <h3>Cancel my account</h3>
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+    </div>
+  </div>
+</div>
+
+<style>
+  .inline-block {
+    display: inline-block;
+  }
+</style>

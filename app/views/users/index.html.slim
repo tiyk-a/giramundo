@@ -1,0 +1,22 @@
+h1 Listing users
+
+- @users.each do |user|
+  .container
+    .row
+      .col-lg-2
+      .col-lg-2
+        = link_to user, data: {"turbolinks" => false} do
+          = user.email
+      .col-lg-4
+        - if user.admin == true
+          = link_to "Remove Admin？", destroy_admin_path(user), method: :post, class: "btn"
+        - else
+          = link_to "Add Admin？", add_admin_path(user), method: :post, class: "btn"
+      .col-lg-2
+        = user.created_at.strftime('%m,%d, %Y')
+      .col-lg-2
+        = link_to user, data: { confirm: 'Are you sure?' }, method: :delete do
+          i class="fas fa-user-times fa-2x"
+
+
+br

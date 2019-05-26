@@ -1,26 +1,65 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 text-center">
+      <h2>HOLA Mate :)</h2>
+    </div>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+<%= form_for(resource, url: session_path(resource_name)) do |f| %>
+<div class="container">
+  <div class="row field">
+    <%= f.label :email, class: "inline-block col-lg-3 text-right" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "inline-block col-lg-3 input-lg" %>
+    <div class="col-lg-3">
+    </div>
   </div>
+</div>
+
+
+ <div class="container">
+  <div class="row field">
+      <%= f.label :password, class: "inline-block col-lg-3 text-right" %>
+      <%= f.password_field :password, autocomplete: "current-password" , class: "inline-block col-lg-3 input-lg" %>
+    <div class="col-lg-3">
+    </div>
+  </div>
+</div>
+</div>
 
   <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
+    <div class="container">
+      <div class="row field">
+        <div class="col-lg-3">
+        </div>
+          <%= f.check_box :remember_me, style: 'width: 20px; margin: 0;' %>
+          <%= f.label :remember_me, style: 'line-height: 14px' %>
+        </div>
+      </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3"></div>
+      <div class="col-lg-3 text-center actions">
+          <%= f.submit "Log in", class: "btn" %>
+      </div>
+    </div>
   </div>
 <% end %>
 
-<%= render "users/shared/links" %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 text-center actions">
+      <%= render "users/shared/links" %>
+    </div>
+  </div>
+</div>
+
+
+<style>
+  .inline-block {
+    display: inline-block;
+  }
+</style>

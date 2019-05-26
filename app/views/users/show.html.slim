@@ -1,0 +1,41 @@
+.container
+	.row.text-center
+		.col-lg-10
+			h1 Your Keeps
+
+.container
+	.row.text-center
+		.col-lg-10
+			- if @user.keeps.present?
+				#myMapUser
+			- else
+				= link_to concerts_path, data: {"turbolinks" => false} do
+					h2 style="border-bottom: 3px solid white; display: inline-block;" FIND YOUR FAVORITE CONCERTS!
+
+.container
+	.row
+		.col-lg-2
+			=render 'watch_list'
+
+		.col-lg-8
+			- if @user.keeps.present?
+				ul#concertContainer
+					-@user.keeps.each do |keep|
+						= render 'concerts/concert_container', concert:keep.concert, keep: @keep
+			-else
+				h3 YOUR CLIPPED CONCERTS WOULD BE LISTED HERE :)
+
+
+
+.container
+	.row
+		.col-lg-3
+		.col-lg-7
+			=< link_to 'Back', users_path, class: "btn", data: {"turbolinks" => false}
+		.col-lg-3
+
+
+javascript:
+  $(document).ready(function(){
+    initMap('myMapUser', gon.keeps[0].latitude, gon.keeps[0].longitude, gon.keeps, 2);
+  });
