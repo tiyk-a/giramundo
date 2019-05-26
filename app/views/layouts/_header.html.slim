@@ -1,0 +1,136 @@
+canvas.c
+.container#onCanvas
+  .row
+    .col-lg-2
+    .col-lg-6.text-center.flex style="margin: 0 auto;"
+      . style="margin: 0 auto;"
+        a.inline-block href="#footerTop" test
+        .inline-block =link_to concerts_path, data: {"turbolinks" => false} do
+          h1.header-logo
+            span style="color:deeppink;" N
+            span OTI
+            span style="color:deeppink;" G
+            span IRA
+            span style="color:deeppink;" M
+            span UNDO
+    .col-lg-1.text-right
+
+    / .col-lg-1
+      #navBtn.text-right
+        p#menu style="font-family: 'Righteous', cursive; font-size: 18px; padding: 5px 10px 5px 0; color: black;" MENU
+        -if user_signed_in?
+          #userId.hidden =current_user.id
+      .nav-items#nav1.hidden
+        = link_to concerts_path, data: {"turbolinks" => false} do
+          i class="fas fa-music fa-2x" style="padding:8px;"
+        #navToConcert
+          p CONCERTS
+      .nav-items#nav2.hidden
+        = link_to artists_path, data: {"turbolinks" => false} do
+          i class="fab fa-napster fa-2x" style="padding:8px;"
+        #navToArtist
+          p ARTISTS
+      .nav-items#nav3.hidden
+        = link_to venues_path, data: {"turbolinks" => false} do
+          i class="fas fa-map-marked-alt fa-2x" style="padding:8px;"
+        #navToVenues
+          p VENUES
+      .nav-items#nav4.hidden
+        -if user_signed_in?
+          = link_to user_path(current_user), data: {"turbolinks" => false} do
+            i class="fas fa-paperclip fa-2x" style="padding:8px;"
+          #navToUser
+            p MY KEEPS
+        -else
+          = link_to new_user_session_path do
+            i class="fas fa-sign-in-alt fa-2x" style="padding:8px;"
+          #navToLogin
+            p LOG IN
+      .nav-items#nav5.hidden
+        -if user_signed_in?
+          = link_to destroy_user_session_path, method: :delete do
+            i class="fas fa-sign-out-alt fa-2x" style="padding:8px;"
+          #navToLogout
+            p LOG OUT
+        -else
+          = link_to about_path, data: {"turbolinks" => false} do
+            i class="fa fa-envelope fa-2x" style="padding:8px;"
+          #navToAbout
+            p ABOUT
+
+
+// FOR HEADER BACKGROUND
+// https://codepen.io/thebabydino/pen/lKvHb
+javascript:
+    var c = document.querySelector('.c') /* canvas element */, 
+    w /* canvas width */, h /* canvas height */,
+    ctx = c.getContext('2d') /* canvas context */, 
+    
+    /* previous & current coordinates */
+    x0, y0, x, y, 
+    t = 0, t_step = 1/20, 
+    tmp, 
+    
+    /* just me being lazy */
+    exp = Math.exp, pow = Math.pow, sqrt = Math.sqrt, 
+    PI = Math.PI, sin = Math.sin, cos = Math.cos;
+
+
+    /* FUNCTIONS */
+    /* a random number between min & max */
+    var rand = function(max, min) {
+      var b = (max === 0 || max) ? max : 1, a = min || 0;
+      
+      return a + (b - a)*Math.random();
+    };
+
+    var trimUnit = function(input_str, unit) {
+      return parseInt(input_str.split(unit)[0], 10);
+    };
+
+    var initCanvas = function() {
+      var s = getComputedStyle(c);
+      
+      w = c.width = trimUnit(s.width, 'px');
+      h = c.height = trimUnit(s.height, 'px');
+    };
+
+    var wave = function() {
+      x0 = -1, y0 = h/2;
+      
+      ctx.clearRect(0, 0, w, h);
+      
+      tmp = pow(t, 1.75)/19; /* keep computation out of loop */
+      
+      for(x = 0; x < w; x = x + 3) {
+        y =  9*sqrt(x)*sin(x/23/PI + t/3 + sin(x/29 + t)) + 
+                    32*sin(t)*cos(x/19 + t/7) + 
+                    16*cos(t)*sin(sqrt(x) + rand(3, 2)*tmp) + h/2;
+        
+        ctx.beginPath();
+        ctx.moveTo(x0, y0);
+        ctx.lineTo(x, y);
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = 'hsl(' + (2*x/w + t)*180 + ', 100%, 65%)';
+        ctx.stroke();
+        
+        x0 = x;
+        y0 = y;
+      }
+      
+      
+      
+      t += t_step;
+      
+      requestAnimationFrame(wave);
+    };
+
+
+    /* START THE MADNESS */
+    setTimeout(function() {
+      initCanvas();
+      wave();
+      
+      /* fix looks on resize */
+      addEventListener('resize', initCanvas, false);
+    }, 15);

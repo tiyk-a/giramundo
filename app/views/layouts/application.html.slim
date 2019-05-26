@@ -31,9 +31,9 @@ html
   body
     -if admin_user?
       #nav
-        <!-- = render 'layouts/header' -->
+        = render 'layouts/header'
     -else
       #navnormal
-        <!-- = render 'layouts/header' -->
+        = render 'layouts/header'
     = yield
     <!-- = render 'layouts/footer' -->
