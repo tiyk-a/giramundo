@@ -12,7 +12,7 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require underscore
+// require underscore
 // requre jquery.sliderPro.min
 //= require gmaps/google
 // require infinite-scroll.pkgd.min
