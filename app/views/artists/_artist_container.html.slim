@@ -3,7 +3,7 @@ li.artistList style="margin:20px 0;"
     -if artist.artist_image.present?
       =image_tag(artist.artist_image, :size => '60x40')
     -else
-      =image_tag("/images/no-portrait.png", :size => '60x40')
+      =image_tag("/assets/no-portrait.png", :size => '60x40')
   span style="width: 200px; padding-left: 10px;" = link_to artist.artist_name, artist, class: "listArtistName#{artist.id}", style: "font-size: 18px;", data: {"turbolinks" => false}
   span style="font-size: 10px; width: 200px; padding:0 10px;" class="listArtistMbid#{artist.id}" = artist.mb_id
   span style="width:50px; padding:0 10px;" = artist.performers.count

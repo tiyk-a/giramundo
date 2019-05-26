@@ -15,7 +15,7 @@
         -elsif concert.performers[0].artist.artist_image.present?
           =image_tag concert.performers[0].artist.artist_image, :size => "80x60"
         -else
-          =image_tag("/images/no-concert.png", :size => '80x60')
+          =image_tag("/assets/no-concert.png", :size => '80x60')
     span style="width:270px; padding: 0 3px;" = link_to concert.concert_name, concert_path(concert), class: "concertName_#{concert.id}", id: "concertNameCell", data: {"turbolinks" => false}
     -if concert.tm_id.present?
       span class="hidden registeredArtistConcertTmId#{concert.tm_id}" id="tmIdCell" = concert.tm_id
@@ -34,15 +34,15 @@
 
     -if concert.origin == "Ticket Master"
       span style="padding: 0 10px;" = link_to concert.source do
-        =image_tag '/images/tmlogo_blue.png', size: '60x20'
+        =image_tag '/assets/tmlogo_blue.png', size: '60x20'
     -elsif concert.origin == "Songkick"
       span style="padding: 0 10px;" = link_to concert.source do
-        =image_tag '/images/by_Songkick_white.png', size: '50x10'
+        =image_tag '/assets/by_Songkick_white.png', size: '50x10'
     -elsif concert.origin == "manual"
       span style="padding: 0 10px;" = link_to concert.source do
-        =image_tag '/images/loading.jpg', size: '60x20'
+        =image_tag '/assets/loading.jpg', size: '60x20'
     -else
-      span style="padding: 0 10px;" =image_tag '/images/loading.jpg', size: '60x20'
+      span style="padding: 0 10px;" =image_tag '/assets/loading.jpg', size: '60x20'
 
     - if user_signed_in? && current_user.keeps.find_by(concert_id: concert.id).present?
       span.destroyKeep style="padding: 0 10px;" value="#{current_user.keeps.find_by(concert_id: concert.id).id}"
@@ -72,7 +72,7 @@
         -elsif concert.performers[0].artist.artist_image.present?
           =image_tag concert.performers[0].artist.artist_image, :size => "80x60"
         -else
-          =image_tag("/images/no-concert.png", :size => '80x60')
+          =image_tag("/assets/no-concert.png", :size => '80x60')
     span style="width:320px; padding: 0 3px;" = link_to concert.concert_name, concert_path(concert), class: "concertName_#{concert.id}", id: "concertNameCell", data: {"turbolinks" => false}
     -if concert.tm_id.present?
       span class="hidden registeredArtistConcertTmId#{concert.tm_id}" id="tmIdCell" = concert.tm_id
@@ -91,15 +91,15 @@
 
     -if concert.origin == "Ticket Master"
       span style="padding: 0 10px;" = link_to concert.source do
-        =image_tag '/images/tmlogo_blue.png', size: '60x20'
+        =image_tag '/assets/tmlogo_blue.png', size: '60x20'
     -elsif concert.origin == "Songkick"
       span style="padding: 0 10px;" = link_to concert.source do
-        =image_tag '/images/by_Songkick_white.png', size: '50x10'
+        =image_tag '/assets/by_Songkick_white.png', size: '50x10'
     -elsif concert.origin == "manual"
       span style="padding: 0 10px;" = link_to concert.source do
-        =image_tag '/images/loading.jpg', size: '60x20'
+        =image_tag '/assets/loading.jpg', size: '60x20'
     -else
-      span style="padding: 0 10px;" =image_tag '/images/loading.jpg', size: '60x20'
+      span style="padding: 0 10px;" =image_tag '/assets/loading.jpg', size: '60x20'
 
     - if user_signed_in? && current_user.keeps.find_by(concert_id: concert.id).present?
       span style="padding: 0 10px;" = link_to keep_path(current_user.keeps.find_by(concert_id: concert.id)), method: :delete do
