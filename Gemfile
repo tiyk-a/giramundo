@@ -72,10 +72,10 @@ gem 'devise'
 # gem 'ticketmaster-sdk'
 # gem 'musicbrainz', '0.5.2'
 # gem 'feedjira'
-# gem "paranoia", "~> 2.2"
+gem "paranoia", "~> 2.2"
 # gem 'whenever', :require => false
 # gem 'kaminari'
-# gem 'geocoder'
+gem 'geocoder'
 # gem 'gmaps4rails'
 # gem 'gon'
 # gem 'pry-rails'
