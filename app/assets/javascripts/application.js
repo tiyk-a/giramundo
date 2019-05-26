@@ -15,9 +15,9 @@
 //= require underscore
 // requre jquery.sliderPro.min
 //= require gmaps/google
-//= require infinite-scroll.pkgd.min
+// require infinite-scroll.pkgd.min
 // require jquery-ui/datepicker
-//= require autocomplete-rails
+// require autocomplete-rails
 //= require turbolinks
 //= require_tree .
 
