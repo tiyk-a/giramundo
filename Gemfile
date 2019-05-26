@@ -61,26 +61,26 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-# gem 'bootstrap-sass', '~> 3.3.6'
-# gem 'jquery-rails'
-# gem "font-awesome-rails"
-# gem 'ransack'
-# gem 'bootstrap_form'
-# gem 'slim-rails'
-# gem 'html2slim'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'jquery-rails'
+gem "font-awesome-rails"
+gem 'ransack'
+gem 'bootstrap_form'
+gem 'slim-rails'
+gem 'html2slim'
 gem 'devise'
-# gem 'ticketmaster-sdk'
-# gem 'musicbrainz', '0.5.2'
-# gem 'feedjira'
+gem 'ticketmaster-sdk'
+gem 'musicbrainz', '0.5.2'
+gem 'feedjira'
 gem "paranoia", "~> 2.2"
-# gem 'whenever', :require => false
-# gem 'kaminari'
+gem 'whenever', :require => false
+gem 'kaminari'
 gem 'geocoder'
-# gem 'gmaps4rails'
-# gem 'gon'
-# gem 'pry-rails'
-# gem 'jquery-ui-rails', '5.0.5'
-# gem 'rails4-autocomplete'
+gem 'gmaps4rails'
+gem 'gon'
+gem 'pry-rails'
+gem 'jquery-ui-rails', '5.0.5'
+gem 'rails4-autocomplete'
 group :production do
   gem 'pg'
 end
