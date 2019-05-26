@@ -1,0 +1,20 @@
+= form_for feed do |f|
+  - if feed.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(feed.errors.count, "error")} prohibited this feed from being saved:"
+      ul
+        - feed.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :url
+    = f.text_field :url
+  .field
+    = f.label :description
+    = f.text_area :description
+  .text-center
+    .actions = button_tag 'Submit', type: 'submit', method: :post, url: feeds_path, class: "btn"
+

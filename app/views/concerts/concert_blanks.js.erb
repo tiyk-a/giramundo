@@ -1,0 +1,2 @@
+$(".concert_nameTbody").append("<%= j(render partial: 'concert_container', collection: @concert_blanks, :as => 'concert',locals: {keep: @keep}) %>");
+$(".concert_blanks_pagination").html("<%= j(render partial: 'pagination', locals: {concerts: @concert_blanks}) %>");

@@ -1,0 +1,80 @@
+- if @focuses.present?
+  .container.onlyForBasicView
+    .row.text-center
+      .slider-pro#my-slider
+        .sp-slides
+          - @focuses.each do |pick|
+            .sp-slide
+              =link_to concert_path(pick) do
+                =image_tag(pick.image, :size => '800x500')
+            .sp-caption
+              = link_to pick.concert_name, concert_path(pick)
+
+        .sp-thumbnails
+          - @focuses.each do |pick|
+            .sp-thumbnail
+              .sp-thumbnail-image-container
+                =image_tag(pick.image, :size => '120x80')
+              .sp-thumbnail-text
+                =link_to concert_path(pick) do
+                  .sp-thumbnail-title =pick.concert_name.truncate(25)
+                  .sp-thumbnail-description
+                    =pick.date.strftime('%b. %d') if pick.date.present?
+                    =pick.venue.city if pick.venue.present?
+.container
+  .row
+    .col-lg-8
+    .col-lg-2.inline-block.text-right
+      .inline-block style="font-size: 12px;"
+        = link_to 'SWITCH to SIMPLE VIEW', switch_concert_path(1), class: 'post_button', id: "switchSimple", remote: true
+      .inline-block style="font-size: 12px;"
+        = link_to 'SWITCH to BASIC VIEW', switch_concert_path(2), class: 'post_button hidden', id: "switchBasic", remote: true
+.container
+  .row
+    .col-lg-2#concertSideBar
+      = render 'entries/top', top_entries: @top_entries, entries: @entries
+      -if user_signed_in?
+        =render 'users/watch_list'
+      -if admin_user?
+        = render 'form', concert: @concert, artists: @artists, venues: @venues
+      h3 Need Map?
+      #concertIndexMap style="width:100%; height:200px;"
+      = render 'venues/geocodeBox'
+    .col-lg-8
+      .col-lg-4.inline-block
+        .text-center.flex
+          input#fromDate.inline-block type="text" style="margin: 0;" placeholder="DESDE"
+          input#toDate.inline-block type="text" style="margin: 0;" placeholder="HASTA"
+          #dateFind.text-center.btn submit
+      .col-lg-5.inline-block.text-right.m-0
+        #basicSort
+          .inline-block
+            = link_to 'Asc', concerts_sort_path(1), method: :post, class: 'post_button btn', id: "sortAsc", remote: true
+          .inline-block
+            = link_to 'Desc', concerts_sort_path(2), method: :post, class: 'post_button btn', id: "sortDesc", remote: true
+          .inline-block
+            = link_to 'Country', concerts_sort_path(3), method: :post, class: 'post_button btn', id: "sortCountry", remote: true
+          .inline-block
+            = link_to 'City', concerts_sort_path(4), method: :post, class: 'post_button btn', id: "sortCity", remote: true
+          .inline-block
+            = link_to 'Venue', concerts_sort_path(5), method: :post, class: 'post_button btn', id: "sortVenue", remote: true
+          .inline-block
+            p.btn#planBtn Plan
+        #simpleSort.hidden
+          .inline-block
+            = link_to 'Asc', concerts_simple_sort_path(1), method: :post, class: 'post_button btn', remote: true
+          .inline-block
+            = link_to 'Desc', concerts_simple_sort_path(2), method: :post, class: 'post_button btn', remote: true
+          .inline-block
+            p.btn#planBtn Simple Plan
+
+      -if @concerts.present?
+        ul.text-left#swichWindow
+          = render 'basic_view',locals: {concerts: @concerts, keep: @keep}
+        .pagination
+          = render 'pagination', concerts: @concerts
+
+javascript:
+  $(document).ready(function(){
+    initMap('concertIndexMap', 0, 0, null, 4);
+  });

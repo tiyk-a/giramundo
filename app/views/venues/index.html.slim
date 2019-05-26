@@ -1,0 +1,43 @@
+.container
+  .row
+    .col-lg-10.text-center
+      h1 All Venues that has concert
+
+- if @venues.present?
+  .container
+    #mapVenuesIndex
+- else
+  .container.text-center
+    h1 THERE'S NO VENUES :(
+
+.container
+  .row
+    .col-lg-2
+      .
+        h3 New Venue?
+        = render 'form', venue: @venue
+      .mb-20px style="margin: 30px 0;;"
+        -if admin_user?
+          .text-center style="margin-bottom: 50px;"
+            h3 Automatically Update?
+            = link_to 'Refresh Venue Info', refresh_venue_path, method: :patch, class: "btn"
+        .text-center style="margin-bottom: 50px;"
+          = render 'geocodeBox'
+    .col-lg-8
+      - if @venues.present?
+        .col-lg-4.inline-block
+        .col-lg-4.inline-block.text-right
+          .inline-block
+            = button_tag "Manage", class: "m-0 btn", id: "pickupNotFound"
+          .inline-block
+            = link_to 'Country', venues_sort_path(1), method: :post, class: 'post_button btn', id: "venueByCountry", remote: true
+          .inline-block
+            = link_to 'Double?', venues_sort_path(2), method: :post, class: 'post_button btn', id: "conflictVenue", remote: true
+        ul.sortVenueContainer style="margin:20px;"
+            - @venues.each do |venue|
+              = render 'venue_container', venue: venue
+
+javascript:
+  $(document).ready(function(){
+    initMap('mapVenuesIndex', gon.venues[0].latitude, gon.venues[0].longitude, gon.venues, 2);
+  });

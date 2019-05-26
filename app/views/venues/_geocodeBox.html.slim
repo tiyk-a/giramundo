@@ -1,0 +1,19 @@
+h3 Search Location
+input id="address" type="textbox" value="Address OR Venue name" style="margin: 5px 0; width: 100%;"
+
+input type="button" value="Encode" style="margin: 5px auto;" id="encodeBtn"
+#manualGeoCoderResult.hidden style="width: 100%;"
+  h5 Searched word
+  #geoCoderName
+  h5 Address
+  #geoCoderAddress
+  h5 latitude
+  #geoCoderLat
+  h5 longitude
+  #geoCoderLng
+
+javascript:
+  $(document).on('click', '#encodeBtn', function(){
+    var key = $('#address').val();
+    locationSearch(key);
+  });

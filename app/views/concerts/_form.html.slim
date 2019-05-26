@@ -1,0 +1,47 @@
+// LOCAL VARIABLES ARE : CONCERT, ARTISTS
+= form_with(model: concert, local: true) do |form|
+  - if concert.errors.any?
+    #error_explanation
+      h2
+        = pluralize(concert.errors.count, "error")
+        |  prohibited this concert from being saved:
+      ul
+        - concert.errors.full_messages.each do |message|
+          li
+            = message
+  .field
+    = form.label :concert_name
+    = form.text_field :concert_name
+  .field
+    = form.label :source
+    = form.text_area :source
+  .field
+    = form.label :image
+    = form.text_area :image
+  .field
+    = form.label :tm_id
+    = form.text_field :tm_id, readonly: true
+  .field
+    = form.label :date
+    = form.text_field :date
+  .field
+    = form.label :venue_id
+    = form.collection_select(:venue_id, venues, :id, :name)
+  .field
+    = form.label :timezone
+    = form.text_field :timezone
+  .field
+    h4 Performer
+    - if concert.performers.present?
+      h5 Currentlly Confirmed
+      - concert.performers.each do |p|
+        p =link_to p.artist.artist_name, concert_path(p.artist)
+      h5 Add More Performers?
+    = fields_for :performers do |f|
+      = f.collection_select(:artist_id, artists, :id, :artist_name, :include_blank => true)
+      = f.hidden_field :concert_id, value: concert.id
+  .field
+    = form.label :origin
+    = form.select :origin, Concert.origins.keys.to_a, {}
+  .actions
+    = button_tag 'Submit', type: 'submit', method: :post, url: concerts_path, class: "btn"

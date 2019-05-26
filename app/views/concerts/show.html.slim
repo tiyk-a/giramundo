@@ -1,0 +1,72 @@
+.hidden#concertId =@concert.tm_id
+
+.container
+  .row
+    .col-lg-2
+      ul style="background-color: white; color: black; list-style: none; text-align: center; display: inline-block; padding: 20px 25px 15px 25px; margin: 0; font-size: 30px; font-family:'Roboto', sans-serif;"
+        li =@concert.date.strftime('%b')
+        li =@concert.date.strftime('%-d')
+    .col-lg-8.boxShadow
+      ul
+        li
+          span Global time:
+          span =@concert.date
+          span.hidden#concertShowDatetime =@concert.date.to_i
+        li
+          span Local time:
+          -if @concert.local_time.present?
+            span#concertShowLocalTime = @concert.local_time
+          -else
+            span#concertShowLocalTimeTBC TBC
+            span#concertShowLocalTimeUpdate.btn Get Localtime
+
+.container
+  .row
+    .col-lg-10
+      h1 = link_to @concert.concert_name, @concert.source, class: "linkRighteous", data: {"turbolinks" => false}
+      span.hidden#concertShowId =@concert.id
+
+.container
+  .row
+    .col-lg-4.text-right
+      = link_to @concert.source do
+        -if @concert.image.present?
+          =image_tag(@concert.image, :size => "400x300")
+        -elsif @concert.performers[0].artist.artist_image.present?
+          =image_tag @concert.performers[0].artist.artist_image, :size => "400x340"
+        -else
+          =image_tag("/images/loading.jpg", :size => '400x300')
+    .col-lg-6
+      -if admin_user?
+        = render 'concerts/form', concert: @concert, artists: @artists, venues: @venues
+      -else
+        h3 Performers
+        - if @concert.performers.present?
+          - @concert.performers.each do |performer|
+            h5  = link_to performer.artist.artist_name, artist_path(performer.artist), data: {"turbolinks" => false}
+        -else
+          h5 TBC
+
+      h3 See Ticket
+      -if @concert.origin == "Ticket Master"
+        = link_to @concert.source do
+          =image_tag '/images/tmlogo_blue.png', size: '60x20'
+      -elsif @concert.source == "Songkick"
+        = link_to @concert.source do
+          =image_tag '/images/by_Songkick_white.png', size: '50x10'
+      -elsif @concert.source == "manual"
+        = link_to @concert.source do
+          =image_tag("/images/loading.jpg", :size => '60x20')
+      -else
+        =image_tag("/images/loading.jpg", :size => '60x20')
+
+      h3 Venue
+      -if @concert.venue.present?
+        h5 = link_to @concert.venue.name, venue_path(@concert.venue), data: {"turbolinks" => false}
+      -else
+        h5 TBC
+
+.container
+  .row
+    .col-lg-10
+      = link_to 'Back', concerts_path, class: "btn", data: {"turbolinks" => false}

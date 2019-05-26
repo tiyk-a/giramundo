@@ -1,0 +1,51 @@
+/ variables: concert, keep
+li.concertContainer
+  span style="font-size: 14px;" = concert.date.strftime('%b %d') if concert.date.present?
+  span.pr-narrow style="font-size: 14px;"
+    - concert.performers.includes(:artist).each do |performer|
+      = link_to performer.artist.artist_name, artist_path(performer.artist), class: "small mb-0 pb-0", data: {"turbolinks" => false}
+      br
+  span.pl-narrow
+    = link_to concert_path(concert), data: {"turbolinks" => false} do
+      - if concert.image.present?
+        =image_tag concert.image, :size => "80x60"
+      -elsif concert.performers[0].artist.artist_image.present?
+        =image_tag concert.performers[0].artist.artist_image, :size => "80x60"
+      -else
+        =image_tag("/images/no-concert.png", :size => '80x60')
+  span = link_to concert.concert_name, concert_path(concert), data: {"turbolinks" => false}
+  -if concert.tm_id.present?
+  span style="font-size: 14px;" = concert.venue.name if concert.venue.present?
+  span style="font-size: 14px;" = concert.venue.country if concert.venue.present?
+  span style="font-size: 14px;" = concert.venue.city if concert.venue.present?
+  span style="font-size: 14px;" = concert.venue.id if concert.venue.present?
+
+  - if user_signed_in? && current_user.keeps.find_by(concert_id: concert.id).present?
+    span = link_to keep_path(current_user.keeps.find_by(concert_id: concert.id)), method: :delete do
+      i class="fas fa-paperclip" style="color:deeppink;"
+
+  - elsif user_signed_in? && current_user.keeps.find_by(concert_id: concert.id).blank?
+    span
+      = form_with model:keep do |f|
+        = f.hidden_field :concert_id, value: concert.id
+        = f.hidden_field :user_id, value: current_user.id
+        = link_to keeps_path(keep: {user_id: current_user.id, concert_id: concert.id}), method: :post do
+          i class="fas fa-paperclip"
+  span.planColumn class="plan hidden" value="planThis_#{concert.id}"
+    i.planColumn class="far fa-check-circle hidden"
+  -if concert.date.present?
+    span class="hidden" = concert.date.yday
+  -else
+    span class="hidden" = "TBC"
+
+  -if concert.origin == "Ticket Master"
+    span = link_to concert.source do
+      =image_tag '/images/tmlogo_blue.png', size: '60x20'
+  -elsif concert.origin == "Songkick"
+    span = link_to concert.source do
+      =image_tag '/images/by_Songkick_white.png', size: '50x10'
+  -elsif concert.origin == "manual"
+    span = link_to concert.source do
+      =image_tag '/images/loading.jpg', size: '60x20'
+  -else
+    span =image_tag '/images/loading.jpg', size: '60x20'

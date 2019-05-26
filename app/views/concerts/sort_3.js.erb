@@ -1,0 +1,3 @@
+$('.concertContainerTest').html("<%= j(render partial: 'concert_container_venues', collection: @concerts, :as => 'concert',locals: {keep: @keep}) %>");
+$('.post_button').removeClass('activeBtn');
+$('#sortCountry').addClass('activeBtn');

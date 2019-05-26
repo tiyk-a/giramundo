@@ -1,0 +1,88 @@
+.container
+  .row
+    .col-lg-10.text-center
+      h1 MONITORING
+
+.container
+  .row
+    .col-lg-2
+      h1#adminTitle1 CONCERTS
+    .col-lg-8
+
+
+-if @concert_blanks.present?
+  .row
+    .col-lg-2
+      #activeAdminBox
+        = render 'concerts/form', concert: @concert, artists: @artists, venues: @venues
+        . style="margin: 50px 0"
+          h3 DESTROY PAST EVENTS
+          = link_to "Date Check", date_check_path, method: :get, remote: true, class: "btn"
+          .date_checked_notif
+          ul.date_checked
+    .col-lg-8
+      ul.concert_nameTbody
+        = render partial: 'concert_container', collection: @concert_blanks, :as => 'concert', locals: {keep: @keep}
+      / .concert_blanks_pagination
+      /   = paginate @concert_blanks, :remote => true
+
+.container
+  .row
+    .col-lg-2
+      h1 VENUE
+      = render 'venues/geocodeBox'
+    .col-lg-8
+      ul
+        = render partial: 'venues/venue_container', collection: @venue_blanks, :as => 'venue'
+        /= paginate @venues_blanks, :remote => true
+
+.container
+  .row
+    .col-lg-2
+      h1 PAST CONCERTS
+    .col-lg-8
+      ul.past_concertsTbody
+          = render partial: 'concerts/concert_container', collection: @past_concerts, :as => 'concert'
+      //.past_concert_pagination
+        = paginate @past_concerts, param_name: 'past_concert', :remote => true
+
+
+.admin-nav
+  h1.text-center All Pages
+  .flex
+    .col-lg-2
+      h3.block Views Only for Admin
+      ol
+        li edit artist
+        li edit concert
+        li =link_to 'Users index', users_path, data: {"turbolinks" => false}
+        li =link_to 'Feeds index', feeds_path, data: {"turbolinks" => false}
+        li =link_to 'All entries index', all_entries_path, data: {"turbolinks" => false}
+        li =link_to 'Refresh Concerts', concerts_path, id: "concertRefresh", data: {"turbolinks" => false}
+        li =link_to 'Refresh Venues', feeds_path, id: "venueRefresh", data: {"turbolinks" => false}
+        li = link_to 'Manual New Artist', artists_path, data: {"turbolinks" => false}
+    .col-lg-2
+      h3 Only for User & Admin
+      ol
+        li =link_to 'Sign out', destroy_user_session_path, method: :delete
+        li =link_to 'Edit pw', edit_user_password_path
+        li =link_to 'Edit user info', edit_user_registration_path
+        li =link_to 'Artists index', artists_path, data: {"turbolinks" => false}
+        li =link_to 'User show', user_path(current_user), data: {"turbolinks" => false}
+        li =link_to 'Cancel registration', cancel_user_registration_path
+    .col-lg-2
+      h3 Only for Guests
+      ol
+        li =link_to 'Sign in', new_user_session_path
+        li =link_to 'Sign up', new_user_registration_path
+        li =link_to 'New pw', new_user_password_path
+    .col-lg-2
+      h3 SIN LIMITACION
+      ol
+        li Artist show
+        li =link_to 'Concerts index', concerts_path, data: {"turbolinks" => false}
+        li Concert show
+        li Feeds entries index
+        li =link_to 'Top entries index', top_entries_path, data: {"turbolinks" => false}
+        li = link_to 'Venues', venues_path, data: {"turbolinks" => false}
+        li Venue show

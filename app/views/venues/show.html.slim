@@ -1,0 +1,55 @@
+.container
+  .row
+    .col-lg-2
+      ul style="background-color: white; color: black; list-style: none; text-align: center; display: inline-block; padding: 20px 25px 15px 25px; margin: 0; font-size: 30px; font-family:'Roboto', sans-serif;"
+        li class="venueCity_#{@venue.id}" style="font-size:30px;" =@venue.city
+        li class="venueCountry_#{@venue.id}" style="font-size:22px;" =@venue.country
+    .col-lg-8
+      .inline-block
+        h1 = link_to @venue.name, @venue.url, class: "venueName_#{@venue.id} linkRighteous", data: {"turbolinks" => false}
+        h3 class="venueAddress_#{@venue.id}" style="font-family:'Roboto', sans-serif; font-size:24px; font-weight:200;" Address
+        p =@venue.address
+
+.container
+  .row
+    .col-lg-2
+      -if user_signed_in?
+        -if admin_user?
+          h3 New Venue?
+          = render 'form', venue: @newVenue
+        = render 'geocodeBox'
+    .col-lg-8
+      #mapVenueShow
+      - if admin_user?
+        -if @venue.latitude.present? && @venue.latitude.present?
+          p
+          |
+            Coordinates:
+          = @venue.latitude
+          = @venue.longitude
+          = button_tag "Edit?", class: "btn editVenue", value: @venue.id
+          p.btn.GetMap.inline-block Refresh Map
+        -else
+          p.btn.GetMap Get Map
+
+.container
+  .row
+    .col-lg-2
+    .col-lg-8
+      h3 CONFIRMED CONCERTS
+      -if @venue.concerts.present?
+        ul
+          -@venue.concerts.each do |concert|
+            = render 'concerts/concert_container', concert:concert, keep: @keep
+
+.container
+  .row
+    .col-lg-2
+      = link_to "Back to All Venues", venues_path, class: 'btn', data: {"turbolinks" => false}
+.hidden class="venueLat_#{@venue.id}" =@venue.latitude
+.hidden class="venueLng_#{@venue.id}" =@venue.longitude
+
+javascript:
+  $(document).ready(function(){
+    initMap('mapVenueShow', gon.venue.latitude, gon.venue.longitude, gon.venue, 8);
+  });

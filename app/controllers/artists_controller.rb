@@ -1,44 +1,67 @@
 class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show, :edit, :update, :destroy]
+  before_action :set_admin, only: [:edit]
+  before_action :authenticate_user!, only: [:index]
+  autocomplete :artist, :artist_name, full: true
+  # GEM https://github.com/peterwillcn/rails4-autocomplete
+  # FRIENDLY REFERENCE: https://techblog.kyamanak.com/entry/2018/06/03/170603
 
   # GET /artists
   # GET /artists.json
   def index
-    @artists = Artist.all
+    if params[:artist_name].present?
+      @artists = Artist.where(artist_name: params[:artist_name])
+    else
+      @artists = Artist.all.reverse_order
+    end
+
+    @artist = Artist.new
+
+    #EXTERNAL SEARCH
+    @searched = params[:artist].to_s
+    @artists_by_sptf = Artist.all
+    require 'musicbrainz'
+    @foundArtist = MusicBrainz::Artist.search(@searched)
+    # GEM GITHUB => https://github.com/localhots/musicbrainz
+  end
+
+  def id_refresh
+    artists = Artist.where(mb_id: nil)
+    require 'musicbrainz'
+    artists.each do |a|
+      @found = MusicBrainz::Artist.search(a.artist_name)
+      if @found.present? && @found[0][:name] == a.artist_name
+        p @found[0][:name]
+        p @found[0][:mbid]
+        a.mb_id = @found[0][:mbid]
+      else
+        p @found[0][:name] + "CHECK REQUEST"
+        a.mb_id = "TBC"
+      end
+      a.save
+    end
+    @artists = Artist.where(updated_at: Time.zone.now.beginning_of_day)
+    render :file => "/app/views/artists/id_refresh.js.erb"
   end
 
   # GET /artists/1
   # GET /artists/1.json
   def show
-  end
-
-  # GET /artists/new
-  def new
-    @artist = Artist.new
-  end
-
-  # GET /artists/1/edit
-  def edit
+    @artist = Artist.find(params[:id])
+    gon.artist = Artist.find(params[:id])
+    @artists = Artist.all
+    @venues = Venue.all
+    @concert = Concert.new
   end
 
   # POST /artists
   # POST /artists.json
   def create
-    @artist = Artist.new(artist_params)
-
-    respond_to do |format|
-      if @artist.save
-        format.html { redirect_to @artist, notice: 'Artist was successfully created.' }
-        format.json { render :show, status: :created, location: @artist }
-      else
-        format.html { render :new }
-        format.json { render json: @artist.errors, status: :unprocessable_entity }
-      end
-    end
+    artist = Artist.find_or_create_by(artist_name: artist_params[:artist_name])
+    artist.update(artist_params)
+    redirect_to artists_path
   end
 
-  # PATCH/PUT /artists/1
-  # PATCH/PUT /artists/1.json
   def update
     respond_to do |format|
       if @artist.update(artist_params)
@@ -62,13 +85,14 @@ class ArtistsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_artist
-      @artist = Artist.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def artist_params
-      params.require(:artist).permit(:artist_name, :artist_image, :deleted_at, :mb_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_artist
+    @artist = Artist.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def artist_params
+    params.require(:artist).permit(:artist_name, :artist_image, :deleted_at, :mb_id)
+  end
 end

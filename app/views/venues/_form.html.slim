@@ -1,0 +1,36 @@
+= form_for venue do |f|
+  - if venue.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(venue.errors.count, "error")} prohibited this venue from being saved:"
+      ul
+        - venue.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :country
+    = f.text_field :country
+  .field
+    = f.label :city
+    = f.text_field :city
+  .field
+    = f.label :address
+    = f.text_area :address
+  .field
+    = f.label :url
+    = f.text_field :url
+  .field
+    = f.label :latitude
+    = f.text_field :latitude
+  .field
+    = f.label :longitude
+    = f.text_field :longitude
+  .text-center
+    .actions = button_tag 'Submit', type: 'submit', method: :post, url: venues_path, class: "btn"
+
+.text-center
+  h3 Powered by
+  = link_to "https://www.google.com/maps", target: '_blank' do
+    =image_tag '/images/google_map.png', size: '100x30'

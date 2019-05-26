@@ -1,0 +1,47 @@
+/variables: concert, keep
+li.concert
+  span.simpleViewTd class="concertDate_#{concert.id}" id="dateCell" style="width:60px;padding-left:10px;" = concert.date.strftime('%b %d') if concert.date.present?
+  span.pr-narrow.simpleViewTd style="width:100px;text-align:left;font-size:12px;"
+    - concert.performers.includes(:artist).each do |performer|
+      = link_to performer.artist.artist_name, artist_path(performer.artist), class: "small mb-0 pb-0 inline-block", data: {"turbolinks" => false}
+      p.inline-block ,
+  span.simpleViewTd style="width:250px;text-align:left;" = link_to concert.concert_name.truncate(40), concert_path(concert), data: {"turbolinks" => false}
+  -if concert.tm_id.present?
+    span class="hidden" = concert.tm_id
+  span.simpleViewTd style="width:150px;text-align:left;font-size:12px;"
+    - if concert.venue.present?
+      = link_to venue_path(concert.venue), data: {"turbolinks" => false} do
+        = concert.venue.city
+        p.inline-block ,
+        = concert.venue.country
+
+  - if user_signed_in? && current_user.keeps.find_by(concert_id: concert.id).present?
+    span.simpleViewTd style="padding: 0 10px;" = link_to keep_path(current_user.keeps.find_by(concert_id: concert.id)), method: :delete do
+      i class="fas fa-paperclip" style="color:deeppink;"
+
+  - elsif user_signed_in? && current_user.keeps.find_by(concert_id: concert.id).blank?
+    span.simpleViewTd style="padding: 0 10px;"
+      = form_with model:keep do |f|
+        = f.hidden_field :concert_id, value: concert.id
+        = f.hidden_field :user_id, value: current_user.id
+        = link_to keeps_path(keep: {user_id: current_user.id, concert_id: concert.id}), method: :post do
+          i class="fas fa-paperclip"
+  span.planColumn.simpleViewTd.plan.hidden value="planThis_#{concert.id}" style="padding: 0 10px;"
+    i.planColumn class="far fa-check-circle hidden"
+  -if concert.date.present?
+    span class="hidden" = concert.date.yday
+  -else
+    span class="hidden" = "TBC"
+
+  -if concert.origin == "Ticket Master"
+    span style="padding: 0 10px;" = link_to concert.source do
+      =image_tag '/images/tmlogo_blue.png', size: '60x20'
+  -elsif concert.origin == "Songkick"
+    span style="padding: 0 10px;" = link_to concert.source do
+      =image_tag '/images/by_Songkick_white.png', size: '50x10'
+  -elsif concert.origin == "manual"
+    span style="padding: 0 10px;" = link_to concert.source do
+      =image_tag '/images/loading.jpg
+      ', size: '60x20'
+  -else
+    span style="padding: 0 10px;" =image_tag '/images/loading.jpg', size: '60x20'

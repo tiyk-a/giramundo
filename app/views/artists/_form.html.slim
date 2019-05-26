@@ -1,0 +1,31 @@
+= form_for artist do |f|
+  - if artist.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(artist.errors.count, "error")} prohibited this artist from being saved:"
+      ul
+        - artist.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :artist_name
+    = f.text_field :artist_name
+
+  .field
+    = f.label :mb_id, "MB ID"
+    = f.text_field :mb_id
+
+  .field
+    = f.label :artist_image
+    = f.text_field :artist_image
+    br
+    -if artist.artist_image.present?
+      h5 CURRENT IMAGE
+      =image_tag(artist.artist_image, :size => "150x100")
+      br
+    - if @artist.performers.present?
+      -@artist.performers.each do |perform|
+        -if perform.concert.image.present?
+          =image_tag(perform.concert.image, :size => "60x40", class: "concertImage concertImage#{perform.concert.id}")
+      #selectedArtistImage
+
+  .actions = button_tag 'Submit', type: 'submit', method: :get, url: artists_path, class: "btn"

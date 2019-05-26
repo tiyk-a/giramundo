@@ -1,0 +1,63 @@
+.container
+  .row
+    .col-lg-10.text-center
+      h1 Artist List
+
+-if @searched.present?
+  .container
+    .row
+      .col-lg-2
+      .col-lg-8
+        h2 Search Results
+
+-if @searched.present?
+  .container
+    .row
+      .col-lg-2
+        . style="height: 30px; width: 100%;"
+        .
+          h3 Powered by
+          =link_to 'https://musicbrainz.org/' do
+            =image_tag '/images/MusicBrainz_Logo_Transparent.png', size: '100x80'
+        - if admin_user?
+          = link_to 'No MB Id?', artist_id_refresh_path, method: :post, class: "btn", remote: true
+      .col-lg-8
+        - @foundArtist.each do |s|
+          .flex
+            p.textBtn.showNext.foundArtistSave =s[:name]
+            .hidden style="line-height: 90px; font-family: 'Roboto', sans-serif; font-weight:100;" = s[:desc]
+            .hidden =s[:mbid]
+
+-if @searched.present?
+  .container
+    .row
+      .col-lg-2
+      .col-lg-8
+        .id_refresh_results
+    .container.hidden#artistCount =@artists.count
+    .container.hidden#artistLast =@artists.first.id if @artists.exists?
+
+.container
+  .row
+    .col-lg-2
+      - unless @searched.present?
+        .text-center style="margin: 50px 0;"
+          h3 Powered by
+          =link_to 'https://musicbrainz.org/' do
+            =image_tag '/images/MusicBrainz_Logo_Transparent.png', size: '100x80'
+        - if admin_user?
+          = link_to 'MB Id refresh', artist_id_refresh_path, method: :post, class: "btn", remote: true
+      -if admin_user?
+        . style="margin: 50px 0;"
+          h3 Add New Artist Manually?
+          = render 'form', artist: @artist
+    .col-lg-8
+      .
+        = form_tag(artists_path, method: :get, enforce_utf8: false) do
+          = autocomplete_field_tag 'artist[artist_name]', nil,  autocomplete_artist_artist_name_artists_path, style: "width:400px; display:inline-block;", placeholder: "SEARCH ARTIST"
+          = submit_tag 'Search', style: "width:200px; display:inline-block;"
+        #artistIndexContainer
+          -if admin_user?
+            =render 'artist_index_admin', artists: @artists
+          -else
+            =render 'artist_index_basic', artists: @artists

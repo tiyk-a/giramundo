@@ -1,0 +1,68 @@
+.container
+	.row
+		.col-lg-4
+			h1#artistName style="font-size:50px; margin: 0;" = @artist.artist_name
+			.hidden#artistMbId = @artist.mb_id
+			.artistImageBox
+				-if @artist.artist_image.present?
+					=image_tag(@artist.artist_image, :size => '300x200')
+				-else
+					=image_tag("/images/no-portrait.png", :size => '300x200')
+				p#findArtistImage.btn.inline-block Update Artist's Image?
+		.col-lg-6
+			#yt
+
+.container
+	.row
+		.col-lg-2
+			=image_tag '/images/tmlogo_blue.png', size: '170x60', id: "findConcertButton"
+			=image_tag '/images/by_Songkick_white.png', size: '140x40', id: "findConcertButtonSK"
+			h3 Edit Artist?
+			= render 'form', artist: @artist
+			h3 Edit Concert?
+			= render 'concerts/form', concert: @concert, artists: @artists, venues: @venues
+		.col-lg-8
+			h3 Concerts of this artist
+			ul
+				-if @artist.performers.present?
+					-@artist.performers.each do |perform|
+						-unless perform.concert.date.nil?
+							= render 'concerts/concert_container', concert:perform.concert, keep: @keep
+
+.container
+	.row
+		.col-lg-4
+			= link_to 'Back', artists_path, class: "btn", data: {"turbolinks" => false}
+
+javascript:
+	// Load the IFrame Player API code asynchronously.
+	var tag = document.createElement('script');
+	tag.src = "https://www.youtube.com/player_api";
+	var firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+	// Replace the 'ytplayer' element with an <iframe> and
+	// YouTube player after the API code downloads.
+	var player;
+	function onYouTubePlayerAPIReady() {
+
+		var artistName = $('#artistName').text();
+		$.ajax({
+			type:"GET",
+			url:"https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=" + artistName + "&type=video&key=AIzaSyCqWnrtA-LEDP4JE9O3CvFr80np1gBEyuY",
+			async:true,
+			dataType: "json",
+		}).done(async function (data){
+				await console.log(data);
+				var artistVideoId = (data.items[0].id.videoId);
+
+				player = new YT.Player('yt', {
+			height: '360',
+			width: '640',
+			videoId: artistVideoId
+		});
+
+		}).fail((jqXHR, textStatus, errorThrown) => {
+			 console.log('fail', jqXHR.status);
+		});
+	}

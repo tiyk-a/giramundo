@@ -1,0 +1,9 @@
+li style="margin:20px;"
+	span DATE
+	span ARTIST
+	span TITLE
+	span PLACE
+	span KEEP
+	span.planColumnHeader.hidden PLAN
+.concertTbody.concertContainerTest
+  = render partial: 'concert_container_simple', collection: @concerts, :as => 'concert', locals: {keep: @keep}

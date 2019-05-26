@@ -1,0 +1,19 @@
+-artists.each do |artist|
+	.inline-block.text-left style="margin: 15px 5px;" value="#{artist.id}"
+		.
+			= link_to artist_path(artist), data: {"turbolinks" => false} do
+				-if artist.artist_image.present?
+					=image_tag(artist.artist_image, :size => '150x150')
+				-else
+					=image_tag '/images/loading.jpg', size: '150x150'
+		.flex style="align-content: space-around;"
+			.inline-block
+				= link_to artist.artist_name, artist_path(artist), data: {"turbolinks" => false}
+			.inline-block
+				-if user_signed_in? && current_user.watch_artists.find_by(artist_id: artist.id).present?
+					.removeWatch style="padding:0 5px;color:deeppink;"
+						i. class="fas fa-heart"
+				-else
+					.createWatch style="padding:0 5px;"
+						input.hidden value="#{artist.id}"
+						i class="far fa-heart"

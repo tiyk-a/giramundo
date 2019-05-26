@@ -1,0 +1,2 @@
+$('.date_checked').html("<%= j(render partial: 'date_checked', collection: @concerts, :as => 'concert') %>");
+$('.date_checked_notif').html("<p><%= @concerts.count%>RECORDS WERE DELETED</p>");

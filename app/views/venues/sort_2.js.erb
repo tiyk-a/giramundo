@@ -1,0 +1,26 @@
+$('.sortVenueContainer').html("<%= j(render partial: 'venue_container', collection: @venues, :as => 'venue') %>");
+$('.post_button').removeClass('activeBtn');
+$('#conflictVenue').addClass('activeBtn');
+
+var count = $('.venueName')
+
+
+// Findout double-registered records
+for(var i = 0; i < count.length; i++){
+	var venueId = '.venueName_' + i
+	var text = $(venueId).text();
+
+	var allNames = [i, text]
+
+	for(var j = i+1; j < count.length-1; j++){
+		var venueIdJ = '.venueName_' + j
+		var textJ = $(venueId).text();
+
+		if(allNames[1] == textJ){
+			$(venueId).children().css('color', 'deeppink');
+			console.log(allNames[1] + 'match to' + textJ);
+		};
+	};
+};
+console.log('anyway done');
+// Findout double-registered records
