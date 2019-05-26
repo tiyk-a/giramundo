@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   post '/venues_sort/:id', to: 'venues#sort', as: :venues_sort
 
   # WATCH ARTISTS
-  post '/add_watch_artist/', to: 'watch_artists#add_watch_artist', as: :add_watch_artist
+  post '/add_watch_artist/:id', to: 'watch_artists#add_watch_artist', as: :add_watch_artist
   delete '/destroy_watch_artist/:id', to: 'watch_artists#destroy_watch_artist', as: :destroy_watch_artist
 
   # FEEDS & ENTRIES

@@ -1,0 +1,7 @@
+/ variables: artist
+- if user_signed_in? && WatchArtist.find_by(user_id: current_user, artist_id: artist)
+  = link_to destroy_watch_artist_path(artist), method: :delete, remote: true do
+    i class="fas fa-heart" style="padding:0 5px;color:deeppink;"
+- else
+  = link_to add_watch_artist_path(artist), method: :post, remote: true do
+    i class="far fa-heart" style="padding:0 5px;"

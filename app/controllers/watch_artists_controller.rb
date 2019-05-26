@@ -1,17 +1,18 @@
 class WatchArtistsController < ApplicationController
   def add_watch_artist
-    watch_artist = WatchArtist.new(artist_id: watch_artist_params[:artist_id], user_id: current_user.id)
+    watch_artist = WatchArtist.new(artist_id: params[:id], user_id: current_user.id)
+    artist_id = params[:id]
     watch_artist.save
-    respond_to do |format|
-      format.html { redirect_to artists_url}
-      format.json { head :no_content }
-    end
+    @artist = artist_id
+    render :file => "/app/views/watch_artists/watch_artist.js.erb"
   end
 
   def destroy_watch_artist
     watch_artist = WatchArtist.find_by(artist_id: params[:id], user_id: current_user.id)
+    deleted_artist_id = params[:id]
     watch_artist.destroy
-    redirect_to artists_path
+    @artist = deleted_artist_id
+    render :file => "/app/views/watch_artists/watch_artist.js.erb"
   end
 
   private

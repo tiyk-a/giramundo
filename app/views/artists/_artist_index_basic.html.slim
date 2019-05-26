@@ -10,10 +10,4 @@
 			.inline-block
 				= link_to artist.artist_name, artist_path(artist), data: {"turbolinks" => false}
 			.inline-block
-				-if user_signed_in? && current_user.watch_artists.find_by(artist_id: artist.id).present?
-					.removeWatch style="padding:0 5px;color:deeppink;"
-						i. class="fas fa-heart"
-				-else
-					.createWatch style="padding:0 5px;"
-						input.hidden value="#{artist.id}"
-						i class="far fa-heart"
+				. class="watch_artist#{artist.id}" = render 'watch_artists/watch_artist', artist: artist

@@ -8,12 +8,7 @@ li.artistList style="margin:20px 0;"
   span style="font-size: 10px; width: 200px; padding:0 10px;" class="listArtistMbid#{artist.id}" = artist.mb_id
   span style="width:50px; padding:0 10px;" = artist.performers.count
   span style="width:50px; padding:0 10px;"
-    - if user_signed_in? && WatchArtist.find_by(user_id: current_user, artist_id: artist)
-      = link_to destroy_watch_artist_path(artist), method: :delete do
-        i class="fas fa-times" style="color: deeppink;"
-    - else
-      = link_to add_watch_artist_path(artist), method: :post do
-        i class="fas fa-check"
+    . class="watch_artist#{artist.id}" = render 'watch_artists/watch_artist', artist: artist
   -if admin_user?
     span style="width:50px; padding:0 10px;" = button_tag "Edit?", class: "editArtist", value: artist.id
     span style="width:50px; padding:0 10px;" = link_to artist, data: { confirm: 'Are you sure?' }, method: :delete do
