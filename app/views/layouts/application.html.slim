@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+    title
+      | NotiGiraMundo
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    = include_gon
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
+
+    // FOR LATIN
+    <link href="https://fonts.googleapis.com/css?family=Righteous|Roboto:100,300,500,700&display=swap" rel="stylesheet">
+    // FOR JAPANESE
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:100,300&display=swap&subset=japanese" rel="stylesheet">
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqWnrtA-LEDP4JE9O3CvFr80np1gBEyuY"></script>
+
+
+    = javascript_include_tag 'application'
+    <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+
+
+    <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
+
+
+
+  body
+    -if admin_user?
+      #nav
+        = render 'layouts/header'
+    -else
+      #navnormal
+        = render 'layouts/header'
+    = yield
+    = render 'layouts/footer'
