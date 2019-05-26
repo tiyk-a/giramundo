@@ -1,21 +1,18 @@
 class KeepsController < ApplicationController
   def create
-    @keep = Keep.new(keep_params)
+    @keep = Keep.new(concert_id: params[:id], user_id: current_user)
+    concert_id = params[:id]
     @keep.save
-
-    respond_to do |format|
-      format.html { redirect_to concerts_url, notice: 'Concert was successfully saved.' }
-      format.json { head :no_content }
-    end
+    @keep = concert_id
+    render :file => "/app/views/keeps/keep.js.erb"
   end
 
   def destroy
-    @keep = Keep.find_by(user_id: params[:user_id], concert_id: params[:concert_id])
+    @keep = Keep.find_by(user_id: current_user, concert_id: params[:id])
+    concert_id = params[:id]
     @keep.destroy
-    respond_to do |format|
-      format.html { redirect_to concerts_url, notice: 'A keep was successfully deleted.' }
-      format.json { head :no_content }
-    end
+    @keep = concert_id
+    render :file => "/app/views/keeps/keep.js.erb"
   end
 
   private

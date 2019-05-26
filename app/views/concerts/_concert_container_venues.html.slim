@@ -19,18 +19,8 @@ li.concertContainer
   span style="font-size: 14px;" = concert.venue.country if concert.venue.present?
   span style="font-size: 14px;" = concert.venue.city if concert.venue.present?
   span style="font-size: 14px;" = concert.venue.id if concert.venue.present?
+  . class="keep_#{concert.id}" = render 'keeps/keep', concert: concert
 
-  - if user_signed_in? && current_user.keeps.find_by(concert_id: concert.id).present?
-    span = link_to keep_path(current_user.keeps.find_by(concert_id: concert.id)), method: :delete do
-      i class="fas fa-paperclip" style="color:deeppink;"
-
-  - elsif user_signed_in? && current_user.keeps.find_by(concert_id: concert.id).blank?
-    span
-      = form_with model:keep do |f|
-        = f.hidden_field :concert_id, value: concert.id
-        = f.hidden_field :user_id, value: current_user.id
-        = link_to keeps_path(keep: {user_id: current_user.id, concert_id: concert.id}), method: :post do
-          i class="fas fa-paperclip"
   span.planColumn class="plan hidden" value="planThis_#{concert.id}"
     i.planColumn class="far fa-check-circle hidden"
   -if concert.date.present?

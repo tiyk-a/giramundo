@@ -14,18 +14,20 @@ li.concert
         = concert.venue.city
         p.inline-block ,
         = concert.venue.country
+    . class="keep_#{concert.id}" = render 'keeps/keep', concert: concert
 
-  - if user_signed_in? && current_user.keeps.find_by(concert_id: concert.id).present?
-    span.simpleViewTd style="padding: 0 10px;" = link_to keep_path(current_user.keeps.find_by(concert_id: concert.id)), method: :delete do
-      i class="fas fa-paperclip" style="color:deeppink;"
+  / - if user_signed_in? && current_user.keeps.find_by(concert_id: concert.id).present?
+  /   span.simpleViewTd style="padding: 0 10px;" = link_to keep_path(current_user.keeps.find_by(concert_id: concert.id)), method: :delete do
+  /     i class="fas fa-paperclip" style="color:deeppink;"
 
-  - elsif user_signed_in? && current_user.keeps.find_by(concert_id: concert.id).blank?
-    span.simpleViewTd style="padding: 0 10px;"
-      = form_with model:keep do |f|
-        = f.hidden_field :concert_id, value: concert.id
-        = f.hidden_field :user_id, value: current_user.id
-        = link_to keeps_path(keep: {user_id: current_user.id, concert_id: concert.id}), method: :post do
-          i class="fas fa-paperclip"
+  / - elsif user_signed_in? && current_user.keeps.find_by(concert_id: concert.id).blank?
+  /   span.simpleViewTd style="padding: 0 10px;"
+  /     = form_with model:keep do |f|
+  /       = f.hidden_field :concert_id, value: concert.id
+  /       = f.hidden_field :user_id, value: current_user.id
+  /       = link_to keeps_path(keep: {user_id: current_user.id, concert_id: concert.id}), method: :post do
+  /         i class="fas fa-paperclip"
+
   span.planColumn.simpleViewTd.plan.hidden value="planThis_#{concert.id}" style="padding: 0 10px;"
     i.planColumn class="far fa-check-circle hidden"
   -if concert.date.present?
