@@ -1,0 +1,937 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "font-awesome";
+
+//<<<<<<<<<<<<<<<<<<<<<<<< GENERAL SETTING >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//******************* ELEMENTS *******************
+//******************* ELEMENTS *******************
+html{
+	overflow:auto
+}
+body{
+	overflow: hidden;
+	min-width: 1280px;
+}
+html, body {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Roboto', sans-serif;
+ background-color: black;
+ color: lightgray;
+ }
+ button{
+  background-color: black;
+	border: 2px solid white;
+	padding: 15px 10px;
+	color: white;
+	cursor: pointer;
+	font-family: 'Righteous', cursive;
+	&:hover {
+	background-color: white;
+	color: black;
+	border: 2px solid white;
+	}
+	&:active {
+    background-color: white;
+  }
+}
+ .line-height {
+	line-height: 100%;
+}
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+a {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  font-weight: 100;
+  &:hover {
+    opacity: 1;
+    text-decoration: none;
+    text-shadow: 0.5px 0.5px white;
+  }
+  &:active {
+    text-decoration: none;
+  }
+}
+img {
+	&:hover {
+	opacity: 0.8;
+	cursor: pointer;
+	}
+}
+h1, h2, h3, h4, h5, h6, p, ol, ul, th, td {
+	color: white;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Righteous', cursive;
+	font-weight: 100;
+}
+p, ol, ul, th, td {
+  	font-family: 'Roboto', sans-serif;
+}
+p, ol, ul, td {
+	font-weight: 100;
+}
+table {
+	border: none;
+	width: 100%;
+	padding: 40px;
+}
+th {
+	font-weight: 400;
+	margin: 0 5px;
+}
+ul{
+	list-style:none;
+	padding:0;
+	margin:0;
+	li{
+		padding:0;
+		span{
+		}
+	}
+}
+span{
+	display:inline-block;
+}
+label {
+  display: block;
+  font-weight: 300;
+}
+textarea {
+	height: 50px;
+}
+input, textarea, select {
+	width: 100%;
+	box-shadow: 0 0 10px lightgray;
+	border: 0.3px inset lightgray;
+	background-color: transparent;
+	font-weight: 100;
+	font-size: 14px;
+	color: white;
+	width: 100%;
+	padding: 10px;
+	margin: 10px 0;
+	font-family: 'Roboto', sans-serif;
+	letter-spacing: 2px;
+}
+input[type="submit"], input[type="button"] {
+	width: 100%;
+	cursor: pointer;
+    &:hover {
+    	background-color: white;
+		color: black;
+		border: 2px solid white;
+    }
+}
+//******************* ELEMENTS *******************
+//******************* ELEMENTS *******************
+
+//******************* ELEMENTS *******************
+//******************* ELEMENTS *******************
+.hidden {
+	display: none;
+}
+.btn {
+	background-color: black;
+	border: 2px solid white;
+	padding: 15px 10px;
+	color: white;
+	cursor: pointer;
+	font-family: 'Righteous', cursive;
+	font-size: 11px;
+	&:hover {
+	background-color: white;
+	color: black;
+	border: 2px solid white;
+	}
+	&:active {
+    background-color: white;
+  }
+}
+.textBtn {
+	background-color: black;
+	border: none;
+	padding: 15px 10px;
+	color: white;
+	cursor: pointer;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 100;
+	font-size: 18px;
+	&:hover {
+	background-color: white;
+	border: 2px solid white;
+	color:black;
+	}
+}
+.activeBtn {
+	background-color: lightgray;
+}
+.container {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+.row {
+	width: 100%;
+	margin: 0;
+	padding: 0 5%;
+	display: flex;
+	box-sizing: border-box;
+}
+.col-lg-1 {
+	width: 10%;
+	padding:2%;
+}
+.col-lg-2 {
+	width: 20%;
+	padding:2%;
+}
+.col-lg-3 {
+	width: 30%;
+	padding:2%;
+}
+.col-lg-4 {
+	width: 40%;
+	padding:2%;
+}
+.col-lg-5 {
+	width: 50%;
+	padding:2%;
+}
+.col-lg-6 {
+	width: 60%;
+	padding:2%;
+}
+.col-lg-7 {
+	width: 70%;
+	padding:2%;
+}
+.col-lg-8 {
+	width: 80%;
+	padding:2%;
+}
+.col-lg-9 {
+	width: 90%;
+	padding:2%;
+}
+.col-lg-10 {
+	width: 100%;
+	padding:2%;
+}
+
+//1/4 GRID
+.qua-col {
+	width: 25%;
+	padding: 2%;
+}
+
+//******************* MARGIN *******************
+//******************* MARGIN *******************
+.m-0 {
+	margin: 0;
+}
+.mb-20 {
+	margin-bottom: 20px;
+}
+.mr-20 {
+	margin-right: 20px;
+}
+.mr-10 {
+	margin-right: 10px;
+}
+.ml-10 {
+	margin-left: 10px;
+}
+//******************* MARGIN *******************
+//******************* MARGIN *******************
+
+
+//******************* PADDING *******************
+//******************* PADDING *******************
+.pr-narrow {
+	padding-right: 5px !important;
+}
+.pl-narrow {
+	padding-left: 5px !important;
+}
+.pr-10 {
+	padding-right: 10px;
+}
+.pl-10 {
+	padding-left: 10px;
+}
+.pt-10 {
+	padding-top: 10px;
+}
+.pb-10 {
+	padding-bottom: 10px;
+}
+//******************* PADDING *******************
+//******************* PADDING *******************
+
+//******************* POSITION *******************
+//******************* POSITION *******************
+.text-center {
+	text-align: center;
+}
+.text-right {
+	text-align: right;
+}
+.text-left {
+	text-align: left;
+}
+.flex {
+	display: flex;
+}
+.align_bottom {
+	align-items: flex-end;
+}
+.inline-block {
+	display: inline-block;
+}
+.block {
+	display: block;
+}
+//******************* POSITION *******************
+//******************* POSITION *******************
+
+//******************* FONT *******************
+//******************* FONT *******************
+.font-light {
+ font-weight: light;
+ }
+.bold {
+	font-weight: bold;
+}
+.black {
+	color: black;
+}
+.linkRighteous {
+		font-family: 'Righteous', cursive;
+}
+.jp_text {
+	font-family: 'M PLUS Rounded 1c', sans-serif;
+	font-weight: 100;
+}
+//******************* FONT *******************
+//******************* FONT *******************
+
+
+
+//******************* HEADER *******************
+//******************* HEADER *******************
+.header-logo {
+ font-weight: bold;
+ font-size: 50px;
+ font-family: 'Righteous', cursive;
+ }
+.header-logo-small {
+	position: fixed;
+	width: 100%;
+	height: 100px;
+	z-index: 10000;
+ 	h1 {
+ 		 margin: 0;
+ 		a{
+ 			font-size: 30px;
+ 		}
+ 	}
+ }
+.admin-nav {
+	background-color: #666666;
+	width: 100%;
+	margin: 0;
+}
+.public_nav {
+	width: 100%;
+	margin: 0;
+}
+.c {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+#onCanvas {
+	position: absolute;
+	top: 0;
+}
+ #nav {
+	background-color: black;
+	opacity: 0.8;
+	z-index: 2;
+	//position: fixed;
+	width: 100%;
+	top: 0;
+}
+#userModal {
+	background-color: gray;
+	color: black;
+	width: 200px;
+	margin: 5px 0 5px auto;
+	cursor: pointer;
+	a {
+	color: black;
+	}
+	:hover {
+	opacity: 1;
+	cursor: pointer;
+	}
+}
+
+// NAV
+#navBtn {
+	width: 100px;
+	height: 100px;
+	border-radius:0 0 0 100%;
+	position:absolute;
+	top: 0;
+	right: 0;
+	background-color: deeppink;
+	cursor: pointer;
+	&:hover{
+		box-shadow: 0 0 10px lightgray;
+		border: 0.3px inset lightgray;
+		text-shadow: 0.5px 0.5px white;
+	}
+}
+#nav1 {
+	width: 50px;
+	height: 50px;
+	border-radius:50%;
+	position:absolute;
+	top: 0px;
+	right: 150px;
+	background-color: deeppink;
+	text-align:center;
+	a{
+		width: 100px;
+		height: 100px;
+		margin: 0;
+		padding: 0;
+		line-height:50px;
+		&:hover{
+			text-decoration:none;
+		}
+	}
+	&:hover{
+		box-shadow: 0 0 10px lightgray;
+		border: 0.3px inset lightgray;
+		text-shadow: 0.5px 0.5px white;
+	}
+}
+#nav2 {
+	width: 50px;
+	height: 50px;
+	border-radius:50%;
+	position:absolute;
+	top: 60px;
+	right: 135px;
+	background-color: deeppink;
+	a{
+		width: 100px;
+		height: 100px;
+		margin: 0;
+		padding: 0;
+		line-height:50px;
+		&:hover{
+			text-decoration:none;
+		}
+	}
+	&:hover{
+		box-shadow: 0 0 10px lightgray;
+		border: 0.3px inset lightgray;
+		text-shadow: 0.5px 0.5px white;
+	}
+}
+#nav3 {
+	width: 50px;
+	height: 50px;
+	border-radius:50%;
+	position:absolute;
+	top: 110px;
+	right: 110px;
+	background-color: deeppink;
+	a{
+		width: 100px;
+		height: 100px;
+		margin: 0;
+		padding: 0;
+		line-height:50px;
+		&:hover{
+			text-decoration:none;
+		}
+	}
+	&:hover{
+		box-shadow: 0 0 10px lightgray;
+		border: 0.3px inset lightgray;
+		text-shadow: 0.5px 0.5px white;
+	}
+}
+#nav4 {
+	width: 50px;
+	height: 50px;
+	border-radius:50%;
+	position:absolute;
+	top: 135px;
+	right: 60px;
+	background-color: deeppink;
+	a{
+		width: 100px;
+		height: 100px;
+		margin: 0;
+		padding: 0;
+		line-height:50px;
+		&:hover{
+			text-decoration:none;
+		}
+	}
+	&:hover{
+		box-shadow: 0 0 10px lightgray;
+		border: 0.3px inset lightgray;
+		text-shadow: 0.5px 0.5px white;
+	}
+}
+#nav5 {
+	width: 50px;
+	height: 50px;
+	border-radius:50%;
+	position:absolute;
+	top: 150px;
+	right: 0px;
+	background-color: deeppink;
+	a{
+		width: 100px;
+		height: 100px;
+		margin: 0;
+		padding: 0;
+		line-height:50px;
+		&:hover{
+			text-decoration:none;
+		}
+	}
+	&:hover{
+		box-shadow: 0 0 10px lightgray;
+		border: 0.3px inset lightgray;
+		text-shadow: 0.5px 0.5px white;
+	}
+}
+
+#navToConcert p, #navToArtist p, #navToVenues p, #navToUser p, #navToLogin p, #navToLogout p, #navToAbout p {
+	display:none;
+}
+// NAV
+//******************* HEADER *******************
+//******************* HEADER *******************
+
+//******************* FOOTER *******************
+//******************* FOOTER *******************
+// FOOTER ADMIN NAV
+#adminNavBtn {
+	width: 100px;
+	height: 100px;
+	border-radius:100% 0 0 0;
+	position:fixed;
+	bottom: 0;
+	right: 0;
+	background-color: deeppink;
+	cursor: pointer;
+	&:hover{
+		box-shadow: 0 0 10px lightgray;
+		border: 0.3px inset lightgray;
+		text-shadow: 0.5px 0.5px white;
+	}
+}
+#adminNav1 {
+	width: 50px;
+	height: 50px;
+	border-radius:50%;
+	position:fixed;
+	bottom: 0px;
+	right: 150px;
+	background-color: deeppink;
+	text-align:center;
+	a{
+		width: 100px;
+		height: 100px;
+		margin: 0;
+		padding: 0;
+		line-height:50px;
+		&:hover{
+			text-decoration:none;
+		}
+	}
+	&:hover{
+		box-shadow: 0 0 10px lightgray;
+		border: 0.3px inset lightgray;
+		text-shadow: 0.5px 0.5px white;
+	}
+}
+#adminNav2 {
+	width: 50px;
+	height: 50px;
+	border-radius:50%;
+	position:fixed;
+	bottom: 60px;
+	right: 135px;
+	background-color: deeppink;
+	a{
+		width: 100px;
+		height: 100px;
+		margin: 0;
+		padding: 0;
+		line-height:50px;
+		&:hover{
+			text-decoration:none;
+		}
+	}
+	&:hover{
+		box-shadow: 0 0 10px lightgray;
+		border: 0.3px inset lightgray;
+		text-shadow: 0.5px 0.5px white;
+	}
+}
+#adminNav3 {
+	width: 50px;
+	height: 50px;
+	border-radius:50%;
+	position:fixed;
+	bottom: 110px;
+	right: 110px;
+	background-color: deeppink;
+	a{
+		width: 100px;
+		height: 100px;
+		margin: 0;
+		padding: 0;
+		line-height:50px;
+		&:hover{
+			text-decoration:none;
+		}
+	}
+	&:hover{
+		box-shadow: 0 0 10px lightgray;
+		border: 0.3px inset lightgray;
+		text-shadow: 0.5px 0.5px white;
+	}
+}
+#adminNav4 {
+	width: 50px;
+	height: 50px;
+	border-radius:50%;
+	position:fixed;
+	bottom: 135px;
+	right: 60px;
+	background-color: deeppink;
+	a{
+		width: 100px;
+		height: 100px;
+		margin: 0;
+		padding: 0;
+		line-height:50px;
+		&:hover{
+			text-decoration:none;
+		}
+	}
+	&:hover{
+		box-shadow: 0 0 10px lightgray;
+		border: 0.3px inset lightgray;
+		text-shadow: 0.5px 0.5px white;
+	}
+}
+#adminNav5 {
+	width: 50px;
+	height: 50px;
+	border-radius:50%;
+	position:fixed;
+	bottom: 150px;
+	right: 0px;
+	background-color: deeppink;
+	a{
+		width: 100px;
+		height: 100px;
+		margin: 0;
+		padding: 0;
+		line-height:50px;
+		&:hover{
+			text-decoration:none;
+		}
+	}
+	&:hover{
+		box-shadow: 0 0 10px lightgray;
+		border: 0.3px inset lightgray;
+		text-shadow: 0.5px 0.5px white;
+	}
+}
+// FOOTER ADMIN NAV
+//******************* FOOTER *******************
+//******************* FOOTER *******************
+
+//******************* FUNCTIONS *******************
+//******************* FUNCTIONS *******************
+#notice {
+  color: white;
+  background-color: gray;
+  border-radius: 10px;
+  margin: 0;
+  z-index: 1000;
+  padding: 5px 10px;
+  display: inline-block;
+  font-weight: 400;
+  font-family: 'Righteous', cursive;
+  opacity: 0.8;
+}
+.field_with_errors {
+  padding: 2px;
+  background-color: deeppink;
+  display: table;
+}
+#error_explanation {
+  width: 450px;
+  border: 2px solid deeppink;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+
+  h2 {
+    padding: 5px 5px 5px 15px;
+    background-color: #000;
+    color: #fff;
+  }
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+    color: white;
+  }
+}
+
+// AJAX TRANSACTING
+#loading {
+  display: table;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: lightgray;
+  opacity: 0.5;
+}
+#loading .loadingMsg {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 140px;
+  // background: url("yatra_buscando.gif") center center no-repeat;
+  background-size: 20% 40%;
+}
+.loading {
+	display: none;
+	z-index: 1000;
+}
+//REFERENCE ---> https://webllica.com/jquery-now-loading/
+// AJAX TRANSACTING
+
+.boxShadow{
+	box-shadow: 0 0 10px lightgray;
+	border: 0.3px inset lightgray;
+}
+//******************* FUNCTIONS *******************
+//******************* FUNCTIONS *******************
+
+//<<<<<<<<<<<<<<<<<<<<<<<< PARTIAL >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+.concertContainer td {
+	font-size: 16px;
+	padding: 10px 20px;
+	margin: 20px 10px;
+}
+#loginView {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  margin: auto;
+  width: 80%;
+  height: 70%;
+  background-color: pink;
+  z-index: 1000;
+  border-radius: 20px;
+}
+//<<<<<<<<<<<<<<<<<<<<<<<< PARTIAL >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+//<<<<<<<<<<<<<<<<<<<<<<<< PAGES >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+//******************* USERS *******************
+#myMapUser {
+	height: 800px;
+    width: 100%;
+}
+#userModalBtn {
+	cursor: pointer;
+	&:hover{
+		opacity: 0.8;
+	}
+}
+//******************* USERS *******************
+
+//******************* ABOUT *******************
+//******************* ABOUT *******************
+.about_page {
+	width: 100vw;
+	height: 100vh;
+}
+#aboutTop {
+	position:relative;
+	width: 100vw;
+	height: 100vh;
+	text-align:center;
+}
+.textBox {
+		z-index: 1;
+		position:absolute;
+		top:30px;
+		color:white;
+		width: 100%;
+		height: 100%;
+		padding: 50px;
+	}
+#aboutTopBg {
+	width: 100%;
+	height: 100%;
+	opacity: 0.5;
+	margin:0;
+	padding:0;
+}
+.transparent {
+	background: transparent;
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+	z-index: 2;
+	text-align:center;
+	// position:absolute;
+	// top:100px;
+	color:black;
+}
+#aboutCatch {
+	position:relative;
+	.aboutHeadline {
+		position:absolute;
+		top:100px;
+		display:inline-block;
+		color:black;
+		font-size: 50px;
+		padding:50px;
+		z-index: 3;
+		h1 {
+			color:white;
+			font-size: 50px;
+		}
+	}
+}
+#aboutMap {
+	width: 100%;
+	height: 100%;
+	position:relative;
+	&::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.7);
+	z-index:2;
+  }
+}
+#aboutCheck {
+	background-color: deeppink;
+}
+#aboutPlan {
+	background-color: black;
+}
+#aboutFly {
+	background-color: deeppink;
+}
+#aboutAction {
+	background-color: black;
+	position:absolute;
+}
+#aboutActionBg {
+	width: 100%;
+	height: 100%;
+	opacity: 0.5;
+	margin:0;
+	padding:0;
+}
+#aboutNav {
+	z-index: 5000;
+	position:fixed;
+	top:150px;
+	right:0;
+}
+.verticalAboutNavContainer{
+	width:50px;
+	margin:0;
+	position:fixed;
+	top:140px;
+	right:0;
+	text-align:center;
+}
+.verticalAboutNavInner {
+	width:50px;
+	margin:10px 5px;
+}
+.tv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  &::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.1);
+  }
+  .screen {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0.6;
+    margin: auto;
+  }
+}
+//******************* ABOUT *******************
+//******************* ABOUT *******************
+//<<<<<<<<<<<<<<<<<<<<<<<< PAGES >>>>>>>>>>>>>>>>>>>>>>>>>>>>>

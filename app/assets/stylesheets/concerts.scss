@@ -1,3 +1,75 @@
 // Place all the styles related to the Concerts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Concerts#index
+#concertContainer > tr > td.pl-narrow > a > img {
+	padding: 0;
+}
+#concertContainer > tr > td.pl-narrow {
+	padding: 0;
+}
+// Concerts#index END ***
+
+#onTv {
+	border-radius: 40px;
+	border: 0.3px inset lightgray;
+	box-shadow: 0 0 10px lightgray;
+	padding: 20px;
+	margin: 20px 0;
+	.onTvNews {
+	opacity: 1;
+	color: black;
+	}
+}
+.simpleViewTd {
+	padding: 3px 5px;
+	font-size: 14px;
+	line-height:12px;
+}
+.highlight1 {
+	background-color: #80305B;
+	box-shadow: 0 0 10px lightgray;
+	border-radius:24px;
+}
+.highlight2 {
+	background-color: deeppink;
+}
+.planHover {
+	&:hover{
+		border-radius:24px;
+		box-shadow: 0 0 10px lightgray;
+	}
+}
+.pagination {
+	margin: 20px 0;
+	text-align: right;
+}
+.sp-thumbnail {
+	text-align: left;
+	display: flex;
+}
+.sp-thumbnail-image-container {
+	width: 150px;
+	height: 80px;
+	margin: 0;
+	display: inline-block;
+}
+.sp-thumbnail-text {
+	font-family: 'Roboto', sans-serif;
+	display: inline-block;
+	width: 150px;
+	height: 80px;
+	margin: 0;
+}
+.sp-thumbnail-title {
+	font-size: 12px;
+	font-weight: 200;
+}
+.sp-thumbnail-description {
+	font-size: 10px;
+	font-weight: 100;
+}
+.sp-arrow {
+	opacity: 0.5;
+}

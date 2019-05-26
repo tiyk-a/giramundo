@@ -1,3 +1,33 @@
 // Place all the styles related to the Artists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.artistImageBox {
+	border: 2px solid white;
+	width: 300px;
+	height: 200px;
+}
+.artistList td {
+	font-size: 20px;
+	padding: 10px 20px;
+	margin: 20px 10px;
+}
+#yt {
+	width: 640px;
+	height: 360px;
+}
+.createWatch{
+	cursor:pointer;
+	&:hover{
+		text-decoration:none;
+		opacity:0.8;
+	}
+}
+.removeWatch{
+	cursor:pointer;
+	color:deeppink;
+	&:hover{
+		text-decoration:none;
+		opacity:0.8;
+	}
+}
