@@ -48,8 +48,8 @@ $(function(){
           removeLoading();
         }else{
             ar = (data._embedded.events);
-            if(ar[i]._embedded !== undefined){
-              for(var i = 0; i < ar.length; i ++){
+            for(var i = 0; i < ar.length; i ++){
+              if(ar[i]._embedded !== undefined){
                 // POST
                 await $.ajax({
                   type:"POST",

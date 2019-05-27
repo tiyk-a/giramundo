@@ -22,10 +22,6 @@ class ArtistsController < ApplicationController
       @artists = Artist.all.reverse_order
     end
     @artist = Artist.new
-    #EXTERNAL SEARCH
-    # @searched = params[:artist].to_s
-    # require 'musicbrainz'
-    # @foundArtist = MusicBrainz::Artist.search(@searched)
   end
 
   def id_refresh
@@ -34,11 +30,8 @@ class ArtistsController < ApplicationController
     artists.each do |a|
       @found = MusicBrainz::Artist.search(a.artist_name)
       if @found.present? && @found[0][:name] == a.artist_name
-        p @found[0][:name]
-        p @found[0][:mbid]
         a.mb_id = @found[0][:mbid]
       else
-        p @found[0][:name] + "CHECK REQUEST"
         a.mb_id = "TBC"
       end
       a.save
@@ -55,8 +48,6 @@ class ArtistsController < ApplicationController
     @artists = Artist.all
     @venues = Venue.all
     @concert = Concert.new
-    p ENV['SK_API']
-    p ENV['TM_API']
     gon.sk_key = ENV['SK_API']
     gon.tm_key = ENV['TM_API']
   end
