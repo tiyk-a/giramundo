@@ -49,7 +49,7 @@ $(function(){
         }else{
             ar = (data._embedded.events);
             for(var i = 0; i < ar.length; i ++){
-              if(ar[i]._embedded !== undefined){
+              if(ar[i]._embedded !== undefined && ar[i]._embedded.venues[0] !== undefined && ar[i]._embedded.venues[0].location !== undefined){
                 // POST
                 await $.ajax({
                   type:"POST",
