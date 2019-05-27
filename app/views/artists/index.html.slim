@@ -1,16 +1,17 @@
 .container
   .row
     .col-lg-10.text-center
-      h1 Artist List
+      h1
+        =link_to "Artist List", artists_path
 
--if @searched.present?
+-if @foundArtists.present?
   .container
     .row
       .col-lg-2
       .col-lg-8
         h2 Search Results
 
--if @searched.present?
+-if @foundArtists.present?
   .container
     .row
       .col-lg-2
@@ -22,20 +23,20 @@
         - if admin_user?
           = link_to 'No MB Id?', artist_id_refresh_path, method: :post, class: "btn", remote: true
       .col-lg-8
-        - @foundArtist.each do |s|
+        - @foundArtists.each do |s|
           .flex
             p.textBtn.showNext.foundArtistSave =s[:name]
             .hidden style="line-height: 90px; font-family: 'Roboto', sans-serif; font-weight:100;" = s[:desc]
             .hidden =s[:mbid]
 
--if @searched.present?
-  .container
-    .row
-      .col-lg-2
-      .col-lg-8
-        .id_refresh_results
-    .container.hidden#artistCount =@artists.count
-    .container.hidden#artistLast =@artists.first.id if @artists.exists?
+/ -if @searched.present?
+.container
+  .row
+    .col-lg-2
+    .col-lg-8
+      .id_refresh_results
+  .container.hidden#artistCount =@artists.count
+  .container.hidden#artistLast =@artists.first.id if @artists.exists?
 
 .container
   .row
@@ -61,3 +62,4 @@
             =render 'artist_index_admin', artists: @artists
           -else
             =render 'artist_index_basic', artists: @artists
+

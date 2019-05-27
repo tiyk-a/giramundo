@@ -9,20 +9,27 @@ class ArtistsController < ApplicationController
   # GET /artists
   # GET /artists.json
   def index
-    if params[:artist_name].present?
-      @artists = Artist.where(artist_name: params[:artist_name])
+    if (params.has_key?(:artist))
+      if Artist.where(artist_name: artist_params[:artist_name]).present?
+        @artists = Artist.where(artist_name: artist_params[:artist_name])
+      else
+        p "TTTTTTTTTTTTTTTTTTTTTTT"
+        @artists = Artist.all.reverse_order
+        require 'musicbrainz'
+        @foundArtists = MusicBrainz::Artist.search(artist_params[:artist_name])
+        # GEM GITHUB => https://github.com/localhots/musicbrainz
+        p "TTTTTTTTTT END  TTTTTTTTTTTTT"
+      end
     else
       @artists = Artist.all.reverse_order
+      p "TTTTTTTTTT OUT  TTTTTTTTTTTTT"
     end
-
+    p "TTTTTTTTTT OUTTT  TTTTTTTTTTTTT"
     @artist = Artist.new
-
     #EXTERNAL SEARCH
-    @searched = params[:artist].to_s
-    @artists_by_sptf = Artist.all
-    require 'musicbrainz'
-    @foundArtist = MusicBrainz::Artist.search(@searched)
-    # GEM GITHUB => https://github.com/localhots/musicbrainz
+    # @searched = params[:artist].to_s
+    # require 'musicbrainz'
+    # @foundArtist = MusicBrainz::Artist.search(@searched)
   end
 
   def id_refresh
