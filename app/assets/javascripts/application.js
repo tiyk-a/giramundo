@@ -565,10 +565,10 @@ $(document).on('click', '.GetMap', async function(){
 
 // LOCATION SEARCH (GEOCODE BOX)
 function locationSearch(key) {
-  var key = gon.gg_key
+  var api_key = gon.gg_key
   $.ajax({
     type:"GET",
-    url:"https://maps.googleapis.com/maps/api/geocode/json?address=" + key + "&key=" + key,
+    url:"https://maps.googleapis.com/maps/api/geocode/json?address=" + key + "&key=" + api_key,
     async:true,
     dataType: "json",
   }).done(async function (data){
