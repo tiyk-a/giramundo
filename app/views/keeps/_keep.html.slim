@@ -1,5 +1,5 @@
 /variables: concert
-- if user_signed_in? && Keep.find_by(user_id: current_user, concert_id: concert).present?
+- if user_signed_in? && Keep.find_by(user_id: current_user, concert_id: concert)
 	= link_to destroy_keep_path(concert), method: :delete, remote: true do
 		i class="fas fa-paperclip fa-lg" style="color:deeppink;"
 - else

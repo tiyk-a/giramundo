@@ -14,9 +14,8 @@ li.concert
         = concert.venue.city
         p.inline-block ,
         = concert.venue.country
-    . class="keep_#{concert.id}" = render 'keeps/keep', concert: concert
-
-  span.planColumn.simpleViewTd.plan.hidden value="planThis_#{concert.id}" style="padding: 0 10px;"
+  span class="keep_#{concert.id}" style="display:inline-block; margin: 0 5px;" = render 'keeps/keep', concert: concert
+  span.planColumn.simpleViewTd.plan.hidden value="planThis_#{concert.id}" style="padding: 0 10px;width:60px;"
     i.planColumn class="far fa-check-circle hidden"
   -if concert.date.present?
     span class="hidden" = concert.date.yday
@@ -24,14 +23,13 @@ li.concert
     span class="hidden" = "TBC"
 
   -if concert.origin == "Ticket Master"
-    span style="padding: 0 10px;" = link_to concert.source do
+    span style="padding: 0 10px;width:120px;" = link_to concert.source do
       =image_tag '/assets/tmlogo_blue.png', size: '60x20'
   -elsif concert.origin == "Songkick"
-    span style="padding: 0 10px;" = link_to concert.source do
+    span style="padding: 0 10px;width:120px;" = link_to concert.source do
       =image_tag '/assets/by_Songkick_white.png', size: '50x10'
   -elsif concert.origin == "manual"
-    span style="padding: 0 10px;" = link_to concert.source do
-      =image_tag '/assets/loading.jpg
-      ', size: '60x20'
+    span style="padding: 0 10px;width:120px;" = link_to concert.source do
+      =image_tag '/assets/loading.jpg', size: '60x20'
   -else
-    span style="padding: 0 10px;" =image_tag '/assets/loading.jpg', size: '60x20'
+    span style="padding: 0 10px;width:120px;" = image_tag '/assets/loading.jpg', size: '60x20'
