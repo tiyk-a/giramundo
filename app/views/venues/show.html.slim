@@ -6,7 +6,12 @@
         li class="venueCountry_#{@venue.id}" style="font-size:22px;" =@venue.country
     .col-lg-8
       .inline-block
-        h1 = link_to @venue.name, @venue.url, class: "venueName_#{@venue.id} linkRighteous", data: {"turbolinks" => false}
+        h1
+          |
+          = link_to @venue.name, @venue.url, class: "venueName_#{@venue.id} linkRighteous", data: {"turbolinks" => false}
+          span style="font-size:16px; margin:0 5px;"
+            =link_to @venue.url, target: '_blank' do
+              i class="fas fa-external-link-alt"
         h3 class="venueAddress_#{@venue.id}" style="font-family:'Roboto', sans-serif; font-size:24px; font-weight:200;" Address
         p =@venue.address
 
