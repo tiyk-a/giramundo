@@ -48,7 +48,8 @@ $(function(){
           removeLoading();
         }else{
             ar = (data._embedded.events);
-            for(var i = 0; i < ar.length; i ++){
+            if(ar[i]._embedded !== undefined){
+              for(var i = 0; i < ar.length; i ++){
                 // POST
                 await $.ajax({
                   type:"POST",
@@ -74,7 +75,34 @@ $(function(){
                   console.log('fail', jqXHR.status);
                 });
                 // POST
-              };
+              }else{
+                // POST
+                await $.ajax({
+                  type:"POST",
+                  url:'/concerts',
+                  dataType: "json",
+                  data: { concert: {
+                    concert_name: ar[i].name, source: ar[i].url, tm_id: ar[i].id, image: ar[i].images[0].url, origin: "Ticket Master",
+                    date: ar[i].dates.start.dateTime, timezone: ar[i].dates.timezone
+                  },
+                  performers: {
+                    artist: artistName
+                    },
+                  venue: {
+                    name: "TBC", address: "TBC", latitude: 40.748187, longitude: 74.0822967,
+                    country: "United States Of America", city: "New York",
+                    url: "https://www.msg.com/madison-square-garden?cmp=van_thegarden"
+                    }
+                  }
+                }).done((data, textStatus, jqXHR) => {
+                  console.log('done', jqXHR.status);
+                })
+                .fail((jqXHR, textStatus, errorThrown) => {
+                  console.log('fail', jqXHR.status);
+                });
+                // POST
+              }
+            };
         };
         // REMOVE LOADING GIF
         removeLoading();
