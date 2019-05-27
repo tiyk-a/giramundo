@@ -23,7 +23,8 @@ Rails.application.routes.draw do
   get '/date_check', to: 'concerts#date_check', as: :date_check
 
   # KEEPS
-  resources :keeps, only: [:create, :destroy]
+  post '/add_keep/:id', to: 'keeps#add_keep', as: :add_keep
+  delete '/destroy_keep/:id', to: 'keeps#destroy_keep', as: :destroy_keep
 
   # READING LIST
   resources :reading_lists, only: [:create, :update, :destroy]

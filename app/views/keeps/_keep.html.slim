@@ -1,6 +1,7 @@
-- if user_signed_in? && current_user.keeps.find_by(concert_id: concert.id).present?
-	= link_to keep_path(current_user.keeps.find_by(concert_id: concert.id)), method: :delete, remote: true do
+/variables: concert
+- if user_signed_in? && Keep.find_by(user_id: current_user, concert_id: concert).present?
+	= link_to destroy_keep_path(concert), method: :delete, remote: true do
 		i class="fas fa-paperclip fa-lg" style="color:deeppink;"
 - else
-	= link_to keeps_path(concert), method: :post, remote: true do
+	= link_to add_keep_path(concert), method: :post, remote: true do
 		i class="fas fa-paperclip fa-lg"
