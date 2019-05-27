@@ -24,7 +24,10 @@
   .row
     .col-lg-10
       h1 = link_to @concert.concert_name, @concert.source, class: "linkRighteous", data: {"turbolinks" => false}
-      span.hidden#concertShowId =@concert.id
+        span.hidden#concertShowId =@concert.id
+        span style="font-size:16px; margin:0 5px;"
+          =link_to @concert.source, target: '_blank' do
+            i class="fas fa-external-link-alt"
 
 .container
   .row

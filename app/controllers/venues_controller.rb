@@ -10,7 +10,7 @@ class VenuesController < ApplicationController
       venue = Venue.find_or_create_by(name: venue_params[:name])
       venue.update(venue_params)
     end
-    redirect_to venues_path
+    redirect_to venue_path(venue)
   end
 
   def show

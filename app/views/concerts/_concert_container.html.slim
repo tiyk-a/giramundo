@@ -94,7 +94,7 @@
     -else
       span style="padding: 0 10px;" =image_tag '/assets/loading.jpg', size: '60x20'
 
-    . class="keep_#{concert}" = render 'keeps/keep', concert: concert
+    . class="keep_#{concert}" style="inline-block;" = render 'keeps/keep', concert: concert
 
     span.planColumn.plan.hidden value="#{concert.id}"
       i.planColumn class="far fa-check-circle fa-lg hidden"

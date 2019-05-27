@@ -57,7 +57,8 @@ class ArtistsController < ApplicationController
   def create
     artist = Artist.find_or_create_by(artist_name: artist_params[:artist_name])
     artist.update(artist_params)
-    redirect_to artists_path
+    p 'porque------------------------------------'
+    redirect_to artist_path(artist)
   end
 
   def update
