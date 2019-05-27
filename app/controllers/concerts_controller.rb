@@ -28,6 +28,8 @@ class ConcertsController < ApplicationController
     @artists = Artist.all
     @venues = Venue.all
     gon.venue = set_concert.venue
+    p ENV['TimeZone']
+    gon.tz_key = ENV['TimeZone']
   end
 
   # POST /concerts
@@ -193,8 +195,7 @@ class ConcertsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def concert_params
-    params.require(:concert).permit(:concert_name, :source, :done, :image, :tm_id, :local_time,
-                                    :local_date, :date, :timezone, :venue_id, :origin)
+    params.require(:concert).permit(:concert_name, :source, :done, :image, :tm_id, :local_date, :date, :timezone, :venue_id, :origin)
   end
 
   def performers_params

@@ -35,9 +35,10 @@ $(function(){
     var artistName = $('#artistName').text();
     // SHOW LOADING GIF
     dispLoading("PLEASE WAIT...");
+    var key = gon.tm_key
     $.ajax({
       type:"GET",
-      url:"https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + artistName + "&size=15&sort=date,asc&apikey=" + ENV['TM_API'],
+      url:"https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + artistName + "&size=15&sort=date,asc&apikey=" + key,
       async:true,
       dataType: "json",
     }).done(async function (data){
@@ -95,9 +96,10 @@ $(function(){
     var artistName = $('#artistName').text();
     // SHOW LOADING GIF
     dispLoading("PLEASE WAIT...");
+    var key = gon.sk_key
     $.ajax({
       type:"GET",
-      url:"https://api.songkick.com/api/3.0/artists/mbid:" + gon.artist.mb_id + "/calendar.json?per_page=10&apikey=" + ENV['SK_API'],
+      url:"https://api.songkick.com/api/3.0/artists/mbid:" + gon.artist.mb_id + "/calendar.json?per_page=10&apikey=" + key,
       async:true,
       dataType: "json",
     }).done(async function (data){
@@ -183,12 +185,13 @@ $(document).on('click', '#concertShowLocalTimeUpdate', function(){
   var datetimeStr = $('#concertShowDatetime').text();
   var datetime = Number(datetimeStr)
   var id = $('#concertShowId').text();
+  var key = gon.tz_key
 
   if(datetime !== null && lat !== undefined && lng !== undefined){
 
       $.ajax({
         type:"GET",
-        url:"http://api.timezonedb.com/v2.1/get-time-zone?key=" + ENV['TimeZone'] +"&format=json&by=position&lat=" +
+        url:"http://api.timezonedb.com/v2.1/get-time-zone?key=" + key +"&format=json&by=position&lat=" +
               lat + "&lng=" + lng + "&time=" + datetime,
         async:true,
         dataType: "json",
@@ -205,7 +208,7 @@ $(document).on('click', '#concertShowLocalTimeUpdate', function(){
               url: post_to,
               dataType: "json",
               data: { concert: {
-                local_time: data.formatted
+                local_date: data.formatted
                 }
               }
           }).done((data, textStatus, jqXHR) => {
@@ -259,9 +262,10 @@ $(document).on('click', '#findArtistImage', function(){
 
 // YOUTUBE IMAGE FUNCTION
 function getYtThumb(artistName, mb_id) {
+  var key = gon.gg_key
     $.ajax({
       type:"GET",
-      url:"https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=" + artistName + "&type=channel&key=AIzaSyCqWnrtA-LEDP4JE9O3CvFr80np1gBEyuY",
+      url:"https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=" + artistName + "&type=channel&key=" + key,
       async:true,
       dataType: "json",
     }).done(async function (data){
@@ -448,12 +452,13 @@ $(document).on('click', '.GetMap', async function(){
 
     var venue_name = gon.venue.name
     var venue_address = gon.venue.address
+    var key = gon.gg_key
 
     if(venue_address !== "TBC"){
         console.log('SEARCHING WIZ ADDRESS');
         $.ajax({
           type:"GET",
-          url:"https://maps.googleapis.com/maps/api/geocode/json?address=" + venue_address + "&key=" + ENV['GMap'],
+          url:"https://maps.googleapis.com/maps/api/geocode/json?address=" + venue_address + "&key=" + key,
           async:true,
           dataType: "json",
         }).done(async function (data){
@@ -486,12 +491,13 @@ $(document).on('click', '.GetMap', async function(){
           console.log('fail', jqXHR.status);
           // REMOVE LOADING GIF
           removeLoading();
+          window.location.reload();
         });
     }else{
       console.log('SEARCHING WIZ VENUE NAME');
       $.ajax({
         type:"GET",
-        url:"https://maps.googleapis.com/maps/api/geocode/json?address=" + venue_name + "&key=" + ENV['GMap'],
+        url:"https://maps.googleapis.com/maps/api/geocode/json?address=" + venue_name + "&key=" + key,
         async:true,
         dataType: "json",
       }).done(async function (data){
@@ -509,7 +515,7 @@ $(document).on('click', '.GetMap', async function(){
               }
             }).done((data, textStatus, jqXHR) => {
               console.log('done', jqXHR.status);
-            }).fail((jqXHR, textStatus, errorThrown) => { //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ERROR HAPPENS!!!
+            }).fail((jqXHR, textStatus, errorThrown) => {
               console.log('fail', jqXHR.status);
               // REMOVE LOADING GIF
               removeLoading();
@@ -519,21 +525,22 @@ $(document).on('click', '.GetMap', async function(){
           // REMOVE LOADING GIF
         removeLoading();
         window.location.reload();
-      }).fail((jqXHR, textStatus, errorThrown) => { //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ERROR HAPPENS!!!
+      }).fail((jqXHR, textStatus, errorThrown) => {
         console.log('fail', jqXHR.status);
         // REMOVE LOADING GIF
         removeLoading();
+        window.location.reload();
       });
     }
-  //await window.location.reload();
 });
 // VENUES#SHOW REFRESH GOOGLE MAP INFO
 
 // LOCATION SEARCH (GEOCODE BOX)
 function locationSearch(key) {
+  var key = gon.gg_key
   $.ajax({
     type:"GET",
-    url:"https://maps.googleapis.com/maps/api/geocode/json?address=" + key + "&key=" + ENV['GMap'],
+    url:"https://maps.googleapis.com/maps/api/geocode/json?address=" + key + "&key=" + key,
     async:true,
     dataType: "json",
   }).done(async function (data){
@@ -605,10 +612,11 @@ function inputConcert() {
 // For Concert#Show, to get info
 $(function(){
   $('.concertDetailsButton').on('click', function(){
-    var id = $('#concertId').text()
+    var id = $('#concertId').text();
+    var key = gon.tm_key
     $.ajax({
       type:"GET",
-      url:"https://app.ticketmaster.com/discovery/v2/events/" + id + ".json?apikey=" + ENV['TM_API'],
+      url:"https://app.ticketmaster.com/discovery/v2/events/" + id + ".json?apikey=" + key,
       async:true,
       dataType: "json",
     }).done(function (data){

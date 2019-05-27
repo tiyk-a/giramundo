@@ -13,18 +13,14 @@ class ArtistsController < ApplicationController
       if Artist.where(artist_name: artist_params[:artist_name]).present?
         @artists = Artist.where(artist_name: artist_params[:artist_name])
       else
-        p "TTTTTTTTTTTTTTTTTTTTTTT"
         @artists = Artist.all.reverse_order
         require 'musicbrainz'
         @foundArtists = MusicBrainz::Artist.search(artist_params[:artist_name])
         # GEM GITHUB => https://github.com/localhots/musicbrainz
-        p "TTTTTTTTTT END  TTTTTTTTTTTTT"
       end
     else
       @artists = Artist.all.reverse_order
-      p "TTTTTTTTTT OUT  TTTTTTTTTTTTT"
     end
-    p "TTTTTTTTTT OUTTT  TTTTTTTTTTTTT"
     @artist = Artist.new
     #EXTERNAL SEARCH
     # @searched = params[:artist].to_s
@@ -59,6 +55,10 @@ class ArtistsController < ApplicationController
     @artists = Artist.all
     @venues = Venue.all
     @concert = Concert.new
+    p ENV['SK_API']
+    p ENV['TM_API']
+    gon.sk_key = ENV['SK_API']
+    gon.tm_key = ENV['TM_API']
   end
 
   # POST /artists

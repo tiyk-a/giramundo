@@ -14,8 +14,8 @@
           span.hidden#concertShowDatetime =@concert.date.to_i
         li
           span Local time:
-          -if @concert.local_time.present?
-            span#concertShowLocalTime = @concert.local_time
+          -if @concert.local_date.present?
+            span#concertShowLocalTime = @concert.local_date
           -else
             span#concertShowLocalTimeTBC TBC
             span#concertShowLocalTimeUpdate.btn Get Localtime

@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   add_flash_types :success, :info, :warning, :danger
   helper_method :admin_user?
+  before_action :gg_key
 
   def after_sign_in_path_for(resource)
     concerts_path
@@ -19,5 +20,9 @@ class ApplicationController < ActionController::Base
     else
       redirect_to concerts_path
     end
+  end
+
+  def gg_key
+    gon.gg_key = ENV['GMap']
   end
 end

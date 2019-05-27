@@ -16,30 +16,26 @@
  *= require_self
  *= require_tree .
  */
-
-@import "font-awesome";
+  @import "font-awesome";
 
 //<<<<<<<<<<<<<<<<<<<<<<<< GENERAL SETTING >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //******************* ELEMENTS *******************
 //******************* ELEMENTS *******************
-html {
-	overflow:auto;
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Roboto', sans-serif;
-	color: white;
- }
- body{
+html{
+	overflow:auto
+}
+body{
 	overflow: hidden;
 	min-width: 1280px;
-	background-color: #000000;
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Roboto', sans-serif;
-	color: white;
 }
+html, body {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Roboto', sans-serif;
+ background-color: black;
+ color: lightgray;
+ }
  button{
 	background-color: black;
 	border: 2px solid white;
@@ -828,6 +824,18 @@ input[type="submit"], input[type="button"] {
 	opacity: 0.5;
 	margin:0;
 	padding:0;
+}
+.transparent {
+	background: transparent;
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+	z-index: 2;
+	text-align:center;
+	// position:absolute;
+	// top:100px;
+	color:black;
 }
 #aboutCatch {
 	position:relative;
