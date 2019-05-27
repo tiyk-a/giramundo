@@ -37,7 +37,7 @@ $(function(){
     dispLoading("PLEASE WAIT...");
     $.ajax({
       type:"GET",
-      url:"https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + artistName + "&size=15&sort=date,asc&apikey=" + ENV['TM_API'],
+      url:"https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + artistName + "&size=15&sort=date,asc&apikey=" + ['TM_API'],
       async:true,
       dataType: "json",
     }).done(async function (data){
@@ -97,7 +97,7 @@ $(function(){
     dispLoading("PLEASE WAIT...");
     $.ajax({
       type:"GET",
-      url:"https://api.songkick.com/api/3.0/artists/mbid:" + gon.artist.mb_id + "/calendar.json?per_page=10&apikey=" + ENV['SK_API'],
+      url:"https://api.songkick.com/api/3.0/artists/mbid:" + gon.artist.mb_id + "/calendar.json?per_page=10&apikey=" + ['SK_API'],
       async:true,
       dataType: "json",
     }).done(async function (data){
@@ -188,7 +188,7 @@ $(document).on('click', '#concertShowLocalTimeUpdate', function(){
 
       $.ajax({
         type:"GET",
-        url:"http://api.timezonedb.com/v2.1/get-time-zone?key=" + ENV['TimeZone'] +"&format=json&by=position&lat=" +
+        url:"http://api.timezonedb.com/v2.1/get-time-zone?key=" + ['TimeZone'] +"&format=json&by=position&lat=" +
               lat + "&lng=" + lng + "&time=" + datetime,
         async:true,
         dataType: "json",
@@ -453,7 +453,7 @@ $(document).on('click', '.GetMap', async function(){
         console.log('SEARCHING WIZ ADDRESS');
         $.ajax({
           type:"GET",
-          url:"https://maps.googleapis.com/maps/api/geocode/json?address=" + venue_address + "&key=" + ENV['GMap'],
+          url:"https://maps.googleapis.com/maps/api/geocode/json?address=" + venue_address + "&key=" + ['GMap'],
           async:true,
           dataType: "json",
         }).done(async function (data){
@@ -491,7 +491,7 @@ $(document).on('click', '.GetMap', async function(){
       console.log('SEARCHING WIZ VENUE NAME');
       $.ajax({
         type:"GET",
-        url:"https://maps.googleapis.com/maps/api/geocode/json?address=" + venue_name + "&key=" + ENV['GMap'],
+        url:"https://maps.googleapis.com/maps/api/geocode/json?address=" + venue_name + "&key=" + ['GMap'],
         async:true,
         dataType: "json",
       }).done(async function (data){
@@ -533,7 +533,7 @@ $(document).on('click', '.GetMap', async function(){
 function locationSearch(key) {
   $.ajax({
     type:"GET",
-    url:"https://maps.googleapis.com/maps/api/geocode/json?address=" + key + "&key=" + ENV['GMap'],
+    url:"https://maps.googleapis.com/maps/api/geocode/json?address=" + key + "&key=" + ['GMap'],
     async:true,
     dataType: "json",
   }).done(async function (data){
@@ -608,7 +608,7 @@ $(function(){
     var id = $('#concertId').text()
     $.ajax({
       type:"GET",
-      url:"https://app.ticketmaster.com/discovery/v2/events/" + id + ".json?apikey=" + ENV['TM_API'],
+      url:"https://app.ticketmaster.com/discovery/v2/events/" + id + ".json?apikey=" + ['TM_API'],
       async:true,
       dataType: "json",
     }).done(function (data){
