@@ -38,7 +38,7 @@
       = link_to "Back to All Venues", venues_path, class: 'btn', data: {"turbolinks" => false}
     .col-lg-8
       #mapVenueShow
-      h3 CONFIRMED CONCERTS
+      h1 CONFIRMED CONCERTS
       -if @venue.concerts.present?
         ul
           -@venue.concerts.each do |concert|
