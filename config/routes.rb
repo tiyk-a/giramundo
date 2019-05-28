@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   post '/destroy_admin/:id', to: 'users#destroy_admin', as: :destroy_admin
 
   # ARTISTS
-  resources :artists, only: [:index, :show, :destroy, :create, :update]
+  resources :artists, only: [:index, :show, :destroy, :create, :update] do
+  get :autocomplete_artist_artist_name, :on => :collection
+  end
   # post '/artist_id_refresh', to: 'artists#id_refresh', as: :artist_id_refresh
 
   # CONCERTS
