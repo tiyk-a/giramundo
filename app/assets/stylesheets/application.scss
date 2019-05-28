@@ -33,11 +33,11 @@ html, body {
  padding: 0;
  box-sizing: border-box;
  font-family: 'Roboto', sans-serif;
- background-color: black;
+ background-color: #806C77;
  color: lightgray;
  }
  button{
-	background-color: black;
+	background-color: #806C77;
 	border: 2px solid white;
 	padding: 15px 10px;
 	color: white;
@@ -45,7 +45,7 @@ html, body {
 	font-family: 'Righteous', cursive;
 	&:hover {
 	background-color: white;
-	color: black;
+	color: #806C77;
 	border: 2px solid white;
 	}
 	&:active {
@@ -143,7 +143,7 @@ input[type="submit"], input[type="button"] {
 	cursor: pointer;
     &:hover {
     	background-color: white;
-		color: black;
+		color: #806C77;
 		border: 2px solid white;
     }
 }
@@ -156,7 +156,7 @@ input[type="submit"], input[type="button"] {
 	display: none;
 }
 .btn {
-	background-color: black;
+	background-color: #806C77;
 	border: 2px solid white;
 	padding: 15px 10px;
 	color: white;
@@ -165,7 +165,7 @@ input[type="submit"], input[type="button"] {
 	font-size: 11px;
 	&:hover {
 	background-color: white;
-	color: black;
+	color: #806C77;
 	border: 2px solid white;
 	}
 	&:active {
@@ -174,7 +174,7 @@ input[type="submit"], input[type="button"] {
 }
 .activeBtn {
 	background-color: white;
-	color:black;
+	color:#806C77;
 }
 .container {
 	width: 100%;
@@ -314,7 +314,7 @@ input[type="submit"], input[type="button"] {
 	font-weight: bold;
 }
 .black {
-	color: black;
+	color: #806C77;
 }
 .linkRighteous {
 		font-family: 'Righteous', cursive;
@@ -366,7 +366,7 @@ input[type="submit"], input[type="button"] {
 	top: 0;
 }
  #nav {
-	background-color: black;
+	background-color: #806C77;
 	opacity: 0.8;
 	z-index: 2;
 	//position: fixed;
@@ -375,12 +375,12 @@ input[type="submit"], input[type="button"] {
 }
 #userModal {
 	background-color: gray;
-	color: black;
+	color: #806C77;
 	width: 200px;
 	margin: 5px 0 5px auto;
 	cursor: pointer;
 	a {
-	color: black;
+	color: #806C77;
 	}
 	:hover {
 	opacity: 1;
@@ -396,7 +396,7 @@ input[type="submit"], input[type="button"] {
 	position:absolute;
 	top: 0;
 	right: 0;
-	background-color: deeppink;
+	background-color: #E6C3D5;
 	cursor: pointer;
 	&:hover{
 		box-shadow: 0 0 10px lightgray;
@@ -411,7 +411,7 @@ input[type="submit"], input[type="button"] {
 	position:absolute;
 	top: 0px;
 	right: 150px;
-	background-color: deeppink;
+	background-color: #E6C3D5;
 	text-align:center;
 	a{
 		width: 100px;
@@ -436,7 +436,7 @@ input[type="submit"], input[type="button"] {
 	position:absolute;
 	top: 60px;
 	right: 135px;
-	background-color: deeppink;
+	background-color: #E6C3D5;
 	a{
 		width: 100px;
 		height: 100px;
@@ -460,7 +460,7 @@ input[type="submit"], input[type="button"] {
 	position:absolute;
 	top: 110px;
 	right: 110px;
-	background-color: deeppink;
+	background-color: #E6C3D5;
 	a{
 		width: 100px;
 		height: 100px;
@@ -484,7 +484,7 @@ input[type="submit"], input[type="button"] {
 	position:absolute;
 	top: 135px;
 	right: 60px;
-	background-color: deeppink;
+	background-color: #E6C3D5;
 	a{
 		width: 100px;
 		height: 100px;
@@ -508,7 +508,7 @@ input[type="submit"], input[type="button"] {
 	position:absolute;
 	top: 150px;
 	right: 0px;
-	background-color: deeppink;
+	background-color: #E6C3D5;
 	a{
 		width: 100px;
 		height: 100px;
@@ -543,7 +543,7 @@ input[type="submit"], input[type="button"] {
 	position:fixed;
 	bottom: 0;
 	right: 0;
-	background-color: deeppink;
+	background-color: #E6C3D5;
 	cursor: pointer;
 	&:hover{
 		box-shadow: 0 0 10px lightgray;
@@ -558,7 +558,7 @@ input[type="submit"], input[type="button"] {
 	position:fixed;
 	bottom: 0px;
 	right: 150px;
-	background-color: deeppink;
+	background-color: #E6C3D5;
 	text-align:center;
 	a{
 		width: 100px;
@@ -583,7 +583,7 @@ input[type="submit"], input[type="button"] {
 	position:fixed;
 	bottom: 60px;
 	right: 135px;
-	background-color: deeppink;
+	background-color: #E6C3D5;
 	a{
 		width: 100px;
 		height: 100px;
@@ -607,7 +607,7 @@ input[type="submit"], input[type="button"] {
 	position:fixed;
 	bottom: 110px;
 	right: 110px;
-	background-color: deeppink;
+	background-color: #E6C3D5;
 	a{
 		width: 100px;
 		height: 100px;
@@ -631,7 +631,7 @@ input[type="submit"], input[type="button"] {
 	position:fixed;
 	bottom: 135px;
 	right: 60px;
-	background-color: deeppink;
+	background-color: #E6C3D5;
 	a{
 		width: 100px;
 		height: 100px;
@@ -655,7 +655,7 @@ input[type="submit"], input[type="button"] {
 	position:fixed;
 	bottom: 150px;
 	right: 0px;
-	background-color: deeppink;
+	background-color: #E6C3D5;
 	a{
 		width: 100px;
 		height: 100px;
@@ -692,12 +692,12 @@ input[type="submit"], input[type="button"] {
 }
 .field_with_errors {
   padding: 2px;
-  background-color: deeppink;
+  background-color: #E6C3D5;
   display: table;
 }
 #error_explanation {
   width: 450px;
-  border: 2px solid deeppink;
+  border: 2px solid #E6C3D5;
   padding: 7px 7px 0;
   margin-bottom: 20px;
   background-color: #f0f0f0;
@@ -823,7 +823,7 @@ input[type="submit"], input[type="button"] {
 	text-align:center;
 	// position:absolute;
 	// top:100px;
-	color:black;
+	color:#806C77;
 }
 #aboutCatch {
 	position:relative;
@@ -831,7 +831,7 @@ input[type="submit"], input[type="button"] {
 		position:absolute;
 		top:100px;
 		display:inline-block;
-		color:black;
+		color:#806C77;
 		font-size: 50px;
 		padding:50px;
 		z-index: 3;
@@ -857,16 +857,16 @@ input[type="submit"], input[type="button"] {
   }
 }
 #aboutCheck {
-	background-color: deeppink;
+	background-color: #E6C3D5;
 }
 #aboutPlan {
-	background-color: black;
+	background-color: #806C77;
 }
 #aboutFly {
-	background-color: deeppink;
+	background-color: #E6C3D5;
 }
 #aboutAction {
-	background-color: black;
+	background-color: #806C77;
 	position:absolute;
 }
 #aboutActionBg {

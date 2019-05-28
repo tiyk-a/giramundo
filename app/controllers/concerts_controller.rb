@@ -136,19 +136,19 @@ class ConcertsController < ApplicationController
   def sort
     @keep = Keep.new
     if params[:id] == "1"
-      @concerts = Concert.page(params[:page]).order('date asc').includes(:performers)
+      @concerts = Concert.full.page(params[:page]).order('date asc').includes(:performers)
       render :file => "/app/views/concerts/sort_1.js.erb"
     elsif params[:id] == "2"
-      @concerts = Concert.page(params[:page]).order('date desc').includes(:performers)
+      @concerts = Concert.full.page(params[:page]).order('date desc').includes(:performers)
       render :file => "/app/views/concerts/sort_2.js.erb"
     elsif params[:id] == "3"
-      @concerts = Concert.page(params[:page]).includes(:venue).order('venues.country DESC')
+      @concerts = Concert.full.page(params[:page]).includes(:venue).order('venues.country DESC')
       render :file => "/app/views/concerts/sort_3.js.erb"
     elsif params[:id] == "4"
-      @concerts = Concert.page(params[:page]).includes(:venue).order('venues.city DESC')
+      @concerts = Concert.full.page(params[:page]).includes(:venue).order('venues.city DESC')
       render :file => "/app/views/concerts/sort_4.js.erb"
     elsif params[:id] == "5"
-      @concerts = Concert.page(params[:page]).includes(:venue).order('venues.name DESC')
+      @concerts = Concert.full.page(params[:page]).includes(:venue).order('venues.name DESC')
       render :file => "/app/views/concerts/sort_5.js.erb"
     end
   end

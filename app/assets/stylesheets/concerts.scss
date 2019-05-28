@@ -19,7 +19,7 @@
 	margin: 20px 0;
 	.onTvNews {
 	opacity: 1;
-	color: black;
+	color: #806C77;
 	}
 }
 .simpleViewTd {
@@ -28,12 +28,14 @@
 	line-height:12px;
 }
 .highlight1 {
-	background-color: #80305B;
+	background-color: #BFA3B2;
 	box-shadow: 0 0 10px lightgray;
 	border-radius:24px;
 }
 .highlight2 {
-	background-color: deeppink;
+	background-color: #E6C3D5;
+	box-shadow: 0 0 10px lightgray;
+	border-radius:24px;
 }
 .planHover {
 	&:hover{

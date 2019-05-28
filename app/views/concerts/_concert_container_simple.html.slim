@@ -5,7 +5,7 @@ li.concert
     - concert.performers.includes(:artist).each do |performer|
       = link_to performer.artist.artist_name, artist_path(performer.artist), class: "small mb-0 pb-0 inline-block", data: {"turbolinks" => false}
       p.inline-block ,
-  span.simpleViewTd style="width:250px;text-align:left;" = link_to concert.concert_name.truncate(40), concert_path(concert), data: {"turbolinks" => false}
+  span.simpleViewTd style="width:200px;text-align:left;" = link_to concert.concert_name.truncate(40), concert_path(concert), data: {"turbolinks" => false}
   -if concert.tm_id.present?
     span class="hidden" = concert.tm_id
   span.simpleViewTd style="width:150px;text-align:left;font-size:12px;"

@@ -32,7 +32,7 @@ li.concert id="#{concert.date.strftime('%Y-%m-%d')}" class="#{concert.date.strft
     span class="concertOrigin_#{concert.id} hidden" id="concertOriginCell" = concert.origin
     span class="concertTmId_#{concert.id} hidden" = concert.tm_id
     span style="padding: 0 10px;" = link_to concert, data: { confirm: 'Are you sure?' }, method: :delete do
-      i class="fas fa-times fa-lg" style="color: deeppink;"
+      i class="fas fa-times fa-lg" style="color: #E6C3D5;"
 
   -if concert.origin == "Ticket Master"
     span style="padding: 0 10px;" = link_to concert.source do
@@ -83,7 +83,7 @@ li.concert id="#{concert.date.strftime('%Y-%m-%d')}" class="#{concert.date.strft
 /       span class="concertOrigin_#{concert.id} hidden" id="concertOriginCell" = concert.origin
 /       span class="concertTmId_#{concert.id} hidden" = concert.tm_id
 /       span = link_to concert, data: { confirm: 'Are you sure?' }, method: :delete do
-/         i class="fas fa-times fa-lg" style="color: deeppink;"
+/         i class="fas fa-times fa-lg" style="color: #E6C3D5;"
 
 /     -if concert.origin == "Ticket Master"
 /       span style="padding: 0 10px;" = link_to concert.source do

@@ -4,8 +4,8 @@
 
 .artistImageBox {
 	border: 2px solid white;
-	width: 300px;
-	height: 200px;
+	width: 400px;
+	height: 300px;
 }
 .artistList td {
 	font-size: 20px;
@@ -25,14 +25,14 @@
 }
 .removeWatch{
 	cursor:pointer;
-	color:deeppink;
+	color:#E6C3D5;
 	&:hover{
 		text-decoration:none;
 		opacity:0.8;
 	}
 }
 .textBtn {
-	background-color: black;
+	background-color: #806C77;
 	border: none;
 	color: white;
 	cursor: pointer;

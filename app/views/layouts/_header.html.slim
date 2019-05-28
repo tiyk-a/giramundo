@@ -7,19 +7,20 @@ canvas.c
         a.inline-block href="#footerTop" test
         .inline-block =link_to concerts_path, data: {"turbolinks" => false} do
           h1.header-logo
-            span style="color:deeppink;" N
+            span style="color:#E6C3D5;" N
             span OTI
-            span style="color:deeppink;" G
+            span style="color:#E6C3D5;" G
             span IRA
-            span style="color:deeppink;" M
+            span style="color:#E6C3D5;" M
             span UNDO
     .col-lg-1.text-right
 
     .col-lg-1
       #navBtn.text-right
-        p#menu style="font-family: 'Righteous', cursive; font-size: 18px; padding: 5px 10px 5px 0; color: black;" MENU
-        -if user_signed_in?
-          #userId.hidden =current_user.id
+        #menu style="font-family: 'Righteous', cursive; font-size: 18px; padding: 10px 10px 5px 0; color: #806C77;"
+          i class="fas fa-bars fa-3x"
+          -if user_signed_in?
+            #userId.hidden =current_user.id
       .nav-items#nav1.hidden
         = link_to concerts_path, data: {"turbolinks" => false} do
           i class="fas fa-music fa-2x" style="padding:8px;"

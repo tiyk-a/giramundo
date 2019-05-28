@@ -9,7 +9,7 @@ h1 Listing users
           = user.email
       .col-lg-2
         - if user.admin == true
-          span.btn style="width:90px;background-color:deeppink; border: 2px solid deeppink; text-align:center;" = link_to "Admin", destroy_admin_path(user), method: :post
+          span.btn style="width:90px;background-color:#E6C3D5; border: 2px solid #E6C3D5; text-align:center;" = link_to "Admin", destroy_admin_path(user), method: :post
         - else
           span.btn style="width:90px; text-align:center;" = link_to "Add Admin", add_admin_path(user), method: :post
       .col-lg-2

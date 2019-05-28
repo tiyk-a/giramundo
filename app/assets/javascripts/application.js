@@ -157,8 +157,8 @@ function initMap(mapId, latCenter, lngCenter, markerSources, zoomSize) {
 
     var hoverinfo = [];
 
-    var content_full = "<h3><a href='http://localhost:3000/venues/" + id + "' style='color:black;' target='_blank;'>" + name + "</a></h3>" +
-    "<p><a href='" + url + "' style='color:black; border-bottom: gray solid 0.5px;' target='_blank'>Official Web<span style='color:gray; padding: 0 5px;'><i class='fas fa-external-link-alt fa-xs'></i></span></a></p>"
+    var content_full = "<h3><a href='http://localhost:3000/venues/" + id + "' style='color:#806C77;' target='_blank;'>" + name + "</a></h3>" +
+    "<p><a href='" + url + "' style='color:#806C77; border-bottom: gray solid 0.5px;' target='_blank'>Official Web<span style='color:gray; padding: 0 5px;'><i class='fas fa-external-link-alt fa-xs'></i></span></a></p>"
 
     // マーカーにマウスを乗せたときのイベント
     marker.addListener('click', function() {

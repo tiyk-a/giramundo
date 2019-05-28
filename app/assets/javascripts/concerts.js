@@ -116,7 +116,7 @@ $(document).on('click', '.plan', function(){
    });
 
   // HIGHLIGHT ROW
-  $(this).parent().parent().parent().toggleClass('highlight2');
+  $(this).parent().toggleClass('highlight2');
 });
 
 function compareDate(root, from, to, column) {
@@ -125,7 +125,7 @@ function compareDate(root, from, to, column) {
   var toN = Number(to);
 
   if(rootN >= fromN && rootN <= toN){
-    $(column).parent().parent().parent().toggleClass('highlight1');
+    $(column).parent().toggleClass('highlight1');
     var parent = $(column).parent().html();
   };
 };
@@ -167,6 +167,11 @@ function highlihghtConcerts(startDate, toDate){
 
   };
 };
+
+$(document).on('click', '#dateFindClear', function(){
+  $("li").removeClass('highlight2');
+  $("li").removeClass('highlight1');
+});
 //Concerts#index JUMP TO THE INPUTTED DATE!
 
 // SLIDE SHOW
@@ -217,7 +222,7 @@ $(document).on('click','.createKeep', function(){
   }).done((data, textStatus, jqXHR) => {
     alert('successfully saved :)');
     console.log(data);
-    $(clicked).css('color','deeppink');
+    $(clicked).css('color','#E6C3D5');
     $(clicked).val('would be id');
     $(clicked).removeClass('createKeep');
     $(clicked).addClass('removeKeep');
