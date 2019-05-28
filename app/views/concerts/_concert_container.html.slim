@@ -1,7 +1,10 @@
 /variables: concert, keep
 -if concert.date.present?
   li.concert id="#{concert.date.strftime('%Y-%m-%d')}" class="#{concert.date.strftime('%Y-%m-%d')}" value="#{concert.id}"
-    span style="font-size: 18px; width:50px;" class="concertDate_#{concert.id} text-center" id="dateCell" = concert.date.strftime('%b %d')
+    span style="font-size: 18px; width:50px;"
+      span style="width:100%;" class="concertDate_#{concert.id} text-center inline-block" id="dateCell" = concert.date.strftime('%b')
+      br
+      span.inline-block.text-center style="width:100%;" = concert.date.strftime('%d')
     span.pr-narrow.hidden#artistCell style="font-size: 10px;"
       - concert.performers.includes(:artist).each do |performer|
         = link_to performer.artist.artist_name, artist_path(performer.artist), class: "small mb-0 pb-0 font-light", data: {"turbolinks" => false}
@@ -16,7 +19,7 @@
           =image_tag concert.performers[0].artist.artist_image, :size => "80x60"
         -else
           =image_tag("/assets/no-concert.png", :size => '80x60')
-    span style="width:270px; padding: 0 3px;" = link_to concert.concert_name, concert_path(concert), class: "concertName_#{concert.id}", id: "concertNameCell", data: {"turbolinks" => false}
+    span style="width:230px; padding: 0 3px;" = link_to concert.concert_name, concert_path(concert), class: "concertName_#{concert.id}", id: "concertNameCell", data: {"turbolinks" => false}
     -if concert.tm_id.present?
       span class="hidden registeredArtistConcertTmId#{concert.tm_id}" id="tmIdCell" = concert.tm_id
     span id="venueNameCell" class="hidden" = concert.venue.name if concert.venue.present?
@@ -66,7 +69,7 @@
           =image_tag concert.performers[0].artist.artist_image, :size => "80x60"
         -else
           =image_tag("/assets/no-concert.png", :size => '80x60')
-    span style="width:320px; padding: 0 3px;" = link_to concert.concert_name, concert_path(concert), class: "concertName_#{concert.id}", id: "concertNameCell", data: {"turbolinks" => false}
+    span style="width:230px; padding: 0 3px;" = link_to concert.concert_name, concert_path(concert), class: "concertName_#{concert.id}", id: "concertNameCell", data: {"turbolinks" => false}
     -if concert.tm_id.present?
       span class="hidden registeredArtistConcertTmId#{concert.tm_id}" id="tmIdCell" = concert.tm_id
     span id="venueNameCell" class="hidden" = concert.venue.name if concert.venue.present?
