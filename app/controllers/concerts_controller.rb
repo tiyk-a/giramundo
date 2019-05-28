@@ -1,5 +1,5 @@
 class ConcertsController < ApplicationController
-  protect_from_forgery :except => [:create, :sort, :update_concert]
+  protect_from_forgery :except => [:create, :sort, :update_concert, :show]
   before_action :set_concert, only: [:show, :update, :destroy]
   before_action :set_admin, only: [:edit]
 

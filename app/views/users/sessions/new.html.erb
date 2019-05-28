@@ -32,10 +32,14 @@
       <div class="row field">
         <div class="col-lg-3">
         </div>
-          <%= f.check_box :remember_me, style: 'width: 20px; margin: 0;' %>
-          <%= f.label :remember_me, style: 'line-height: 14px' %>
+        <div class="col-lg-3">
+          <div class="text-right" style="width:100%; display:block;">
+            <%= f.check_box :remember_me, style: 'width: 20px; margin: 0; display:inline-block;' %>
+            <%= f.label :remember_me, style: 'line-height: 14px; display:inline-block;' %>
+          </div>
         </div>
       </div>
+    </div>
   <% end %>
 
   <div class="container">
