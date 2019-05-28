@@ -241,41 +241,41 @@ MOVED TO ARTISTS#SHOW PAGE
 // ARTISTS#INDEX SEARCHED ARTISTS SELECT
 $(document).on('mouseover', '.showNext', function(){
   $(this).next().removeClass('hidden');
-  sel = $(this);
-  var artistName = $(this).text();
-  onlyGetYtThumb(artistName);
+  // sel = $(this);
+  // var artistName = $(this).text();
+  // onlyGetYtThumb(artistName);
 });
 // ARTISTS#INDEX SEARCHED ARTISTS SELECT
 
 // YOUTUBE IMAGE FUNCTION ********* TEST *********
-function onlyGetYtThumb(artistName) {
-  var key = gon.gg_key
-    $.ajax({
-      type:"GET",
-      url:"https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=" + artistName + "&type=channel&key=" + key,
-      async:true,
-      dataType: "json",
-    }).done(async function (data){
-      await console.log(data);
-      if(data.items[0].snippet.thumbnails.high !== undefined){
-          var artistImg = (data.items[0].snippet.thumbnails.high.url);
-        }else{
-          var artistImg = (data.items[0].snippet.thumbnails.default.url);
-        }
-        // SHOW
+// function onlyGetYtThumb(artistName) {
+//   var key = gon.gg_key
+//     $.ajax({
+//       type:"GET",
+//       url:"https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=" + artistName + "&type=channel&key=" + key,
+//       async:true,
+//       dataType: "json",
+//     }).done(async function (data){
+//       await console.log(data);
+//       if(data.items[0].snippet.thumbnails.high !== undefined){
+//           var artistImg = (data.items[0].snippet.thumbnails.high.url);
+//         }else{
+//           var artistImg = (data.items[0].snippet.thumbnails.default.url);
+//         }
+//         // SHOW
 
-        // SHOW
-    }).fail((jqXHR, textStatus, errorThrown) => {
-         alert('fail');
-    });
-}
+//         // SHOW
+//     }).fail((jqXHR, textStatus, errorThrown) => {
+//          alert('fail');
+//     });
+// }
 // YOUTUBE IMAGE FUNCTION  ********* TEST *********
 
 
 // ARTISTS#INDEX ADD NEW ARTIST FUNCTION
 $(document).on('click', '.foundArtistSave', function(){
   // SHOW LOADING GIF
-  dispLoading("PLEASE WAIT...");
+  // dispLoading("PLEASE WAIT...");
   var artistName = $(this).text();
   var mb_id = $(this).next().next().text();
   getYtThumb(artistName, mb_id);
@@ -319,18 +319,31 @@ function getYtThumb(artistName, mb_id) {
                 }
               }
           }).done((data, textStatus, jqXHR) => {
-                console.log('done', jqXHR.status);
-                window.location.reload();
-
+                console.log(data, jqXHR.status);
+                window.location.href = '/artists';
           }).fail((jqXHR, textStatus, errorThrown) => {
                 console.log('fail', jqXHR.status);
-                // REMOVE LOADING GIF
-                removeLoading();
-                window.location.reload();
+                window.location.href = '/artists';
           });
       // POST
     }).fail((jqXHR, textStatus, errorThrown) => {
-         console.log('fail', jqXHR.status);
+      // POST
+          $.ajax({
+              type:"POST",
+              url:'/artists',
+              dataType: "json",
+              data: { artist: {
+                artist_name: artistName, artist_image: "no-portrait.png", mb_id: mb_id,
+                }
+              }
+          }).done((data, textStatus, jqXHR) => {
+                console.log(data, jqXHR.status);
+                window.location.href = '/artists';
+           }).fail((jqXHR, textStatus, errorThrown) => {
+                console.log('fail', jqXHR.status);
+                window.location.href = '/artists';
+          });
+      // POST
     });
 }
 // YOUTUBE IMAGE FUNCTION

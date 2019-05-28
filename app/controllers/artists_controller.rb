@@ -55,10 +55,10 @@ class ArtistsController < ApplicationController
   # POST /artists
   # POST /artists.json
   def create
-    artist = Artist.find_or_create_by(artist_name: artist_params[:artist_name])
-    artist.update(artist_params)
-    redirect_to artist_path(artist)
-
+    @artist = Artist.find_or_create_by(artist_name: artist_params[:artist_name])
+    @artist.update(artist_params)
+    render :file => "/app/views/artists/show.js.erb"
+    # redirect_to artist_path(artist)
   end
 
   def update
