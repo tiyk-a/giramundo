@@ -31,3 +31,16 @@
 		opacity:0.8;
 	}
 }
+.textBtn {
+	background-color: black;
+	border: none;
+	color: white;
+	cursor: pointer;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 100;
+	font-size: 18px;
+	width:250px;
+	&:hover {
+	opacity:0.9;
+	}
+}
