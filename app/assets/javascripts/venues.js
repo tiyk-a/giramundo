@@ -55,7 +55,7 @@ function pickupNotFound() {
 // Venues#index Find "TBC"
 
 // VENUES#SHOW REFRESH GOOGLE MAP INFO
-$(document).on('click', '.GetMap', async function(){
+$(document).on('click', '.getMap', async function(){
     // SHOW LOADING GIF
     dispLoading("PLEASE WAIT...");
 

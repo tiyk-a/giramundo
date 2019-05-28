@@ -1,11 +1,11 @@
 li
 	span class="venueName_#{venue.id} venueName" style="width:300px;" = link_to venue.name, venue_path(venue), data: {"turbolinks" => false}
 	span class="venueCity_#{venue.id}" style="width:100px;font-size:12px;" =venue.city
-	span class="venueCountry_#{venue.id}" style="width:100px;font-size:12px;" =venue.country
+	span class="venueCountry_#{venue.id}" style="width:150px;font-size:12px;" =venue.country
 	span class="venueAddress_#{venue.id} hidden" =venue.address
 	span class="venueLat_#{venue.id} hidden" =venue.latitude
 	span class="venueLng_#{venue.id} hidden" =venue.longitude
 	- if admin_user?
-		span style="width:100px;"= button_tag "Edit?", class: "btn editVenue", value: venue.id
-		span style="width:100px;"= link_to venue, method: :delete, data: { confirm: 'Are you sure?' }, remote: true do
+		span style="width:60px;"= button_tag "Edit?", class: "btn editVenue", value: venue.id
+		span style="width:50px;"= link_to venue, method: :delete, data: { confirm: 'Are you sure?' }, remote: true do
 			i class="fas fa-times" style="color: #E6C3D5;"

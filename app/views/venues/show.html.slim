@@ -4,53 +4,46 @@
       ul style="background-color: white; color: #806C77; list-style: none; text-align: center; display: inline-block; padding: 20px 25px 15px 25px; margin: 0; font-size: 30px; font-family:'Roboto', sans-serif;"
         li class="venueCity_#{@venue.id}" style="font-size:30px;" =@venue.city
         li class="venueCountry_#{@venue.id}" style="font-size:22px;" =@venue.country
-    .col-lg-8
+    .col-lg-6
       .inline-block
-        h1
+        h1 style="margin:0;"
           |
           = link_to @venue.name, @venue.url, class: "venueName_#{@venue.id} linkRighteous", data: {"turbolinks" => false}
           span style="font-size:16px; margin:0 5px;"
             =link_to @venue.url, target: '_blank' do
               i class="fas fa-external-link-alt"
-        h3 class="venueAddress_#{@venue.id}" style="font-family:'Roboto', sans-serif; font-size:24px; font-weight:200;" Address
-        p =@venue.address
+        .inline-block
+          i class="fas fa-map-marker-alt fa-2x"
+        p class="venueAddress_#{@venue.id} inline-block" =@venue.address
+    .col-lg-2
+      - if user_signed_in? && admin_user?
+        ul
+          li
+            span Lat:
+            span = @venue.latitude if @venue.latitude.present?
+          li
+            span Lng:
+            span = @venue.longitude if @venue.longitude.present?
+          span = button_tag "Edit?", class: "btn editVenue", value: @venue.id
+          span
+            p.getMap.btn Get Map
 
 .container
   .row
     .col-lg-2
-      -if user_signed_in?
-        -if admin_user?
-          h3 New Venue?
-          = render 'form', venue: @newVenue
-        = render 'geocodeBox'
+      -if user_signed_in? && admin_user?
+        h3 New Venue?
+        = render 'form', venue: @newVenue
+      = render 'geocodeBox'
+      = link_to "Back to All Venues", venues_path, class: 'btn', data: {"turbolinks" => false}
     .col-lg-8
       #mapVenueShow
-      - if admin_user?
-        -if @venue.latitude.present? && @venue.latitude.present?
-          p
-          |
-            Coordinates:
-          = @venue.latitude
-          = @venue.longitude
-          = button_tag "Edit?", class: "btn editVenue", value: @venue.id
-          p.btn.GetMap.inline-block Refresh Map
-        -else
-          p.btn.GetMap Get Map
-
-.container
-  .row
-    .col-lg-2
-    .col-lg-8
       h3 CONFIRMED CONCERTS
       -if @venue.concerts.present?
         ul
           -@venue.concerts.each do |concert|
             = render 'concerts/concert_container', concert:concert, keep: @keep
 
-.container
-  .row
-    .col-lg-2
-      = link_to "Back to All Venues", venues_path, class: 'btn', data: {"turbolinks" => false}
 .hidden class="venueLat_#{@venue.id}" =@venue.latitude
 .hidden class="venueLng_#{@venue.id}" =@venue.longitude
 
