@@ -12,9 +12,14 @@
           span style="font-size:16px; margin:0 5px;"
             =link_to @venue.url, target: '_blank' do
               i class="fas fa-external-link-alt"
-        .inline-block
-          i class="fas fa-map-marker-alt fa-2x"
-        p class="venueAddress_#{@venue.id} inline-block" =@venue.address
+        .inline-block style="margin: 10px; font-weight:100;"
+          span
+            i class="fas fa-map-marker-alt fa-2x"
+          span
+            . class="venueAddress_#{@venue.id}" style="margin:10px;" =@venue.address
+            . style="margin:10px;"
+              span =@venue.city
+              span =@venue.country
     .col-lg-2
       - if user_signed_in? && admin_user?
         ul
@@ -31,11 +36,14 @@
 .container
   .row
     .col-lg-2
-      -if user_signed_in? && admin_user?
-        h3 New Venue?
-        = render 'form', venue: @newVenue
-      = render 'geocodeBox'
-      = link_to "Back to All Venues", venues_path, class: 'btn', data: {"turbolinks" => false}
+      .
+        -if user_signed_in? && admin_user?
+          h3 New Venue?
+          = render 'form', venue: @newVenue
+      . style="margin: 20px 0;"
+        = render 'geocodeBox'
+      . style="margin: 20px 0;"
+        = link_to "Back", :back, class: 'btn', data: {"turbolinks" => false}
     .col-lg-8
       #mapVenueShow
       h1 CONFIRMED CONCERTS

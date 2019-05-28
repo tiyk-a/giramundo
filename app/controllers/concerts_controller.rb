@@ -30,6 +30,7 @@ class ConcertsController < ApplicationController
     gon.venue = set_concert.venue
     p ENV['TimeZone']
     gon.tz_key = ENV['TimeZone']
+    @keep = Keep.new
   end
 
   # POST /concerts
