@@ -9,6 +9,7 @@ class ArtistsController < ApplicationController
   # GET /artists
   # GET /artists.json
   def index
+    binding.pry
     if (params.has_key?(:artist))
       if Artist.where(artist_name: artist_params[:artist_name]).present?
         @artists = Artist.where(artist_name: artist_params[:artist_name])
@@ -58,7 +59,9 @@ class ArtistsController < ApplicationController
     artist = Artist.find_or_create_by(artist_name: artist_params[:artist_name])
     artist.update(artist_params)
     p 'porque------------------------------------'
+    binding.pry
     redirect_to artist_path(artist)
+
   end
 
   def update

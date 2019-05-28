@@ -45,61 +45,9 @@ li.concert id="#{concert.date.strftime('%Y-%m-%d')}" class="#{concert.date.strft
       =image_tag '/assets/loading.jpg', size: '60x20'
   -else
     span style="padding: 0 10px;" =image_tag '/assets/loading.jpg', size: '60x20'
-  . class="keep_#{concert}" style="display:inline-block;" = render 'keeps/keep', concert: concert
+  . class="keep_#{concert.id}" style="display:inline-block;" = render 'keeps/keep', concert: concert
 
   span.planColumn.plan.hidden value="#{concert.id}" style="padding: 0 10px;"
     i.planColumn class="far fa-check-circle fa-lg hidden"
   span class="datetime_#{concert.id} datetime hidden" = concert.date.strftime('%s').to_i / 60 / 60
       / sera HOURS SINCE THE START(OF THE CONCERT-STARTI-TIME)
-
-/ -else
-/   li
-/     span style="font-size: 18px; width:50px;" class="concertDate_#{concert.id} text-center" id="dateCell" = concert.date
-/     span.pr-narrow.hidden#artistCell style="font-size: 10px;"
-/       - concert.performers.includes(:artist).each do |performer|
-/         = link_to performer.artist.artist_name, artist_path(performer.artist), class: "small mb-0 pb-0 font-light", data: {"turbolinks" => false}
-/         div class="hidden concertPerformer_#{concert.id}"
-/           = performer.artist_id
-/         br
-/     span.pl-narrow#imageCell style="width:80px; padding: 0 5px;"
-/       = link_to concert_path(concert), data: {"turbolinks" => false} do
-/         - if concert.image.present?
-/           =image_tag concert.image, :size => "80x60"
-/         -elsif concert.performers[0].artist.artist_image.present?
-/           =image_tag concert.performers[0].artist.artist_image, :size => "80x60"
-/         -else
-/           =image_tag("/assets/no-concert.png", :size => '80x60')
-/     span style="width:230px; padding: 0 3px;" = link_to concert.concert_name, concert_path(concert), class: "concertName_#{concert.id}", id: "concertNameCell", data: {"turbolinks" => false}
-/     -if concert.tm_id.present?
-/       span class="hidden registeredArtistConcertTmId#{concert.tm_id}" id="tmIdCell" = concert.tm_id
-/     span id="venueNameCell" class="hidden" = concert.venue.name if concert.venue.present?
-/     span id="cityCell" style="font-size: 12px; width: 70px; text-align:right; padding:0 5px 0 0;" = concert.venue.city if concert.venue.present?
-/     span id="countryCell" style="font-size: 12px; padding-right: 3px; width: 50px; padding:0 0 0 5px;" = concert.venue.country if concert.venue.present?
-/     -if admin_user?
-/       span style="padding:0 10px;" = button_tag "Edit?", class: "btn editConcert", id: "idCell", value: concert.id
-/       span class="concertSource_#{concert.id} hidden" = concert.source
-/       span class="concertImage_#{concert.id} hidden" = concert.image
-/       span class="concertVenue_#{concert.id} hidden" id="venueIdCell" = concert.venue_id
-/       span class="concertOrigin_#{concert.id} hidden" id="concertOriginCell" = concert.origin
-/       span class="concertTmId_#{concert.id} hidden" = concert.tm_id
-/       span = link_to concert, data: { confirm: 'Are you sure?' }, method: :delete do
-/         i class="fas fa-times fa-lg" style="color: #E6C3D5;"
-
-/     -if concert.origin == "Ticket Master"
-/       span style="padding: 0 10px;" = link_to concert.source do
-/         =image_tag '/assets/tmlogo_blue.png', size: '60x20'
-/     -elsif concert.origin == "Songkick"
-/       span style="padding: 0 10px;" = link_to concert.source do
-/         =image_tag '/assets/by_Songkick_white.png', size: '50x10'
-/     -elsif concert.origin == "manual"
-/       span style="padding: 0 10px;" = link_to concert.source do
-/         =image_tag '/assets/loading.jpg', size: '60x20'
-/     -else
-/       span style="padding: 0 10px;" =image_tag '/assets/loading.jpg', size: '60x20'
-
-/     . class="keep_#{concert}" style="inline-block;" = render 'keeps/keep', concert: concert
-
-/     span.planColumn.plan.hidden value="#{concert.id}"
-/       i.planColumn class="far fa-check-circle fa-lg hidden"
-/     span class="datetime_#{concert.id} datetime hidden" = concert.date
-/         / sera HOURS SINCE THE START(OF THE CONCERT-STARTI-TIME)
