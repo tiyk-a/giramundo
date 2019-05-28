@@ -1,4 +1,5 @@
 class ArtistsController < ApplicationController
+  protect_from_forgery :except => [:create, :index, :show]
   before_action :set_artist, only: [:show, :edit, :update, :destroy]
   before_action :set_admin, only: [:edit]
   before_action :authenticate_user!, only: [:index]
@@ -9,7 +10,6 @@ class ArtistsController < ApplicationController
   # GET /artists
   # GET /artists.json
   def index
-    binding.pry
     if (params.has_key?(:artist))
       if Artist.where(artist_name: artist_params[:artist_name]).present?
         @artists = Artist.where(artist_name: artist_params[:artist_name])
@@ -58,10 +58,7 @@ class ArtistsController < ApplicationController
   def create
     artist = Artist.find_or_create_by(artist_name: artist_params[:artist_name])
     artist.update(artist_params)
-    p 'porque------------------------------------'
-    binding.pry
     redirect_to artist_path(artist)
-
   end
 
   def update

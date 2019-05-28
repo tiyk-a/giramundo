@@ -229,7 +229,8 @@ $(document).on('click', '#concertShowLocalTimeUpdate', function(){
       alert('SOrry noT avaiLable...');
   };
 });
-// Artists#Show GET LOCAL TIME
+// Artists#
+// GET LOCAL TIME
 
 
 /*
@@ -241,36 +242,8 @@ MOVED TO ARTISTS#SHOW PAGE
 // ARTISTS#INDEX SEARCHED ARTISTS SELECT
 $(document).on('mouseover', '.showNext', function(){
   $(this).next().removeClass('hidden');
-  sel = $(this);
-  var artistName = $(this).text();
-  onlyGetYtThumb(artistName);
 });
 // ARTISTS#INDEX SEARCHED ARTISTS SELECT
-
-// YOUTUBE IMAGE FUNCTION ********* TEST *********
-function onlyGetYtThumb(artistName) {
-  var key = gon.gg_key
-    $.ajax({
-      type:"GET",
-      url:"https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=" + artistName + "&type=channel&key=" + key,
-      async:true,
-      dataType: "json",
-    }).done(async function (data){
-      await console.log(data);
-      if(data.items[0].snippet.thumbnails.high !== undefined){
-          var artistImg = (data.items[0].snippet.thumbnails.high.url);
-        }else{
-          var artistImg = (data.items[0].snippet.thumbnails.default.url);
-        }
-        // SHOW
-
-        // SHOW
-    }).fail((jqXHR, textStatus, errorThrown) => {
-         alert('fail');
-    });
-}
-// YOUTUBE IMAGE FUNCTION  ********* TEST *********
-
 
 // ARTISTS#INDEX ADD NEW ARTIST FUNCTION
 $(document).on('click', '.foundArtistSave', function(){
@@ -296,13 +269,17 @@ $(document).on('click', '.foundArtistSave', function(){
 
 // YOUTUBE IMAGE FUNCTION
 function getYtThumb(artistName, mb_id) {
+  console.log('on function');
+  console.log(artistName);
   var key = gon.gg_key
+  console.log(key);
     $.ajax({
       type:"GET",
-      url:"https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=" + artistName + "&type=channel&key=" + key,
+      url:"https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=" + artistName + "&type=channel&key=AIzaSyCqWnrtA-LEDP4JE9O3CvFr80np1gBEyuY",
       async:true,
       dataType: "json",
     }).done(async function (data){
+      console.log('youtube done');
         await console.log(data);
         if(data.items[0].snippet.thumbnails.high !== undefined){
           var artistImg = (data.items[0].snippet.thumbnails.high.url);
@@ -319,10 +296,12 @@ function getYtThumb(artistName, mb_id) {
                 }
               }
           }).done((data, textStatus, jqXHR) => {
+            console.log('post done');
                 console.log('done', jqXHR.status);
                 window.location.reload();
 
           }).fail((jqXHR, textStatus, errorThrown) => {
+            console.log('post done');
                 console.log('fail', jqXHR.status);
                 // REMOVE LOADING GIF
                 removeLoading();
@@ -330,6 +309,9 @@ function getYtThumb(artistName, mb_id) {
           });
       // POST
     }).fail((jqXHR, textStatus, errorThrown) => {
+      // REMOVE LOADING GIF
+                removeLoading();
+      console.log('post done');
          console.log('fail', jqXHR.status);
     });
 }
