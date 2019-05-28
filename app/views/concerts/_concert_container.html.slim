@@ -39,7 +39,7 @@ li.concert id="#{concert.date.strftime('%Y-%m-%d')}" class="#{concert.date.strft
       =image_tag '/assets/tmlogo_blue.png', size: '60x20'
   -elsif concert.origin == "Songkick"
     span style="padding: 0 10px;" = link_to concert.source do
-      =image_tag '/assets/by_Songkick_white.png', size: '50x10'
+      =image_tag '/assets/by_Songkick_white.png', size: '60x10'
   -elsif concert.origin == "manual"
     span style="padding: 0 10px;" = link_to concert.source do
       =image_tag '/assets/loading.jpg', size: '60x20'

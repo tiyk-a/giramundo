@@ -1,2 +1,4 @@
 $('.sortVenueContainer').html("<%= j(render partial: 'venue_container', collection: @venues, :as => 'venue') %>");
+$('#pickupNotFound').removeClass('activeBtn');
+$('#conflictVenue').removeClass('activeBtn');
 $('#venueByCountry').addClass('activeBtn');

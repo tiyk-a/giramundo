@@ -1,5 +1,7 @@
 $('.sortVenueContainer').html("<%= j(render partial: 'venue_container', collection: @venues, :as => 'venue') %>");
 $('.post_button').removeClass('activeBtn');
+$('#pickupNotFound').removeClass('activeBtn');
+$('#venueByCountry').removeClass('activeBtn');
 $('#conflictVenue').addClass('activeBtn');
 
 var count = $('.venueName')

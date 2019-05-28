@@ -47,9 +47,8 @@ $(function(){
 });
 
 function pickupNotFound() {
-  $( "td:contains(TBC)").each(function(){
+  $( "span:contains(TBC)").each(function(){
     var res = $(this).parent();
-    $(this).toggleClass('activeBtn');
     $(res).toggleClass('highlight2');
   });
 }

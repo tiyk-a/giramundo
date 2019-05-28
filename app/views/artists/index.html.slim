@@ -36,10 +36,10 @@
               p.textBtn.showNext.foundArtistSave =s[:name]
               .hidden style="line-height: 90px; font-family: 'Roboto', sans-serif; font-weight:100;" = s[:desc]
               .hidden =s[:mbid]
-      .
+      . style="width:100%;"
         = form_tag(artists_path, method: :get, enforce_utf8: false) do
-          = autocomplete_field_tag 'artist[artist_name]', nil,  autocomplete_artist_artist_name_artists_path, style: "width:400px; display:inline-block;", placeholder: "SEARCH ARTIST"
-          = submit_tag 'Search', style: "width:200px; display:inline-block;"
+          = autocomplete_field_tag 'artist[artist_name]', nil,  autocomplete_artist_artist_name_artists_path, style: "width:60%; display:inline-block;", placeholder: "SEARCH ARTIST"
+          = submit_tag 'Search', style: "width:30%; display:inline-block;"
         #artistIndexContainer
           -if admin_user?
             =render 'artist_index_admin', artists: @artists
