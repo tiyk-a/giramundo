@@ -15,13 +15,14 @@
   .container
     .row
       .col-lg-2
-        . style="height: 30px; width: 100%;"
-        .
+        /. style="height: 30px; width: 100%;"
+        /.
           h3 Powered by
           =link_to 'https://musicbrainz.org/' do
             =image_tag '/assets/MusicBrainz_Logo_Transparent.png', size: '100x80'
-        - if admin_user?
-          = link_to 'No MB Id?', artist_id_refresh_path, method: :post, class: "btn", remote: true
+        /.
+          - if admin_user?
+            = link_to 'No MB Id?', artist_id_refresh_path, method: :post, class: "btn", remote: true
       .col-lg-8
         - @foundArtists.each do |s|
           .flex
@@ -43,14 +44,17 @@
     .col-lg-2
       - unless @searched.present?
         .text-center style="margin: 50px 0;"
-          h3 Powered by
+          h4 Thanks to
           =link_to 'https://musicbrainz.org/' do
             =image_tag '/assets/MusicBrainz_Logo_Transparent.png', size: '100x80'
-        - if admin_user?
+        /- if admin_user?
           = link_to 'MB Id refresh', artist_id_refresh_path, method: :post, class: "btn", remote: true
       -if admin_user?
         . style="margin: 50px 0;"
-          h3 Add New Artist Manually?
+          h3
+            span
+              i class="fas fa-pencil-alt"
+            span Manual Input
           = render 'form', artist: @artist
     .col-lg-8
       .

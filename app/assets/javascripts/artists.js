@@ -160,8 +160,14 @@ function inputArtist() {
   var artistMbId = '.listArtistMbid' + sel.val();
   var mbid = $(artistMbId).text();
 
+  var artistImg = '.listArtistImg' + sel.val();
+  var img = $(artistImg).attr('src');
+
   $('#artist_artist_name').val(name);
   $('#artist_mb_id').val(mbid);
+  $('#artist_artist_image').val(img);
+
+  $('#inputtedArtistImage').html("<image src='" + img + "', style='width:150px;, height: 100px;' %>");
 }
 // END ARTIST Edit
 
@@ -248,13 +254,16 @@ $(document).on('click', '.foundArtistSave', function(){
 });
 // ARTISTS#INDEX ADD NEW ARTIST FUNCTION
 
-// ARTISTS#SHOW ADD ARTISTS'S IMAGE FUNCTION (RESCUE as normally image could be found automatically)
-$(document).on('click', '#findArtistImage', function(){
-  var artistName = $('#artistName').text();
-  var mb_id = $('#artistMbId').text();
-  getYtThumb(artistName, mb_id);
-  window.location.reload();
-});
+// ARTISTS#SHOW ADD ARTISTS'S IMAGE FUNCTION (RESCUE Function as normally image could be found automatically)
+// *********** AS THIS FUNCTION LOOKS TO BE JUST DOUBLED, ELIMINATING FOR FUNCTION TEST ***********
+
+// $(document).on('click', '#findArtistImage', function(){
+//   var artistName = $('#artistName').text();
+//   var mb_id = $('#artistMbId').text();
+//   getYtThumb(artistName, mb_id);
+//   window.location.reload();
+// });
+// *********** AS THIS FUNCTION LOOKS TO BE JUST DOUBLED, ELIMINATING FOR FUNCTION TEST ***********
 // ARTISTS#SHOW ADD ARTISTS'S IMAGE FUNCTION (RESCUE as normally image could be found automatically)
 
 // YOUTUBE IMAGE FUNCTION

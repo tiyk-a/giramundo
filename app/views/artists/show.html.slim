@@ -5,10 +5,10 @@
 			.hidden#artistMbId = @artist.mb_id
 			.artistImageBox
 				-if @artist.artist_image.present?
-					=image_tag(@artist.artist_image, :size => '300x200')
+					=image_tag(@artist.artist_image, :size => '400x300')
 				-else
 					=image_tag("/assets/no-portrait.png", :size => '300x200')
-				p#findArtistImage.btn.inline-block Update Artist's Image?
+				/ p#findArtistImage.btn.inline-block Update Artist's Image?
 		.col-lg-6
 			#yt
 

@@ -1,7 +1,7 @@
 li.artistList style="margin:20px 0;"
   span style="width:60px; padding:0 3px;" = link_to artist_path(artist.id), data: {"turbolinks" => false} do
     -if artist.artist_image.present?
-      =image_tag(artist.artist_image, :size => '60x40')
+      =image_tag(artist.artist_image, :size => '60x40', class: "listArtistImg#{artist.id}")
     -else
       =image_tag("/assets/no-portrait.png", :size => '60x40')
   span style="width: 200px; padding-left: 10px;" = link_to artist.artist_name, artist, class: "listArtistName#{artist.id}", style: "font-size: 18px;", data: {"turbolinks" => false}

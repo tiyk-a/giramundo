@@ -27,5 +27,6 @@
         -if perform.concert.image.present?
           =image_tag(perform.concert.image, :size => "60x40", class: "concertImage concertImage#{perform.concert.id}")
       #selectedArtistImage
+    #inputtedArtistImage
 
   .actions = button_tag 'Submit', type: 'submit', method: :get, url: artists_path, class: "btn"
