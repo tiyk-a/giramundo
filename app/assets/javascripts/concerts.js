@@ -116,7 +116,7 @@ $(document).on('click', '.plan', function(){
    });
 
   // HIGHLIGHT ROW
-  $(this).parent().toggleClass('highlight2');
+  $(this).parent().parent().parent().toggleClass('highlight2');
 });
 
 function compareDate(root, from, to, column) {
@@ -125,7 +125,7 @@ function compareDate(root, from, to, column) {
   var toN = Number(to);
 
   if(rootN >= fromN && rootN <= toN){
-    $(column).parent().toggleClass('highlight1');
+    $(column).parent().parent().parent().toggleClass('highlight1');
     var parent = $(column).parent().html();
   };
 };
