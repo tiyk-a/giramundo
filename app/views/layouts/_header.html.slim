@@ -23,7 +23,7 @@ canvas.c
             #userId.hidden =current_user.id
       .nav-items#nav1.hidden
         = link_to concerts_path, data: {"turbolinks" => false} do
-          i class="fas fa-music fa-2x" style="padding:8px;"
+          i class="fas fa-music fa-2x" style="padding:8px 13px 8px 7px;"
         #navToConcert
           p CONCERTS
       .nav-items#nav2.hidden
@@ -36,26 +36,28 @@ canvas.c
           i class="fas fa-map-marked-alt fa-2x" style="padding:8px;"
         #navToVenues
           p VENUES
-      .nav-items#nav4.hidden
-        -if user_signed_in?
+      -if user_signed_in?
+        .nav-items#nav4-1.hidden
           = link_to user_path(current_user), data: {"turbolinks" => false} do
             i class="fas fa-paperclip fa-2x" style="padding:8px;"
           #navToUser
             p MY KEEPS
-        -else
+      -else
+        .nav-items#nav4-2.hidden
           = link_to new_user_session_path do
             i class="fas fa-sign-in-alt fa-2x" style="padding:8px;"
           #navToLogin
             p LOG IN
-      .nav-items#nav5.hidden
-        -if user_signed_in?
+      -if user_signed_in?
+        .nav-items#nav5-1.hidden
           = link_to destroy_user_session_path, method: :delete do
             i class="fas fa-sign-out-alt fa-2x" style="padding:8px;"
           #navToLogout
             p LOG OUT
-        -else
+      -else
+        .nav-items#nav5-2.hidden
           = link_to about_path, data: {"turbolinks" => false} do
-            i class="fa fa-envelope fa-2x" style="padding:8px;"
+            i class="fas fa-question fa-2x" style="padding:8px 8px 8px 12px;"
           #navToAbout
             p ABOUT
 

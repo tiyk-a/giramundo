@@ -77,15 +77,25 @@ $(document).on('mouseover', '#nav3', function(){
   });
 // BTN3
 // BTN4
-$(document).on('mouseover', '#nav4', function(){
-    $('#menu').html('<h3>Login</h3>');
+$(document).on('mouseover', '#nav4-1', function(){
+    $('#menu').html('<h3>Keeps</h3>');
   });
 // BTN4
+// BTN4-2
+$(document).on('mouseover', '#nav4-2', function(){
+    $('#menu').html('<h3>Log In / Out</h3>');
+  });
+// BTN4-2
 // BTN5
-$(document).on('mouseover', '#nav5', function(){
-    $('#menu').html('<h3>About</h3>');
+$(document).on('mouseover', '#nav5-1', function(){
+    $('#menu').html('<h3>Sign Out</h3>');
   });
 // BTN5
+// BTN5-2
+$(document).on('mouseover', '#nav5-2', function(){
+    $('#menu').html('<h3>About</h3>');
+  });
+// BTN5-2
 //******************** HEADER ********************
 //******************** HEADER ********************
 
@@ -114,17 +124,17 @@ $(document).on('mouseover', '#adminNav2', function(){
 // BTN2
 // BTN3
 $(document).on('mouseover', '#adminNav3', function(){
-    $('#adminNavBtn').html('<h3 style="font-size: 18px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;">Venues</h3>');
+    $('#adminNavBtn').html('<h3 style="font-size: 18px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;">Admin</h3>');
   });
 // BTN3
 // BTN4
 $(document).on('mouseover', '#adminNav4', function(){
-    $('#adminNavBtn').html('<h3 style="font-size: 18px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;">Login</h3>');
+    $('#adminNavBtn').html('<h3 style="font-size: 18px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;">Users</h3>');
   });
 // BTN4
 // BTN5
 $(document).on('mouseover', '#adminNav5', function(){
-    $('#adminNavBtn').html('<h3 style="font-size: 18px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;">About</h3>');
+    $('#adminNavBtn').html('<h3 style="font-size: 18px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;">Sign Out</h3>');
   });
 // BTN5
 //******************** FOOTER ********************
