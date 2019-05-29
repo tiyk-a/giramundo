@@ -1,6 +1,6 @@
 class CreateEntries < ActiveRecord::Migration[5.2]
   def change
-    create_table :entries do |t|
+    create_table :entries, :options => 'ENGINE=InnoDB ROW_FORMAT=DYNAMIC' do |t|
       t.string :title
       t.datetime :published
       t.text :content
