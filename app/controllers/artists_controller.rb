@@ -22,7 +22,7 @@ class ArtistsController < ApplicationController
       @artists = Artist.all.reverse_order
     end
     @artist = Artist.new
-    gon.last_artist = Artist.last.id
+    gon.next_artist_id = Artist.with_deleted.last.id + 1
   end
 
   # def id_refresh

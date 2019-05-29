@@ -297,9 +297,7 @@ $(document).on('click', '.foundArtistSave', function(){
 // YOUTUBE IMAGE FUNCTION
 function getYtThumb(artistName, mb_id) {
   var key = gon.gg_key
-  var last_artist_id = gon.last_artist
-  var next_id = last_artist_id + 1
-  console.log(last_artist_id);
+  var next_id = gon.next_artist_id
   console.log(next_id);
     $.ajax({
       type:"GET",
