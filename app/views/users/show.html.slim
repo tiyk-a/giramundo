@@ -25,15 +25,6 @@
 			-else
 				h3 YOUR CLIPPED CONCERTS WOULD BE LISTED HERE :)
 
-
-
-.container
-	.row
-		.col-lg-3
-		.col-lg-7
-			= link_to "Back", :back, class: "btn", data: {"turbolinks" => false}
-		.col-lg-3
-
 javascript:
   $(document).ready(function(){
     initMap('myMapUser', gon.keeps[0].latitude, gon.keeps[0].longitude, gon.keeps, 2);

@@ -111,10 +111,6 @@
             .concertTbody.concertContainerTest
               = render partial: 'concert_container', collection: @concert.venue.concerts, :as => 'concert', locals: {keep: @keep}
 
-.container
-  .row
-    .col-lg-10
-      = link_to "Back", :back, class: "btn", data: {"turbolinks" => false}
 
 
 javascript:

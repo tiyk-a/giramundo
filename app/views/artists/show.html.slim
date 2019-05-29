@@ -29,11 +29,6 @@
 						-unless perform.concert.date.nil?
 							= render 'concerts/concert_container', concert:perform.concert, keep: @keep
 
-.container
-	.row
-		.col-lg-4
-			= link_to "Back", :back, class: "btn", data: {"turbolinks" => false}
-
 javascript:
 	// Load the IFrame Player API code asynchronously.
 	var tag = document.createElement('script');
