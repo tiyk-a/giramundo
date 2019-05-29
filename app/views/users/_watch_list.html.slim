@@ -4,4 +4,10 @@ h3 Your Singers
 		-current_user.watch_artists.includes(:artist).each do |watch|
 			li
 				span =image_tag(watch.artist.artist_image, :size => '60x60', :style => 'border-radius:50%;')
-				span = link_to watch.artist.artist_name, artist_path(watch.artist), data: {"turbolinks" => false}
+				span style="position:absolute; padding:20px 10px;" = link_to watch.artist.artist_name, artist_path(watch.artist), data: {"turbolinks" => false}
+
+javascript:
+	$(function() {
+	    $('ul li span').matchHeight();
+	    console.log('done');
+	});
