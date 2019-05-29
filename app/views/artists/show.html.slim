@@ -1,7 +1,11 @@
 .container
 	.row
 		.col-lg-4
-			h1#artistName style="font-size:50px; margin: 0;" = @artist.artist_name
+			.flex style="justify-content:space-between;padding:10px;"
+				span
+					h1#artistName style="font-size:50px; margin: 0;" = @artist.artist_name
+				span style="margin:15px;"
+					. class="watch_artist_lg#{@artist.id}" = render 'watch_artists/watch_artist_lg', artist: @artist
 			.hidden#artistMbId = @artist.mb_id
 			.artistImageBox
 				-if @artist.artist_image.present?

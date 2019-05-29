@@ -23,7 +23,7 @@
       =image_tag(artist.artist_image, :size => "150x100")
       br
     - if @artist.performers.present?
-      -@artist.performers.each do |perform|
+      -@artist.performers.includes([:concert]).each do |perform|
         -if perform.concert.image.present?
           =image_tag(perform.concert.image, :size => "60x40", class: "concertImage concertImage#{perform.concert.id}")
       #selectedArtistImage
