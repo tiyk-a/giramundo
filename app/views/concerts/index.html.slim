@@ -38,7 +38,6 @@
       -if admin_user?
         = render 'form', concert: @concert, artists: @artists, venues: @venues
       h3 Need Map?
-      #concertIndexMap style="width:100%; height:200px;"
       = render 'venues/geocodeBox'
     .col-lg-8
       .col-lg-4.inline-block
@@ -74,8 +73,3 @@
           = render 'basic_view',locals: {concerts: @concerts, keep: @keep}
         .pagination
           = render 'pagination', concerts: @concerts
-
-javascript:
-  $(document).ready(function(){
-    initMap('concertIndexMap', 0, 0, null, 4);
-  });
