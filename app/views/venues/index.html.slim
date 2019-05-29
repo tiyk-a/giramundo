@@ -14,8 +14,9 @@
   .row
     .col-lg-2
       .
-        h3 New Venue?
-        = render 'form', venue: @venue
+        -if admin_user?
+          h3 New Venue?
+          = render 'form', venue: @venue
       .mb-20px style="margin: 30px 0;;"
         -if admin_user?
           .text-center style="margin-bottom: 50px;"

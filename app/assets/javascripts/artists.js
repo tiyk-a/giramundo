@@ -295,8 +295,66 @@ $(document).on('click', '.foundArtistSave', function(){
 // ARTISTS#SHOW ADD ARTISTS'S IMAGE FUNCTION (RESCUE as normally image could be found automatically)
 
 // YOUTUBE IMAGE FUNCTION
-// MOVED TO ARTISTS#SHOW PAGE
-// YOUTUBE IMAGE FUNCTION
+  function getYtThumb(artistName, mb_id) {
+    var key = gon.gg_key
+    var next_id = gon.next_artist_id
+    console.log(next_id);
+      $.ajax({
+        type:"GET",
+        url:"https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=" + artistName + "&type=channel&key=" + key,
+        async:true,
+        dataType: "json",
+      }).done(async function (data){
+          await console.log(data);
+          if(data.items[0].snippet.thumbnails.high !== undefined){
+            var artistImg = (data.items[0].snippet.thumbnails.high.url);
+          }else{
+            var artistImg = (data.items[0].snippet.thumbnails.default.url);
+          }
+          // POST
+            await $.ajax({
+                type:"POST",
+                url:'/artists',
+                dataType: "json",
+                data: { artist: {
+                  artist_name: artistName, artist_image: artistImg, mb_id: mb_id,
+                  }
+                }
+            }).done((data, textStatus, jqXHR) => {
+                  console.log(data, jqXHR.status);
+                  console.log(next_id);
+                  var redirect_to = "/artists/" + next_id
+                  window.location.href = redirect_to;
+            }).fail((jqXHR, textStatus, errorThrown) => {
+                  console.log('fail', jqXHR.status);
+                  console.log(next_id);
+                  var redirect_to = "/artists/" + next_id
+                  window.location.href = redirect_to;
+            });
+        // POST
+      }).fail((jqXHR, textStatus, errorThrown) => {
+        // POST
+            $.ajax({
+                type:"POST",
+                url:'/artists',
+                dataType: "json",
+                data: { artist: {
+                  artist_name: artistName, artist_image: "no-portrait.png", mb_id: mb_id,
+                  }
+                }
+            }).done((data, textStatus, jqXHR) => {
+                  console.log(next_id);
+                  var redirect_to = "/artists/" + next_id
+                  window.location.href = redirect_to;
+             }).fail((jqXHR, textStatus, errorThrown) => {
+                  console.log(next_id);
+                  var redirect_to = "/artists/" + next_id
+                  window.location.href = redirect_to;
+            });
+        // POST
+      });
+  }
+  // YOUTUBE IMAGE FUNCTION
 
 // WATCH ARTIST#CREATE
 $(document).on('click','.createWatch', function(){

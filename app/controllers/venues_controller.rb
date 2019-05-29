@@ -1,6 +1,6 @@
 class VenuesController < ApplicationController
   def index
-    @venues = Venue.all
+    @venues = Venue.all.includes([:concerts])
     @venue = Venue.new
     gon.venues = Venue.all
   end

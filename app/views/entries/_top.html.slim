@@ -1,23 +1,21 @@
 #topNews
-	h3.text-left Artist related news
+	h3.text-left =link_to 'Artist related news', top_entries_path, class: "bold", data: {"turbolinks" => false}
 	-top_entries.each do |entry|
 		.text-left style="font-size: 14px; padding: 0;"
 			p
 				|
 				span style="font-weight:300;" =link_to entry.artist.artist_name, artist_path(entry.artist), data: {"turbolinks" => false}
 				span =link_to entry.title, entry.url, target: '_blank'
-				i style="color: gray;"
+				i style="color: black;"
 					|
 						---
 					=entry.feed.name
-	= link_to "Check All Top News", top_entries_path, class: "bold", data: {"turbolinks" => false}
 
 #allNews
-	h3.text-left All news
+	h3.text-left =link_to 'All news', all_entries_path, class: "bold", data: {"turbolinks" => false}
 	-entries.each do |entry|
 		.text-left style="font-size: 14px; padding: 0;"
 			p
 				|
 				=link_to entry.title, entry.url, target: '_blank'
-				i style="color: gray;" = entry.feed.name
-	= link_to "Check All News", all_entries_path, class: "bold", data: {"turbolinks" => false}
+				i style="color: black;" = entry.feed.name

@@ -374,7 +374,7 @@ input[type="submit"], input[type="button"] {
 	top: 0;
 }
 #userModal {
-	background-color: gray;
+	background-color: black;
 	color: #806C77;
 	width: 200px;
 	margin: 5px 0 5px auto;
@@ -477,7 +477,7 @@ input[type="submit"], input[type="button"] {
 		text-shadow: 0.5px 0.5px white;
 	}
 }
-#nav4 {
+#nav4-1, #nav4-2 {
 	width: 50px;
 	height: 50px;
 	border-radius:50%;
@@ -501,7 +501,7 @@ input[type="submit"], input[type="button"] {
 		text-shadow: 0.5px 0.5px white;
 	}
 }
-#nav5 {
+#nav5-1, #nav5-2 {
 	width: 50px;
 	height: 50px;
 	border-radius:50%;
@@ -530,6 +530,45 @@ input[type="submit"], input[type="button"] {
 	display:none;
 }
 // NAV
+
+#loginAlertModal {
+	width: 200px;
+	height: 200px;
+	border-radius:0 0 0 100%;
+	position:absolute;
+	top: 0;
+	right: 0;
+	background-color: #E6C3D5;
+	cursor: pointer;
+	box-shadow: 0 0 10px lightgray;
+	border: 0.3px inset lightgray;
+	text-shadow: 0.5px 0.5px white;
+}
+.loginAlert{
+	cursor:pointer;
+	&:hover {
+		opacity:0.9;
+		color: red;
+	}
+}
+#signIn {
+	&:hover {
+		box-shadow: 0 0 10px lightgray;
+		border: 0.3px inset lightgray;
+		text-shadow: 0.5px 0.5px white;
+		border-radius:50%;
+		opacity:0.8;
+	}
+}
+#signUp {
+	&:hover {
+		box-shadow: 0 0 10px lightgray;
+		border: 0.3px inset lightgray;
+		text-shadow: 0.5px 0.5px white;
+		border-radius:50%;
+		opacity:0.8;
+	}
+}
 //******************* HEADER *******************
 //******************* HEADER *******************
 
@@ -698,7 +737,7 @@ input[type="submit"], input[type="button"] {
 //******************* FUNCTIONS *******************
 #notice {
   color: white;
-  background-color: gray;
+  background-color: black;
   border-radius: 10px;
   margin: 0;
   z-index: 1000;

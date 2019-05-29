@@ -16,10 +16,10 @@
 
 - if admin_user?
   #adminNavBtn.text-right
-    p style="font-family: 'Righteous', cursive; font-size: 18px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;" ADMIN
+    h3 style="font-size: 18px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;" ADMIN
   .adm-nav-items#adminNav1.hidden
     = link_to concerts_path, data: {"turbolinks" => false} do
-      i class="far fa-calendar-alt fa-2x" style="padding:8px;"
+      i class="fas fa-music fa-2x" style="padding:8px;"
   .adm-nav-items#adminNav2.hidden
     = link_to artists_path, data: {"turbolinks" => false} do
       i class="fab fa-napster fa-2x" style="padding:8px;"

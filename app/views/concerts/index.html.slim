@@ -36,8 +36,8 @@
       -if user_signed_in?
         =render 'users/watch_list', something: @watch_artist
       -if admin_user?
+        h4 New Concert?
         = render 'form', concert: @concert, artists: @artists, venues: @venues
-      h3 Need Map?
       = render 'venues/geocodeBox'
     .col-lg-8
       .col-lg-4.inline-block
@@ -52,12 +52,12 @@
             = link_to 'Asc', concerts_sort_path(1), method: :post, class: 'post_button btn', id: "sortAsc", remote: true
           .inline-block
             = link_to 'Desc', concerts_sort_path(2), method: :post, class: 'post_button btn', id: "sortDesc", remote: true
-          .inline-block
-            = link_to 'Country', concerts_sort_path(3), method: :post, class: 'post_button btn', id: "sortCountry", remote: true
-          .inline-block
-            = link_to 'City', concerts_sort_path(4), method: :post, class: 'post_button btn', id: "sortCity", remote: true
-          .inline-block
-            = link_to 'Venue', concerts_sort_path(5), method: :post, class: 'post_button btn', id: "sortVenue", remote: true
+          / .inline-block
+          /   = link_to 'Country', concerts_sort_path(3), method: :post, class: 'post_button btn', id: "sortCountry", remote: true
+          / .inline-block
+          /   = link_to 'City', concerts_sort_path(4), method: :post, class: 'post_button btn', id: "sortCity", remote: true
+          / .inline-block
+          /   = link_to 'Venue', concerts_sort_path(5), method: :post, class: 'post_button btn', id: "sortVenue", remote: true
           .inline-block
             p.btn#planBtn Plan
         #simpleSort.hidden
