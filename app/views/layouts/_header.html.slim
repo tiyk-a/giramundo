@@ -4,9 +4,11 @@ canvas.c
     .col-lg-2
     .col-lg-6.text-center.flex style="margin: 0 auto;"
       . style="margin: 0 auto;"
+        .subline style="margin:0;"
+          p style="margin:0; font-weight:100;" 世界中のコンサート情報収拾アプリ
         a.inline-block href="#footerTop" test
         .inline-block =link_to concerts_path, data: {"turbolinks" => false} do
-          h1.header-logo
+          h1.header-logo style="margin:0;"
             span style="color:#E6C3D5;margin:0;font-style: italic; " N
             span style="margin:0; font-size:30px;font-style: italic; " OTI
             span style="color:#E6C3D5;margin:0;font-style: italic; " G
@@ -25,46 +27,46 @@ canvas.c
         = link_to concerts_path, data: {"turbolinks" => false} do
           i class="fas fa-music fa-2x" style="padding:8px 13px 8px 7px;"
         #navToConcert
-          p CONCERTS
+          p コンサート
       .nav-items#nav2.hidden
         = link_to artists_path, data: {"turbolinks" => false} do
           i class="fab fa-napster fa-2x" style="padding:8px;"
         #navToArtist
-          p ARTISTS
+          p アーティスト
       .nav-items#nav3.hidden
         = link_to venues_path, data: {"turbolinks" => false} do
           i class="fas fa-map-marked-alt fa-2x" style="padding:8px;"
         #navToVenues
-          p VENUES
+          p 会場
       -if user_signed_in?
         .nav-items#nav4-1.hidden
           = link_to user_path(current_user), data: {"turbolinks" => false} do
             i class="fas fa-paperclip fa-2x" style="padding:8px;"
           #navToUser
-            p MY KEEPS
+            p キープ
       -else
         .nav-items#nav4-2.hidden
           = link_to new_user_session_path do
             i class="fas fa-sign-in-alt fa-2x" style="padding:8px;"
           #navToLogin
-            p LOG IN
+            p ログイン
       -if user_signed_in?
         .nav-items#nav5-1.hidden
           = link_to destroy_user_session_path, method: :delete do
             i class="fas fa-sign-out-alt fa-2x" style="padding:8px;"
           #navToLogout
-            p LOG OUT
+            p ログアウト
       -else
         .nav-items#nav5-2.hidden
           = link_to about_path, data: {"turbolinks" => false} do
             i class="fas fa-question fa-2x" style="padding:8px 8px 8px 12px;"
           #navToAbout
-            p ABOUT
+            p アプリについて
 
     #loginAlertModal.hidden
       . style="margin:30px auto;text-align: right;"
         .
-          h1 style="color:#806C77;margin:0 0 10px 0;text-align: right;margin: 0 70px;" Login
+          h3 style="color:#806C77;margin:0 0 10px 0;text-align: right;margin: 0 70px;" Log In
         . style="text-align: right;margin: 0 30px;"
           .inline-block#signIn style="margin:10px;"
             =link_to new_user_session_path do

@@ -63,32 +63,32 @@ $(document).on('click', '#navBtn', function(){
 
 // BTN1
 $(document).on('mouseover', '#nav1', function(){
-    $('#menu').html('<h3>Concerts</h3>');
+    $('#menu').html('<h3 class="jp_text" style="font-size:16px;">コンサート</h3>');
   });
 // BTN1
 // BTN2
 $(document).on('mouseover', '#nav2', function(){
-    $('#menu').html('<h3>Artists</h3>');
+    $('#menu').html('<h3 class="jp_text" style="font-size:16px;">アーティスト</h3>');
   });
 // BTN2
 // BTN3
 $(document).on('mouseover', '#nav3', function(){
-    $('#menu').html('<h3>Venues</h3>');
+    $('#menu').html('<h3 class="jp_text" style="font-size:16px;">会場</h3>');
   });
 // BTN3
 // BTN4
 $(document).on('mouseover', '#nav4-1', function(){
-    $('#menu').html('<h3>Keeps</h3>');
+    $('#menu').html('<h3 class="jp_text" style="font-size:16px;">キープ</h3>');
   });
 // BTN4
 // BTN4-2
 $(document).on('mouseover', '#nav4-2', function(){
-    $('#menu').html('<h3>Log In / Out</h3>');
+    $('#menu').html('<h3 class="jp_text" style="font-size:16px;">ログイン/アウト</h3>');
   });
 // BTN4-2
 // BTN5
 $(document).on('mouseover', '#nav5-1', function(){
-    $('#menu').html('<h3>Sign Out</h3>');
+    $('#menu').html('<h3 class="jp_text" style="font-size:16px;">ログアウト</h3>');
   });
 // BTN5
 // BTN5-2
@@ -114,12 +114,12 @@ $(document).on('click', '#adminNavBtn', function(){
 
 // BTN1
 $(document).on('mouseover', '#adminNav1', function(){
-    $('#adminNavBtn').html('<h3 style="font-size: 18px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;">Concerts</h3>');
+    $('#adminNavBtn').html('<h3 style="font-size:16px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;">コンサート</h3>');
   });
 // BTN1
 // BTN2
 $(document).on('mouseover', '#adminNav2', function(){
-    $('#adminNavBtn').html('<h3 style="font-size: 18px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;">Artists</h3>');
+    $('#adminNavBtn').html('<h3 style="font-size:16px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;">アーティスト</h3>');
   });
 // BTN2
 // BTN3
@@ -129,12 +129,12 @@ $(document).on('mouseover', '#adminNav3', function(){
 // BTN3
 // BTN4
 $(document).on('mouseover', '#adminNav4', function(){
-    $('#adminNavBtn').html('<h3 style="font-size: 18px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;">Users</h3>');
+    $('#adminNavBtn').html('<h3 style="font-size:16px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;">ユーザー</h3>');
   });
 // BTN4
 // BTN5
 $(document).on('mouseover', '#adminNav5', function(){
-    $('#adminNavBtn').html('<h3 style="font-size: 18px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;">Sign Out</h3>');
+    $('#adminNavBtn').html('<h3 style="font-size:16px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;">ログアウト</h3>');
   });
 // BTN5
 //******************** FOOTER ********************
