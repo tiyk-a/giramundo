@@ -21,10 +21,11 @@
 		.col-lg-2
 			=image_tag '/assets/tmlogo_blue.png', size: '170x60', id: "findConcertButton"
 			=image_tag '/assets/by_Songkick_white.png', size: '140x40', id: "findConcertButtonSK"
-			h3 Edit Artist?
-			= render 'form', artist: @artist
-			h3 Edit Concert?
-			= render 'concerts/form', concert: @concert, artists: @artists, venues: @venues
+			-if admin_user?
+				h3 Edit Artist?
+				= render 'form', artist: @artist
+				h3 Edit Concert?
+				= render 'concerts/form', concert: @concert, artists: @artists, venues: @venues
 		.col-lg-8
 			h3 Concerts of this artist
 			ul
