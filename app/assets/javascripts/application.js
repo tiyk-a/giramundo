@@ -56,15 +56,36 @@ $(document).on('click', '#navBtn', function(){
     $('.nav-items').removeClass('hidden');
   }else{
     $('.nav-items').addClass('hidden');
+    $('#menu').html('<i class="fas fa-bars fa-3x"></i>');
   }
 });
 // HEADER NAV
 
-//
-$(document).on('hover', '#nav1', function(){
-    $('#menu').html('<p>Concerts</p>');
+// BTN1
+$(document).on('mouseover', '#nav1', function(){
+    $('#menu').html('<h3>Concerts</h3>');
   });
-//
+// BTN1
+// BTN2
+$(document).on('mouseover', '#nav2', function(){
+    $('#menu').html('<h3>Artists</h3>');
+  });
+// BTN2
+// BTN3
+$(document).on('mouseover', '#nav3', function(){
+    $('#menu').html('<h3>Venues</h3>');
+  });
+// BTN3
+// BTN4
+$(document).on('mouseover', '#nav4', function(){
+    $('#menu').html('<h3>Login</h3>');
+  });
+// BTN4
+// BTN5
+$(document).on('mouseover', '#nav5', function(){
+    $('#menu').html('<h3>About</h3>');
+  });
+// BTN5
 //******************** HEADER ********************
 //******************** HEADER ********************
 
@@ -76,9 +97,36 @@ $(document).on('click', '#adminNavBtn', function(){
     $('.adm-nav-items').removeClass('hidden');
   }else{
     $('.adm-nav-items').addClass('hidden');
+    $('#adminNavBtn').html('<h3 style="font-size: 18px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;">ADMIN</h3>');
   }
 });
 // FOOTER ADMIN NAV
+
+// BTN1
+$(document).on('mouseover', '#adminNav1', function(){
+    $('#adminNavBtn').html('<h3 style="font-size: 18px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;">Concerts</h3>');
+  });
+// BTN1
+// BTN2
+$(document).on('mouseover', '#adminNav2', function(){
+    $('#adminNavBtn').html('<h3 style="font-size: 18px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;">Artists</h3>');
+  });
+// BTN2
+// BTN3
+$(document).on('mouseover', '#adminNav3', function(){
+    $('#adminNavBtn').html('<h3 style="font-size: 18px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;">Venues</h3>');
+  });
+// BTN3
+// BTN4
+$(document).on('mouseover', '#adminNav4', function(){
+    $('#adminNavBtn').html('<h3 style="font-size: 18px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;">Login</h3>');
+  });
+// BTN4
+// BTN5
+$(document).on('mouseover', '#adminNav5', function(){
+    $('#adminNavBtn').html('<h3 style="font-size: 18px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;">About</h3>');
+  });
+// BTN5
 //******************** FOOTER ********************
 //******************** FOOTER ********************
 
@@ -159,7 +207,7 @@ function initMap(mapId, latCenter, lngCenter, markerSources, zoomSize) {
     var hoverinfo = [];
 
     var content_full = "<h3><a href='http://localhost:3000/venues/" + id + "' style='color:#806C77;' target='_blank;'>" + name + "</a></h3>" +
-    "<p><a href='" + url + "' style='color:#806C77; border-bottom: gray solid 0.5px;' target='_blank'>Official Web<span style='color:gray; padding: 0 5px;'><i class='fas fa-external-link-alt fa-xs'></i></span></a></p>"
+    "<p><a href='" + url + "' style='color:#806C77; border-bottom: black solid 0.5px;' target='_blank'>Official Web<span style='color:black; padding: 0 5px;'><i class='fas fa-external-link-alt fa-xs'></i></span></a></p>"
 
     // マーカーにマウスを乗せたときのイベント
     marker.addListener('click', function() {
@@ -268,3 +316,9 @@ $(function(){
   });
 });
 //CLICK AND JAMP
+
+// LOGIN ALERT
+$(document).on('click', '.loginAlert', function(){
+  $('#loginAlertModal').toggleClass('hidden');
+});
+// LOGIN ALERT

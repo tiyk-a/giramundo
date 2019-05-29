@@ -6,7 +6,7 @@
 				|
 				span style="font-weight:300;" =link_to entry.artist.artist_name, artist_path(entry.artist), data: {"turbolinks" => false}
 				span =link_to entry.title, entry.url, target: '_blank'
-				i style="color: gray;"
+				i style="color: black;"
 					|
 						---
 					=entry.feed.name
@@ -19,5 +19,5 @@
 			p
 				|
 				=link_to entry.title, entry.url, target: '_blank'
-				i style="color: gray;" = entry.feed.name
+				i style="color: black;" = entry.feed.name
 	= link_to "Check All News", all_entries_path, class: "bold", data: {"turbolinks" => false}

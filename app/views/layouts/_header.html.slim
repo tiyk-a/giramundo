@@ -59,6 +59,18 @@ canvas.c
           #navToAbout
             p ABOUT
 
+    #loginAlertModal.hidden
+      . style="margin:30px auto;text-align: right;"
+        .
+          h1 style="color:#806C77;margin:0 0 10px 0;text-align: right;margin: 0 70px;" Login
+        . style="text-align: right;margin: 0 30px;"
+          .inline-block#signIn style="margin:10px;"
+            =link_to new_user_session_path do
+              i class="fas fa-sign-in-alt fa-2x" style="color: #806C77;"
+          .inline-block#signUp style="margin:10px;"
+            =link_to new_user_registration_path do
+              i class="fas fa-user-plus fa-2x" style="color: #806C77;"
+
 
 // FOR HEADER BACKGROUND
 // https://codepen.io/thebabydino/pen/lKvHb
