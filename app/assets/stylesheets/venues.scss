@@ -13,3 +13,18 @@
 #encodeBtn {
 	width:110%;
 }
+.venueColumn {
+	&:hover {
+		box-shadow: 0 0 10px lightgray;
+		border: 0.3px inset lightgray;
+		opacity: 1;
+	    text-decoration: none;
+	    text-shadow: 0.5px 0.5px white;
+	}
+}
+.venueColumnText {
+	&:hover {
+		text-decoration: none;
+	    text-shadow: 0.5px 0.5px white;
+	}
+}

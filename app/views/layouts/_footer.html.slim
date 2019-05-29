@@ -32,3 +32,22 @@
   .adm-nav-items#adminNav5.hidden
     = link_to destroy_user_session_path, method: :delete do
       i class="fas fa-sign-out-alt fa-2x" style="padding:8px;"
+
+-else
+  #backBtn.text-right
+    span style="font-family: 'Righteous', cursive; font-size: 18px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;" = link_to "BACK", :back, data: {"turbolinks" => false}
+  / .adm-nav-items#adminNav1.hidden
+  /   = link_to concerts_path, data: {"turbolinks" => false} do
+  /     i class="far fa-calendar-alt fa-2x" style="padding:8px;"
+  / .adm-nav-items#adminNav2.hidden
+  /   = link_to artists_path, data: {"turbolinks" => false} do
+  /     i class="fab fa-napster fa-2x" style="padding:8px;"
+  / .adm-nav-items#adminNav3.hidden
+  /   = link_to admin_path, data: {"turbolinks" => false} do
+  /     i class="fas fa-user-cog fa-2x" style="padding:8px;"
+  / .adm-nav-items#adminNav4.hidden
+  /   = link_to users_path, data: {"turbolinks" => false} do
+  /     i class="fas fa-users fa-2x" style="padding:8px;"
+  / .adm-nav-items#adminNav5.hidden
+  /   = link_to destroy_user_session_path, method: :delete do
+  /     i class="fas fa-sign-out-alt fa-2x" style="padding:8px;"

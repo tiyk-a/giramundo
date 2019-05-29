@@ -27,12 +27,13 @@
       - if @venues.present?
         .col-lg-4.inline-block
         .col-lg-4.inline-block.text-right
-          .inline-block
-            = button_tag "Manage", class: "m-0 btn", id: "pickupNotFound"
-          .inline-block
-            = link_to 'Country', venues_sort_path(1), method: :post, class: 'post_button btn', id: "venueByCountry", remote: true
-          .inline-block
-            = link_to 'Double?', venues_sort_path(2), method: :post, class: 'post_button btn', id: "conflictVenue", remote: true
+          -if admin_user?
+            .inline-block
+              = button_tag "Manage", class: "m-0 btn", id: "pickupNotFound"
+            .inline-block
+              = link_to 'Country', venues_sort_path(1), method: :post, class: 'post_button btn', id: "venueByCountry", remote: true
+            .inline-block
+              = link_to 'Double?', venues_sort_path(2), method: :post, class: 'post_button btn', id: "conflictVenue", remote: true
         ul.sortVenueContainer style="margin:20px;"
             - @venues.each do |venue|
               -unless admin_user?
