@@ -51,7 +51,7 @@
         -elsif @concert.performers[0].artist.artist_image.present?
           =image_tag @concert.performers[0].artist.artist_image, :size => "845x500"
         -else
-          =image_tag("/assets/loading.jpg", :size => '845x500')
+          =image_tag("/images/loading.jpg", :size => '845x500')
       -if admin_user?
         = render 'concerts/form', concert: @concert, artists: @artists, venues: @venues
       -else
@@ -85,15 +85,15 @@
                   span
                     -if @concert.origin == "Ticket Master"
                       = link_to @concert.source do
-                        =image_tag '/assets/tmlogo_blue.png', size: '90x30'
+                        =image_tag '/images/tmlogo_blue.png', size: '90x30'
                     -elsif @concert.source == "Songkick"
                       = link_to @concert.source do
-                        =image_tag '/assets/by_Songkick_white.png', size: '90x30'
+                        =image_tag '/images/by_Songkick_white.png', size: '90x30'
                     -elsif @concert.source == "manual"
                       = link_to @concert.source do
-                        =image_tag("/assets/loading.jpg", :size => '90x30')
+                        =image_tag("/images/loading.jpg", :size => '90x30')
                     -else
-                      =image_tag("/assets/loading.jpg", :size => '90x30')
+                      =image_tag("/images/loading.jpg", :size => '90x30')
 
                 li style="height:50px; padding:0;"
                   span style="margin-left:16px;width:40px"
