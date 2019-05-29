@@ -1,1 +1,2 @@
 $('.keep_<%= @keep %>').html("<%= j(render partial: 'keeps/keep', locals: {concert: @keep}) %>");
+$('.concertShowKeep').html("<%= j(render partial: 'keeps/keep_lg', locals: {concert: @keep}) %>");
