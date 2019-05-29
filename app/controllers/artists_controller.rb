@@ -22,6 +22,7 @@ class ArtistsController < ApplicationController
       @artists = Artist.all.reverse_order
     end
     @artist = Artist.new
+    gon.last_artist = Artist.last.id
   end
 
   # def id_refresh
@@ -57,7 +58,8 @@ class ArtistsController < ApplicationController
   def create
     @artist = Artist.find_or_create_by(artist_name: artist_params[:artist_name])
     @artist.update(artist_params)
-    render :file => "/app/views/artists/show.js.erb"
+    gon.artist = @artist
+    # render :file => "/app/views/artists/show.js.erb"
     # redirect_to artist_path(artist)
   end
 

@@ -297,6 +297,10 @@ $(document).on('click', '.foundArtistSave', function(){
 // YOUTUBE IMAGE FUNCTION
 function getYtThumb(artistName, mb_id) {
   var key = gon.gg_key
+  var last_artist_id = gon.last_artist
+  var next_id = last_artist_id + 1
+  console.log(last_artist_id);
+  console.log(next_id);
     $.ajax({
       type:"GET",
       url:"https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=" + artistName + "&type=channel&key=" + key,
@@ -320,10 +324,14 @@ function getYtThumb(artistName, mb_id) {
               }
           }).done((data, textStatus, jqXHR) => {
                 console.log(data, jqXHR.status);
-                window.location.href = '/artists';
+                console.log(next_id);
+                var redirect_to = "/artists/" + next_id
+                window.location.href = redirect_to;
           }).fail((jqXHR, textStatus, errorThrown) => {
                 console.log('fail', jqXHR.status);
-                window.location.href = '/artists';
+                console.log(next_id);
+                var redirect_to = "/artists/" + next_id
+                window.location.href = redirect_to;
           });
       // POST
     }).fail((jqXHR, textStatus, errorThrown) => {
@@ -337,11 +345,13 @@ function getYtThumb(artistName, mb_id) {
                 }
               }
           }).done((data, textStatus, jqXHR) => {
-                console.log(data, jqXHR.status);
-                window.location.href = '/artists';
+                console.log(next_id);
+                var redirect_to = "/artists/" + next_id
+                window.location.href = redirect_to;
            }).fail((jqXHR, textStatus, errorThrown) => {
-                console.log('fail', jqXHR.status);
-                window.location.href = '/artists';
+                console.log(next_id);
+                var redirect_to = "/artists/" + next_id
+                window.location.href = redirect_to;
           });
       // POST
     });
