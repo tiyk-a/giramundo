@@ -7,12 +7,12 @@ class ConcertsController < ApplicationController
   # GET /concerts.json
   def index
     if Concert.full.limit(10).present?
-      @focuses = Concert.full.order("RANDOM()").limit(10).includes(:artists)
+      @focuses = Concert.full.order("RANDOM()").limit(10).includes(:venue)
     end
-    @concerts = Concert.full.page(params[:page]).order('date ASC').includes(:artists)
+    @concerts = Concert.full.page(params[:page]).order('date ASC').includes(:venue)
     @keep = Keep.new
-    @entries = Entry.limit(5).order('id DESC')
-    @top_entries = Entry.where.not(artist_id: nil).limit(5).order('id DESC')
+    @entries = Entry.limit(5).order('id DESC').includes(:feed)
+    @top_entries = Entry.where.not(artist_id: nil).limit(5).order('id DESC').includes(:artist, :feed)
     @concert = Concert.new
     @artists = Artist.all
     @venues = Venue.all.order('name asc')

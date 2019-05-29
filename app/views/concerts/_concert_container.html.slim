@@ -1,15 +1,20 @@
 li.concert id="#{concert.date.strftime('%Y-%m-%d')}" class="#{concert.date.strftime('%Y-%m-%d')}" value="#{concert.id}"
+  / DATE
   span style="font-size: 18px; width:50px;"
     span.hidden class="concertDate_#{concert.id}" = concert.date.strftime('%b %d')
     span style="width:100%;" class="concertDate_#{concert.id} text-center inline-block" id="dateCell" = concert.date.strftime('%b')
     br
     span.inline-block.text-center style="width:100%;" = concert.date.strftime('%d')
+
+  / PERFORMER (HIDDEN)
   span.pr-narrow.hidden#artistCell style="font-size: 10px;"
     - concert.performers.includes(:artist).each do |performer|
       = link_to performer.artist.artist_name, artist_path(performer.artist), class: "small mb-0 pb-0 font-light", data: {"turbolinks" => false}
       div class="hidden concertPerformer_#{concert.id}"
         = performer.artist_id
       br
+
+  / IMAGE
   span.pl-narrow#imageCell style="width:80px; padding: 0 5px;"
     = link_to concert_path(concert), data: {"turbolinks" => false} do
       - if concert.image.present?
@@ -18,10 +23,14 @@ li.concert id="#{concert.date.strftime('%Y-%m-%d')}" class="#{concert.date.strft
         =image_tag concert.performers[0].artist.artist_image, :size => "80x60"
       -else
         =image_tag("/assets/no-concert.png", :size => '80x60')
+
+  / CONCERT NAME
   span style="width:230px; padding: 0 3px;" = link_to concert.concert_name, concert_path(concert), class: "concertName_#{concert.id}", id: "concertNameCell", data: {"turbolinks" => false}
   -if concert.tm_id.present?
     span class="hidden registeredArtistConcertTmId#{concert.tm_id}" id="tmIdCell" = concert.tm_id
   span id="venueNameCell" class="hidden" = concert.venue.name if concert.venue.present?
+
+  /LOCATION
   span id="cityCell" style="font-size: 12px; width: 70px; text-align:right; padding:0 5px 0 0;" = concert.venue.city if concert.venue.present?
   span id="countryCell" style="font-size: 12px; padding-right: 3px; width: 50px; padding:0 0 0 5px;" = concert.venue.country if concert.venue.present?
   -if admin_user?
@@ -34,6 +43,7 @@ li.concert id="#{concert.date.strftime('%Y-%m-%d')}" class="#{concert.date.strft
     span style="padding: 0 10px;" = link_to concert, data: { confirm: 'Are you sure?' }, method: :delete do
       i class="fas fa-times fa-lg" style="color: #E6C3D5;"
 
+  / SOURCE
   -if concert.origin == "Ticket Master"
     span style="padding: 0 10px;" = link_to concert.source do
       =image_tag '/assets/tmlogo_blue.png', size: '60x20'
@@ -45,8 +55,11 @@ li.concert id="#{concert.date.strftime('%Y-%m-%d')}" class="#{concert.date.strft
       =image_tag '/assets/loading.jpg', size: '60x20'
   -else
     span style="padding: 0 10px;" =image_tag '/assets/loading.jpg', size: '60x20'
+
+  /KEEP BTN
   . class="keep_#{concert.id}" style="display:inline-block;" = render 'keeps/keep', concert: concert
 
+  / PLAN BTN
   span.planColumn.plan.hidden value="#{concert.id}" style="padding: 0 10px;"
     i.planColumn class="far fa-check-circle fa-lg hidden"
   span class="datetime_#{concert.id} datetime hidden" = concert.date.strftime('%s').to_i / 60 / 60
