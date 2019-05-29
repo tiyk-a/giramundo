@@ -16,6 +16,7 @@
 //= requre jquery.sliderPro.min
 //= require gmaps/google
 //= require infinite-scroll.pkgd.min
+//= require jquery-ui
 //= require jquery-ui/datepicker
 //= require autocomplete-rails
 //= require turbolinks

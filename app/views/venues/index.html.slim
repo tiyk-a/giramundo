@@ -35,7 +35,10 @@
             = link_to 'Double?', venues_sort_path(2), method: :post, class: 'post_button btn', id: "conflictVenue", remote: true
         ul.sortVenueContainer style="margin:20px;"
             - @venues.each do |venue|
-              = render 'venue_container', venue: venue
+              -unless admin_user?
+                = render 'venue_container_column', venue: venue
+              -else
+                = render 'venue_container', venue: venue
 
 javascript:
   $(document).ready(function(){
