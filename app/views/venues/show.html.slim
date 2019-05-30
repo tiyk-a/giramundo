@@ -48,7 +48,7 @@
       -if @venue.concerts.present?
         ul
           -@venue.concerts.each do |concert|
-            = render 'concerts/concert_container', concert:concert, keep: @keep
+            = render 'concerts/concert_container_admin', concert:concert, keep: @keep
 
 .hidden class="venueLat_#{@venue.id}" =@venue.latitude
 .hidden class="venueLng_#{@venue.id}" =@venue.longitude
