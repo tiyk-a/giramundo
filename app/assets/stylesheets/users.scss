@@ -16,14 +16,15 @@
 //******************* ABOUT *******************
 //******************* ABOUT *******************
 .about_page {
-	width: 100vw;
+	width: 100%;
 	height: 100vh;
 }
 #aboutTop {
 	position:relative;
-	width: 100vw;
+	width: 100%;
 	height: 100vh;
 	text-align:center;
+	top:-15px;
 }
 .textBox {
 		z-index: 1;
@@ -62,6 +63,7 @@
 }
 #aboutCatch {
 	position:relative;
+	width: 100%;
 	.aboutHeadline {
 		position:absolute;
 		top:100px;
@@ -93,16 +95,24 @@
 }
 #aboutCheck {
 	background-color: #E6C3D5;
+	width: 100%;
 }
 #aboutPlan {
 	background-color: lightgray;
+	width: 100%;
 }
 #aboutFly {
 	background-color: #E6C3D5;
+	width: 100%;
 }
 #aboutAction {
 	background-color: white;
-	position:absolute;
+	position:relative;
+	width: 100%;
+	h1, p {
+		color:white;
+	}
+	color:white;
 }
 #aboutActionBg {
 	width: 100%;
@@ -123,6 +133,8 @@
 	position:fixed;
 	top:150px;
 	right:0;
+	height:470px;
+	width:50px;
 }
 .verticalAboutNavContainer{
 	width:50px;
