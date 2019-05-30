@@ -18,7 +18,7 @@
         .text-center style="margin: 50px 0;"
           h4 Thanks to
           =link_to 'https://musicbrainz.org/' do
-            =image_tag '/images/MusicBrainz_Logo_Transparent.png', size: '100x80'
+            =image_tag '/assets/MusicBrainz_Logo_Transparent.png', size: '100x80'
         /- if admin_user?
           = link_to 'MB Id refresh', artist_id_refresh_path, method: :post, class: "btn", remote: true
       -if admin_user?

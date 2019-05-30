@@ -5,7 +5,7 @@
 				-if artist.artist_image.present?
 					=image_tag(artist.artist_image, :size => '150x150')
 				-else
-					=image_tag '/images/loading.jpg', size: '150x150'
+					=image_tag '/assets/loading.jpg', size: '150x150'
 		.flex style="align-content: space-around;"
 			.inline-block
 				= link_to artist.artist_name, artist_path(artist), data: {"turbolinks" => false}

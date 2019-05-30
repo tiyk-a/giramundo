@@ -11,7 +11,7 @@
 				-if @artist.artist_image.present?
 					=image_tag(@artist.artist_image, :size => '400x300')
 				-else
-					=image_tag("/images/no-portrait.png", :size => '300x200')
+					=image_tag("/assets/no-portrait.png", :size => '300x200')
 				/ p#findArtistImage.btn.inline-block Update Artist's Image?
 		.col-lg-6
 			#yt
@@ -19,8 +19,8 @@
 .container
 	.row
 		.col-lg-2
-			=image_tag '/images/tmlogo_blue.png', size: '170x60', id: "findConcertButton"
-			=image_tag '/images/by_Songkick_white.png', size: '140x40', id: "findConcertButtonSK"
+			=image_tag '/assets/tmlogo_blue.png', size: '170x60', id: "findConcertButton"
+			=image_tag '/assets/by_Songkick_white.png', size: '140x40', id: "findConcertButtonSK"
 			-if admin_user?
 				h3 Edit Artist?
 				= render 'form', artist: @artist
