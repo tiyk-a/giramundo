@@ -190,7 +190,6 @@ function initMap(mapId, latCenter, lngCenter, markerSources, zoomSize) {
 
   // MARKERS FOR INDEX PAGES
     for(var i = 0; i < markerSources.length; i++){
-      console.log(markerSources[i].name)
       var markerEle = [markerSources[i].name, markerSources[i].latitude, markerSources[i].longitude, markerSources[i].id, markerSources[i].url]
       markers.push(markerEle);
     }

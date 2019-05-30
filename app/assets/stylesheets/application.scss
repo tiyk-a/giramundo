@@ -883,7 +883,6 @@ input[type="submit"], input[type="button"] {
 #aboutTopBg {
 	width: 100%;
 	height: 100%;
-	opacity: 0.2;
 	margin:0;
 	padding:0;
 	&::before {
@@ -942,7 +941,7 @@ input[type="submit"], input[type="button"] {
 	background-color: #E6C3D5;
 }
 #aboutPlan {
-	background-color: white;
+	background-color: lightgray;
 }
 #aboutFly {
 	background-color: #E6C3D5;
@@ -954,9 +953,16 @@ input[type="submit"], input[type="button"] {
 #aboutActionBg {
 	width: 100%;
 	height: 100%;
-	opacity: 0.9;
 	margin:0;
 	padding:0;
+	&::before{
+		background-color: black;
+	    opacity: 0.8;
+	    content: '';
+	    height: 100%;
+	    width: 100%;
+	    position: absolute;
+	}
 }
 #aboutNav {
 	z-index: 5000;
