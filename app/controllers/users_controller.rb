@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = current_user
     @keep = Keep.new
     gon.keeps = []
-    keeps = Keep.where(user_id: current_user)
+    keeps = Keep.where(user_id: current_user).includes(:concert)
     keeps.each do |k|
       gon.keeps.push(k.concert.venue)
     end
