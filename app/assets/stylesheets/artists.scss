@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .artistImageBox {
-	border: 2px solid white;
+	border: 2px solid black;
 	width: 400px;
 	height: 300px;
 }
@@ -32,9 +32,9 @@
 	}
 }
 .textBtn {
-	background-color: #806C77;
+	background-color: white;
 	border: none;
-	color: white;
+	color: black;
 	cursor: pointer;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 100;

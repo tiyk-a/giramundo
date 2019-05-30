@@ -1,14 +1,14 @@
-canvas.c
+/canvas.c
 .container#onCanvas
   .row
     .col-lg-2
-    .col-lg-6.text-center.flex style="margin: 0 auto;"
+    .col-lg-6.text-center.flex style="margin: 0 auto;padding:10px;"
       . style="margin: 0 auto;"
         .subline style="margin:0;"
-          p style="margin:0; font-weight:100;" 世界中のコンサート情報収拾アプリ
+          p style="margin:0; font-weight:100; color:white;" 世界中のコンサート情報収拾アプリ
         a.inline-block href="#footerTop" test
         .inline-block =link_to concerts_path, data: {"turbolinks" => false} do
-          h1.header-logo style="margin:0;"
+          h1.header-logo style="margin:0;font-family: 'Righteous', cursive;"
             span style="color:#E6C3D5;margin:0;font-style: italic; " N
             span style="margin:0; font-size:30px;font-style: italic; " OTI
             span style="color:#E6C3D5;margin:0;font-style: italic; " G
@@ -19,7 +19,7 @@ canvas.c
 
     .col-lg-1
       #navBtn.text-right
-        #menu style="font-family: 'Righteous', cursive; font-size: 18px; padding: 10px 10px 5px 0; color: #806C77;"
+        #menu style="font-family: 'Oswald', sans-serif; font-size: 18px; padding: 10px 10px 5px 0; color: white;"
           i class="fas fa-bars fa-3x"
           -if user_signed_in?
             #userId.hidden =current_user.id
@@ -66,19 +66,19 @@ canvas.c
     #loginAlertModal.hidden
       . style="margin:30px auto;text-align: right;"
         .
-          h3 style="color:#806C77;margin:0 0 10px 0;text-align: right;margin: 0 70px;" Log In
+          h3 style="color:white;margin:0 0 10px 0;text-align: right;margin: 0 70px;" Log In
         . style="text-align: right;margin: 0 30px;"
           .inline-block#signIn style="margin:10px;"
             =link_to new_user_session_path do
-              i class="fas fa-sign-in-alt fa-2x" style="color: #806C77;"
+              i class="fas fa-sign-in-alt fa-2x" style="color: white;"
           .inline-block#signUp style="margin:10px;"
             =link_to new_user_registration_path do
-              i class="fas fa-user-plus fa-2x" style="color: #806C77;"
+              i class="fas fa-user-plus fa-2x" style="color: white;"
 
 
 // FOR HEADER BACKGROUND
 // https://codepen.io/thebabydino/pen/lKvHb
-javascript:
+/javascript:
     var c = document.querySelector('.c') /* canvas element */, 
     w /* canvas width */, h /* canvas height */,
     ctx = c.getContext('2d') /* canvas context */, 

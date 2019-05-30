@@ -3,7 +3,7 @@
 .container
   .row
     .col-lg-2
-      ul style="background-color: white; color: #806C77; list-style: none; text-align: center; padding: 20px 25px 15px 25px; margin: 0; font-size: 30px; font-family:'Roboto', sans-serif;"
+      ul style="background-color: white; color: white; list-style: none; text-align: center; padding: 20px 25px 15px 25px; margin: 0; font-size: 30px; font-family:'Roboto', sans-serif;"
         li =@concert.date.strftime('%b')
         li =@concert.date.strftime('%-d')
     .col-lg-7
@@ -32,11 +32,11 @@
         = render 'keeps/keep_lg', concert: @concert
         / - if user_signed_in? && Keep.find_by(user_id: current_user, concert_id: @concert)
         /   = link_to destroy_keep_path(@concert), method: :delete, remote: true do
-        /     span  style="inline-block; background-color:white; border-radius:50%; color: #806C77; padding:10px 12px;"
+        /     span  style="inline-block; background-color:white; border-radius:50%; color: white; padding:10px 12px;"
         /       i class="fas fa-paperclip fa-3x" style="color:#E6C3D5;"
         / - else
         /   = link_to add_keep_path(@concert), method: :post, remote: true do
-        /     span style="inline-block; background-color:white; border-radius:50%; color: #806C77; padding:10px 12px;"
+        /     span style="inline-block; background-color:white; border-radius:50%; color: white; padding:10px 12px;"
         /       i class="fas fa-paperclip fa-3x"
 
 .container
@@ -57,7 +57,7 @@
       -else
         ul style="margin:20px;"
           li
-            = link_to @concert.concert_name, @concert.source, style: "font-size:24px; font-weight:300;font-family: 'Righteous', cursive;", data: {"turbolinks" => false}
+            = link_to @concert.concert_name, @concert.source, style: "font-size:24px; font-weight:300;font-family: 'Oswald', sans-serif;", data: {"turbolinks" => false}
             span style="font-size:16px; margin:0 5px;"
               =link_to @concert.source, target: '_blank' do
                 i class="fas fa-external-link-alt"

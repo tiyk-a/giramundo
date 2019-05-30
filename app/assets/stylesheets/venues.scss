@@ -14,17 +14,32 @@
 	width:110%;
 }
 .venueColumn {
+	color: white;
+	text-shadow: 0.5px 0.5px white;
 	&:hover {
 		box-shadow: 0 0 10px lightgray;
 		border: 0.3px inset lightgray;
 		opacity: 1;
 	    text-decoration: none;
-	    text-shadow: 0.5px 0.5px white;
+	    text-shadow: 0.5px 0.5px lightgray;
+	}
+	&::before{
+	      background-color: black;
+	    opacity: 0.8;
+	    content: '';
+	    height: 100%;
+	    width: 100%;
+	    position: absolute;
+	    &:hover {
+	    	box-shadow: 0 0 10px lightgray;
+	    }
 	}
 }
 .venueColumnText {
+	color: white;
+	text-shadow: 0.5px 0.5px white;
 	&:hover {
 		text-decoration: none;
-	    text-shadow: 0.5px 0.5px white;
+	    text-shadow: 0.5px 0.5px lightgray;
 	}
 }

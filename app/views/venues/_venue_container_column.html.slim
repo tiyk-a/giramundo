@@ -7,13 +7,13 @@
 				=image_tag(venue.concerts.last.performers[0].artist.artist_image, :size => '250x250', style: "opacity:0.5;")
 			-else
 				=image_tag '/images/loading.jpg', size: '250x250', style: "opacity:0.3;"
-		span.venueColumnText style="position:absolute; top:30px;left:0;margin:10px 10px 0 20px;font-family: 'Righteous', cursive;font-size:42px;width:100%;" = venue.city
+		span.venueColumnText style="position:absolute; top:30px;left:0;margin:10px 10px 0 20px;font-family: 'Oswald', sans-serif; font-size:42px;width:100%;" = venue.city
 		ul style="position:absolute; top:150px;left:0;margin:0 10px 0 20px;"
-			li
+			li style="box-shadow:none; color: white; text-shadow: 0.5px 0.5px white;"
 				span
 					i class="fas fa-globe"
-				span style="font-weight: 300;font-size:16px;" = venue.country
-			li
+				span style="font-weight: 300;font-size:16px;" = venue.country.truncate(30)
+			li style="box-shadow:none; color: white; text-shadow: 0.5px 0.5px white;"
 				span
 					i class="fas fa-map-marker-alt"
-				span style="font-weight:100;font-size:14px;" = venue.name
+				span style="font-weight:100;font-size:14px;" = venue.name.truncate(30)

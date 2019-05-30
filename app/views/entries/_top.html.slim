@@ -5,7 +5,7 @@
 			p
 				|
 				span style="font-weight:300;" =link_to entry.artist.artist_name, artist_path(entry.artist), data: {"turbolinks" => false}
-				span =link_to entry.title, entry.url, target: '_blank'
+				span style="font-size:12px;" =link_to entry.title, entry.url, target: '_blank'
 				i style="color: black;"
 					|
 						---
@@ -15,7 +15,7 @@
 	h3.text-left =link_to 'All news', all_entries_path, class: "bold", data: {"turbolinks" => false}
 	-entries.each do |entry|
 		.text-left style="font-size: 14px; padding: 0;"
-			p
+			p  style="font-size:12px;"
 				|
 				=link_to entry.title, entry.url, target: '_blank'
 				i style="color: black;" = entry.feed.name

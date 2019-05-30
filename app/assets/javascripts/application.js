@@ -107,34 +107,34 @@ $(document).on('click', '#adminNavBtn', function(){
     $('.adm-nav-items').removeClass('hidden');
   }else{
     $('.adm-nav-items').addClass('hidden');
-    $('#adminNavBtn').html('<h3 style="font-size: 18px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;">ADMIN</h3>');
+    $('#adminNavBtn').html('<h3 style="font-size: 18px; padding: 5px 10px 5px 0; color: white; margin-top:55px;">ADMIN</h3>');
   }
 });
 // FOOTER ADMIN NAV
 
 // BTN1
 $(document).on('mouseover', '#adminNav1', function(){
-    $('#adminNavBtn').html('<h3 style="font-size:16px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;">コンサート</h3>');
+    $('#adminNavBtn').html('<h3 style="font-size:16px; padding: 5px 10px 5px 0; color: white; margin-top:55px;">コンサート</h3>');
   });
 // BTN1
 // BTN2
 $(document).on('mouseover', '#adminNav2', function(){
-    $('#adminNavBtn').html('<h3 style="font-size:16px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;">アーティスト</h3>');
+    $('#adminNavBtn').html('<h3 style="font-size:16px; padding: 5px 10px 5px 0; color: white; margin-top:55px;">アーティスト</h3>');
   });
 // BTN2
 // BTN3
 $(document).on('mouseover', '#adminNav3', function(){
-    $('#adminNavBtn').html('<h3 style="font-size: 18px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;">Admin</h3>');
+    $('#adminNavBtn').html('<h3 style="font-size: 18px; padding: 5px 10px 5px 0; color: white; margin-top:55px;">Admin</h3>');
   });
 // BTN3
 // BTN4
 $(document).on('mouseover', '#adminNav4', function(){
-    $('#adminNavBtn').html('<h3 style="font-size:16px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;">ユーザー</h3>');
+    $('#adminNavBtn').html('<h3 style="font-size:16px; padding: 5px 10px 5px 0; color: white; margin-top:55px;">ユーザー</h3>');
   });
 // BTN4
 // BTN5
 $(document).on('mouseover', '#adminNav5', function(){
-    $('#adminNavBtn').html('<h3 style="font-size:16px; padding: 5px 10px 5px 0; color: #806C77; margin-top:55px;">ログアウト</h3>');
+    $('#adminNavBtn').html('<h3 style="font-size:16px; padding: 5px 10px 5px 0; color: white; margin-top:55px;">ログアウト</h3>');
   });
 // BTN5
 //******************** FOOTER ********************
@@ -216,8 +216,8 @@ function initMap(mapId, latCenter, lngCenter, markerSources, zoomSize) {
 
     var hoverinfo = [];
 
-    var content_full = "<h3><a href='http://localhost:3000/venues/" + id + "' style='color:#806C77;' target='_blank;'>" + name + "</a></h3>" +
-    "<p><a href='" + url + "' style='color:#806C77; border-bottom: black solid 0.5px;' target='_blank'>Official Web<span style='color:black; padding: 0 5px;'><i class='fas fa-external-link-alt fa-xs'></i></span></a></p>"
+    var content_full = "<h3><a href='http://localhost:3000/venues/" + id + "' style='color:white;' target='_blank;'>" + name + "</a></h3>" +
+    "<p><a href='" + url + "' style='color:white; border-bottom: black solid 0.5px;' target='_blank'>Official Web<span style='color:black; padding: 0 5px;'><i class='fas fa-external-link-alt fa-xs'></i></span></a></p>"
 
     // マーカーにマウスを乗せたときのイベント
     marker.addListener('click', function() {
