@@ -7,11 +7,11 @@
 				|
 					Top Entries:
 				= @entries.count
-		-@entries.each do |entry|
-			.
-				.mb-20.inline-block.bold.mr-20
-					= entry.artist.artist_name
-				.mb-20.inline-block
-					|
-						:
-					= link_to entry.title, entry.url
+		-@entries.includes(:artist).each do |entry|
+			ul
+				li style="box-shadow:none;"
+					span = entry.artist.artist_name
+					span
+						|
+							 :
+					span = link_to entry.title.truncate(80), entry.url

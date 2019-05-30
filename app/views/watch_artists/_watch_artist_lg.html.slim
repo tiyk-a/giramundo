@@ -2,10 +2,10 @@
 - if user_signed_in?
 	-if WatchArtist.find_by(user_id: current_user, artist_id: artist)
 	  = link_to destroy_watch_artist_path(artist), method: :delete, remote: true do
-	    i class="fas fa-heart fa-3x" style="padding:0 5px;color:#E6C3D5;"
+	    i class="fas fa-heart fa-2x" style="padding:0 5px;color:#E6C3D5;"
 	- else
 	  = link_to add_watch_artist_path(artist), method: :post, remote: true do
-	    i class="far fa-heart fa-3x" style="padding:0 5px;"
+	    i class="far fa-heart fa-2x" style="padding:0 5px; color:lightgray;"
 -else
 	.loginAlert
-		i class="far fa-heart fa-3x" style="padding:0 5px;"
+		i class="far fa-heart fa-2x" style="padding:0 5px; color:lightgray;"

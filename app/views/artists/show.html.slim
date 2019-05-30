@@ -1,10 +1,10 @@
 .container
 	.row
 		.col-lg-4
-			.flex style="justify-content:space-between;padding:10px;"
+			.flex style="justify-content:space-between;"
 				span
-					h1#artistName style="font-size:50px; margin: 0;" = @artist.artist_name
-				span style="margin:15px;"
+					h1#artistName style="font-size:40px; margin: 0;" = @artist.artist_name
+				span style="margin-top:15px;"
 					. class="watch_artist_lg#{@artist.id}" = render 'watch_artists/watch_artist_lg', artist: @artist
 			.hidden#artistMbId = @artist.mb_id
 			.artistImageBox

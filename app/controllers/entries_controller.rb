@@ -4,7 +4,7 @@ class EntriesController < ApplicationController
 
   def top
     artists = Artist.all
-    entries = Entry.all
+    entries = Entry.all.includes(:feed)
     entries.each do |entry|
       artists.each do |a|
         if entry.title.downcase.include?(a.artist_name.downcase)
@@ -13,7 +13,7 @@ class EntriesController < ApplicationController
         end
       end
     end
-    @entries = Entry.where.not(artist_id: nil).page(params[:page]).order('created_at desc')
+    @entries = Entry.where.not(artist_id: nil).page(params[:page]).order('created_at desc').includes(:feed)
   end
 
   def all

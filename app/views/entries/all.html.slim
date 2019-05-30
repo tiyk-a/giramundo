@@ -7,9 +7,9 @@
 				|
 					All Entries:
 				= @entries.count
-		-@entries.each do |entry|
-			. style="font-size: 18px; padding: 5px 0;
-				= link_to destroy_entry_path(entry), method: :delete do
-					i class="fas fa-times"
-				|
-				=entry.title
+		ul
+			-@entries.each do |entry|
+				li style="font-size: 18px; padding: 5px 0; box-shadow:none;"
+					span = link_to destroy_entry_path(entry), method: :delete do
+						i class="fas fa-times" style="color:red;"
+					span =entry.title.truncate(80)
