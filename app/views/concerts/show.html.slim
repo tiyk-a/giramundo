@@ -110,7 +110,7 @@
           h1 Other Concerts
           ul style="margin:20px;"
             .concertTbody.concertContainerTest
-              = render partial: 'concert_container', collection: @concert.venue.concerts, :as => 'concert', locals: {keep: @keep}
+              = render partial: 'concert_container_admin', collection: @concert.venue.concerts, :as => 'concert', locals: {keep: @keep}
 
 
 

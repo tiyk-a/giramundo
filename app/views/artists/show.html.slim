@@ -31,8 +31,9 @@
 			ul
 				-if @artist.performers.present?
 					-@artist.performers.each do |perform|
-						-unless perform.concert.date.nil?
-							= render 'concerts/concert_container', concert:perform.concert, keep: @keep
+						-if perform.concert.present?
+							-unless perform.concert.date.nil?
+								= render 'concerts/concert_container', concert:perform.concert, keep: @keep
 
 javascript:
 	// Load the IFrame Player API code asynchronously.

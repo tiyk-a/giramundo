@@ -1,8 +1,8 @@
 li.concert id="#{concert.date.strftime('%Y-%m-%d')}" class="#{concert.date.strftime('%Y-%m-%d')}" value="#{concert.id}" style="position:relative; height:70px;"
   / DATE
   .inline-block style="font-size: 18px; width:50px; position:absolute; left:0; top:0; padding:25px 5px;"
-    span.hidden class="concertDate_#{concert.id}" = concert.date.strftime('%b %d')
-    span style="width:100%;" class="concertDate_#{concert.id} text-center inline-block" id="dateCell" = concert.date.strftime('%b')
+    span.hidden class="concertDate_#{concert.id}" = concert.date
+    span style="width:100%;" class="text-center inline-block" id="dateCell" = concert.date.strftime('%b')
     br
     span.inline-block.text-center style="width:100%;" = concert.date.strftime('%d')
 

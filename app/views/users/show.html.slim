@@ -21,7 +21,7 @@
 			- if @user.keeps.present?
 				ul#concertContainer
 					-@user.keeps.each do |keep|
-						= render 'concerts/concert_container', concert:keep.concert, keep: @keep
+						= render 'concerts/concert_container_admin', concert:keep.concert, keep: @keep
 			-else
 				h3 YOUR CLIPPED CONCERTS WOULD BE LISTED HERE :)
 

@@ -1,7 +1,7 @@
 li style="height:40px;"
 	span = link_to venue_path(venue), data: {"turbolinks" => false} do
 		span class="venueName_#{venue.id} venueName" style="width:300px; font-size:18px; font-weight:300;" = venue.name
-		span style="width:130px; text-align:right;"
+		span style="width:250px; text-align:right;"
 			span class="venueCity_#{venue.id}" style="font-size:12px;" =venue.city
 			span class="venueCountry_#{venue.id}" style="font-size:12px;" =venue.country
 		span class="venueAddress_#{venue.id} hidden" =venue.address

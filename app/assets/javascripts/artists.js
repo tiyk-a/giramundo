@@ -275,7 +275,7 @@ $(document).on('mouseover', '.showNext', function(){
 // ARTISTS#INDEX ADD NEW ARTIST FUNCTION
 $(document).on('click', '.foundArtistSave', function(){
   // SHOW LOADING GIF
-  // dispLoading("PLEASE WAIT...");
+  dispLoading("PLEASE WAIT...");
   var artistName = $(this).text();
   var mb_id = $(this).next().next().text();
   getYtThumb(artistName, mb_id);
@@ -322,13 +322,13 @@ $(document).on('click', '.foundArtistSave', function(){
                 }
             }).done((data, textStatus, jqXHR) => {
                   console.log(data, jqXHR.status);
-                  console.log(next_id);
                   var redirect_to = "/artists/" + next_id
+                  removeLoading();
                   window.location.href = redirect_to;
             }).fail((jqXHR, textStatus, errorThrown) => {
                   console.log('fail', jqXHR.status);
-                  console.log(next_id);
                   var redirect_to = "/artists/" + next_id
+                  removeLoading();
                   window.location.href = redirect_to;
             });
         // POST
@@ -343,12 +343,12 @@ $(document).on('click', '.foundArtistSave', function(){
                   }
                 }
             }).done((data, textStatus, jqXHR) => {
-                  console.log(next_id);
                   var redirect_to = "/artists/" + next_id
+                  removeLoading();
                   window.location.href = redirect_to;
              }).fail((jqXHR, textStatus, errorThrown) => {
-                  console.log(next_id);
                   var redirect_to = "/artists/" + next_id
+                  removeLoading();
                   window.location.href = redirect_to;
             });
         // POST
