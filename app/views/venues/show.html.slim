@@ -1,9 +1,9 @@
 .container
   .row
     .col-lg-2
-      ul style="background-color: white; color: white; list-style: none; text-align: center; display: inline-block; padding: 20px 25px 15px 25px; margin: 0; font-size: 30px; font-family:'Roboto', sans-serif;"
-        li class="venueCity_#{@venue.id}" style="font-size:30px;" =@venue.city
-        li class="venueCountry_#{@venue.id}" style="font-size:22px;" =@venue.country
+      ul style="background-color: lightgray; color: black; list-style: none; text-align: center; padding: 20px 25px 15px 25px; margin: 0; font-size: 30px; font-family:'Roboto', sans-serif;box-shadow: 0 0 10px lightgray;"
+        li class="venueCity_#{@venue.id}" style="font-size:30px;box-shadow:none;" =@venue.city
+        li class="venueCountry_#{@venue.id}" style="font-size:22px;box-shadow:none;" =@venue.country
     .col-lg-6
       .inline-block
         h1 style="margin:0;"
@@ -23,10 +23,10 @@
     .col-lg-2
       - if user_signed_in? && admin_user?
         ul
-          li
+          li style="box-shadow:none;"
             span Lat:
             span = @venue.latitude if @venue.latitude.present?
-          li
+          li style="box-shadow:none;"
             span Lng:
             span = @venue.longitude if @venue.longitude.present?
           span = button_tag "Edit?", class: "btn editVenue", value: @venue.id

@@ -23,14 +23,6 @@
                     =pick.venue.city if pick.venue.present?
 .container
   .row.bg-gray
-    .col-lg-8
-    .col-lg-2.inline-block.text-right
-      .inline-block style="font-size: 12px;"
-        = link_to 'SWITCH to SIMPLE VIEW', switch_concert_path(1), class: 'post_button', id: "switchSimple", remote: true
-      .inline-block style="font-size: 12px;"
-        = link_to 'SWITCH to BASIC VIEW', switch_concert_path(2), class: 'post_button hidden', id: "switchBasic", remote: true
-.container
-  .row.bg-gray
     .col-lg-2#concertSideBar
       = render 'entries/top', top_entries: @top_entries, entries: @entries
       -if user_signed_in?
