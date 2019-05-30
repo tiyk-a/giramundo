@@ -103,6 +103,12 @@ class ConcertsController < ApplicationController
     end
   end
 
+  def update
+    @concert = Concert.find(params[:id])
+    @concert.update(concert_params)
+    redirect_to concert_path(@concert)
+  end
+
   def update_concert
     @concert = Concert.find(params[:id])
     @concert.update(concert_params)
