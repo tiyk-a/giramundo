@@ -183,7 +183,7 @@ class ConcertsController < ApplicationController
   end
 
   def date_check
-    concerts = Concert.all.includes(:keep)
+    concerts = Concert.all.includes(:keeps)
     concerts.each do |c|
       if c.date.present? && c.date.to_date.past?
         c.destroy
