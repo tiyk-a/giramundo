@@ -68,7 +68,7 @@ $(document).on('mouseover', '#nav1', function(){
 // BTN1
 // BTN2
 $(document).on('mouseover', '#nav2', function(){
-    $('#menu').html('<h3 class="jp_text" style="font-size:16px;">アーティスト</h3>');
+    $('#menu').html('<h3 class="jp_text" style="font-size:16px;">歌手</h3>');
   });
 // BTN2
 // BTN3
@@ -119,7 +119,7 @@ $(document).on('mouseover', '#adminNav1', function(){
 // BTN1
 // BTN2
 $(document).on('mouseover', '#adminNav2', function(){
-    $('#adminNavBtn').html('<h3 style="font-size:16px; padding: 5px 10px 5px 0; color: white; margin-top:55px;">アーティスト</h3>');
+    $('#adminNavBtn').html('<h3 style="font-size:16px; padding: 5px 10px 5px 0; color: white; margin-top:55px;">歌手</h3>');
   });
 // BTN2
 // BTN3
