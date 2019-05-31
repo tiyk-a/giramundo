@@ -37,14 +37,16 @@ li.concert value="#{concert.id}" style="position:relative; height:70px;"
   .inline-block id="cityCell" style="font-size: 12px; width: 70px; text-align:right; padding:0 5px 0 0; position:absolute; left:400px; top:0; padding:30px 5px;" = concert.venue.city if concert.venue.present?
   .inline-block id="countryCell" style="font-size: 12px; padding-right: 3px; width: 50px; padding:0 0 0 5px; position:absolute; left:480px; top:0; padding:30px 5px;" = concert.venue.country if concert.venue.present?
 
-  .inline-block style="position: absolute; left: 780px; top: 0px; padding: 25px 5px; display: block;" = button_tag "Edit?", class: "btn editConcert", id: "idCell", value: concert.id
-  . class="concertSource_#{concert.id} hidden" = concert.source if concert.source.present?
-  . class="concertImage_#{concert.id} hidden" = concert.image if concert.image.present?
-  . class="concertVenue_#{concert.id} hidden" id="venueIdCell" = concert.venue_id if concert.venue_id.present?
-  . class="concertOrigin_#{concert.id} hidden" id="concertOriginCell" = concert.origin if concert.origin.present?
-  . class="concertTmId_#{concert.id} hidden" = concert.tm_id if concert.tm_id.present?
-  . style="position: absolute;left: 850px;top: 0px;padding: 40px 5px;display: block;" = link_to concert, data: { confirm: 'Are you sure?' }, method: :delete do
-    i class="fas fa-times fa-lg" style="color: #E6C3D5;"
+  / FOR ADMIN FUNCTION
+  -if admin_user?
+    .inline-block style="position: absolute; left: 780px; top: 0px; padding: 25px 5px; display: block;" = button_tag "Edit?", class: "btn editConcert", id: "idCell", value: concert.id
+    . class="concertSource_#{concert.id} hidden" = concert.source if concert.source.present?
+    . class="concertImage_#{concert.id} hidden" = concert.image if concert.image.present?
+    . class="concertVenue_#{concert.id} hidden" id="venueIdCell" = concert.venue_id if concert.venue_id.present?
+    . class="concertOrigin_#{concert.id} hidden" id="concertOriginCell" = concert.origin if concert.origin.present?
+    . class="concertTmId_#{concert.id} hidden" = concert.tm_id if concert.tm_id.present?
+    . style="position: absolute;left: 850px;top: 0px;padding: 40px 5px;display: block;" = link_to concert, data: { confirm: 'Are you sure?' }, method: :delete do
+      i class="fas fa-times fa-lg" style="color: #E6C3D5;"
 
   / SOURCE
   -if concert.origin.present?

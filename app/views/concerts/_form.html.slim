@@ -35,7 +35,7 @@
     - if concert.performers.present?
       h5 Currentlly Confirmed
       - concert.performers.each do |p|
-        p =link_to p.artist.artist_name, concert_path(p.artist)
+        p =link_to p.artist.artist_name, artist_path(p.artist)
       h5 Add More Performers?
     = fields_for :performers do |f|
       = f.collection_select(:artist_id, artists, :id, :artist_name, :include_blank => true)
