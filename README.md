@@ -49,16 +49,19 @@ Compare the conditions - Venues, dates, etc. - and plan your travel. With a clic
 
 ## Function
 
+### Artists Page
+- Please search your favorite artists' name. If the singer was already registered on the app, his/her icon would be appeared. If not, the search results of MusicBrainz would be shown. What you only have to do is click his/her correct name. If there was any description of the artist available, with your mouseover it would be on the page.
 
+- On artist page, let's check his/her information. Please click "TicketMaster" or "Songkick" logo on the left column. The artist's concerts would be searched on those ticket providors' database and would be saved on this app. If you don't find any update from those platforms but knowing any information, please input manually those information(Only permitted for admin users)
+
+### Concerts Page
+- Concerts page is the top page. Concerts that have enought information to show on the top page are listed. Admin users will confirm other concerts that lack any data and those would be added soon. You can use Asc/Desc sort by date. With the "Plan" button, you'll check date-confricts of concerts.
+
+- On each concert page, you see those basic data of the concert, like date and venue. If the local time wasn't provided, please try to click "Get local time" button. 
 
 ## Requirement
 
-## Usage
 
-
-
-
-## Author
-
-An latin-pop-music geek who lives in Tokyo, Japan.
-東京に住むラテン・ポップ・オタクです。
+## Framework
+- Ruby 2.5.5
+- Rails 5.2.3
