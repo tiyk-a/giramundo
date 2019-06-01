@@ -5,7 +5,7 @@
     .col-lg-6.text-center.flex style="margin: 0 auto;padding:10px;"
       . style="margin: 0 auto;"
         .subline style="margin:0;"
-          p style="margin:0; font-weight:100; color:white;" 世界中のコンサート情報収拾アプリ
+          p style="margin:0; font-weight:100; color:white;" 世界中のコンサート情報収集アプリ
         a.inline-block href="#footerTop" test
         .inline-block =link_to concerts_path, data: {"turbolinks" => false} do
           h1.header-logo style="margin:0;font-family: 'Righteous', cursive;"
@@ -27,41 +27,34 @@
         = link_to concerts_path, data: {"turbolinks" => false} do
           i class="fas fa-music fa-2x" style="padding:8px 13px 8px 7px;"
         #navToConcert
-          p コンサート
       .nav-items#nav2.hidden
         = link_to artists_path, data: {"turbolinks" => false} do
           i class="fab fa-napster fa-2x" style="padding:8px;"
         #navToArtist
-          p 歌手
       .nav-items#nav3.hidden
         = link_to venues_path, data: {"turbolinks" => false} do
           i class="fas fa-map-marked-alt fa-2x" style="padding:8px;"
         #navToVenues
-          p 会場
       -if user_signed_in?
         .nav-items#nav4-1.hidden
           = link_to user_path(current_user), data: {"turbolinks" => false} do
             i class="fas fa-paperclip fa-2x" style="padding:8px;"
           #navToUser
-            p キープ
       -else
         .nav-items#nav4-2.hidden
           = link_to new_user_session_path do
             i class="fas fa-sign-in-alt fa-2x" style="padding:8px;"
           #navToLogin
-            p ログイン
       -if user_signed_in?
         .nav-items#nav5-1.hidden
           = link_to destroy_user_session_path, method: :delete do
             i class="fas fa-sign-out-alt fa-2x" style="padding:8px;"
           #navToLogout
-            p ログアウト
       -else
         .nav-items#nav5-2.hidden
           = link_to about_path, data: {"turbolinks" => false} do
             i class="fas fa-question fa-2x" style="padding:8px 8px 8px 12px;"
           #navToAbout
-            p アプリについて
 
     #loginAlertModal.hidden
       . style="margin:30px auto;text-align: right;"

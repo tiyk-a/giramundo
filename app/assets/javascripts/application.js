@@ -30,25 +30,25 @@
 
 //******************** HEADER ********************
 //******************** HEADER ********************
-// HEADER SCROLL
-function init() {
-  // スクロールして何ピクセルでアニメーションさせるか
-  var px_change   = 20;
+// // HEADER SCROLL
+// function init() {
+//   // スクロールして何ピクセルでアニメーションさせるか
+//   var px_change   = 20;
 
-  // スクロールのイベントハンドラを登録
-  window.addEventListener('scroll', function(e){
-    // 変化するポイントまでスクロールしたらクラスを追加
-    if ( $(window).scrollTop() > px_change ) {
-      $("#nav, #navnormal").addClass("header-logo-small");
+//   // スクロールのイベントハンドラを登録
+//   window.addEventListener('scroll', function(e){
+//     // 変化するポイントまでスクロールしたらクラスを追加
+//     if ( $(window).scrollTop() > px_change ) {
+//       $("#nav, #navnormal").addClass("header-logo-small");
 
-    // 変化するポイント以前であればクラスを削除
-    } else if ( $("#nav, #navnormal").hasClass("header-logo-small") ) {
-      $("#nav, #navnormal").removeClass("header-logo-small");
-    }
-  });
-}
-window.onload = init();
-// HEADER SCROLL
+//     // 変化するポイント以前であればクラスを削除
+//     } else if ( $("#nav, #navnormal").hasClass("header-logo-small") ) {
+//       $("#nav, #navnormal").removeClass("header-logo-small");
+//     }
+//   });
+// }
+// window.onload = init();
+// // HEADER SCROLL
 
 // HEADER NAV
 $(document).on('click', '#navBtn', function(){
@@ -63,32 +63,32 @@ $(document).on('click', '#navBtn', function(){
 
 // BTN1
 $(document).on('mouseover', '#nav1', function(){
-    $('#menu').html('<h3 class="jp_text" style="font-size:16px;">コンサート</h3>');
+    $('#menu').html('<h3>CONCERTS</h3>');
   });
 // BTN1
 // BTN2
 $(document).on('mouseover', '#nav2', function(){
-    $('#menu').html('<h3 class="jp_text" style="font-size:16px;">歌手</h3>');
+    $('#menu').html('<h3>ARTISTS</h3>');
   });
 // BTN2
 // BTN3
 $(document).on('mouseover', '#nav3', function(){
-    $('#menu').html('<h3 class="jp_text" style="font-size:16px;">会場</h3>');
+    $('#menu').html('<h3>VENUES</h3>');
   });
 // BTN3
 // BTN4
 $(document).on('mouseover', '#nav4-1', function(){
-    $('#menu').html('<h3 class="jp_text" style="font-size:16px;">キープ</h3>');
+    $('#menu').html('<h3>KEEPS</h3>');
   });
 // BTN4
 // BTN4-2
 $(document).on('mouseover', '#nav4-2', function(){
-    $('#menu').html('<h3 class="jp_text" style="font-size:16px;">ログイン/アウト</h3>');
+    $('#menu').html('<h3>LOG IN/OUT</h3>');
   });
 // BTN4-2
 // BTN5
 $(document).on('mouseover', '#nav5-1', function(){
-    $('#menu').html('<h3 class="jp_text" style="font-size:16px;">ログアウト</h3>');
+    $('#menu').html('<h3>LOG OUT</h3>');
   });
 // BTN5
 // BTN5-2
@@ -114,12 +114,12 @@ $(document).on('click', '#adminNavBtn', function(){
 
 // BTN1
 $(document).on('mouseover', '#adminNav1', function(){
-    $('#adminNavBtn').html('<h3 style="font-size:16px; padding: 5px 10px 5px 0; color: white; margin-top:55px;">コンサート</h3>');
+    $('#adminNavBtn').html('<h3 style="font-size:18px; padding: 5px 10px 5px 0; color: white; margin-top:55px;">CONCERTS</h3>');
   });
 // BTN1
 // BTN2
 $(document).on('mouseover', '#adminNav2', function(){
-    $('#adminNavBtn').html('<h3 style="font-size:16px; padding: 5px 10px 5px 0; color: white; margin-top:55px;">歌手</h3>');
+    $('#adminNavBtn').html('<h3 style="font-size:18px; padding: 5px 10px 5px 0; color: white; margin-top:55px;">ARTISTS</h3>');
   });
 // BTN2
 // BTN3
@@ -129,12 +129,12 @@ $(document).on('mouseover', '#adminNav3', function(){
 // BTN3
 // BTN4
 $(document).on('mouseover', '#adminNav4', function(){
-    $('#adminNavBtn').html('<h3 style="font-size:16px; padding: 5px 10px 5px 0; color: white; margin-top:55px;">ユーザー</h3>');
+    $('#adminNavBtn').html('<h3 style="font-size:18px; padding: 5px 10px 5px 0; color: white; margin-top:55px;">USERS</h3>');
   });
 // BTN4
 // BTN5
 $(document).on('mouseover', '#adminNav5', function(){
-    $('#adminNavBtn').html('<h3 style="font-size:16px; padding: 5px 10px 5px 0; color: white; margin-top:55px;">ログアウト</h3>');
+    $('#adminNavBtn').html('<h3 style="font-size:18px; padding: 5px 10px 5px 0; color: white; margin-top:55px;">LOG OUT</h3>');
   });
 // BTN5
 //******************** FOOTER ********************
