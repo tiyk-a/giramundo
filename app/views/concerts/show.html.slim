@@ -17,7 +17,7 @@
               =link_to @concert.source, target: '_blank' do
                 i class="fas fa-external-link-alt"
         li style="box-shadow:none;"
-          span Global time:
+          span Universal time:
           span =@concert.date
           span.hidden#concertShowDatetime =@concert.date.to_i
         li style="box-shadow:none;"
@@ -54,63 +54,66 @@
           =image_tag("/assets/loading.jpg", :size => '845x500')
       -if admin_user?
         = render 'concerts/form', concert: @concert, artists: @artists, venues: @venues
-      -else
-        ul style="margin:20px;"
-          li style="box-shadow:none;"
-            = link_to @concert.concert_name, @concert.source, style: "font-size:24px; font-weight:300;font-family: 'Oswald', sans-serif;", data: {"turbolinks" => false}
-            span style="font-size:16px; margin:0 5px;"
-              =link_to @concert.source, target: '_blank' do
-                i class="fas fa-external-link-alt"
-        ul style="margin:20px;"
-          li style="box-shadow:none;"
-            span style="width:50%; height:210px;"
-              #concertShowMap style="width:100%; height:100%;"
-            span style="width:40%; height:210px; vertical-align:top;"
-              ul style="margin:20px;"
-                li style="box-shadow:none;"
-                  - if @concert.performers.present?
-                    ul
-                      - @concert.performers.each do |performer|
-                        li style="height:40px; position:relative; box-shadow:none;"
-                          span style="width:50px; height:40px; position:absolute; top:0;"
-                            =image_tag(performer.artist.artist_image, size: "40x40", style: "border-radius:50%;")
-                          span style="width:200px; height:40px; position:absolute; top:0; left:50px;"
-                            h4 style="margin:10px 3px;" = link_to performer.artist.artist_name, artist_path(performer.artist), data: {"turbolinks" => false}
-                  -else
-                    span
-                      h4 TBC
-                li style="height:50px; padding:0; box-shadow:none;"
-                  span style="margin-left:12px;width:40px"
-                    i class="fas fa-ticket-alt fa-2x"
+      / -else
+      ul style="margin:20px;"
+        li style="box-shadow:none;"
+          = link_to @concert.concert_name, @concert.source, style: "font-size:24px; font-weight:300;font-family: 'Oswald', sans-serif;", data: {"turbolinks" => false}
+          span style="font-size:16px; margin:0 5px;"
+            =link_to @concert.source, target: '_blank' do
+              i class="fas fa-external-link-alt"
+      ul style="margin:20px;"
+        li style="box-shadow:none;"
+          span style="width:50%; height:210px;"
+            #concertShowMap style="width:100%; height:100%;"
+          span style="width:40%; height:210px; vertical-align:top;"
+            ul style="margin:20px;"
+              li style="box-shadow:none;"
+                - if @concert.performers.present?
+                  ul
+                    - @concert.performers.each do |performer|
+                      li style="height:40px; position:relative; box-shadow:none;"
+                        span style="width:50px; height:40px; position:absolute; top:0;"
+                          =image_tag(performer.artist.artist_image, size: "40x40", style: "border-radius:50%;")
+                        span style="width:200px; height:40px; position:absolute; top:0; left:50px;"
+                          h4 style="margin:10px 3px;" = link_to performer.artist.artist_name, artist_path(performer.artist), data: {"turbolinks" => false}
+                        span style="left: 250px; position: absolute; padding: 5px 0 0 0;" = render 'watch_artists/watch_artist', artist: performer.artist
+                -else
                   span
-                    -if @concert.origin == "Ticket Master"
-                      = link_to @concert.source do
-                        =image_tag '/assets/tmlogo_blue.png', size: '90x30'
-                    -elsif @concert.source == "Songkick"
-                      = link_to @concert.source do
-                        =image_tag '/assets/by_Songkick_white.png', size: '90x30'
-                    -elsif @concert.source == "manual"
-                      = link_to @concert.source do
-                        =image_tag("/assets/loading.jpg", :size => '90x30')
-                    -else
+                    h4 TBC
+              li style="height:50px; padding:0; box-shadow:none;"
+                span style="margin-left:12px;width:40px"
+                  i class="fas fa-ticket-alt fa-2x"
+                span
+                  -if @concert.origin == "Ticket Master"
+                    = link_to @concert.source do
+                      =image_tag '/assets/tmlogo_blue.png', size: '90x30'
+                  -elsif @concert.source == "Songkick"
+                    = link_to @concert.source do
+                      =image_tag '/assets/by_Songkick_white.png', size: '90x30'
+                  -elsif @concert.source == "manual"
+                    = link_to @concert.source do
                       =image_tag("/assets/loading.jpg", :size => '90x30')
+                  -else
+                    =image_tag("/assets/loading.jpg", :size => '90x30')
 
-                li style="height:50px; padding:0; box-shadow:none;"
-                  span style="margin-left:16px;width:40px"
-                    i class="fas fa-map-marker-alt fa-2x"
-                  span
-                    -if @concert.venue.present?
-                      span style="width:180px;"
-                        h4 style="margin:0;" = link_to @concert.venue.name, venue_path(@concert.venue), data: {"turbolinks" => false}
-                    -else
-                      h4 TBC
-
-      -if @concert.venue.concerts.present?
-        . style="margin:20px;"
-          h1 Other Concerts
-          ul style="margin:20px;"
-            .concertTbody.concertContainerTest
-              = render partial: 'concert_container_admin', collection: @concert.venue.concerts, :as => 'concert', locals: {keep: @keep}
+              li style="height:50px; padding:0; box-shadow:none;"
+                span style="margin-left:16px;width:40px"
+                  i class="fas fa-map-marker-alt fa-2x"
+                span
+                  -if @concert.venue.present?
+                    span style="width:180px;"
+                      h4 style="margin:0;" = link_to @concert.venue.name, venue_path(@concert.venue), data: {"turbolinks" => false}
+                  -else
+                    h4 TBC
+      .
+        h1 Other Concerts
+        -if @concert.venue.concerts.present? && @concert.venue.concerts.where.not(id: @concert.id).present?
+          . style="margin:20px;"
+            ul style="margin:20px;"
+              .concertTbody.concertContainerTest
+                = render partial: 'concert_container_admin', collection: @concert.venue.concerts.where.not(id: @concert.id), :as => 'concert', locals: {keep: @keep}
+        -else
+          h3 Not Found :(
 
 
 

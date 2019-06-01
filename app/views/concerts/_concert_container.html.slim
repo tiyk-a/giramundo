@@ -61,7 +61,7 @@ li.concert id="#{concert.date.strftime('%Y-%m-%d')}" class="#{concert.date.strft
 
   / PLAN BTN
   .planColumn.plan.hidden value="#{concert.id}" style="padding: 0 10px; position:absolute; left:730px; top:0; padding:35px 5px;"
-    i.planColumn class="far fa-check-circle fa-lg hidden"
+    i.planColumn class="far fa-check-circle fa-lg hidden" style="color: lightgray;"
   . class="datetime_#{concert.id} datetime hidden" = concert.date.strftime('%s').to_i / 60 / 60
       / sera HOURS SINCE THE START(OF THE CONCERT-STARTI-TIME)
 
