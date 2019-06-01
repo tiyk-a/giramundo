@@ -1,5 +1,5 @@
 #topNews
-	h3.text-left =link_to 'Artist related news', top_entries_path, class: "bold", data: {"turbolinks" => false}
+	h4.text-left =link_to 'Artist related news', top_entries_path, data: {"turbolinks" => false}
 	-top_entries.each do |entry|
 		.text-left style="font-size: 14px; padding: 0;"
 			p
@@ -12,7 +12,7 @@
 					=entry.feed.name
 
 #allNews
-	h3.text-left =link_to 'All news', all_entries_path, class: "bold", data: {"turbolinks" => false}
+	h4.text-left =link_to 'All news', all_entries_path, data: {"turbolinks" => false}
 	-entries.each do |entry|
 		.text-left style="font-size: 14px; padding: 0;"
 			p  style="font-size:12px;"

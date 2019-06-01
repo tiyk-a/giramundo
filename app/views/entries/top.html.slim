@@ -4,14 +4,12 @@
     .col-lg-10
     	- if admin_user?
 			h1
-				|
-					Top Entries:
-				= @entries.count
-		-@entries.includes(:artist).each do |entry|
-			ul
-				li style="box-shadow:none;"
-					span = entry.artist.artist_name
-					span
-						|
-							 :
-					span = link_to entry.title.truncate(80), entry.url
+				span Top Entries:
+				span = @entries.count
+		ul
+			-@entries.includes(:artist).each do |entry|
+				li style="box-shadow:none; height:60px; position:relative; padding: 0; margin: 0;"
+					.inline-block style="position:absolute;" = image_tag(entry.artist.artist_image, size: "50x50", style: "border-radius: 50%;")
+					.inline-block style="position:absolute; left: 100px; padding-top: 15px;" = link_to entry.artist.artist_name, artist_path(entry.artist)
+					.inline-block style="position:absolute; left: 200px; padding-top: 15px;"
+						span = link_to entry.title.truncate(50), entry.url

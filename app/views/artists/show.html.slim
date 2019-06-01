@@ -26,6 +26,14 @@
 				= render 'form', artist: @artist
 				h3 Edit Concert?
 				= render 'concerts/form', concert: @concert, artists: @artists, venues: @venues
+			-elsif @artist.entries.present?
+				#artistShowEntryUl
+					h4 Artist News
+					ul
+						-@artist.entries.each do |entry|
+							li style="box-shadow:none; height:60px; position:relative; padding: 0; margin: 0;"
+								.inline-block style="position:absolute;"
+									span style="font-size:14px;" = link_to entry.title.truncate(50), entry.url
 		.col-lg-8
 			h3 Concerts of this artist
 			ul
