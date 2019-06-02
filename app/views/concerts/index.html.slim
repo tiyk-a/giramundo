@@ -45,10 +45,10 @@
           #dateFind.text-center.btn Submit
           #dateFindClear.btn style="margin-left:10px;" Clear
       .col-lg-5.inline-block.text-right.m-0
-        .inline-block style="font-size: 12px; margin-right:10px;"
-          = link_to 'SWITCH to SIMPLE VIEW', switch_concert_path(1), class: 'post_button', id: "switchSimple", remote: true
-        .inline-block style="font-size: 12px;"
-          = link_to 'SWITCH to BASIC VIEW', switch_concert_path(2), class: 'post_button hidden', id: "switchBasic", remote: true
+        .inline-block.btn style="font-size: 12px; margin-right:10px;"
+          = link_to '>> SIMPLE VIEW', switch_concert_path(1), class: 'post_button', id: "switchSimple", remote: true
+        .inline-block.btn style="font-size: 12px;"
+          = link_to '>> BASIC VIEW', switch_concert_path(2), class: 'post_button hidden', id: "switchBasic", remote: true
         .inline-block
           #basicSort
             .inline-block
