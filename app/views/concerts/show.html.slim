@@ -87,10 +87,10 @@
                   -if @concert.origin == "Ticket Master"
                     = link_to @concert.source do
                       =image_tag '/assets/tmlogo_blue.png', size: '90x30'
-                  -elsif @concert.source == "Songkick"
+                  -elsif @concert.origin == "Songkick"
                     = link_to @concert.source do
                       =image_tag '/assets/by_Songkick_white.png', size: '90x30'
-                  -elsif @concert.source == "manual"
+                  -elsif @concert.origin == "manual"
                     = link_to @concert.source do
                       =image_tag("/assets/loading.jpg", :size => '90x30')
                   -else

@@ -87,34 +87,34 @@ $(document).on('click', '#adminNavBtn', function(){
     $('.adm-nav-items').removeClass('hidden');
   }else{
     $('.adm-nav-items').addClass('hidden');
-    $('#adminNavBtn').html('<h3 style="font-size: 18px; padding: 5px 10px 5px 0; color: white; margin-top:55px;">ADMIN</h3>');
+    $('#adminNavBtn').html('<h3 style="font-size: 18px; padding: 5px 10px 5px 0; color: black; margin-top:55px;">ADMIN</h3>');
   }
 });
 // FOOTER ADMIN NAV
 
 // BTN1
 $(document).on('mouseover', '#adminNav1', function(){
-    $('#adminNavBtn').html('<h3 style="font-size:18px; padding: 5px 10px 5px 0; color: white; margin-top:55px;">CONCERTS</h3>');
+    $('#adminNavBtn').html('<h3 style="font-size:18px; padding: 5px 10px 5px 0; color: black; margin-top:55px;">CONCERTS</h3>');
   });
 // BTN1
 // BTN2
 $(document).on('mouseover', '#adminNav2', function(){
-    $('#adminNavBtn').html('<h3 style="font-size:18px; padding: 5px 10px 5px 0; color: white; margin-top:55px;">ARTISTS</h3>');
+    $('#adminNavBtn').html('<h3 style="font-size:18px; padding: 5px 10px 5px 0; color: black; margin-top:55px;">ARTISTS</h3>');
   });
 // BTN2
 // BTN3
 $(document).on('mouseover', '#adminNav3', function(){
-    $('#adminNavBtn').html('<h3 style="font-size: 18px; padding: 5px 10px 5px 0; color: white; margin-top:55px;">Admin</h3>');
+    $('#adminNavBtn').html('<h3 style="font-size: 18px; padding: 5px 10px 5px 0; color: black; margin-top:55px;">Admin</h3>');
   });
 // BTN3
 // BTN4
 $(document).on('mouseover', '#adminNav4', function(){
-    $('#adminNavBtn').html('<h3 style="font-size:18px; padding: 5px 10px 5px 0; color: white; margin-top:55px;">USERS</h3>');
+    $('#adminNavBtn').html('<h3 style="font-size:18px; padding: 5px 10px 5px 0; color: black; margin-top:55px;">USERS</h3>');
   });
 // BTN4
 // BTN5
 $(document).on('mouseover', '#adminNav5', function(){
-    $('#adminNavBtn').html('<h3 style="font-size:18px; padding: 5px 10px 5px 0; color: white; margin-top:55px;">LOG OUT</h3>');
+    $('#adminNavBtn').html('<h3 style="font-size:18px; padding: 5px 10px 5px 0; color: black; margin-top:55px;">LOG OUT</h3>');
   });
 // BTN5
 //******************** FOOTER ********************

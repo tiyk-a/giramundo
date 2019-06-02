@@ -6,7 +6,10 @@
           - @focuses.each do |pick|
             .sp-slide
               =link_to concert_path(pick) do
-                =image_tag(pick.image, :size => '800x500')
+                -if pick.image.present?
+                  =image_tag(pick.image, :size => '800x500')
+                -else
+                  =image_tag(pick.performers[0].artist.artist_image, :size => '800x500')
             .sp-caption
               = link_to pick.concert_name, concert_path(pick)
 
@@ -14,7 +17,10 @@
           - @focuses.each do |pick|
             .sp-thumbnail
               .sp-thumbnail-image-container
-                =image_tag(pick.image, :size => '120x80')
+                -if pick.image.present?
+                  =image_tag(pick.image, :size => '120x80')
+                -else
+                  =image_tag(pick.performers[0].artist.artist_image, :size => '120x80')
               .sp-thumbnail-text
                 =link_to concert_path(pick) do
                   .sp-thumbnail-title =pick.concert_name.truncate(25)

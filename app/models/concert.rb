@@ -9,6 +9,6 @@ class Concert < ApplicationRecord
   validates :concert_name, presence: true
 
   def self.full
-     where.not(image: nil, date: nil, venue_id: nil)
+     where.not(date: nil, venue_id: nil)
   end
 end
