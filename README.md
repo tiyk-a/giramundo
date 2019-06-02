@@ -11,6 +11,7 @@ For music/concert geeks around the world :)
 URL: http://www.notigiramundo.info/
 
 日本語アバウトページはこちら：http://www.notigiramundo.info/about
+
 アプリ理解のご参考に。
 
 
