@@ -2,8 +2,8 @@
 	.venueColumnImg
 		= link_to venue_path(venue), data: {"turbolinks" => false} do
 			-if venue.concerts.present? && venue.concerts.last.image.present?
-					=image_tag(venue.concerts.last.image, :size => '250x250', style: "opacity:0.5;")
-			-elsif venue.concerts.present? && venue.concerts.last.performers[0].artist.artist_image.present?
+				=image_tag(venue.concerts.last.image, :size => '250x250', style: "opacity:0.5;")
+			-elsif venue.concerts.present? && venue.concerts.last.performers.present? && venue.concerts.last.performers[0].artist.artist_image.present?
 				=image_tag(venue.concerts.last.performers[0].artist.artist_image, :size => '250x250', style: "opacity:0.5;")
 			-else
 				=image_tag '/assets/loading.jpg', size: '250x250', style: "opacity:0.3;"

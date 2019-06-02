@@ -42,6 +42,8 @@
           = render 'form', venue: @newVenue
       . style="margin: 20px 0;"
         = render 'geocodeBox'
+      -if user_signed_in?
+        =render 'users/watch_list'
     .col-lg-8
       #mapVenueShow
       h1 CONFIRMED CONCERTS

@@ -24,6 +24,8 @@
             = link_to 'Refresh Venue Info', refresh_venue_path, method: :patch, class: "btn"
         .text-center style="margin-bottom: 50px;"
           = render 'geocodeBox'
+        -if user_signed_in?
+          =render 'users/watch_list'
     .col-lg-8
       - if @venues.present?
         .col-lg-4.inline-block

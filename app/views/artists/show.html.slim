@@ -43,6 +43,8 @@
 							li style="box-shadow:none; height:60px; position:relative; padding: 0; margin: 0;"
 								.inline-block style="position:absolute;"
 									span style="font-size:14px;" = link_to entry.title.truncate(50), entry.url
+			- elsif user_signed_in?
+				=render 'users/watch_list'
 		.col-lg-8
 			h3 Concerts of this artist
 			ul

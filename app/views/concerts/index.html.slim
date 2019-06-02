@@ -32,7 +32,7 @@
     .col-lg-2#concertSideBar
       = render 'entries/top', top_entries: @top_entries, entries: @entries
       -if user_signed_in?
-        =render 'users/watch_list', something: @watch_artist
+        =render 'users/watch_list'
       -if admin_user?
         h4 New Concert?
         = render 'form', concert: @concert, artists: @artists, venues: @venues

@@ -63,7 +63,7 @@ $(document).on('mouseover', '#nav4-1', function(){
 // BTN4
 // BTN4-2
 $(document).on('mouseover', '#nav4-2', function(){
-    $('#menu').html('<h3>LOG IN/OUT</h3>');
+    $('#menu').html('<h3>LOG IN</h3>');
   });
 // BTN4-2
 // BTN5

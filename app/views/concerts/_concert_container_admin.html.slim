@@ -16,15 +16,14 @@ li.concert value="#{concert.id}" style="position:relative; height:70px;"
       br
 
   / IMAGE
-  -if concert.image.present?
-    .inline-block.pl-narrow#imageCell style="width:80px; padding: 0 5px; position:absolute; left:70px; top:0; padding:15px 5px;"
-      = link_to concert_path(concert), data: {"turbolinks" => false} do
-        - if concert.image.present?
-          =image_tag concert.image, :size => "80x60"
-        -elsif concert.performers[0].artist.artist_image.present?
-          =image_tag concert.performers[0].artist.artist_image, :size => "80x60"
-        -else
-          =image_tag("/assets/no-concert.png", :size => '80x60')
+  .inline-block.pl-narrow#imageCell style="width:80px; padding: 0 5px; position:absolute; left:70px; top:0; padding:15px 5px;"
+    = link_to concert_path(concert), data: {"turbolinks" => false} do
+      - if concert.image.present?
+        =image_tag concert.image, :size => "80x60"
+      - elsif concert.performers[0].artist.artist_image.present?
+        =image_tag concert.performers[0].artist.artist_image, :size => "80x60"
+      - else
+        =image_tag("/assets/no-concert.png", :size => '80x60')
 
   / CONCERT NAME
   -if concert.concert_name.present?
