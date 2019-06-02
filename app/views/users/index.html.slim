@@ -1,4 +1,7 @@
-h1 Listing users
+.container
+  .row
+    .col-lg-10.text-center
+      h1 Users List
 
 - @users.each do |user|
   .container
@@ -16,5 +19,5 @@ h1 Listing users
         = user.created_at.strftime('%m,%d, %Y')
       .col-lg-1
         = link_to user, data: { confirm: 'Are you sure?' }, method: :delete do
-          i class="fas fa-user-times fa-2x"
+          i class="fas fa-user-times fa-2x" style="color: #E6C3D5;"
       .col-lg-2

@@ -138,6 +138,7 @@ class ConcertsController < ApplicationController
     @keep = Keep.new
     @concert = Concert.new
     @venues = Venue.all
+    @venue = Venue.new
   end
 
   def sort

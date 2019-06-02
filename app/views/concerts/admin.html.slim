@@ -30,7 +30,13 @@
   .row
     .col-lg-2
       h1 VENUE
+    .col-lg-8
+
+.container
+  .row
+    .col-lg-2
       = render 'venues/geocodeBox'
+      = render 'venues/form', venue: @venue
     .col-lg-8
       ul
         = render partial: 'venues/venue_container', collection: @venue_blanks, :as => 'venue'
@@ -40,6 +46,11 @@
   .row
     .col-lg-2
       h1 PAST CONCERTS
+    .col-lg-8
+
+.container
+  .row
+    .col-lg-2
     .col-lg-8
       ul.past_concertsTbody
           = render partial: 'concerts/concert_container_admin', collection: @past_concerts, :as => 'concert'

@@ -122,7 +122,7 @@ $(document).on('mouseover', '#adminNav5', function(){
 
 //******************** GENERAL ********************
 //******************** GENERAL ********************
-// AJAX TRANSACTING *** START ***
+//  *** START LOADING ***
 function dispLoading(msg){
   if( msg == undefined ){
     msg = "";
@@ -133,13 +133,14 @@ function dispLoading(msg){
     $("body").append("<div id='loading'>" + dispMsg + "</div>");
   }
 }
+//  *** START LOADING ***
 
-// TO *** FINISH *** AJAX TRANSACTING
+// *** FINISH LOADING ***
 function removeLoading(){
   $("#loading").fadeOut("slow");
 }
 //REFERENCE ---> https://webllica.com/jquery-now-loading/
-// AJAX TRANSACTING
+// *** FINISH LOADING ***
 
 // GOOGLE MAP
 function initMap(mapId, latCenter, lngCenter, markerSources, zoomSize) {
