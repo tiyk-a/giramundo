@@ -8,6 +8,12 @@ NotiGiraMundoは世界で人気のあるアーティスト達のコンサート�
 
 For music/concert geeks around the world :)
 
+URL: http://www.notigiramundo.info/
+
+日本語アバウトページはこちら：http://www.notigiramundo.info/about
+
+アプリ理解のご参考に。
+
 
 
 ## Description
@@ -40,7 +46,7 @@ With this "refresh artist's concert info", users can update that artists' inform
 ログインしたユーザーは"refresh artist' concert info"のボタンを押すことができます。ゲストユーザーには制限がかかっている機能です。
 このボタンでユーザーはお気に入りアーティストのコンサート情報が更新されていないか確認することができ、さらに確認された情報は他のユーザーにも共有されます。
 
-### Keep and compare, plan your travel
+### Keep and compare. Plan your travel
 #### 気になるコンサートはキープして、比較、プランしてフライトへ。
 Users can keep concerts that you were interested in. On my page, those kept concerts are listed, and mapped on the world map.
 Compare the conditions - Venues, dates, etc. - and plan your travel. With a click you can jump to the ticket provider's buy-ticket page.
@@ -49,16 +55,26 @@ Compare the conditions - Venues, dates, etc. - and plan your travel. With a clic
 
 ## Function
 
+### Artists Page
+- Please search your favorite artists' name. If the singer was already registered on the app, his/her icon would be appeared. If not, the search results of MusicBrainz would be shown. What you only have to do is click his/her correct name. If there was any description of the artist available, with your mouseover it would be on the page.
+好きなアーティストの名前を検索してみてください。すでにそのアーティストがアプリに登録されている場合は、アイコンが表示されます。まだ登録されていない場合はMusicBrainzのデータベースからのサーチ結果がテキストで表示されます。複数の検索結果から、適当なアーティスト名をクリックしてください。アーティストの詳細情報が入手できていた場合はアーティスト名へのマウスオーバーで詳細情報が表示されます。
 
+
+- On artist page, let's check his/her information. Please click "TicketMaster" or "Songkick" logo on the left column. The artist's concerts would be searched on those ticket providors' database and would be saved on this app. If you don't find any update from those platforms but knowing any information, please input manually those information(Only permitted for admin users)
+アーティスト詳細ページでコンサート情報を探しましょう。世界中のチケット情報を入手できる"TicketMaster"と"Songkick"、２つのチケットサイトが用意されています。左のカラムにあるロゴをクリックしてください。そのアーティストのコンサート情報をアプリが検索し、結果を表示します。もし、どちらのチケットサイトからも発見されなかったコンサートの情報をあなたがご存知の場合は、手作業でコンサート情報を入力することもできます（管理者アカウントのみ対応可能）。
+
+
+
+### Concerts Page
+- Concerts page is the top page. Concerts that have enought information to show on the top page are listed. Admin users will confirm other concerts that lack any data and those would be added soon. You can use Asc/Desc sort by date. With the "Plan" button, you'll check date-confricts of concerts.
+コンサート一覧ページはトップページです。リストするのに十分な情報の揃っているコンサートのみがトップページに表示されています。アプリ管理者が順次、不足情報のみられるコンサート情報のデータを確認し、完了次第トップページに追加されます。トップページではコンサートの日付を今日から近い順/遠い順に並び替えることが可能です。また、"Plan"ボタンを利用すると、気になるコンサートと日程の重複がある他のコンサートをハイライトで確認することができます。
+
+- On each concert page, you see those basic data of the concert, like date and venue. If the local time wasn't provided, please try to click "Check local time" button. 
+各コンサート情報のページでは、日付や会場などの基本情報を確認することができます。もしトップにローカルタイムが表示されていない場合は"Check local time"ボタンを押してください。ローカルタイムを確認し、表示します。
 
 ## Requirement
 
-## Usage
 
-
-
-
-## Author
-
-An latin-pop-music geek who lives in Tokyo, Japan.
-東京に住むラテン・ポップ・オタクです。
+## Framework
+- Ruby 2.5.5
+- Rails 5.2.3
