@@ -339,7 +339,7 @@ $(document).on('click', '.foundArtistSave', function(){
                 url:'/artists',
                 dataType: "json",
                 data: { artist: {
-                  artist_name: artistName, artist_image: "/assets/no-portrait.png", mb_id: mb_id,
+                  artist_name: artistName, artist_image: "/images/no-portrait.png", mb_id: mb_id,
                   }
                 }
             }).done((data, textStatus, jqXHR) => {

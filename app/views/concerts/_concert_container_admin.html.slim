@@ -23,7 +23,7 @@ li.concert value="#{concert.id}" style="position:relative; height:70px;"
       - elsif concert.performers[0].artist.artist_image.present?
         =image_tag concert.performers[0].artist.artist_image, :size => "80x60"
       - else
-        =image_tag("/assets/no-concert.png", :size => '80x60')
+        =image_tag("/images/no-concert.png", :size => '80x60')
 
   / CONCERT NAME
   -if concert.concert_name.present?
@@ -51,12 +51,12 @@ li.concert value="#{concert.id}" style="position:relative; height:70px;"
   -if concert.origin.present?
     -if concert.origin == "Ticket Master"
       .inline-block style="padding: 0 10px; position:absolute; left:600px; top:0; padding:35px 5px;" = link_to concert.source do
-        =image_tag '/assets/tmlogo_blue.png', size: '60x20'
+        =image_tag '/images/tmlogo_blue.png', size: '60x20'
     -elsif concert.origin == "Songkick"
       .inline-block style="padding: 0 10px; position:absolute; left:600px; top:0; padding:35px 5px;" = link_to concert.source do
-        =image_tag '/assets/by_Songkick_white.png', size: '60x10'
+        =image_tag '/images/by_Songkick_white.png', size: '60x10'
     -elsif concert.origin == "manual"
       .inline-block style="padding: 0 10px; position:absolute; left:600px; top:0; padding:35px 5px;" = link_to concert.source do
-        =image_tag '/assets/loading.jpg', size: '60x20'
+        =image_tag '/images/loading.jpg', size: '60x20'
     -else
-      .inline-block style="padding: 0 10px; position:absolute; left:600px; top:0; padding:35px 5px;" =image_tag '/assets/loading.jpg', size: '60x20'
+      .inline-block style="padding: 0 10px; position:absolute; left:600px; top:0; padding:35px 5px;" = image_tag '/images/loading.jpg', size: '60x20'

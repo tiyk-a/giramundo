@@ -22,7 +22,7 @@ li.concert id="#{concert.date.strftime('%Y-%m-%d')}" class="#{concert.date.strft
       -elsif concert.performers[0].artist.artist_image.present?
         =image_tag concert.performers[0].artist.artist_image, :size => "80x60"
       -else
-        =image_tag("/assets/no-concert.png", :size => '80x60')
+        =image_tag("/images/no-concert.png", :size => '80x60')
 
   / CONCERT NAME
   .inline-block style="width:230px; padding: 0 3px; position:absolute; left:160px; top:0; padding:25px 5px;" = link_to concert.concert_name, concert_path(concert), class: "concertName_#{concert.id}", id: "concertNameCell", data: {"turbolinks" => false}
@@ -46,15 +46,15 @@ li.concert id="#{concert.date.strftime('%Y-%m-%d')}" class="#{concert.date.strft
   / SOURCE
   -if concert.origin == "Ticket Master"
     .inline-block style="padding: 0 10px; position:absolute; left:600px; top:0; padding:35px 5px;" = link_to concert.source do
-      =image_tag '/assets/tmlogo_blue.png', size: '60x20'
+      =image_tag '/images/tmlogo_blue.png', size: '60x20'
   -elsif concert.origin == "Songkick"
     .inline-block style="padding: 0 10px; position:absolute; left:600px; top:0; padding:35px 5px;" = link_to concert.source do
-      =image_tag '/assets/by_Songkick_white.png', size: '60x10'
+      =image_tag '/images/by_Songkick_white.png', size: '60x10'
   -elsif concert.origin == "manual"
     .inline-block style="padding: 0 10px; position:absolute; left:600px; top:0; padding:35px 5px;" = link_to concert.source do
-      =image_tag '/assets/loading.jpg', size: '60x20'
+      =image_tag '/images/loading.jpg', size: '60x20'
   -else
-    .inline-block style="padding: 0 10px; position:absolute; left:600px; top:0; padding:35px 5px;" = image_tag '/assets/loading.jpg', size: '60x20'
+    .inline-block style="padding: 0 10px; position:absolute; left:600px; top:0; padding:35px 5px;" = image_tag '/images/loading.jpg', size: '60x20'
 
   /KEEP BTN
   .inline-block class="keep_#{concert.id}" style="display:inline-block; position:absolute; left:660px; top:0; padding:35px 5px;" = render 'keeps/keep', concert: concert

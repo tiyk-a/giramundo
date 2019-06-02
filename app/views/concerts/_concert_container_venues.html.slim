@@ -12,7 +12,7 @@ li.concertContainer
       -elsif concert.performers[0].artist.artist_image.present?
         =image_tag concert.performers[0].artist.artist_image, :size => "80x60"
       -else
-        =image_tag("/assets/no-concert.png", :size => '80x60')
+        =image_tag("/images/no-concert.png", :size => '80x60')
   span = link_to concert.concert_name, concert_path(concert), data: {"turbolinks" => false}
   -if concert.tm_id.present?
   span style="font-size: 14px;" = concert.venue.name if concert.venue.present?
@@ -30,12 +30,12 @@ li.concertContainer
 
   -if concert.origin == "Ticket Master"
     span = link_to concert.source do
-      =image_tag '/assets/tmlogo_blue.png', size: '60x20'
+      =image_tag '/images/tmlogo_blue.png', size: '60x20'
   -elsif concert.origin == "Songkick"
     span = link_to concert.source do
-      =image_tag '/assets/by_Songkick_white.png', size: '50x10'
+      =image_tag '/images/by_Songkick_white.png', size: '50x10'
   -elsif concert.origin == "manual"
     span = link_to concert.source do
-      =image_tag '/assets/loading.jpg', size: '60x20'
+      =image_tag '/images/loading.jpg', size: '60x20'
   -else
-    span =image_tag '/assets/loading.jpg', size: '60x20'
+    span =image_tag '/images/loading.jpg', size: '60x20'
