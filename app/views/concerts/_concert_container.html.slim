@@ -54,7 +54,7 @@ li.concert id="#{concert.date.strftime('%Y-%m-%d')}" class="#{concert.date.strft
     .inline-block style="padding: 0 10px; position:absolute; left:600px; top:0; padding:35px 5px;" = link_to concert.source do
       =image_tag '/assets/loading.jpg', size: '60x20'
   -else
-    .inline-block style="padding: 0 10px; position:absolute; left:600px; top:0; padding:35px 5px;" =image_tag '/assets/loading.jpg', size: '60x20'
+    .inline-block style="padding: 0 10px; position:absolute; left:600px; top:0; padding:35px 5px;" = image_tag '/assets/loading.jpg', size: '60x20'
 
   /KEEP BTN
   .inline-block class="keep_#{concert.id}" style="display:inline-block; position:absolute; left:660px; top:0; padding:35px 5px;" = render 'keeps/keep', concert: concert
@@ -64,9 +64,3 @@ li.concert id="#{concert.date.strftime('%Y-%m-%d')}" class="#{concert.date.strft
     i.planColumn class="far fa-check-circle fa-lg hidden" style="color: lightgray;"
   . class="datetime_#{concert.id} datetime hidden" = concert.date.strftime('%s').to_i / 60 / 60
       / sera HOURS SINCE THE START(OF THE CONCERT-STARTI-TIME)
-
-// javascript:
-//   $(function() {
-//       $('ul li span').matchHeight();
-//       console.log('done');
-//   });
