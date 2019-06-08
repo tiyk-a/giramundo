@@ -172,16 +172,16 @@ class ConcertsController < ApplicationController
     end
   end
 
-  def switch
-    if params[:id] == "1"
-      @concerts = Concert.where.not(date: nil).page(params[:page]).per(100).order('date ASC').includes(:performers)
-      render :file => "/app/views/concerts/switch_simple.js.erb"
-    elsif params[:id] == "2"
-      @concerts = Concert.page(params[:page]).includes(:performers).order('date asc')
-      render :file => "/app/views/concerts/switch_basic.js.erb"
-    end
-    @keep = Keep.new
-  end
+  # def switch
+  #   if params[:id] == "1"
+  #     @concerts = Concert.where.not(date: nil).page(params[:page]).per(100).order('date ASC').includes(:performers)
+  #     render :file => "/app/views/concerts/switch_simple.js.erb"
+  #   elsif params[:id] == "2"
+  #     @concerts = Concert.page(params[:page]).includes(:performers).order('date asc')
+  #     render :file => "/app/views/concerts/switch_basic.js.erb"
+  #   end
+  #   @keep = Keep.new
+  # end
 
   def date_check
     concerts = Concert.all.includes(:keeps)

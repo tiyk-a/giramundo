@@ -45,22 +45,16 @@
           #dateFind.text-center.btn Submit
           #dateFindClear.btn style="margin-left:10px;" Clear
       .col-lg-5.inline-block.text-right.m-0
-        .inline-block style="font-size: 12px; margin-right:10px;"
-          = link_to '>> SIMPLE VIEW', switch_concert_path(1), class: 'post_button btn', id: "switchSimple", remote: true
-        .inline-block style="font-size: 12px;"
-          = link_to '>> BASIC VIEW', switch_concert_path(2), class: 'post_button hidden btn', id: "switchBasic", remote: true
+        / .inline-block style="font-size: 12px; margin-right:10px;"
+        /   = link_to '>> SIMPLE VIEW', switch_concert_path(1), class: 'post_button btn', id: "switchSimple", remote: true
+        / .inline-block style="font-size: 12px;"
+        /   = link_to '>> BASIC VIEW', switch_concert_path(2), class: 'post_button hidden btn', id: "switchBasic", remote: true
         .inline-block
           #basicSort
             .inline-block
               = link_to 'Asc', concerts_sort_path(1), method: :post, class: 'post_button btn', id: "sortAsc", remote: true
             .inline-block
               = link_to 'Desc', concerts_sort_path(2), method: :post, class: 'post_button btn', id: "sortDesc", remote: true
-            / .inline-block
-            /   = link_to 'Country', concerts_sort_path(3), method: :post, class: 'post_button btn', id: "sortCountry", remote: true
-            / .inline-block
-            /   = link_to 'City', concerts_sort_path(4), method: :post, class: 'post_button btn', id: "sortCity", remote: true
-            / .inline-block
-            /   = link_to 'Venue', concerts_sort_path(5), method: :post, class: 'post_button btn', id: "sortVenue", remote: true
             .inline-block
               p.btn#planBtn Plan
         #simpleSort.hidden
