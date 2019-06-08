@@ -35,7 +35,7 @@
   .row
     .col-lg-2
       -if user_signed_in?
-        =render 'users/watch_list'
+        .spHide =render 'users/watch_list'
     .col-lg-8
       = link_to @concert.source do
         -if @concert.image.present?
@@ -45,7 +45,7 @@
         -else
           =image_tag("/images/loading.jpg", :size => '845x500')
       -if admin_user?
-        = render 'concerts/form', concert: @concert, artists: @artists, venues: @venues
+        .adminSpHide = render 'concerts/form', concert: @concert, artists: @artists, venues: @venues
       / -else
       ul style="margin:20px;"
         li style="box-shadow:none;"

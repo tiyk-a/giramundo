@@ -13,7 +13,7 @@
 .container
   .row
     .col-lg-2
-      .
+      .adminSpHide
         -if admin_user?
           h3 New Venue?
           = render 'form', venue: @venue
@@ -25,7 +25,7 @@
         .text-center style="margin-bottom: 50px;"
           = render 'geocodeBox'
         -if user_signed_in?
-          =render 'users/watch_list'
+          .spHide =render 'users/watch_list'
     .col-lg-8
       - if @venues.present?
         .col-lg-4.inline-block
