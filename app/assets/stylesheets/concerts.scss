@@ -9,6 +9,23 @@
 #concertContainer > tr > td.pl-narrow {
 	padding: 0;
 }
+// ************************************************
+.concert {
+	position: relative;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    margin: 5px 0;
+    box-shadow: 0 0 10px lightgrey;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: white;
+    &:hover {
+    	box-shadow: 0 0 12px grey;
+    }
+}
 // Concerts#index END ***
 
 #onTv {

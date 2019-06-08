@@ -1,6 +1,6 @@
-li.concert id="#{concert.date.strftime('%Y-%m-%d')}" class="#{concert.date.strftime('%Y-%m-%d')}" value="#{concert.id}" style="position:relative; height:70px;"
+.concert id="#{concert.date.strftime('%Y-%m-%d')}" class="#{concert.date.strftime('%Y-%m-%d')}" value="#{concert.id}"
   / DATE
-  .inline-block style="font-size: 18px; width:50px; position:absolute; left:0; top:0; padding:25px 5px;"
+  .inline-block style="font-size: 18px; width:50px;"
     span.hidden class="concertDate_#{concert.id}" = concert.date
     span style="width:100%;" class="text-center inline-block" id="dateCell" = concert.date.strftime('%b')
     br
@@ -15,7 +15,7 @@ li.concert id="#{concert.date.strftime('%Y-%m-%d')}" class="#{concert.date.strft
       br
 
   / IMAGE
-  .inline-block.pl-narrow#imageCell style="width:80px; padding: 0 5px; position:absolute; left:70px; top:0; padding:15px 5px;"
+  .inline-block.pl-narrow#imageCell style="width:80px;"
     = link_to concert_path(concert), data: {"turbolinks" => false} do
       - if concert.image.present?
         =image_tag concert.image, :size => "80x60"
@@ -25,42 +25,42 @@ li.concert id="#{concert.date.strftime('%Y-%m-%d')}" class="#{concert.date.strft
         =image_tag("/images/no-concert.png", :size => '80x60')
 
   / CONCERT NAME
-  .inline-block style="width:230px; padding: 0 3px; position:absolute; left:160px; top:0; padding:25px 5px;" = link_to concert.concert_name, concert_path(concert), class: "concertName_#{concert.id}", id: "concertNameCell", data: {"turbolinks" => false}
+  .inline-block style="width:230px;" = link_to concert.concert_name, concert_path(concert), class: "concertName_#{concert.id}", id: "concertNameCell", data: {"turbolinks" => false}
   -if concert.tm_id.present?
     span class="hidden registeredArtistConcertTmId#{concert.tm_id}" id="tmIdCell" = concert.tm_id
   . id="venueNameCell" class="hidden" = concert.venue.name if concert.venue.present?
 
   /LOCATION
-  .inline-block id="cityCell" style="font-size: 12px; width: 70px; text-align:right; padding:0 5px 0 0; position:absolute; left:400px; top:0; padding:30px 5px;" = concert.venue.city if concert.venue.present?
-  .inline-block id="countryCell" style="font-size: 12px; padding-right: 3px; width: 50px; padding:0 0 0 5px; position:absolute; left:480px; top:0; padding:30px 5px;" = concert.venue.country if concert.venue.present?
+  .inline-block id="cityCell" style="font-size: 12px; width: 70px; text-align:right;" = concert.venue.city if concert.venue.present?
+  .inline-block id="countryCell" style="font-size: 12px; padding-right: 3px; width: 50px;" = concert.venue.country if concert.venue.present?
   -if admin_user?
-    .inline-block style="position: absolute; left: 780px; top: 0px; padding: 25px 5px; display: block;" = button_tag "Edit?", class: "btn editConcert", id: "idCell", value: concert.id
+    .inline-block style="display: block;" = button_tag "Edit?", class: "btn editConcert", id: "idCell", value: concert.id
     . class="concertSource_#{concert.id} hidden" = concert.source
     . class="concertImage_#{concert.id} hidden" = concert.image
     . class="concertVenue_#{concert.id} hidden" id="venueIdCell" = concert.venue_id
     . class="concertOrigin_#{concert.id} hidden" id="concertOriginCell" = concert.origin
     . class="concertTmId_#{concert.id} hidden" = concert.tm_id
-    . style="position: absolute;left: 850px;top: 0px;padding: 40px 5px;display: block;" = link_to concert, data: { confirm: 'Are you sure?' }, method: :delete do
+    . style="display: block;" = link_to concert, data: { confirm: 'Are you sure?' }, method: :delete do
       i class="fas fa-times fa-lg" style="color: #E6C3D5;"
 
   / SOURCE
   -if concert.origin == "Ticket Master"
-    .inline-block style="padding: 0 10px; position:absolute; left:600px; top:0; padding:35px 5px;" = link_to concert.source do
+    .inline-block = link_to concert.source do
       =image_tag '/images/tmlogo_blue.png', size: '60x20'
   -elsif concert.origin == "Songkick"
-    .inline-block style="padding: 0 10px; position:absolute; left:600px; top:0; padding:35px 5px;" = link_to concert.source do
+    .inline-block = link_to concert.source do
       =image_tag '/images/by_Songkick_white.png', size: '60x10'
   -elsif concert.origin == "manual"
-    .inline-block style="padding: 0 10px; position:absolute; left:600px; top:0; padding:35px 5px;" = link_to concert.source do
+    .inline-block = link_to concert.source do
       =image_tag '/images/loading.jpg', size: '60x20'
   -else
-    .inline-block style="padding: 0 10px; position:absolute; left:600px; top:0; padding:35px 5px;" = image_tag '/images/loading.jpg', size: '60x20'
+    .inline-block = image_tag '/images/loading.jpg', size: '60x20'
 
   /KEEP BTN
-  .inline-block class="keep_#{concert.id}" style="display:inline-block; position:absolute; left:660px; top:0; padding:35px 5px;" = render 'keeps/keep', concert: concert
+  .inline-block class="keep_#{concert.id}" = render 'keeps/keep', concert: concert
 
   / PLAN BTN
-  .planColumn.plan.hidden value="#{concert.id}" style="padding: 0 10px; position:absolute; left:730px; top:0; padding:35px 5px;"
+  .planColumn.plan.hidden value="#{concert.id}"
     i.planColumn class="far fa-check-circle fa-lg hidden" style="color: lightgray;"
   . class="datetime_#{concert.id} datetime hidden" = concert.date.strftime('%s').to_i / 60 / 60
       / sera HOURS SINCE THE START(OF THE CONCERT-STARTI-TIME)

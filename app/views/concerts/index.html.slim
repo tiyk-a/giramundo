@@ -42,7 +42,7 @@
         .text-center.flex
           input#fromDate.inline-block type="text" style="margin: 0 10px 0 0;" placeholder="FROM"
           /input#toDate.inline-block type="text" style="margin: 0;" placeholder="HASTA"
-          #dateFind.text-center.btn Submit
+          #dateFind.text-center.btn Search
           #dateFindClear.btn style="margin-left:10px;" Clear
       .col-lg-5.inline-block.text-right.m-0
         / .inline-block style="font-size: 12px; margin-right:10px;"
@@ -66,7 +66,7 @@
             p.btn#planBtn Plan
 
       -if @concerts.present?
-        ul.text-left#swichWindow
+        .text-left#swichWindow
           = render 'basic_view',locals: {concerts: @concerts, keep: @keep}
         .pagination
           = render 'pagination', concerts: @concerts
