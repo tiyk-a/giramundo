@@ -1,6 +1,6 @@
 .concert id="#{concert.date.strftime('%Y-%m-%d')}" class="#{concert.date.strftime('%Y-%m-%d')}" value="#{concert.id}"
   / DATE
-  .inline-block style="font-size: 18px; width:50px;"
+  .concertContainerDate
     span.hidden class="concertDate_#{concert.id}" = concert.date
     span style="width:100%;" class="text-center inline-block" id="dateCell" = concert.date.strftime('%b')
     br
@@ -24,43 +24,47 @@
       -else
         =image_tag("/images/no-concert.png", :size => '80x60')
 
-  / CONCERT NAME
-  .inline-block style="width:230px;" = link_to concert.concert_name, concert_path(concert), class: "concertName_#{concert.id}", id: "concertNameCell", data: {"turbolinks" => false}
-  -if concert.tm_id.present?
-    span class="hidden registeredArtistConcertTmId#{concert.tm_id}" id="tmIdCell" = concert.tm_id
-  . id="venueNameCell" class="hidden" = concert.venue.name if concert.venue.present?
+  .spLtCustom
+    / CONCERT NAME
+    .concertName = link_to concert.concert_name, concert_path(concert), class: "concertName_#{concert.id}", id: "concertNameCell", data: {"turbolinks" => false}
+    -if concert.tm_id.present?
+      span class="hidden registeredArtistConcertTmId#{concert.tm_id}" id="tmIdCell" = concert.tm_id
+    . id="venueNameCell" class="hidden" = concert.venue.name if concert.venue.present?
 
-  /LOCATION
-  .inline-block id="cityCell" style="font-size: 12px; width: 70px; text-align:right; font-weight: 100;" = concert.venue.city if concert.venue.present?
-  .inline-block id="countryCell" style="font-size: 12px; padding-right: 3px; width: 50px; font-weight: 100;" = concert.venue.country if concert.venue.present?
-  -if admin_user?
-    .inline-block = button_tag "Edit?", class: "btn editConcert", id: "idCell", value: concert.id
-    . class="concertSource_#{concert.id} hidden" = concert.source
-    . class="concertImage_#{concert.id} hidden" = concert.image
-    . class="concertVenue_#{concert.id} hidden" id="venueIdCell" = concert.venue_id
-    . class="concertOrigin_#{concert.id} hidden" id="concertOriginCell" = concert.origin
-    . class="concertTmId_#{concert.id} hidden" = concert.tm_id
-    . = link_to concert, data: { confirm: 'Are you sure?' }, method: :delete do
-      i class="fas fa-times fa-lg" style="color: #E6C3D5;"
+    /LOCATION
+    #concertsContainerLocations
+      #cityCell = concert.venue.city if concert.venue.present?
+      #countryCell = concert.venue.country if concert.venue.present?
+    -if admin_user?
+      .adminSpHide
+        .inline-block = button_tag "Edit?", class: "btn editConcert", id: "idCell", value: concert.id
+        . class="concertSource_#{concert.id} hidden" = concert.source
+        . class="concertImage_#{concert.id} hidden" = concert.image
+        . class="concertVenue_#{concert.id} hidden" id="venueIdCell" = concert.venue_id
+        . class="concertOrigin_#{concert.id} hidden" id="concertOriginCell" = concert.origin
+        . class="concertTmId_#{concert.id} hidden" = concert.tm_id
+        . = link_to concert, data: { confirm: 'Are you sure?' }, method: :delete do
+          i class="fas fa-times fa-lg" style="color: #E6C3D5;"
 
-  / SOURCE
-  -if concert.origin == "Ticket Master"
-    .inline-block = link_to concert.source do
-      =image_tag '/images/tmlogo_blue.png', size: '60x20'
-  -elsif concert.origin == "Songkick"
-    .inline-block = link_to concert.source do
-      =image_tag '/images/by_Songkick_white.png', size: '60x10'
-  -elsif concert.origin == "manual"
-    .inline-block = link_to concert.source do
-      =image_tag '/images/loading.jpg', size: '60x20'
-  -else
-    .inline-block = image_tag '/images/loading.jpg', size: '60x20'
+    #concertsConainerBtns
+      / SOURCE
+      -if concert.origin == "Ticket Master"
+        .concertContainerSources = link_to concert.source do
+          =image_tag '/images/tmlogo_blue.png', size: '60x20'
+      -elsif concert.origin == "Songkick"
+        .concertContainerSources = link_to concert.source do
+          =image_tag '/images/by_Songkick_white.png', size: '60x10'
+      -elsif concert.origin == "manual"
+        .concertContainerSources = link_to concert.source do
+          =image_tag '/images/loading.jpg', size: '60x20'
+      -else
+        .concertContainerSources = image_tag '/images/loading.jpg', size: '60x20'
 
-  /KEEP BTN
-  .inline-block class="keep_#{concert.id}" = render 'keeps/keep', concert: concert
+      /KEEP BTN
+      .inline-block class="keep_#{concert.id}" = render 'keeps/keep', concert: concert
 
-  / PLAN BTN
-  .planColumn.plan.hidden value="#{concert.id}"
-    i.planColumn class="far fa-check-circle fa-lg hidden" style="color: lightgray;"
-  . class="datetime_#{concert.id} datetime hidden" = concert.date.strftime('%s').to_i / 60 / 60
-      / sera HOURS SINCE THE START(OF THE CONCERT-STARTI-TIME)
+      / PLAN BTN
+      .planColumn.plan.hidden value="#{concert.id}"
+        i.planColumn class="far fa-check-circle fa-lg hidden" style="color: lightgray;"
+      . class="datetime_#{concert.id} datetime hidden" = concert.date.strftime('%s').to_i / 60 / 60
+          / sera HOURS SINCE THE START(OF THE CONCERT-STARTI-TIME)

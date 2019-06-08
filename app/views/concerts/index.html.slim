@@ -32,11 +32,12 @@
     .col-lg-2#concertSideBar
       = render 'entries/top', top_entries: @top_entries, entries: @entries
       -if user_signed_in?
-        =render 'users/watch_list'
+        .userSpHide =render 'users/watch_list'
       -if admin_user?
-        h4 New Concert?
-        = render 'form', concert: @concert, artists: @artists, venues: @venues
-      = render 'venues/geocodeBox'
+        .adminSpHide
+          h4 New Concert?
+          = render 'form', concert: @concert, artists: @artists, venues: @venues
+      .spHide = render 'venues/geocodeBox'
     .col-lg-8
       .col-lg-4.inline-block
         .text-center.flex

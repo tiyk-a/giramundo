@@ -1,10 +1,10 @@
 #topNews
-	h4.text-left =link_to 'Artist News', top_entries_path, data: {"turbolinks" => false}
+	h4 =link_to 'Artist News', top_entries_path, data: {"turbolinks" => false}
 	- top_entries.each do |entry|
 		= link_to entry.url, target: '_blank' do
 			= image_tag(entry.artist.artist_image, size: "190x80")
-		.text-left style="font-size: 14px; padding: 0;"
-			p style="margin: 0 0 20px 0;"
+		.eachNews
+			p
 				span style="font-weight:300;" = link_to entry.artist.artist_name, artist_path(entry.artist), data: {"turbolinks" => false}
 				span style="font-size:12px;" = link_to entry.title, entry.url, target: '_blank'
 				i style="color: black;"
@@ -12,10 +12,10 @@
 					span =entry.feed.name
 
 #allNews
-	h4.text-left = link_to 'All news', all_entries_path, data: {"turbolinks" => false}
+	h4 = link_to 'All news', all_entries_path, data: {"turbolinks" => false}
 	- entries.each do |entry|
-		.text-left style="font-size: 14px; padding: 0;"
-			p  style="font-size:12px;"
+		.eachNews
+			p
 				span = link_to entry.title, entry.url, target: '_blank'
 				i style="color: black;"
 					span ---

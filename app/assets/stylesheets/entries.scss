@@ -8,14 +8,50 @@
     border: 1px gray solid;
     box-shadow: 1px 1px lightgrey;
     margin: 25px 0;
+    text-align: center;
     h4 {
     	padding: 5px 10px;
 	    border-radius: 3px;
 	    border: 1px gray solid;
 	    box-shadow: 1px 1px lightgrey;
 	    background-color: white;
+	    text-align: left;
 	    a {
 	    	font-family: 'Oswald', sans-serif;
 	    }
     }
+}
+.eachNews {
+	text-align: left;
+	font-size: 14px;
+	padding: 0;
+	p {
+		margin: 0 0 20px 0;
+	}
+}
+
+ /* 〜800px：
+------------------------------ */
+@media screen and (max-width:800px) {
+	.eachNews {
+		p {
+			padding-left: 15px;
+		}
+	}
+	#allNews {
+		display: none;
+	}
+}
+
+ /* 〜500px：
+------------------------------ */
+@media screen and (max-width:500px) {
+	.eachNews {
+		p {
+			padding-left: 15px;
+		}
+	}
+	#allNews {
+		display: none;
+	}
 }

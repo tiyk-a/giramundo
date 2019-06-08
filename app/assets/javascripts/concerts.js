@@ -175,8 +175,8 @@ $(document).on('click', '#dateFindClear', function(){
 //Concerts#index JUMP TO THE INPUTTED DATE!
 
 // SLIDE SHOW
-$( document ).ready(function( $ ) {
-  $( '#my-slider' ).sliderPro({
+$(document).ready(function( $ ) {
+  $('#my-slider').sliderPro({
     width: 800,
     height: 500,
     orientation: 'vertical',
@@ -189,11 +189,15 @@ $( document ).ready(function( $ ) {
     thumbnailWidth: 300,
     breakpoints: {
       800: {
+        width: 700,
+        height: 500,
         thumbnailsPosition: 'bottom',
         thumbnailWidth: 270,
         thumbnailHeight: 100
       },
       500: {
+        width: 500,
+        height: 400,
         thumbnailsPosition: 'bottom',
         thumbnailWidth: 120,
         thumbnailHeight: 50

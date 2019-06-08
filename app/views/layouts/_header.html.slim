@@ -1,20 +1,20 @@
 .container#onCanvas
   .row
-    .col-lg-2
+    .col-lg-2.spHide
     .col-lg-6.text-center.flex style="margin: 0 auto;padding:10px;"
       . style="margin: 0 auto;"
-        .subline style="margin:0;"
-          p style="margin:0; font-weight:100; color:white;" 世界中のコンサート情報収集アプリ
+        .subline.text-center style="margin:0;"
+          p#header-subline 世界中のコンサート情報収集アプリ
         a.inline-block href="#footerTop" test
         .inline-block =link_to concerts_path, data: {"turbolinks" => false} do
-          h1.header-logo style="margin:0;font-family: 'Righteous', cursive;"
-            span style="color:#E6C3D5;margin:0;font-style: italic; " N
-            span style="margin:0; font-size:30px;font-style: italic; " OTI
-            span style="color:#E6C3D5;margin:0;font-style: italic; " G
-            span style="margin:0; font-size:30px;font-style: italic; " IRA
-            span style="color:#E6C3D5;margin:0;font-style: italic; " M
-            span style="margin:0; font-size:30px;font-style: italic; " UNDO
-    .col-lg-1.text-right
+          h1.header-logo
+            span.logo-pink N
+            span.logo-other OTI
+            span.logo-pink G
+            span.logo-other IRA
+            span.logo-pink M
+            span.logo-other UNDO
+    .col-lg-1.text-right.spHide
 
     .col-lg-1
       #navBtn.text-right

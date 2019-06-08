@@ -2,7 +2,36 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// Concerts#index
+
+// PARTIAL
+.concertContainerDate {
+	font-size: 18px;
+	width:50px;
+}
+.concertName {
+	display: inline-block;
+	width:230px;
+}
+#cityCell {
+	display: inline-block;
+	font-size: 12px;
+	width: 70px;
+	text-align:right;
+	font-weight: 100;
+}
+#countryCell {
+	display: inline-block;
+	font-size: 12px;
+	padding-right: 3px;
+	width: 50px;
+	font-weight: 100;
+}
+.concertContainerSources {
+	display: inline-block;
+}
+// PARTIAL
+
+// ************* Concerts#index *************
 .concert {
 	position: relative;
     height: 70px;
@@ -19,8 +48,9 @@
     	box-shadow: 0 0 12px grey;
     }
 }
-// Concerts#index END ***
+// ************* Concerts#index END *************
 
+// ************* Concerts#show *************
 #onTv {
 	border-radius: 40px;
 	border: 0.3px inset lightgray;
@@ -82,4 +112,87 @@
 }
 .sp-arrow {
 	opacity: 0.5;
+}
+// ************* Concerts#show END *************
+
+ /* 〜800px：
+------------------------------ */
+@media screen and (max-width:800px) {
+	.concertContainerDate {
+		font-size: 1rem;
+		width: auto;
+	}
+	.spLtCustom {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		padding: 5px;
+		.concertName {
+			font-size: 0.8rem;
+			width: 100%;
+			word-wrap: break-word;
+			line-height: 0.8em;
+			a{
+				font-size: 0.6rem;
+				width: 100%;
+				word-wrap: break-word;
+				font-weight: 400;
+			}
+		}
+		#concertsContainerLocations {
+			display: flex;
+			flex-direction: row;
+			#cityCell, #countryCell {
+			font-size: 0.6rem;
+			width: auto;
+			padding: 0 5px;
+			text-align: right;
+			}
+		}
+		#concertsConainerBtns {
+			display: flex;
+			flex-direction: row;
+		}
+	}
+}
+
+ /* 〜500px：
+------------------------------ */
+@media screen and (max-width:500px) {
+	.concertContainerDate {
+		font-size: 1rem;
+		width: auto;
+	}
+	.spLtCustom {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		padding: 5px;
+		.concertName {
+			font-size: 0.8rem;
+			width: 100%;
+			word-wrap: break-word;
+			line-height: 0.8em;
+			a{
+				font-size: 0.6rem;
+				width: 100%;
+				word-wrap: break-word;
+				font-weight: 400;
+			}
+		}
+		#concertsContainerLocations {
+			display: flex;
+			flex-direction: row;
+			#cityCell, #countryCell {
+			font-size: 0.6rem;
+			width: auto;
+			padding: 0 5px;
+			text-align: right;
+			}
+		}
+		#concertsConainerBtns {
+			display: flex;
+			flex-direction: row;
+		}
+	}
 }
