@@ -7,12 +7,12 @@
     span.inline-block.text-center style="width:100%;" = concert.date.strftime('%d')
 
   / PERFORMER (HIDDEN)
-  .pr-narrow.hidden#artistCell style="font-size: 10px;"
-    - concert.performers.includes(:artist).each do |performer|
-      = link_to performer.artist.artist_name, artist_path(performer.artist), class: "small mb-0 pb-0 font-light", data: {"turbolinks" => false}
-      div class="hidden concertPerformer_#{concert.id}"
-        = performer.artist_id
-      br
+  / .pr-narrow.hidden#artistCell style="font-size: 10px;"
+  /   - concert.performers.includes(:artist).each do |performer|
+  /     = link_to performer.artist.artist_name, artist_path(performer.artist), class: "small mb-0 pb-0 font-light", data: {"turbolinks" => false}
+  /     div class="hidden concertPerformer_#{concert.id}"
+  /       = performer.artist_id
+  /     br
 
   / IMAGE
   .inline-block.pl-narrow#imageCell style="width:80px;"
@@ -31,16 +31,16 @@
   . id="venueNameCell" class="hidden" = concert.venue.name if concert.venue.present?
 
   /LOCATION
-  .inline-block id="cityCell" style="font-size: 12px; width: 70px; text-align:right;" = concert.venue.city if concert.venue.present?
-  .inline-block id="countryCell" style="font-size: 12px; padding-right: 3px; width: 50px;" = concert.venue.country if concert.venue.present?
+  .inline-block id="cityCell" style="font-size: 12px; width: 70px; text-align:right; font-weight: 100;" = concert.venue.city if concert.venue.present?
+  .inline-block id="countryCell" style="font-size: 12px; padding-right: 3px; width: 50px; font-weight: 100;" = concert.venue.country if concert.venue.present?
   -if admin_user?
-    .inline-block style="display: block;" = button_tag "Edit?", class: "btn editConcert", id: "idCell", value: concert.id
+    .inline-block = button_tag "Edit?", class: "btn editConcert", id: "idCell", value: concert.id
     . class="concertSource_#{concert.id} hidden" = concert.source
     . class="concertImage_#{concert.id} hidden" = concert.image
     . class="concertVenue_#{concert.id} hidden" id="venueIdCell" = concert.venue_id
     . class="concertOrigin_#{concert.id} hidden" id="concertOriginCell" = concert.origin
     . class="concertTmId_#{concert.id} hidden" = concert.tm_id
-    . style="display: block;" = link_to concert, data: { confirm: 'Are you sure?' }, method: :delete do
+    . = link_to concert, data: { confirm: 'Are you sure?' }, method: :delete do
       i class="fas fa-times fa-lg" style="color: #E6C3D5;"
 
   / SOURCE

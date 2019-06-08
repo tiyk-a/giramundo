@@ -57,13 +57,13 @@
               = link_to 'Desc', concerts_sort_path(2), method: :post, class: 'post_button btn', id: "sortDesc", remote: true
             .inline-block
               p.btn#planBtn Plan
-        #simpleSort.hidden
-          .inline-block
-            = link_to 'Asc', concerts_simple_sort_path(1), method: :post, class: 'post_button btn', remote: true
-          .inline-block
-            = link_to 'Desc', concerts_simple_sort_path(2), method: :post, class: 'post_button btn', remote: true
-          .inline-block
-            p.btn#planBtn Plan
+        / #simpleSort.hidden
+        /   .inline-block
+        /     = link_to 'Asc', concerts_simple_sort_path(1), method: :post, class: 'post_button btn', remote: true
+        /   .inline-block
+        /     = link_to 'Desc', concerts_simple_sort_path(2), method: :post, class: 'post_button btn', remote: true
+        /   .inline-block
+        /     p.btn#planBtn Plan
 
       -if @concerts.present?
         .text-left#swichWindow
