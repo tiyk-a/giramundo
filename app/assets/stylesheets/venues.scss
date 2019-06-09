@@ -10,7 +10,47 @@
 	#encodeBtn {
 		margin: 5px auto;
 	}
-
+.venueContainer {
+	height:40px;
+	padding: 10px 20px;
+    margin: 5px 0;
+    box-shadow: 0 0 10px lightgrey;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#venueContainerVenueName {
+	width:300px;
+	font-size:18px;
+	font-weight:300;
+	display: inline-block;
+}
+#venueContainerSpFlex {
+	text-align: right;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	p {
+		display: inline-block;
+    	width: 30px;
+    	margin: 0;
+	}
+}
+#venueContainerVenueCity {
+	display: inline-block;
+	font-size:12px;
+}
+#venueContainerVenueCountry {
+	display: inline-block;
+	font-size:12px;
+}
+#venueContainerConcertCount {
+	display: flex;
+	flex-direction: row;
+}
 // PARTIAL
 
 #mapVenuesIndex {
@@ -58,16 +98,53 @@
  /* 〜800px：
 ------------------------------ */
 @media screen and (max-width:800px) {
-
-}
-
- /* 〜500px：
------------------------------- */
-@media screen and (max-width:500px) {
+	.venueContainer {
+		display: block;
+	}
 	#address {
 		width: 90%;
 	}
 	#encodeBtn {
 		width: 97%;
+	}
+	#venueContainerVenueName {
+	width: 100%;
+	display: inline-block;
+	line-height: 0.9rem;
+	}
+	#venueContainerSpFlex {
+		text-align: right;
+	    display: flex;
+	    flex-direction: row;
+	    justify-content: flex-end;
+	}
+	#venueContainerVenueCity, #venueContainerVenueCountry {
+		font-size:12px;
+		width: auto;
+		display: inline-block;
+	}
+}
+
+ /* 〜500px：
+------------------------------ */
+@media screen and (max-width:500px) {
+	.venueContainer {
+		display: block;
+	}
+	#address {
+		width: 90%;
+	}
+	#encodeBtn {
+		width: 97%;
+	}
+	#venueContainerVenueName {
+	width: 100%;
+	display: inline-block;
+	line-height: 0.9rem;
+	}
+	#venueContainerVenueCity, #venueContainerVenueCountry {
+		font-size:12px;
+		width: auto;
+		display: inline-block;
 	}
 }

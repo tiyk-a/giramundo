@@ -12,11 +12,10 @@
 
 .container
   .row
-    .col-lg-2
-      .adminSpHide
-        -if admin_user?
-          h3 New Venue?
-          = render 'form', venue: @venue
+    .col-lg-2.adminSpHide
+      -if admin_user?
+        h3 New Venue?
+        = render 'form', venue: @venue
       .mb-20px style="margin: 30px 0;;"
         -if admin_user?
           .text-center style="margin-bottom: 50px;"
@@ -37,7 +36,7 @@
               = link_to 'Country', venues_sort_path(1), method: :post, class: 'post_button btn', id: "venueByCountry", remote: true
             .inline-block
               = link_to 'Double?', venues_sort_path(2), method: :post, class: 'post_button btn', id: "conflictVenue", remote: true
-        ul.sortVenueContainer style="margin:20px;"
+        .sortVenueContainer style="margin:20px;"
             - @venues.each do |venue|
               -unless admin_user?
                 = render 'venue_container_column', venue: venue
