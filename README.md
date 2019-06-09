@@ -18,7 +18,7 @@ This app collects any concerts of your favorite artist.
 
 ユーザーのお気に入りアーティストが開催する世界各地のコンサートを集めます。
 
-### :wave: No City select
+### :no_good: No City select
 #### 都市選択が不要
 When you search concerts on ticket providers' website, you are required to set your current city or search area. That's reasonable as normally concerts are planned to see local fans.
 
