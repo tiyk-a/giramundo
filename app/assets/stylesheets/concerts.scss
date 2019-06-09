@@ -4,13 +4,18 @@
 
 
 // PARTIAL
+.spLtCustom {
+	display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 .concertContainerDate {
 	font-size: 18px;
 	width:50px;
 }
 .concertName {
 	display: inline-block;
-	width:230px;
+	width:300px;
 }
 #cityCell {
 	display: inline-block;
@@ -18,16 +23,33 @@
 	width: 70px;
 	text-align:right;
 	font-weight: 100;
+	padding:0 10px 0 0;
 }
 #countryCell {
 	display: inline-block;
 	font-size: 12px;
 	padding-right: 3px;
-	width: 50px;
+	width: 100px;
 	font-weight: 100;
+	padding:0 10px 0 0;
 }
 .concertContainerSources {
 	display: inline-block;
+	padding:0 10px;
+}
+.concertContainerAdmin {
+	display: flex;
+    align-items: center;
+    padding:0 10px;
+    #concertContainerDelete {
+    	display: inline-block;
+    	padding: 0 10px;
+    }
+}
+
+// ADMIN
+.adminDateCheck {
+	margin: 50px 0;
 }
 // PARTIAL
 
@@ -139,7 +161,7 @@
 				font-weight: 400;
 			}
 		}
-		#concertsContainerLocations {
+		.concertsContainerLocations {
 			display: flex;
 			flex-direction: row;
 			#cityCell, #countryCell {
@@ -153,6 +175,9 @@
 			display: flex;
 			flex-direction: row;
 		}
+	}
+	.adminDateCheck {
+		margin: 0;
 	}
 }
 
@@ -194,5 +219,8 @@
 			display: flex;
 			flex-direction: row;
 		}
+	}
+	.adminDateCheck {
+		margin: 0;
 	}
 }

@@ -7,10 +7,21 @@
 	width: 400px;
 	height: 300px;
 }
-.artistList td {
-	font-size: 20px;
-	padding: 10px 20px;
-	margin: 20px 10px;
+.artistList {
+	padding: 10px;
+    margin: 20px 0;
+    box-shadow: 0 0 10px lightgrey;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+#artistContainerAdmin{
+	display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 #yt {
 	width: 640px;

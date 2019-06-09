@@ -14,8 +14,9 @@
   .row
     .col-lg-2
       #activeAdminBox
-        = render 'concerts/form', concert: @concert, artists: @artists, venues: @venues
-        . style="margin: 50px 0"
+        .adminSpHide
+          = render 'concerts/form', concert: @concert, artists: @artists, venues: @venues
+        .adminDateCheck
           h3 DESTROY PAST EVENTS
           = link_to "Date Check", date_check_path, method: :get, remote: true, class: "btn"
           .date_checked_notif
@@ -35,8 +36,9 @@
 .container
   .row
     .col-lg-2
-      = render 'venues/geocodeBox'
-      = render 'venues/form', venue: @venue
+      .adminSpHide
+        = render 'venues/geocodeBox'
+        = render 'venues/form', venue: @venue
     .col-lg-8
       ul
         = render partial: 'venues/venue_container', collection: @venue_blanks, :as => 'venue'

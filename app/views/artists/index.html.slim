@@ -1,8 +1,7 @@
 .container
   .row
     .col-lg-10.text-center
-      h1
-        =link_to "Artist List", artists_path
+      h1 Artist List
 
 -if @foundArtists.present?
   .container
@@ -13,7 +12,7 @@
 
 .container
   .row
-    .col-lg-2
+    .col-lg-2.adminSpHide
       - unless @searched.present?
         .text-center style="margin: 50px 0;"
           h4 Thanks to

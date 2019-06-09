@@ -19,7 +19,7 @@
 
 		.col-lg-8
 			- if @user.keeps.present?
-				ul#concertContainer
+				#concertContainer
 					-@user.keeps.each do |keep|
 						= render 'concerts/concert_container_admin', concert:keep.concert, keep: @keep
 			-else

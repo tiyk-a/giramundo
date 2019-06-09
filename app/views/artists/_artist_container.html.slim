@@ -1,4 +1,4 @@
-li.artistList style="margin:20px 0;"
+.artistList
   span style="width:60px; padding:0 3px;" = link_to artist_path(artist.id), data: {"turbolinks" => false} do
     -if artist.artist_image.present?
       =image_tag(artist.artist_image, :size => '60x40', class: "listArtistImg#{artist.id}")
@@ -9,7 +9,8 @@ li.artistList style="margin:20px 0;"
   span style="width:50px; padding:0 10px;" = artist.performers.count
   span style="width:50px; padding:0 10px;"
     . class="watch_artist#{artist.id}" = render 'watch_artists/watch_artist', artist: artist
-  -if admin_user?
-    span style="width:50px; padding:0 10px;" = button_tag "Edit?", class: "editArtist", value: artist.id
-    span style="width:50px; padding:0 10px;" = link_to artist, data: { confirm: 'Are you sure?' }, method: :delete do
-      i class="fas fa-times" style="color: #E6C3D5;"
+  #artistContainerAdmin.adminSpHide
+    -if admin_user?
+      span style="width:50px; padding:0 10px;" = button_tag "Edit?", class: "editArtist", value: artist.id
+      span style="width:50px; padding:0 10px;" = link_to artist, data: { confirm: 'Are you sure?' }, method: :delete do
+        i class="fas fa-times" style="color: #E6C3D5;"

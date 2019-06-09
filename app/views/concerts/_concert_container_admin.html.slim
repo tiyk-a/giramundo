@@ -1,11 +1,14 @@
-li.concert value="#{concert.id}" style="position:relative; height:70px;"
+.concert value="#{concert.id}"
   / DATE
   -if concert.date.present?
-    .inline-block style="font-size: 18px; width:50px; position:absolute; left:0; top:0; padding:25px 5px;"
+    .concertContainerDate
       span.hidden class="concertDate_#{concert.id}" = concert.date.strftime('%b %d')
       span style="width:100%;" class="text-center inline-block" id="dateCell" = concert.date.strftime('%b')
       br
       span.inline-block.text-center style="width:100%;" = concert.date.strftime('%d')
+  -else
+    .concertContainerDate
+      span TBD
 
   / PERFORMER (HIDDEN)
   .pr-narrow.hidden#artistCell style="font-size: 10px;"
@@ -16,47 +19,51 @@ li.concert value="#{concert.id}" style="position:relative; height:70px;"
       br
 
   / IMAGE
-  .inline-block.pl-narrow#imageCell style="width:80px; padding: 0 5px; position:absolute; left:70px; top:0; padding:15px 5px;"
+  .inline-block.pl-narrow#imageCell
     = link_to concert_path(concert), data: {"turbolinks" => false} do
       - if concert.image.present?
         =image_tag concert.image, :size => "80x60"
-      - elsif concert.performers[0].artist.artist_image.present?
+      - elsif concert.performers.present? && concert.performers[0].artist.present? && concert.performers[0].artist.artist_image.present?
         =image_tag concert.performers[0].artist.artist_image, :size => "80x60"
       - else
         =image_tag("/images/no-concert.png", :size => '80x60')
 
   / CONCERT NAME
-  -if concert.concert_name.present?
-    .inline-block style="width:230px; padding: 0 3px; position:absolute; left:160px; top:0; padding:25px 5px;" = link_to concert.concert_name, concert_path(concert), class: "concertName_#{concert.id}", id: "concertNameCell", data: {"turbolinks" => false}
-    -if concert.tm_id.present?
-      span class="hidden registeredArtistConcertTmId#{concert.tm_id}" id="tmIdCell" = concert.tm_id
-    . id="venueNameCell" class="hidden" = concert.venue.name if concert.venue.present?
+  .spLtCustom
+    -if concert.concert_name.present?
+      .concertName = link_to concert.concert_name, concert_path(concert), class: "concertName_#{concert.id}", id: "concertNameCell", data: {"turbolinks" => false}
+      -if concert.tm_id.present?
+        span class="hidden registeredArtistConcertTmId#{concert.tm_id}" id="tmIdCell" = concert.tm_id
+      . id="venueNameCell" class="hidden" = concert.venue.name if concert.venue.present?
 
-  /LOCATION
-  .inline-block id="cityCell" style="font-size: 12px; width: 70px; text-align:right; padding:0 5px 0 0; position:absolute; left:400px; top:0; padding:30px 5px;" = concert.venue.city if concert.venue.present?
-  .inline-block id="countryCell" style="font-size: 12px; padding-right: 3px; width: 50px; padding:0 0 0 5px; position:absolute; left:480px; top:0; padding:30px 5px;" = concert.venue.country if concert.venue.present?
+    /LOCATION
+    .concertsContainerLocations
+      #cityCell = concert.venue.city if concert.venue.present?
+      #countryCell = concert.venue.country if concert.venue.present?
 
-  / FOR ADMIN FUNCTION
-  -if admin_user?
-    .inline-block style="position: absolute; left: 780px; top: 0px; padding: 25px 5px; display: block;" = button_tag "Edit?", class: "btn editConcert", id: "idCell", value: concert.id
-    . class="concertSource_#{concert.id} hidden" = concert.source if concert.source.present?
-    . class="concertImage_#{concert.id} hidden" = concert.image if concert.image.present?
-    . class="concertVenue_#{concert.id} hidden" id="venueIdCell" = concert.venue_id if concert.venue_id.present?
-    . class="concertOrigin_#{concert.id} hidden" id="concertOriginCell" = concert.origin if concert.origin.present?
-    . class="concertTmId_#{concert.id} hidden" = concert.tm_id if concert.tm_id.present?
-    . style="position: absolute;left: 850px;top: 0px;padding: 40px 5px;display: block;" = link_to concert, data: { confirm: 'Are you sure?' }, method: :delete do
-      i class="fas fa-times fa-lg" style="color: #E6C3D5;"
+    / FOR ADMIN FUNCTION
+    .adminSpHide
+      .concertContainerAdmin
+        -if admin_user?
+          .inline-block = button_tag "Edit?", class: "btn editConcert", id: "idCell", value: concert.id
+          . class="concertSource_#{concert.id} hidden" = concert.source if concert.source.present?
+          . class="concertImage_#{concert.id} hidden" = concert.image if concert.image.present?
+          . class="concertVenue_#{concert.id} hidden" id="venueIdCell" = concert.venue_id if concert.venue_id.present?
+          . class="concertOrigin_#{concert.id} hidden" id="concertOriginCell" = concert.origin if concert.origin.present?
+          . class="concertTmId_#{concert.id} hidden" = concert.tm_id if concert.tm_id.present?
+          . = link_to concert, data: { confirm: 'Are you sure?' }, method: :delete do
+            i class="fas fa-times fa-lg" style="color: #E6C3D5;"
 
-  / SOURCE
-  -if concert.origin.present?
-    -if concert.origin == "Ticket Master"
-      .inline-block style="padding: 0 10px; position:absolute; left:600px; top:0; padding:35px 5px;" = link_to concert.source do
-        =image_tag '/images/tmlogo_blue.png', size: '60x20'
-    -elsif concert.origin == "Songkick"
-      .inline-block style="padding: 0 10px; position:absolute; left:600px; top:0; padding:35px 5px;" = link_to concert.source do
-        =image_tag '/images/by_Songkick_white.png', size: '60x10'
-    -elsif concert.origin == "manual"
-      .inline-block style="padding: 0 10px; position:absolute; left:600px; top:0; padding:35px 5px;" = link_to concert.source do
-        =image_tag '/images/loading.jpg', size: '60x20'
-    -else
-      .inline-block style="padding: 0 10px; position:absolute; left:600px; top:0; padding:35px 5px;" = image_tag '/images/loading.jpg', size: '60x20'
+    / SOURCE
+    -if concert.origin.present?
+      -if concert.origin == "Ticket Master"
+        .inline-block = link_to concert.source do
+          =image_tag '/images/tmlogo_blue.png', size: '60x20'
+      -elsif concert.origin == "Songkick"
+        .inline-block = link_to concert.source do
+          =image_tag '/images/by_Songkick_white.png', size: '60x10'
+      -elsif concert.origin == "manual"
+        .inline-block = link_to concert.source do
+          =image_tag '/images/loading.jpg', size: '60x20'
+      -else
+        .inline-block = image_tag '/images/loading.jpg', size: '60x20'

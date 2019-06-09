@@ -101,7 +101,7 @@
         h1 Other Concerts
         -if @concert.venue.concerts.present? && @concert.venue.concerts.where.not(id: @concert.id).present?
           . style="margin:20px;"
-            ul style="margin:20px;"
+            . style="margin:20px;"
               .concertTbody.concertContainerTest
                 = render partial: 'concert_container_admin', collection: @concert.venue.concerts.where.not(id: @concert.id), :as => 'concert', locals: {keep: @keep}
         -else

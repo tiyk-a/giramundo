@@ -32,19 +32,20 @@
     . id="venueNameCell" class="hidden" = concert.venue.name if concert.venue.present?
 
     /LOCATION
-    #concertsContainerLocations
+    .concertsContainerLocations
       #cityCell = concert.venue.city if concert.venue.present?
       #countryCell = concert.venue.country if concert.venue.present?
-    -if admin_user?
-      .adminSpHide
-        .inline-block = button_tag "Edit?", class: "btn editConcert", id: "idCell", value: concert.id
-        . class="concertSource_#{concert.id} hidden" = concert.source
-        . class="concertImage_#{concert.id} hidden" = concert.image
-        . class="concertVenue_#{concert.id} hidden" id="venueIdCell" = concert.venue_id
-        . class="concertOrigin_#{concert.id} hidden" id="concertOriginCell" = concert.origin
-        . class="concertTmId_#{concert.id} hidden" = concert.tm_id
-        . = link_to concert, data: { confirm: 'Are you sure?' }, method: :delete do
-          i class="fas fa-times fa-lg" style="color: #E6C3D5;"
+    .adminSpHide
+      .concertContainerAdmin
+        -if admin_user?
+          .inline-block = button_tag "Edit?", class: "btn editConcert", id: "idCell", value: concert.id
+          . class="concertSource_#{concert.id} hidden" = concert.source
+          . class="concertImage_#{concert.id} hidden" = concert.image
+          . class="concertVenue_#{concert.id} hidden" id="venueIdCell" = concert.venue_id
+          . class="concertOrigin_#{concert.id} hidden" id="concertOriginCell" = concert.origin
+          . class="concertTmId_#{concert.id} hidden" = concert.tm_id
+          #concertContainerDelete = link_to concert, data: { confirm: 'Are you sure?' }, method: :delete do
+            i class="fas fa-times fa-lg" style="color: #E6C3D5;"
 
     #concertsConainerBtns
       / SOURCE
