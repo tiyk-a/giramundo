@@ -1,4 +1,4 @@
-# NotiGiraMundo -- Global Concert News
+# :notes: NotiGiraMundo -- Global Concert News
 
 NotiGiraMundo collects and bring you the concert/tour information of globally-popular artists.
 
@@ -8,23 +8,17 @@ NotiGiraMundoは世界で人気のあるアーティスト達のコンサート�
 
 For music/concert geeks around the world :)
 
-URL: http://www.notigiramundo.info/
-
-日本語アバウトページはこちら：http://www.notigiramundo.info/about
-
-アプリ理解のご参考に。
 
 
+## :musical_score: Description
 
-## Description
-
-### Concert search app that centerizes Artist, not Location.
+### :point_up: Concert search app that centerizes Artist, not Location.
 #### アーティスト・ファーストなコンサート・サーチ
 This app collects any concerts of your favorite artist.
 
 ユーザーのお気に入りアーティストが開催する世界各地のコンサートを集めます。
 
-### No City select
+### :wave: No City select
 #### 都市選択が不要
 When you search concerts on ticket providers' website, you are required to set your current city or search area. That's reasonable as normally concerts are planned to see local fans.
 
@@ -38,7 +32,7 @@ With NotiGiraMundo, you can find your favorite artists' concerts without selecti
 
 NotiGiraMundoでは、アーティストのコンサート情報を都市選択なしで一括検索することができます。
 
-### Enrich information with users
+### :star2: Enrich information with users
 #### ユーザーと作り上げられるコンサート情報
 Users who have account can "refresh artist' concert info". It's not open for guest users.
 With this "refresh artist's concert info", users can update that artists' information.
@@ -46,7 +40,7 @@ With this "refresh artist's concert info", users can update that artists' inform
 ログインしたユーザーは"refresh artist' concert info"のボタンを押すことができます。ゲストユーザーには制限がかかっている機能です。
 このボタンでユーザーはお気に入りアーティストのコンサート情報が更新されていないか確認することができ、さらに確認された情報は他のユーザーにも共有されます。
 
-### Keep and compare. Plan your travel
+### :paperclip: Keep and compare. Plan your travel
 #### 気になるコンサートはキープして、比較、プランしてフライトへ。
 Users can keep concerts that you were interested in. On my page, those kept concerts are listed, and mapped on the world map.
 Compare the conditions - Venues, dates, etc. - and plan your travel. With a click you can jump to the ticket provider's buy-ticket page.
@@ -55,7 +49,9 @@ Compare the conditions - Venues, dates, etc. - and plan your travel. With a clic
 
 ## Function
 
-### Artists Page
+:bow: To Be Updated
+
+### :heart_eyes: Artists Page
 - Please search your favorite artists' name. If the singer was already registered on the app, his/her icon would be appeared. If not, the search results of MusicBrainz would be shown. What you only have to do is click his/her correct name. If there was any description of the artist available, with your mouseover it would be on the page.
 好きなアーティストの名前を検索してみてください。すでにそのアーティストがアプリに登録されている場合は、アイコンが表示されます。まだ登録されていない場合はMusicBrainzのデータベースからのサーチ結果がテキストで表示されます。複数の検索結果から、適当なアーティスト名をクリックしてください。アーティストの詳細情報が入手できていた場合はアーティスト名へのマウスオーバーで詳細情報が表示されます。
 
@@ -65,7 +61,7 @@ Compare the conditions - Venues, dates, etc. - and plan your travel. With a clic
 
 
 
-### Concerts Page
+### :microphone: Concerts Page
 - Concerts page is the top page. Concerts that have enought information to show on the top page are listed. Admin users will confirm other concerts that lack any data and those would be added soon. You can use Asc/Desc sort by date. With the "Plan" button, you'll check date-confricts of concerts.
 コンサート一覧ページはトップページです。リストするのに十分な情報の揃っているコンサートのみがトップページに表示されています。アプリ管理者が順次、不足情報のみられるコンサート情報のデータを確認し、完了次第トップページに追加されます。トップページではコンサートの日付を今日から近い順/遠い順に並び替えることが可能です。また、"Plan"ボタンを利用すると、気になるコンサートと日程の重複がある他のコンサートをハイライトで確認することができます。
 
@@ -74,7 +70,10 @@ Compare the conditions - Venues, dates, etc. - and plan your travel. With a clic
 
 ## Requirement
 
+:bow: To Be Updated.
+Author is making the effort to provide the accurate information
+
 
 ## Framework
-- Ruby 2.5.5
-- Rails 5.2.3
+- :gem: Ruby 2.5.5
+- :railway_car: Rails 5.2.3
