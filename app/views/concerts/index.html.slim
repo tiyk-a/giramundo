@@ -7,9 +7,9 @@
             .sp-slide
               =link_to concert_path(pick) do
                 -if pick.image.present?
-                  =image_tag(pick.image, :size => '800x500')
+                  =image_tag(pick.image, class: "slide_image")
                 -else
-                  =image_tag(pick.performers[0].artist.artist_image, :size => '800x500')
+                  =image_tag(pick.performers[0].artist.artist_image, class: "slide_image")
             .sp-caption
               = link_to pick.concert_name, concert_path(pick)
 
@@ -23,10 +23,11 @@
                   =image_tag(pick.performers[0].artist.artist_image, :size => '120x80')
               .sp-thumbnail-text
                 =link_to concert_path(pick) do
-                  .sp-thumbnail-title =pick.concert_name.truncate(25)
-                  .sp-thumbnail-description
-                    =pick.date.strftime('%b. %d') if pick.date.present?
-                    =pick.venue.city if pick.venue.present?
+                  .sp-thumbnail-wrap
+                    .sp-thumbnail-title =pick.concert_name.truncate(25)
+                    .sp-thumbnail-description
+                      =pick.date.strftime('%b. %d') if pick.date.present?
+                      =pick.venue.city if pick.venue.present?
 .container
   .row.bg-gray
     .col-lg-2#concertSideBar
@@ -46,10 +47,6 @@
           #dateFind.text-center.btn Search
           #dateFindClear.btn style="margin-left:10px;" Clear
       .col-lg-5.inline-block.text-right.m-0
-        / .inline-block style="font-size: 12px; margin-right:10px;"
-        /   = link_to '>> SIMPLE VIEW', switch_concert_path(1), class: 'post_button btn', id: "switchSimple", remote: true
-        / .inline-block style="font-size: 12px;"
-        /   = link_to '>> BASIC VIEW', switch_concert_path(2), class: 'post_button hidden btn', id: "switchBasic", remote: true
         .inline-block
           #basicSort
             .inline-block
@@ -58,13 +55,6 @@
               = link_to 'Desc', concerts_sort_path(2), method: :post, class: 'post_button btn', id: "sortDesc", remote: true
             .inline-block
               p.btn#planBtn Plan
-        / #simpleSort.hidden
-        /   .inline-block
-        /     = link_to 'Asc', concerts_simple_sort_path(1), method: :post, class: 'post_button btn', remote: true
-        /   .inline-block
-        /     = link_to 'Desc', concerts_simple_sort_path(2), method: :post, class: 'post_button btn', remote: true
-        /   .inline-block
-        /     p.btn#planBtn Plan
 
       -if @concerts.present?
         .text-left#swichWindow

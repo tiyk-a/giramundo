@@ -18,8 +18,10 @@
 
     .col-lg-1
       #navBtn.text-right
-        #menu style="font-family: 'Oswald', sans-serif; font-size: 18px; padding: 10px 10px 5px 0; color: white;"
-          i class="fas fa-bars fa-3x"
+        #menu
+          .spHide
+            i class="fas fa-bars fa-3x"
+
           -if user_signed_in?
             #userId.hidden =current_user.id
       .nav-items#nav1.hidden

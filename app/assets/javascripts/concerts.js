@@ -189,18 +189,18 @@ $(document).ready(function( $ ) {
     thumbnailWidth: 300,
     breakpoints: {
       800: {
-        width: 700,
-        height: 500,
+        width: 780,
+        height: 440,
         thumbnailsPosition: 'bottom',
         thumbnailWidth: 270,
         thumbnailHeight: 100
       },
       500: {
-        width: 500,
-        height: 400,
+        width: 300,
+        height: 170,
         thumbnailsPosition: 'bottom',
         thumbnailWidth: 120,
-        thumbnailHeight: 50
+        thumbnailHeight: 120
       }
     }
   });

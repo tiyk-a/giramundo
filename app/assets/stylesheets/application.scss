@@ -36,6 +36,9 @@ html, body {
  background-color: white;
  color: black;
  }
+ .margin-adjustment {
+ 	margin-top:130px;
+ }
  button{
 	background-color: white;
 	border: 1px solid lightgray;
@@ -154,6 +157,11 @@ input[type="submit"], input[type="button"] {
 		border: 2px solid black;
     }
 }
+
+//  FOR ITEMS THAT SHOULD BE HIDDEN ONLY ON LAPTOP
+ .ltHide {
+ 	display: none;
+ }
 //******************* ELEMENTS *******************
 //******************* ELEMENTS *******************
 
@@ -364,18 +372,6 @@ input[type="submit"], input[type="button"] {
  		font-style: italic;
  	}
  }
-// .header-logo-small {
-// 	position: fixed;
-// 	width: 100%;
-// 	height: 100px;
-// 	z-index: 10000;
-//  	h1 {
-//  		 margin: 0;
-//  		a{
-//  			font-size: 30px;
-//  		}
-//  	}
-//  }
 .admin-nav {
 	background-color: lightgray;
 	width: 100%;
@@ -387,10 +383,6 @@ input[type="submit"], input[type="button"] {
 	margin: 0;
 	background-color: white;
 	color: black;
-}
-#onCanvas {
-	// position: fixed;
-	// top: 0;
 }
  #nav, #navnormal {
 	background-color: white;
@@ -418,6 +410,13 @@ input[type="submit"], input[type="button"] {
 	}
 }
 
+#menu {
+	font-family: 'Oswald',
+	sans-serif;
+	font-size: 18px;
+	padding: 10px 10px 5px 0;
+	color: white;
+}
 // NAV
 #navBtn {
 	width: 100px;
@@ -876,13 +875,20 @@ input[type="submit"], input[type="button"] {
  /* 〜800px：
 ------------------------------ */
 @media screen and (max-width:800px) {
+	.margin-adjustment {
+ 	margin-top: 120px;
+ 	}
+ 	.ltHide {
+ 		display: block;
+ 	}
 	.header-logo .logo-pink{
 		color: deeppink;
 	}
 	.row {
 		flex-direction: column;
 	}
-	.col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10 {
+	.col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5,
+	.col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10 {
 		width: 100%;
 		padding: 5px;
 	}
@@ -900,8 +906,10 @@ input[type="submit"], input[type="button"] {
 	 }
 	 #menu {
 	 	font-size: 0.7rem;
-	 	padding: 0;
+	 	padding: 5px 10px 5px 5px;
 	 }
+
+	 // HEADER NAVIGATION
 	#nav {
 		height: 60px;
 	}
@@ -914,11 +922,11 @@ input[type="submit"], input[type="button"] {
 	height: 30px;
 	top: 60px;
     right: 0px;
-	a{
-		width: 100px;
-		height: 100px;
-		line-height:50px;
-	}
+		a{
+			width: 100px;
+			height: 100px;
+			line-height:50px;
+		}
 	}
 	#nav2 {
 		width: 30px;
@@ -965,6 +973,59 @@ input[type="submit"], input[type="button"] {
 			line-height:50px;
 		}
 	}
+	// HEADER NAVIGATION END
+
+	.public_nav {
+		padding: 30px 0;
+		h1 {
+			padding: 0;
+		}
+		div {
+			flex-direction: column;
+		}
+	}
+	// FOOTER ADMIN NAV
+	#adminNavBtn {
+		width: 50px;
+		height: 50px;
+		h3 {
+			padding: 20px 3px 0 5px;
+			font-size: 0.8rem;
+			margin: 0;
+		}
+	}
+	#adminNav1 {
+		width: 30px;
+		height: 30px;
+		bottom: 0px;
+		right: 150px;
+	}
+	#adminNav2 {
+		width: 30px;
+		height: 30px;
+		bottom: 60px;
+		right: 135px;
+	}
+	#adminNav3 {
+		width: 30px;
+		height: 30px;
+		bottom: 110px;
+		right: 110px;
+	}
+	#adminNav4 {
+		width: 30px;
+		height: 30px;
+		bottom: 135px;
+		right: 60px;
+	}
+	#adminNav5 {
+		width: 30px;
+		height: 30px;
+		bottom: 150px;
+		right: 0px;
+	}
+	// FOOTER ADMIN NAV
+
 	.spHide, .userSpHide, .adminSpHide {
 		display: none;
 	}
@@ -973,6 +1034,12 @@ input[type="submit"], input[type="button"] {
  /* 〜500px：
 ------------------------------ */
 @media screen and (max-width:500px) {
+	.margin-adjustment {
+ 	margin-top:90px;
+ 	}
+ 	.ltHide {
+ 		display: block;
+ 	}
 	.row {
 		flex-direction: column;
 	}
@@ -997,7 +1064,7 @@ input[type="submit"], input[type="button"] {
 	}
 	#menu {
 	 	font-size: 0.7rem;
-	 	padding: 0;
+	    padding: 5px 10px 5px 5px;
 	 }
 	#nav {
 		height: 60px;
@@ -1011,11 +1078,11 @@ input[type="submit"], input[type="button"] {
 	height: 30px;
 	top: 60px;
     right: 0px;
-	a{
-		width: 100px;
-		height: 100px;
-		line-height:50px;
-	}
+		a{
+			width: 100px;
+			height: 100px;
+			line-height:50px;
+		}
 	}
 	#nav2 {
 		width: 30px;
