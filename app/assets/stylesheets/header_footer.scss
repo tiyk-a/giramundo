@@ -42,6 +42,11 @@
 	margin: 0;
 	background-color: white;
 	color: black;
+	h1 {
+		padding: 70px 0 0 0;
+		text-shadow:2px 2px 2px darkgrey;
+		color: black;
+	}
 }
  #nav, #navnormal {
 	background-color: white;
@@ -214,7 +219,8 @@
 	}
 }
 
-#navToConcert p, #navToArtist p, #navToVenues p, #navToUser p, #navToLogin p, #navToLogout p, #navToAbout p {
+#navToConcert p, #navToArtist p, #navToVenues p, #navToUser p,
+#navToLogin p, #navToLogout p, #navToAbout p {
 	display:none;
 }
 // NAV
@@ -345,6 +351,12 @@
 	right: 0;
 	background-color: #E6C3D5;
 	cursor: pointer;
+	font-size: 18px;
+	padding: 5px 10px 5px 0;
+	color: black;
+	margin-top:55px;
+	font-family: 'Oswald', sans-serif;
+	font-weight: 300;
 	&:hover{
 		box-shadow: 0 0 10px lightgray;
 		border: 0.3px inset lightgray;
@@ -489,6 +501,17 @@
 		border: 0.3px inset lightgray;
 		text-shadow: 0.5px 0.5px black;
 	}
+	span {
+		font-size: 18px;
+		padding: 5px 10px 5px 0;
+		color: transparent;
+		margin-top:55px;
+		a {
+			color:white;
+			font-weight:300;
+			font-family: 'Oswald', sans-serif;
+		}
+	}
 }
 #whiteTopCover {
 	height: 30px;
@@ -505,6 +528,61 @@
     top: -30px;
 }
 //
+
+// ADMIN SP MENU
+// HIDE ADMIN SP MENU ON LAPTOP
+.sp_admin {
+	display: none;
+}
+
+// HEADER SP MENU
+#sp-admin-menu {
+	position: fixed;
+	padding: 100px 0;
+	top: 0;
+	opacity: 0.8;
+	left: 0;
+	background: #000;
+	color: #fff;
+	width: 100%;
+	height: 100%;
+	display: none;
+	z-index: 5;
+}
+#sp-admin-menu li{
+	text-align: center;
+	width: 80%;
+	margin: 30px auto;
+}
+#sp-admin-menu a{
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+}
+ #adminSpNavBtn {
+	position: fixed;
+	bottom: -50px;
+	right: -50px;
+    width: 100px;
+    height: 100px;
+    z-index: 10;
+    background-color: pink;
+    border-radius: 50%;
+    p {
+    	font-size: 0.7rem;
+	    margin: 0;
+	    position: absolute;
+	    bottom: 60px;
+	    right: 53px;
+    }
+}
+.admin-ham-active {
+	&:hover{
+		box-shadow: 0 0 10px lightgray;
+		border: 0.3px inset lightgray;
+		text-shadow: 0.5px 0.5px black;
+	}
+  }
 //******************* FOOTER *******************
 //******************* FOOTER *******************
 
@@ -545,19 +623,16 @@
 			flex-direction: column;
 		}
 	}
-	// FOOTER ADMIN NAV
-	#adminNavBtn {
-		width: 50px;
-		height: 50px;
-		h3 {
-			padding: 20px 3px 0 5px;
-			font-size: 0.8rem;
-			margin: 0;
-		}
-	}
 	#backBtn {
 	width: 50px;
 	height: 50px;
+	}
+	.sp_admin {
+		display: inline-block;
+	    z-index: 1000;
+	    position: fixed;
+	    bottom: 0;
+	    right: 0;
 	}
 }
 
@@ -596,18 +671,15 @@
 			flex-direction: column;
 		}
 	}
-	// FOOTER ADMIN NAV
-	#adminNavBtn {
-		width: 50px;
-		height: 50px;
-		h3 {
-			padding: 20px 3px 0 5px;
-			font-size: 0.8rem;
-			margin: 0;
-		}
-	}
 	#backBtn {
 	width: 50px;
 	height: 50px;
+	}
+	.sp_admin {
+		display: inline-block;
+	    z-index: 1000;
+	    position: fixed;
+	    bottom: 0;
+	    right: 0;
 	}
 }

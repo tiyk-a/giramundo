@@ -132,6 +132,21 @@ $(document).on('mouseover', '#adminNav5', function(){
     $('#adminNavBtn').html('<h3 style="font-size:18px; padding: 5px 10px 5px 0; color: black; margin-top:55px;">LOG OUT</h3>');
   });
 // BTN5
+
+// SP ADMIN MENU
+$(function(){
+  $('#adminSpNavBtn').on('click', function(){
+    if($(this).hasClass('admin-ham-active')){
+      $(this).removeClass('admin-ham-active');
+      $('#sp-admin-menu').fadeOut();
+      return false;
+    }else{
+      $(this).addClass('admin-ham-active');
+      $('#sp-admin-menu').fadeIn();
+      return false;
+    }
+  });
+});
 //******************** FOOTER ********************
 //******************** FOOTER ********************
 

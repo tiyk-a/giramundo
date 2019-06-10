@@ -1,5 +1,5 @@
 .public_nav#footerTop
-  h1.text-center style="padding: 70px 0 0 0;text-shadow:2px 2px 2px darkgrey; color: black;" POWERED BY
+  h1.text-center POWERED BY
   .flex.text-center.align_bottom
     .col-lg-2.text-center
       = link_to "https://www.ticketmaster.com/", target: '_blank' do
@@ -15,24 +15,37 @@
         =image_tag '/images/MusicBrainz_Logo_Transparent.png', size: '80x50'
 
 - if admin_user?
-  #adminNavBtn.text-right
-    h3 style="font-size: 18px; padding: 5px 10px 5px 0; color: black; margin-top:55px; font-family: 'Oswald', sans-serif; font-weight: 300;" ADMIN
-  .adm-nav-items#adminNav1.hidden
-    = link_to concerts_path, data: {"turbolinks" => false} do
-      i class="fas fa-music fa-2x" style="padding:8px;"
-  .adm-nav-items#adminNav2.hidden
-    = link_to artists_path, data: {"turbolinks" => false} do
-      i class="fab fa-napster fa-2x" style="padding:8px;"
-  .adm-nav-items#adminNav3.hidden
-    = link_to admin_path, data: {"turbolinks" => false} do
-      i class="fas fa-user-cog fa-2x" style="padding:8px;"
-  .adm-nav-items#adminNav4.hidden
-    = link_to users_path, data: {"turbolinks" => false} do
-      i class="fas fa-users fa-2x" style="padding:8px;"
-  .adm-nav-items#adminNav5.hidden
-    = link_to destroy_user_session_path, method: :delete do
-      i class="fas fa-sign-out-alt fa-2x" style="padding:8px;"
+  / ADMIN LP MENU
+  .spHide
+    #adminNavBtn.text-right
+      h3 ADMIN
+    .adm-nav-items#adminNav1.hidden
+      = link_to concerts_path, data: {"turbolinks" => false} do
+        i class="fas fa-music fa-2x" style="padding:8px;"
+    .adm-nav-items#adminNav2.hidden
+      = link_to artists_path, data: {"turbolinks" => false} do
+        i class="fab fa-napster fa-2x" style="padding:8px;"
+    .adm-nav-items#adminNav3.hidden
+      = link_to admin_path, data: {"turbolinks" => false} do
+        i class="fas fa-user-cog fa-2x" style="padding:8px;"
+    .adm-nav-items#adminNav4.hidden
+      = link_to users_path, data: {"turbolinks" => false} do
+        i class="fas fa-users fa-2x" style="padding:8px;"
+    .adm-nav-items#adminNav5.hidden
+      = link_to destroy_user_session_path, method: :delete do
+        i class="fas fa-sign-out-alt fa-2x" style="padding:8px;"
+
+  .sp_admin
+    #sp-admin-menu
+      ul#spAdminMenu
+        li = link_to "Concerts", concerts_path, data: {"turbolinks" => false}
+        li = link_to "Artists", artists_path, data: {"turbolinks" => false}
+        li = link_to "Venues", admin_path, data: {"turbolinks" => false}
+        li = link_to "Users", users_path, data: {"turbolinks" => false}
+        li = link_to "Log Out", destroy_user_session_path, method: :delete
+    #adminSpNavBtn
+      p ADMIN
 
 -else
   #backBtn.text-right
-    span style="font-size: 18px; padding: 5px 10px 5px 0; color: transparent; margin-top:55px;" = link_to "BACK", :back, data: {"turbolinks" => false}, style: "color:white; font-weight:300; font-family: 'Oswald', sans-serif;"
+    span = link_to "BACK", :back, data: {"turbolinks" => false}
