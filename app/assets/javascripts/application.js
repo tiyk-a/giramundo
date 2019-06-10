@@ -76,6 +76,21 @@ $(document).on('mouseover', '#nav5-2', function(){
     $('#menu').html('<h3>About</h3>');
   });
 // BTN5-2
+
+// SP MENU
+$(function(){
+  $('#menuToggle').on('click', function(){
+    if($(this).hasClass('hamburger-active')){
+      $(this).removeClass('hamburger-active');
+      $('#sp-menu').fadeOut();
+      return false;
+    }else{
+      $(this).addClass('hamburger-active');
+      $('#sp-menu').fadeIn();
+      return false;
+    }
+  });
+});
 //******************** HEADER ********************
 //******************** HEADER ********************
 

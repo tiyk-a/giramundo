@@ -1,27 +1,21 @@
-.container#onCanvas
+.container
   .row
-    .col-lg-2.spHide
-    .col-lg-6.text-center.flex style="margin: 0 auto;padding:10px;"
-      . style="margin: 0 auto;"
-        .subline.text-center style="margin:0;"
-          p#header-subline 世界中のコンサート情報収集アプリ
-        a.inline-block href="#footerTop" test
-        .inline-block =link_to concerts_path, data: {"turbolinks" => false} do
-          h1.header-logo
-            span.logo-pink N
-            span.logo-other OTI
-            span.logo-pink G
-            span.logo-other IRA
-            span.logo-pink M
-            span.logo-other UNDO
-    .col-lg-1.text-right.spHide
-
-    .col-lg-1
+    #main_header
+      p#header-subline 世界中のコンサート情報収集サイト
+      / a.inline-block href="#footerTop" test
+      .inline-block =link_to concerts_path, data: {"turbolinks" => false} do
+        h1.header-logo
+          span.logo-pink N
+          span.logo-other OTI
+          span.logo-pink G
+          span.logo-other IRA
+          span.logo-pink M
+          span.logo-other UNDO
+      / LP MENU
+    .spHide
       #navBtn.text-right
         #menu
-          .spHide
-            i class="fas fa-bars fa-3x"
-
+          i class="fas fa-bars fa-3x"
           -if user_signed_in?
             #userId.hidden =current_user.id
       .nav-items#nav1.hidden
@@ -56,6 +50,26 @@
           = link_to about_path, data: {"turbolinks" => false} do
             i class="fas fa-question fa-2x" style="padding:8px 8px 8px 12px;"
           #navToAbout
+
+    / SP MENU
+    .sp_menu
+      -if user_signed_in?
+        #userId.hidden =current_user.id
+      #sp-menu
+        ul#spMenu
+          li = link_to "Concerts", concerts_path, data: {"turbolinks" => false}
+          li = link_to "Artists", artists_path, data: {"turbolinks" => false}
+          li = link_to "Venues", venues_path, data: {"turbolinks" => false}
+          -if user_signed_in?
+            li = link_to "Your Keeps", user_path(current_user), data: {"turbolinks" => false}
+            li = link_to "Log Out", destroy_user_session_path, method: :delete
+          -else
+            li = link_to "Log In", new_user_session_path, data: {"turbolinks" => false}
+            li = link_to "About", about_path, data: {"turbolinks" => false}
+      #menuToggle
+          span
+          span
+          span
 
     #loginAlertModal.hidden
       . style="margin:30px auto;text-align: right;"
