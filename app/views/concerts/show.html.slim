@@ -38,12 +38,13 @@
         .spHide =render 'users/watch_list'
     .col-lg-8
       = link_to @concert.source do
-        -if @concert.image.present?
-          =image_tag(@concert.image, :size => "845x500")
-        -elsif @concert.performers[0].artist.artist_image.present?
-          =image_tag @concert.performers[0].artist.artist_image, :size => "845x500"
-        -else
-          =image_tag("/images/loading.jpg", :size => '845x500')
+        #concertsShowImage
+          -if @concert.image.present?
+            =image_tag(@concert.image)
+          -elsif @concert.performers[0].artist.artist_image.present?
+            =image_tag @concert.performers[0].artist.artist_image
+          -else
+            =image_tag("/images/loading.jpg")
       -if admin_user?
         .adminSpHide = render 'concerts/form', concert: @concert, artists: @artists, venues: @venues
       / -else
@@ -53,57 +54,45 @@
           span style="font-size:16px; margin:0 5px;"
             =link_to @concert.source, target: '_blank' do
               i class="fas fa-external-link-alt"
-      ul style="margin:20px;"
-        li style="box-shadow:none;"
-          span style="width:50%; height:210px;"
-            #concertShowMap style="width:100%; height:100%;"
-          span style="width:40%; height:210px; vertical-align:top;"
-            ul style="margin:20px;"
-              li style="box-shadow:none;"
-                - if @concert.performers.present?
-                  ul
-                    - @concert.performers.each do |performer|
-                      li style="height:40px; position:relative; box-shadow:none;"
-                        span style="width:50px; height:40px; position:absolute; top:0;"
-                          =image_tag(performer.artist.artist_image, size: "40x40", style: "border-radius:50%;")
-                        span style="width:200px; height:40px; position:absolute; top:0; left:50px;"
-                          h4 style="margin:10px 3px;" = link_to performer.artist.artist_name, artist_path(performer.artist), data: {"turbolinks" => false}
-                        span style="left: 250px; position: absolute; padding: 5px 0 0 0;" = render 'watch_artists/watch_artist', artist: performer.artist
-                -else
-                  span
-                    h4 TBC
-              li style="height:50px; padding:0; box-shadow:none;"
-                span style="margin-left:12px;width:40px"
-                  i class="fas fa-ticket-alt fa-2x"
-                span
-                  -if @concert.origin == "Ticket Master"
-                    = link_to @concert.source do
-                      =image_tag '/images/tmlogo_blue.png', size: '90x30'
-                  -elsif @concert.origin == "Songkick"
-                    = link_to @concert.source do
-                      =image_tag '/images/by_Songkick_white.png', size: '90x30'
-                  -elsif @concert.origin == "manual"
-                    = link_to @concert.source do
-                      =image_tag("/images/loading.jpg", :size => '90x30')
-                  -else
-                    =image_tag("/images/loading.jpg", :size => '90x30')
 
-              li style="height:50px; padding:0; box-shadow:none;"
-                span style="margin-left:16px;width:40px"
-                  i class="fas fa-map-marker-alt fa-2x"
-                span
-                  -if @concert.venue.present?
-                    span style="width:180px;"
-                      h4 style="margin:0;" = link_to @concert.venue.name, venue_path(@concert.venue), data: {"turbolinks" => false}
-                  -else
-                    h4 TBC
+      .concertsShowDetails
+        #concertShowMap
+        .concertsShowDetailsRight
+          .concertsShowPerformer
+            - if @concert.performers.present?
+              - @concert.performers.each do |performer|
+                .concertsShowPerformerImage
+                  =image_tag(performer.artist.artist_image, size: "40x40")
+                h4 = link_to performer.artist.artist_name, artist_path(performer.artist), data: {"turbolinks" => false}
+                span = render 'watch_artists/watch_artist', artist: performer.artist
+            -else
+              h4 TBC
+          .concertsShowTicket
+            i class="fas fa-ticket-alt fa-2x"
+            -if @concert.origin == "Ticket Master"
+              = link_to @concert.source do
+                =image_tag '/images/tmlogo_blue.png', size: '90x30'
+            -elsif @concert.origin == "Songkick"
+              = link_to @concert.source do
+                =image_tag '/images/by_Songkick_white.png', size: '90x30'
+            -elsif @concert.origin == "manual"
+              = link_to @concert.source do
+                =image_tag("/images/loading.jpg", :size => '90x30')
+            -else
+              =image_tag("/images/loading.jpg", :size => '90x30')
+
+          .concertsShowMapArea
+            i class="fas fa-map-marker-alt fa-2x"
+            -if @concert.venue.present?
+              h4 = link_to @concert.venue.name, venue_path(@concert.venue), data: {"turbolinks" => false}
+            -else
+              h4 TBC
       .
         h1 Other Concerts
         -if @concert.venue.concerts.present? && @concert.venue.concerts.where.not(id: @concert.id).present?
           . style="margin:20px;"
-            . style="margin:20px;"
-              .concertTbody.concertContainerTest
-                = render partial: 'concert_container_admin', collection: @concert.venue.concerts.where.not(id: @concert.id), :as => 'concert', locals: {keep: @keep}
+            .concertTbody.concertContainerTest
+              = render partial: 'concert_container_admin', collection: @concert.venue.concerts.where.not(id: @concert.id), :as => 'concert', locals: {keep: @keep}
         -else
           h3 Not Found :(
 

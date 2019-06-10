@@ -34,8 +34,12 @@
 ------------------------------ */
 @media screen and (max-width:800px) {
 	.eachNews {
+		text-align: left;
+		font-size: 14px;
+		width: 190px;
+		margin: 0 auto;
 		p {
-			padding-left: 15px;
+			padding: 0;
 		}
 	}
 	#allNews {
@@ -47,8 +51,12 @@
 ------------------------------ */
 @media screen and (max-width:500px) {
 	.eachNews {
+		text-align: left;
+		font-size: 14px;
+		width: 190px;
+		margin: 0 auto;
 		p {
-			padding-left: 15px;
+			padding: 0;
 		}
 	}
 	#allNews {

@@ -17,12 +17,59 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    .artistListImage {
+    	// width: 60px;
+    	padding: 0 3px;
+    	display: inline-block;
+    	img {
+    		width: 60px;
+    		height: 40px;
+    	}
+    }
+    .artistListRight {
+    	margin: 0;
+    	padding: 0;
+    	display: flex;
+    	flex-direction: row;
+    	align-items: center;
+    	justify-content: space-around;
+    	.artistListArtistName {
+	    	width: 200px;
+	    	padding-left: 10px;
+	    	a {
+	    		font-size: 18px;
+	    	}
+    	}
+    	.artistListArtistMbId {
+	    	font-size: 10px;
+	    	width: 200px;
+	    	padding:0 10px;
+	    }
+	    .artistListThirdLine {
+	    	display: flex;
+	    	flex-direction: row;
+	    	margin: 0;
+	    	padding: 0;
+	    	.artistListConcerts {
+		    	width: 50px;
+		    	padding: 0 10px;
+		    	display: inline-block;
+		    }
+		    .artistListWatchArtist {
+		    	width: 50px;
+		    	padding: 0 10px;
+		    	display: inline-block;
+		    }
+	    }
+	    #artistContainerAdmin{
+			display: flex;
+		    flex-direction: row;
+		    align-items: center;
+		}
+    }
+
 }
-#artistContainerAdmin{
-	display: flex;
-    flex-direction: row;
-    align-items: center;
-}
+
 #yt {
 	width: 640px;
 	height: 360px;
@@ -54,4 +101,103 @@
 	&:hover {
 	opacity:0.9;
 	}
+}
+
+ /* 〜800px：
+------------------------------ */
+@media screen and (max-width:800px){
+	// .artistList {
+	// 	padding: 10px;
+	//     margin: 20px 0;
+	//     .artistListImage {
+	//     	padding: 0 8px;
+	//     }
+	//     .artistListArtistName {
+	//     	a {
+	//     		font-size: 0.8rem;
+	//     	}
+	//     }
+	//     .artistListArtistMbId {
+	//     	font-size: 0.4rem;
+	//     }
+	//     .artistListConcerts {
+	//     	font-size: 0.4rem;
+	//     }
+	//     .artistListWatchArtist {
+	//     	width: 50px;
+	//     	padding: 0 10px;
+	//     }
+	// }
+
+	.artistList {
+		// padding: 10px;
+	 //    margin: 20px 0;
+	 //    box-shadow: 0 0 10px lightgrey;
+	 //    border-radius: 10px;
+	 //    cursor: pointer;
+	 //    display: flex;
+	    // flex-direction: row;
+	    // align-items: center;
+	    // justify-content: space-around;
+	    // .artistListImage {
+	    // 	// width: 60px;
+	    // 	padding: 0 3px;
+	    // 	display: inline-block;
+	    // 	img {
+	    // 		width: 60px;
+	    // 		height: 40px;
+	    // 	}
+	    // }
+	    .artistListRight {
+	    	// margin: 0;
+	    	// padding: 0;
+	    	// display: flex;
+	    	flex-direction: column;
+	    	padding: 0 0 0 10px;
+	    	// align-items: center;
+	    	// justify-content: space-around;
+	    	.artistListArtistName {
+		    	// width: 200px;
+		    	padding-left: 0;
+		    	a {
+		    		font-size: 1rem;
+		    	}
+	    	}
+	    	.artistListArtistMbId {
+		    	font-size: 0.4rem;
+		    	// width: 200px;
+		    	padding: 0;
+		    }
+		    .artistListThirdLine {
+		    	display: flex;
+			    margin: 0;
+			    padding: 0;
+			    width: 100%;
+		    	.artistListConcerts {
+		    		    font-size: 0.8rem;
+    					line-height: 1.5rem;
+			    	width: auto;
+			    	// padding: 0 10px;
+			    	// display: inline-block;
+			    }
+			    .artistListWatchArtist {
+			    	width: auto;
+			    	// padding: 0 10px;
+			    	// display: inline-block;
+			    }
+		    }
+		    #artistContainerAdmin{
+				// display: flex;
+			 //    flex-direction: row;
+			 //    align-items: center;
+			}
+	    }
+
+	}
+}
+
+ /* 〜500px：
+------------------------------ */
+@media screen and (max-width:500px){
+
 }

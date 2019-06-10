@@ -1,16 +1,19 @@
 .artistList
-  span style="width:60px; padding:0 3px;" = link_to artist_path(artist.id), data: {"turbolinks" => false} do
+  .artistListImage = link_to artist_path(artist.id), data: {"turbolinks" => false} do
     -if artist.artist_image.present?
-      =image_tag(artist.artist_image, :size => '60x40', class: "listArtistImg#{artist.id}")
+      =image_tag(artist.artist_image, class: "listArtistImg#{artist.id}")
     -else
-      =image_tag("/images/no-portrait.png", :size => '60x40')
-  span style="width: 200px; padding-left: 10px;" = link_to artist.artist_name, artist, class: "listArtistName#{artist.id}", style: "font-size: 18px;", data: {"turbolinks" => false}
-  span style="font-size: 10px; width: 200px; padding:0 10px;" class="listArtistMbid#{artist.id}" = artist.mb_id
-  span style="width:50px; padding:0 10px;" = artist.performers.count
-  span style="width:50px; padding:0 10px;"
-    . class="watch_artist#{artist.id}" = render 'watch_artists/watch_artist', artist: artist
-  #artistContainerAdmin.adminSpHide
-    -if admin_user?
-      span style="width:50px; padding:0 10px;" = button_tag "Edit?", class: "editArtist", value: artist.id
-      span style="width:50px; padding:0 10px;" = link_to artist, data: { confirm: 'Are you sure?' }, method: :delete do
-        i class="fas fa-times" style="color: #E6C3D5;"
+      =image_tag("/images/no-portrait.png")
+  .artistListRight
+    .artistListArtistName = link_to artist.artist_name, artist, class: "listArtistName#{artist.id}", data: {"turbolinks" => false}
+    .artistListArtistMbId class="listArtistMbid#{artist.id}" = artist.mb_id
+    .artistListThirdLine
+      .artistListConcerts = artist.performers.count
+      .artistListWatchArtist
+        . class="watch_artist#{artist.id}" = render 'watch_artists/watch_artist', artist: artist
+    .adminSpHide
+      #artistContainerAdmin
+        -if admin_user?
+          span style="width:50px; padding:0 10px;" = button_tag "Edit?", class: "editArtist", value: artist.id
+          span style="width:50px; padding:0 10px;" = link_to artist, data: { confirm: 'Are you sure?' }, method: :delete do
+            i class="fas fa-times" style="color: #E6C3D5;"

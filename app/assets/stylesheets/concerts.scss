@@ -77,22 +77,22 @@
 // ************* Concerts#index END *************
 
 // ************* Concerts#show *************
-#onTv {
-	border-radius: 40px;
-	border: 0.3px inset lightgray;
-	box-shadow: 0 0 10px lightgray;
-	padding: 20px;
-	margin: 20px 0;
-	.onTvNews {
-	opacity: 1;
-	color: black;
-	}
-}
-.simpleViewTd {
-	padding: 3px 5px;
-	font-size: 14px;
-	line-height:12px;
-}
+// #onTv {
+// 	border-radius: 40px;
+// 	border: 0.3px inset lightgray;
+// 	box-shadow: 0 0 10px lightgray;
+// 	padding: 20px;
+// 	margin: 20px 0;
+// 	.onTvNews {
+// 	opacity: 1;
+// 	color: black;
+// 	}
+// }
+// .simpleViewTd {
+// 	padding: 3px 5px;
+// 	font-size: 14px;
+// 	line-height:12px;
+// }
 .highlight1 {
 	background-color: #BFA3B2;
 	box-shadow: 0 0 10px lightgray;
@@ -108,7 +108,8 @@
 }
 .pagination {
 	margin: 20px 0;
-	text-align: right;
+	display: flex;
+    justify-content: center;
 }
 .sp-thumbnail {
 	text-align: left;
@@ -143,6 +144,80 @@
 .sp-arrow {
 	opacity: 0.5;
 }
+#concertsShowImage {
+	img {
+		width: 845px;
+		height: 500px;
+	}
+}
+#concertShowMap {
+	width:100%;
+	height:100%;
+}
+.concertsShowDetails {
+	display: flex;
+    flex-direction: row;
+	#concertShowMap {
+		width: 50%;
+		height: 210px;
+		display: inline-block;
+	}
+	.concertsShowDetailsRight {
+		width: 40%;
+		height: 210px;
+		vertical-align: top;
+		display: inline-block;
+		.concertsShowPerformer {
+			margin: 20px;
+			.concertsShowPerformerImage {
+				display: inline-block;
+				height: 40px;
+				position: relative;
+				box-shadow:none;
+				width: 50px;
+				img {
+					border-radius: 50%;
+				}
+				h4 {
+					display: inline-block;
+					width: 200px;
+					height: 40px;
+					position: absolute;
+					top: 0;
+					left: 50px;
+					margin: 10px 3px;
+				}
+				span {
+					left: 250px;
+					position: absolute;
+					padding: 5px 0 0 0;
+				}
+			}
+		}
+		.concertsShowTicket {
+			height: 50px;
+			padding: 0;
+			box-shadow: none;
+			i {
+				margin-left: 12px;
+				width: 40px;
+			}
+		}
+		.concertsShowMapArea {
+			height: 50px;
+			padding: 0;
+			box-shadow: none;
+			i {
+				margin-left: 16px;
+				width: 40px;
+			}
+			h4 {
+				display: inline-block;
+				margin: 0;
+			}
+		}
+	}
+}
 // ************* Concerts#show END *************
 
  /* 〜800px：
@@ -167,7 +242,7 @@
 			word-wrap: break-word;
 			line-height: 0.8em;
 			a{
-				font-size: 0.6rem;
+				font-size: 0.7rem;
 				width: 100%;
 				word-wrap: break-word;
 				font-weight: 400;
@@ -176,6 +251,7 @@
 		.concertsContainerLocations {
 			display: flex;
 			flex-direction: row;
+			width: 100%;
 			#cityCell, #countryCell {
 			font-size: 0.6rem;
 			width: auto;
@@ -207,6 +283,12 @@
 	}
 	.sp-thumbnail-wrap {
 		padding: 20px 5px;
+	}
+	#concertsShowImage {
+		img {
+			width: 680px;
+			height: 390px;
+		}
 	}
 }
 
@@ -232,7 +314,7 @@
 			word-wrap: break-word;
 			line-height: 0.8em;
 			a{
-				font-size: 0.6rem;
+				font-size: 0.7rem;
 				width: 100%;
 				word-wrap: break-word;
 				font-weight: 400;
@@ -241,6 +323,7 @@
 		#concertsContainerLocations {
 			display: flex;
 			flex-direction: row;
+			width: 100%;
 			#cityCell, #countryCell {
 			font-size: 0.6rem;
 			width: auto;
@@ -272,5 +355,66 @@
 	}
 	.sp-thumbnail-wrap {
 		padding: 20px 5px;
+	}
+	#concertsShowImage {
+		img {
+			width: 280px;
+			height: 155px;
+		}
+	}
+	.concertsShowDetails {
+	    flex-direction: column;
+		#concertShowMap {
+			width: 100%;
+		}
+		.concertsShowDetailsRight {
+			width: 100%;
+			.concertsShowPerformer {
+				display: flex;
+    			align-items: center;
+				.concertsShowPerformerImage {
+					display: inline-block;
+					height: 40px;
+					position: relative;
+					box-shadow:none;
+					width: 50px;
+				}
+				h4 {
+					display: inline-block;
+					margin: 10px 3px;
+				}
+				span {
+					padding: 5px 0 0 0;
+				}
+			}
+			.concertsShowTicket {
+				height: 50px;
+				padding: 0;
+				box-shadow: none;
+				display: flex;
+    			align-items: center;
+    			margin: 20px;
+				i {
+					margin-left: 12px;
+					width: 40px;
+				}
+			}
+			.concertsShowMapArea {
+				height: 50px;
+				padding: 0;
+				box-shadow: none;
+				display: flex;
+    			align-items: center;
+    			margin: 20px;
+				i {
+					margin-left: 16px;
+					width: 40px;
+				}
+				h4 {
+					display: inline-block;
+					margin: 0;
+				}
+			}
+		}
 	}
 }
