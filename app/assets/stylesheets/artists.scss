@@ -2,11 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.artistImageBox {
-	border: 2px solid black;
-	width: 400px;
-	height: 300px;
-}
+// INDEX ***************************************
 .artistList {
 	padding: 10px;
     margin: 20px 0;
@@ -69,10 +65,41 @@
     }
 
 }
+// INDEX ***************************************
 
+
+// SHOW ***************************************
+.artistsShowHead {
+	// padding: 0 5% 0 0;
+	display: flex;
+	justify-content:space-between;
+	#artistName {
+		font-size: 40px;
+		margin: 0;
+		display: inline-block;
+	}
+	span {
+		margin-top: 15px;
+	}
+}
 #yt {
 	width: 640px;
 	height: 360px;
+}
+.artistImageBox {
+	border: 2px solid black;
+	width: 400px;
+	height: 300px;
+	img {
+		width: 400px;
+		height: 300px;
+	}
+}
+.artistsShowGetInfo {
+	width: 100%;
+	height: 70px;
+	box-shadow: 0 0 10px lightgray;
+	margin: 10px 0;
 }
 .createWatch{
 	cursor:pointer;
@@ -106,58 +133,11 @@
  /* 〜800px：
 ------------------------------ */
 @media screen and (max-width:800px){
-	// .artistList {
-	// 	padding: 10px;
-	//     margin: 20px 0;
-	//     .artistListImage {
-	//     	padding: 0 8px;
-	//     }
-	//     .artistListArtistName {
-	//     	a {
-	//     		font-size: 0.8rem;
-	//     	}
-	//     }
-	//     .artistListArtistMbId {
-	//     	font-size: 0.4rem;
-	//     }
-	//     .artistListConcerts {
-	//     	font-size: 0.4rem;
-	//     }
-	//     .artistListWatchArtist {
-	//     	width: 50px;
-	//     	padding: 0 10px;
-	//     }
-	// }
-
 	.artistList {
-		// padding: 10px;
-	 //    margin: 20px 0;
-	 //    box-shadow: 0 0 10px lightgrey;
-	 //    border-radius: 10px;
-	 //    cursor: pointer;
-	 //    display: flex;
-	    // flex-direction: row;
-	    // align-items: center;
-	    // justify-content: space-around;
-	    // .artistListImage {
-	    // 	// width: 60px;
-	    // 	padding: 0 3px;
-	    // 	display: inline-block;
-	    // 	img {
-	    // 		width: 60px;
-	    // 		height: 40px;
-	    // 	}
-	    // }
 	    .artistListRight {
-	    	// margin: 0;
-	    	// padding: 0;
-	    	// display: flex;
 	    	flex-direction: column;
 	    	padding: 0 0 0 10px;
-	    	// align-items: center;
-	    	// justify-content: space-around;
 	    	.artistListArtistName {
-		    	// width: 200px;
 		    	padding-left: 0;
 		    	a {
 		    		font-size: 1rem;
@@ -165,7 +145,6 @@
 	    	}
 	    	.artistListArtistMbId {
 		    	font-size: 0.4rem;
-		    	// width: 200px;
 		    	padding: 0;
 		    }
 		    .artistListThirdLine {
@@ -177,27 +156,105 @@
 		    		    font-size: 0.8rem;
     					line-height: 1.5rem;
 			    	width: auto;
-			    	// padding: 0 10px;
-			    	// display: inline-block;
 			    }
 			    .artistListWatchArtist {
 			    	width: auto;
-			    	// padding: 0 10px;
-			    	// display: inline-block;
 			    }
 		    }
 		    #artistContainerAdmin{
-				// display: flex;
-			 //    flex-direction: row;
-			 //    align-items: center;
 			}
 	    }
-
+	}
+	.artistsShowHead {
+		padding: 0 5% 0 0;
+	}
+	.artistImageBox {
+		width: 650px;
+		height: 465px;
+		img {
+			width: 650px;
+			height: 465px;
+		}
+	}
+	.artistsShowGetInfo {
+		width: 70%;
+		height: 50px;
+		text-align: center;
+		margin: 10px auto;
+		#findConcertButton {
+			width: 130px;
+			height: 40px;
+		}
+		#findConcertButtonSK {
+			width: 100px;
+			height: 20px;
+		}
 	}
 }
 
  /* 〜500px：
 ------------------------------ */
 @media screen and (max-width:500px){
+	.artistList {
+	    .artistListRight {
+	    	flex-direction: column;
+	    	padding: 0 0 0 10px;
+	    	.artistListArtistName {
+		    	padding-left: 0;
+		    	a {
+		    		font-size: 1rem;
+		    	}
+	    	}
+	    	.artistListArtistMbId {
+		    	font-size: 0.4rem;
+		    	padding: 0;
+		    }
+		    .artistListThirdLine {
+		    	display: flex;
+			    margin: 0;
+			    padding: 0;
+			    width: 100%;
+		    	.artistListConcerts {
+		    		    font-size: 0.8rem;
+    					line-height: 1.5rem;
+			    	width: auto;
+			    }
+			    .artistListWatchArtist {
+			    	width: auto;
+			    }
+		    }
+		    #artistContainerAdmin{
+			}
+	    }
+
+	}
+	.artistsShowHead {
+		padding: 0 10% 0 0;
+		#artistName {
+			font-size: 2rem;
+		}
+	}
+	.artistImageBox {
+		width: 250px;
+		height: 140px;
+		img {
+			width: 250px;
+			height: 140px;
+		}
+	}
+	.artistsShowGetInfo {
+		width: 70%;
+		height: 50px;
+		text-align: center;
+		margin: 10px auto;
+		#findConcertButton {
+			width: 130px;
+			height: 40px;
+		}
+		#findConcertButtonSK {
+			width: 100px;
+			height: 20px;
+		}
+	}
 
 }

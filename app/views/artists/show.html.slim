@@ -1,50 +1,51 @@
 .container
 	.row
 		.col-lg-4
-			.flex style="justify-content:space-between;"
+			.artistsShowHead
+				h1#artistName = @artist.artist_name
 				span
-					h1#artistName style="font-size:40px; margin: 0;" = @artist.artist_name
-				span style="margin-top:15px;"
 					. class="watch_artist_lg#{@artist.id}" = render 'watch_artists/watch_artist_lg', artist: @artist
 			.hidden#artistMbId = @artist.mb_id
 			.artistImageBox
 				-if @artist.artist_image.present?
-					=image_tag(@artist.artist_image, :size => '400x300')
+					=image_tag(@artist.artist_image)
 				-else
-					=image_tag("/images/no-portrait.png", :size => '300x200')
+					=image_tag("/images/no-portrait.png")
 				/ p#findArtistImage.btn.inline-block Update Artist's Image?
-		.col-lg-6
-			#yt
+		.spHide
+			.col-lg-6
+				#yt
 
 .container
 	.row
 		.col-lg-2
 			h3 Click to Find Info
 			- unless user_signed_in?
-				. style="width:100%; height:70px; box-shadow: 0 0 10px lightgray; margin: 10px 0;"
+				.artistsShowGetInfo
 					=image_tag '/images/tmlogo_blue.png', size: '170x60', class: "loginAlert", style:"padding: 5px 20px;"
-				. style="width:100%; height:70px; box-shadow: 0 0 10px lightgray; margin: 10px 0;"
+				.artistsShowGetInfo
 					=image_tag '/images/by_Songkick_white.png', size: '140x40', class: "loginAlert", style:"padding: 20px 35px;"
 			-else
-				. style="width:100%; height:70px; box-shadow: 0 0 10px lightgray; margin: 10px 0;"
+				.artistsShowGetInfo
 					=image_tag '/images/tmlogo_blue.png', size: '170x60', id: "findConcertButton", style:"padding: 5px 20px;"
-				. style="width:100%; height:70px; box-shadow: 0 0 10px lightgray; margin: 10px 0;"
+				.artistsShowGetInfo
 					=image_tag '/images/by_Songkick_white.png', size: '140x40', id: "findConcertButtonSK", style:"padding: 20px 35px;"
-			-if admin_user?
-				h3 Edit Artist?
-				= render 'form', artist: @artist
-				h3 Edit Concert?
-				= render 'concerts/form', concert: @concert, artists: @artists, venues: @venues
-			-elsif @artist.entries.present?
-				#artistShowEntryUl
-					h4 Artist News
-					ul
-						-@artist.entries.each do |entry|
-							li style="box-shadow:none; height:60px; position:relative; padding: 0; margin: 0;"
-								.inline-block style="position:absolute;"
-									span style="font-size:14px;" = link_to entry.title.truncate(50), entry.url
-			- elsif user_signed_in?
-				=render 'users/watch_list'
+			.spHide
+				-if admin_user?
+					h3 Edit Artist?
+					= render 'form', artist: @artist
+					h3 Edit Concert?
+					= render 'concerts/form', concert: @concert, artists: @artists, venues: @venues
+				-elsif @artist.entries.present?
+					#artistShowEntryUl
+						h4 Artist News
+						ul
+							-@artist.entries.each do |entry|
+								li style="box-shadow:none; height:60px; position:relative; padding: 0; margin: 0;"
+									.inline-block style="position:absolute;"
+										span style="font-size:14px;" = link_to entry.title.truncate(50), entry.url
+				- elsif user_signed_in?
+					=render 'users/watch_list'
 		.col-lg-8
 			h3 Concerts of this artist
 			ul
