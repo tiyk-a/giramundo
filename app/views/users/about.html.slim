@@ -29,11 +29,12 @@
 			.verticalAboutNavInner
 				a href="#aboutAction"
 					i class="far fa-hand-point-right fa-2x"
-#whiteTopCover
-#aboutTop.about_page.text-center
+
+#aboutFillMargin
+.about_page#aboutTop
 	#aboutTopBg
 		=image_tag "/images/about_1.jpg"
-	.textBox.text-center
+	.textBox
 		h1
 			span.aboutLogoPink N
 			span.aboutLogoWhite OTI
@@ -44,8 +45,7 @@
 		h2 Notification de las Giras del Mundo
 		p.jp_text ローカルマーケットでしか告知されないことの多い
 		p.jp_text 世界各地のアツいコンサート情報をお知らせします
-#aboutCatch.about_page.text-left style="color:white;"
-	#whiteBottomCover
+.about_page#aboutCatch
 	#aboutMap
 	.aboutHeadline
 		h1 DON'T WAIT. TRAVEL.
@@ -60,25 +60,25 @@
 			span.aboutMapLogoWhite IRA
 			span.aboutMapLogoPink M
 			span.aboutMapLogoWhite UNDO
-#aboutCheck.about_page.text-center
+.about_page#aboutCheck
 	.
 		h1 CHECK
 		i class="far fa-newspaper fa-7x"
 		p NO WEB CLAWLING ANYMORE! CATCH UP YOUR FAVORITE ARTISTS' CONCERT INFORMATION SMARTLY
 		p.jp_text アーティストのコンサート情報を国や都市に縛られず入手
-#aboutPlan.about_page.text-center
+.about_page#aboutPlan
 	.
 		h1 PLAN
 		i class="fas fa-pencil-alt fa-7x"
 		P KEEP CONCERTS THAT YOU ARE INTERESTED IN. COMPARE CONDITIONES ON A PAGE
 		p.jp_text 気になるライブはキープして日程やロケーション、規模を比較
-#aboutFly.about_page.text-center
+.about_page#aboutFly
 	.
 		h1 FLY
 		i class="fas fa-plane-departure fa-7x"
 		P IT'S NOT A DREAM TO SEE HIM/HER! FLY FOR THE BRILLIANT MOMENT. IT WILL BE YOUR PRESCIOUS EXPERIENCE
 		p.jp_text １クリックでチケットサイトへ。一生に一度の素敵な瞬間を心に刻みに行きましょう
-#aboutAction.about_page.text-center
+.about_page#aboutAction
 	#aboutActionBg
 		=image_tag "/images/about_2.jpg"
 	.actionBtn
@@ -87,6 +87,7 @@
 			i class="far fa-hand-point-right fa-10x"
 		h1 =link_to 'GET STARTED', concerts_path, class: "btn", id: "getStarted", data: {"turbolinks" => false}
 		p.jp_text ライブを探しに行きましょう
+
 
 javascript:
   $(document).ready(function(){
