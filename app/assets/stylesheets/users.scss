@@ -27,14 +27,40 @@
 	top:-15px;
 }
 .textBox {
-		z-index: 1;
-		position:absolute;
-		top:30px;
-		color:black;
-		width: 100%;
-		height: 100%;
-		padding: 50px 0;
+	z-index: 1;
+	position:absolute;
+	top:30px;
+	color:black;
+	width: 100%;
+	height: 80%;
+	padding: 50px 0;
+	h1 {
+		margin: 0;
+		font-family: 'Righteous', cursive;
+		color: white;
+		padding-top: 30px;
+		.aboutLogoPink {
+			font-size: 70px;
+			color: #E6C3D5;
+			margin: 0;
+			font-style: italic;
+		}
+		.aboutLogoWhite {
+			font-size: 50px;
+			margin: 0;
+			font-style: italic;
+		}
 	}
+	h2 {
+		font-size: 50px;
+		color: white;
+	}
+	p.jp_text {
+		font-size: 30px;
+		text-shadow: 2px 2px 2px darkgrey;
+		color: white;
+	}
+}
 #aboutTopBg {
 	width: 100%;
 	height: 100%;
@@ -47,6 +73,10 @@
 	    height: 100%;
 	    width: 100%;
 	    position: absolute;
+	}
+	img {
+		width: 100%;
+		height:100%;
 	}
 }
 .transparent {
@@ -73,8 +103,29 @@
 		padding:50px;
 		z-index: 3;
 		h1 {
-			color:black;
+			color: white;
 			font-size: 50px;
+		}
+		p.jp_text {
+			font-size: 30px;
+			text-shadow: 2px 2px 2px darkgrey;
+			color: white;
+		}
+		h4 {
+			text-align: right;
+			font-family: 'Righteous', cursive;
+			span.aboutMapLogoPink {
+				font-size: 50px;
+				color: #E6C3D5;
+				margin: 0;
+				font-style: italic;
+			}
+			span.aboutMapLogoWhite {
+				font-size: 30px;
+				margin: 0;
+				font-style: italic;
+				color: white;
+			}
 		}
 	}
 }
@@ -96,14 +147,57 @@
 #aboutCheck {
 	background-color: #E6C3D5;
 	width: 100%;
+	div {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 200px 0 0 0;
+		h1 {
+			font-size: 70px;
+		}
+		p.jp_text {
+			font-size: 30px;
+			text-shadow: 2px 2px 2px darkgrey;
+		}
+	}
 }
 #aboutPlan {
 	background-color: lightgray;
 	width: 100%;
+	div {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 200px 0 0 0;
+		h1 {
+			font-size: 70px;
+			text-shadow: 2px 2px 2px white;
+		}
+		p {
+			text-shadow: 2px 2px 2px white;
+		}
+		p.jp_text {
+			font-size: 30px;
+			text-shadow: 2px 2px 2px white;
+		}
+	}
 }
 #aboutFly {
 	background-color: #E6C3D5;
 	width: 100%;
+	div {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 200px 0 0 0;
+		h1 {
+			font-size: 70px;
+		}
+		p.jp_text {
+			font-size: 30px;
+			text-shadow: 2px 2px 2px darkgrey;
+		}
+	}
 }
 #aboutAction {
 	background-color: white;
@@ -113,6 +207,26 @@
 		color:white;
 	}
 	color:white;
+	.actionBtn {
+		z-index: 1;
+		position:absolute;
+		top:30px;
+		color:black;
+		width: 100%;
+		height: 100%;
+		padding: 50px 0;
+		a {
+			color: white;
+		}
+	}
+	#getStarted {
+		box-shadow: 0 0 10px lightgray;
+		border: 0.3px inset lightgray;
+	}
+	p.jp_text {
+		font-size: 30px;
+		text-shadow: 2px 2px 2px darkgrey;
+	}
 }
 #aboutActionBg {
 	width: 100%;
@@ -127,6 +241,11 @@
 	    width: 100%;
 	    position: absolute;
 	}
+	img {
+		width: 100%;
+		height: 100%;
+		opacity: 0.5;
+	}
 }
 #aboutNav {
 	z-index: 5000;
@@ -135,6 +254,10 @@
 	right:0;
 	height:470px;
 	width:50px;
+	color:white;
+	a {
+		color: white;
+	}
 }
 .verticalAboutNavContainer{
 	width:50px;
@@ -212,6 +335,87 @@
 		flex-direction: row;
 		justify-content: space-around;
 	}
+	#aboutTop {
+		top: -70px;
+	}
+	.textBox {
+		h1 {
+			padding-top: 20px;
+			.aboutLogoPink {
+				font-size: 2rem;
+			}
+			.aboutLogoWhite {
+				font-size: 1.5rem;
+			}
+		}
+		h2 {
+			font-size: 1.5rem;
+		}
+		p.jp_text {
+			font-size: 0.8rem;
+		}
+	}
+	#aboutCatch {
+	.aboutHeadline {
+		padding:20px;
+		h1 {
+			font-size: 2rem;
+		}
+		p.jp_text {
+			font-size: 0.8rem;
+		}
+		h4 {
+			span.aboutMapLogoPink {
+				font-size: 1.5rem;
+			}
+			span.aboutMapLogoWhite {
+				font-size: 1rem;
+				}
+			}
+		}
+	}
+	#aboutMap {
+	}
+	#aboutCheck {
+		div {
+			padding: 200px 0 0 0;
+			h1 {
+				font-size: 2rem;
+			}
+			p.jp_text {
+				font-size: 0.8rem;
+			}
+		}
+	}
+	#aboutPlan {
+		div {
+			padding: 200px 0 0 0;
+			h1 {
+				font-size: 2rem;
+			}
+			p {
+			}
+			p.jp_text {
+				font-size: 0.8rem;
+			}
+		}
+	}
+	#aboutFly {
+		div {
+			padding: 200px 0 0 0;
+			h1 {
+				font-size: 2rem;
+			}
+			p.jp_text {
+				font-size: 0.8rem;
+			}
+		}
+	}
+	#aboutAction {
+		p.jp_text {
+			font-size: 0.8rem;
+		}
+	}
 }
 
  /* 〜500px：
@@ -235,6 +439,21 @@
 	}
 	.usersIndexCreatedAt {
 		font-size: 0.6rem;
+	}
+	#aboutCheck {
+		div {
+			padding: 100px 0 0 0;
+		}
+	}
+	#aboutPlan {
+		div {
+			padding: 100px 0 0 0;
+		}
+	}
+	#aboutFly {
+		div {
+			padding: 100px 0 0 0;
+		}
 	}
 }
 
