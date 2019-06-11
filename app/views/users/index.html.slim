@@ -5,19 +5,21 @@
 
 - @users.each do |user|
   .container
-    .row
-      .col-lg-2
+    .usersIndexList
+      / ABOBE SAME TO ROW
+      .spHide
+        .col-lg-2
       .col-lg-1
-        = link_to user, data: {"turbolinks" => false} do
-          = user.email
+        = link_to user.email, user_path(user), class: "usersIndexEmail", data: {"turbolinks" => false}
       .col-lg-2
         - if user.admin == true
-          span.btn style="width:90px;background-color:#E6C3D5; border: 2px solid #E6C3D5; text-align:center;" = link_to "Admin", destroy_admin_path(user), method: :post
+          .removeAdmin.btn = link_to "Admin", destroy_admin_path(user), method: :post
         - else
-          span.btn style="width:90px; text-align:center;" = link_to "Add Admin", add_admin_path(user), method: :post
+          .addAdmin.btn = link_to "Add Admin", add_admin_path(user), method: :post
       .col-lg-2
-        = user.created_at.strftime('%m,%d, %Y')
+        .usersIndexCreatedAt = user.created_at.strftime('%m,%d, %Y')
       .col-lg-1
         = link_to user, data: { confirm: 'Are you sure?' }, method: :delete do
           i class="fas fa-user-times fa-2x" style="color: #E6C3D5;"
-      .col-lg-2
+      .spHide
+        .col-lg-2
