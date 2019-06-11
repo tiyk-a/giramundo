@@ -1,9 +1,9 @@
 .container
   .row
     .col-lg-2
-      ul style="background-color: lightgray; color: black; list-style: none; text-align: center; padding: 20px 25px 15px 25px; margin: 0; font-size: 30px; font-family:'Roboto', sans-serif;box-shadow: 0 0 10px lightgray;"
-        li class="venueCity_#{@venue.id}" style="font-size:30px;box-shadow:none;" =@venue.city
-        li class="venueCountry_#{@venue.id}" style="font-size:22px;box-shadow:none;" =@venue.country
+      .venuesShowHeadBlock
+        .venuesShowHeadBlockCity class="venueCity_#{@venue.id}" =@venue.city
+        .venuesShowHeadBlockCountry class="venueCountry_#{@venue.id}" =@venue.country
     .col-lg-6
       .inline-block
         h1 style="margin:0;"
@@ -12,41 +12,43 @@
           span style="font-size:16px; margin:0 5px;"
             =link_to @venue.url, target: '_blank' do
               i class="fas fa-external-link-alt"
-        .inline-block style="margin: 10px; font-weight:100;"
-          span
-            i class="fas fa-map-marker-alt fa-2x"
-          span
-            . class="venueAddress_#{@venue.id}" style="margin:10px;" =@venue.address
-            . style="margin:10px;"
+        .venuesShowLocations
+          i class="fas fa-map-marker-alt fa-2x"
+          .
+            . class="venueAddress_#{@venue.id}" =@venue.address
+            .
               span =@venue.city
               span =@venue.country
     .col-lg-2
       - if user_signed_in? && admin_user?
-        ul
-          li style="box-shadow:none;"
-            span Lat:
-            span = @venue.latitude if @venue.latitude.present?
-          li style="box-shadow:none;"
-            span Lng:
-            span = @venue.longitude if @venue.longitude.present?
-          span = button_tag "Edit?", class: "btn editVenue", value: @venue.id
-          span
-            p.getMap.btn Get Map
+        .venuesShowLatLng
+          .venuesShowLatLngWrap
+            p
+              span Lat:
+              span = @venue.latitude if @venue.latitude.present?
+            p
+              span Lng:
+              span = @venue.longitude if @venue.longitude.present?
+          .spHide
+            span = button_tag "Edit?", class: "btn editVenue", value: @venue.id
+            span
+              p.getMap.btn Get Map
 
 .container
   .row
     .col-lg-2
-      .
-        -if admin_user?
-          h3 New Venue?
-          = render 'form', venue: @newVenue
-      . style="margin: 20px 0;"
-        = render 'geocodeBox'
-      -if user_signed_in?
-        =render 'users/watch_list'
+      .spHide
+        .
+          -if admin_user?
+            h3 New Venue?
+            = render 'form', venue: @newVenue
+        . style="margin: 20px 0;"
+          = render 'geocodeBox'
+        -if user_signed_in?
+          =render 'users/watch_list'
     .col-lg-8
       #mapVenueShow
-      h1 CONFIRMED CONCERTS
+      h1#venuesShowConcerts CONFIRMED CONCERTS
       -if @venue.concerts.present?
         ul
           -@venue.concerts.each do |concert|
