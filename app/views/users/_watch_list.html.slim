@@ -1,10 +1,10 @@
 h3 Your Singers
 - if current_user.watch_artists.present?
-	ul
+	.watchArtistList
 		-current_user.watch_artists.includes(:artist).each do |watch|
-			li style=" box-shadow:none;"
-				span =image_tag(watch.artist.artist_image, :size => '60x60', :style => 'border-radius:50%;')
-				span style="position:absolute; padding:20px 10px;" = link_to watch.artist.artist_name, artist_path(watch.artist), data: {"turbolinks" => false}
+			.watchArtistListEach
+				. =image_tag(watch.artist.artist_image, :size => '60x60')
+				. = link_to watch.artist.artist_name, artist_path(watch.artist), data: {"turbolinks" => false}
 
 javascript:
 	$(function() {

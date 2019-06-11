@@ -1,3 +1,60 @@
 // Place all the styles related to the WatchArtists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.watchArtistList {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	.watchArtistListEach {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		div {
+			display: inline-block;
+			padding: 10px;
+			img {
+				border-radius: 50%;
+			}
+		}
+	}
+}
+
+ /* 〜800px：
+------------------------------ */
+@media screen and (max-width:800px) {
+	.watchArtistList {
+		flex-direction: row;
+		flex-wrap:wrap;
+		.watchArtistListEach {
+			width: 130px;
+			flex-direction: column;
+			div {
+				padding: 0;
+				a {
+					font-size: 0.6rem;
+				}
+			}
+		}
+	}
+}
+
+ /* 〜500px：
+------------------------------ */
+@media screen and (max-width:500px) {
+	.watchArtistList {
+		flex-direction: row;
+		flex-wrap:wrap;
+		.watchArtistListEach {
+			width: 130px;
+			flex-direction: column;
+			div {
+				padding: 0;
+				a {
+					font-size: 0.6rem;
+				}
+			}
+		}
+	}
+}
