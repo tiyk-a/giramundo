@@ -362,6 +362,11 @@
 		border: 0.3px inset lightgray;
 		text-shadow: 0.5px 0.5px black;
 	}
+	h3 {
+		position: fixed;
+		bottom: 5px;
+		right: 10px;
+	}
 }
 #adminNav1 {
 	width: 50px;

@@ -50,6 +50,7 @@
 // ADMIN
 .adminDateCheck {
 	margin: 50px 0;
+	text-align: center;
 }
 // PARTIAL
 
@@ -289,6 +290,13 @@
 			width: 680px;
 			height: 390px;
 		}
+	}
+	// ADMIN
+	#activeAdminBox {
+	    margin: 20px 0;
+	}
+	#adminTitle1 {
+		text-align: center;
 	}
 }
 

@@ -57,6 +57,7 @@
         #userId.hidden =current_user.id
       #sp-menu
         ul#spMenu
+          li = link_to "Admin", admin_path, data: {"turbolinks" => false}
           li = link_to "Concerts", concerts_path, data: {"turbolinks" => false}
           li = link_to "Artists", artists_path, data: {"turbolinks" => false}
           li = link_to "Venues", venues_path, data: {"turbolinks" => false}
