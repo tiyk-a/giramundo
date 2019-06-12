@@ -7,49 +7,27 @@
 </div>
 
 <%= form_for(resource, url: session_path(resource_name)) do |f| %>
-<div class="container">
-  <div class="row field">
-    <%= f.label :email, class: "inline-block col-lg-3 text-right" %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "inline-block col-lg-3 input-lg" %>
-    <div class="col-lg-3">
-    </div>
+<div class="container sessionsNewContainer">
+  <div class="row sessionsNewRow">
+    <%= f.label :email, class: "signInLabel col-lg-3" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "inline-block input-lg" %>
   </div>
-</div>
 
-
- <div class="container">
-  <div class="row field">
-      <%= f.label :password, class: "inline-block col-lg-3 text-right" %>
-      <%= f.password_field :password, autocomplete: "current-password" , class: "inline-block col-lg-3 input-lg" %>
-    <div class="col-lg-3">
-    </div>
+  <div class="row sessionsNewRow">
+      <%= f.label :password, class: "signInLabel col-lg-3" %>
+      <%= f.password_field :password, autocomplete: "current-password" , class: "inline-block input-lg" %>
   </div>
-</div>
-</div>
 
   <% if devise_mapping.rememberable? %>
-    <div class="container">
-      <div class="row field">
-        <div class="col-lg-3">
-        </div>
-        <div class="col-lg-3">
-          <div class="text-right" style="width:100%; display:block;">
-            <%= f.check_box :remember_me, style: 'width: 20px; margin: 0; display:inline-block;' %>
-            <%= f.label :remember_me, style: 'line-height: 14px; display:inline-block;' %>
-          </div>
-        </div>
+      <div class="row sessionsNewRowRow">
+            <%= f.check_box :remember_me, style: 'width: 20px;' %>
+            <%= f.label :remember_me, style: 'line-height: 14px;' %>
       </div>
-    </div>
   <% end %>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3"></div>
-      <div class="col-lg-3 text-center actions">
+    <div class="row sessionsNewRow">
           <%= f.submit "Log in", class: "btn" %>
-      </div>
     </div>
-  </div>
 <% end %>
 
 

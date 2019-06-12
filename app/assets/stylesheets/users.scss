@@ -13,6 +13,31 @@
 	}
 }
 
+
+// SESSIONS#NEW
+.sessionsNewContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.sessionsNewRow {
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+	margin: 0;
+}
+.sessionsNewRowRow {
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+	margin: 0;
+}
+.signInLabel {
+	display: inline-block;
+	width: auto;
+}
 //******************* ABOUT *******************
 //******************* ABOUT *******************
 #aboutFillMargin {
@@ -32,6 +57,7 @@
 	height: 100vh;
 	text-align:center;
 	top: 0;
+	background-color: black;
 }
 .textBox {
 	z-index: 1;
@@ -230,12 +256,15 @@
 	    justify-content: center;
 	    align-items: center;
 		a {
-			color: black;
+			color: white;
 		}
-	}
-	#getStarted {
-		box-shadow: 0 0 10px lightgray;
-		border: 0.3px inset lightgray;
+		h1 {
+			#getStarted {
+				box-shadow: 0 0 10px lightgray;
+				border: 0.3px inset lightgray;
+				color: black;
+			}
+		}
 	}
 	p.jp_text {
 		font-size: 30px;
@@ -453,9 +482,8 @@
 		font-size: 0.6rem;
 	}
 	.textBox {
-		top: 50%;
+		top: 20%;
 		height: 50%;
-		background-color: black;
 	}
 	#aboutCatch {
 		.aboutHeadline {
@@ -492,10 +520,14 @@
 		top: 50px;
 	}
 	#aboutTopBg {
-		height: 50%;
+		height: 100%;
 		&::before {
-		    height: 50%;
+		    height: 100%;
 		}
+	}
+	// SESSIONS#NEW
+	.sessionsNewRow {
+		width: 80%;
 	}
 }
 
