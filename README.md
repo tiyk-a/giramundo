@@ -1,4 +1,5 @@
-# :notes: NotiGiraMundo -- Global Concert News
+# :tada: NotiGiraMundo(Concert Info Collector)
+![NotiGiraMundo](https://github.com/tiyk-a/images/blob/master/ngm.png "image")
 
 NotiGiraMundo collects and bring you the concert/tour information of globally-popular artists.
 
