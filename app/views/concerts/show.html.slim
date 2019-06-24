@@ -3,31 +3,31 @@
 .container
   .row
     .col-lg-2
-      ul style="background-color: lightgray; color: black; list-style: none; text-align: center; padding: 20px 25px 15px 25px; margin: 0; font-size: 30px; font-family:'Roboto', sans-serif;box-shadow: 0 0 10px lightgray;"
-        li style="box-shadow:none;" =@concert.date.strftime('%b')
-        li style="box-shadow:none;" =@concert.date.strftime('%-d')
+      ul#concertsShowDateUl
+        li =@concert.date.strftime('%b')
+        li =@concert.date.strftime('%-d')
     .col-lg-7
-      ul style="margin-left:20px;"
-        li style="box-shadow:none;"
-          h1 style="margin:0;"
+      ul#concertsShowDescUl
+        li
+          h1
             |
             = link_to @concert.concert_name, @concert.source, class: "linkRighteous", data: {"turbolinks" => false}
             span.hidden#concertShowId =@concert.id
-            span style="font-size:16px; margin:0 5px;"
+            span
               =link_to @concert.source, target: '_blank' do
                 i class="fas fa-external-link-alt"
-        li style="box-shadow:none;"
+        li
           span Universal time:
           span =@concert.date
           span.hidden#concertShowDatetime =@concert.date.to_i
-        li style="box-shadow:none;"
+        li
           span Local time:
           -if @concert.local_date.present?
             span#concertShowLocalTime = @concert.local_date
           -else
             span#concertShowLocalTimeTBC TBC
             span#concertShowLocalTimeUpdate.btn Check Local Time
-    .col-lg-1 style="text-align:right; margin-right:20px;"
+    .col-lg-1#concertsShowKeepBtn style="text-align:right; margin-right:20px;"
       .concertShowKeep class="keep_#{@concert}" style="margin-top:30px;"
         = render 'keeps/keep_lg', concert: @concert
 
@@ -36,7 +36,7 @@
     .col-lg-2
       -if user_signed_in?
         .spHide =render 'users/watch_list'
-    .col-lg-8
+    .col-lg-8#concertsShowSpModif
       = link_to @concert.source do
         #concertsShowImage
           -if @concert.image.present?
@@ -48,12 +48,13 @@
       -if admin_user?
         .adminSpHide = render 'concerts/form', concert: @concert, artists: @artists, venues: @venues
       / -else
-      ul style="margin:20px;"
-        li style="box-shadow:none;"
-          = link_to @concert.concert_name, @concert.source, style: "font-size:24px; font-weight:300;font-family: 'Oswald', sans-serif;", data: {"turbolinks" => false}
-          span style="font-size:16px; margin:0 5px;"
-            =link_to @concert.source, target: '_blank' do
-              i class="fas fa-external-link-alt"
+      .spHide
+        ul style="margin:20px;"
+          li style="box-shadow:none;"
+            = link_to @concert.concert_name, @concert.source, style: "font-size:24px; font-weight:300;font-family: 'Oswald', sans-serif;", data: {"turbolinks" => false}
+            span style="font-size:16px; margin:0 5px;"
+              =link_to @concert.source, target: '_blank' do
+                i class="fas fa-external-link-alt"
 
       .concertsShowDetails
         #concertShowMap

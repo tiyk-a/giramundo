@@ -116,7 +116,7 @@ $(document).on('click', '.plan', function(){
    });
 
   // HIGHLIGHT ROW
-  $(this).parent().toggleClass('highlight2');
+  $(this).parent().parent().parent().toggleClass('highlight2');
 });
 
 function compareDate(root, from, to, column) {
@@ -125,7 +125,7 @@ function compareDate(root, from, to, column) {
   var toN = Number(to);
 
   if(rootN >= fromN && rootN <= toN){
-    $(column).parent().toggleClass('highlight1');
+    $(column).parent().parent().parent().toggleClass('highlight1');
     var parent = $(column).parent().html();
   };
 };
@@ -145,18 +145,22 @@ $(document).on('click', '#userModalBtn', function(){
 $(document).on('click', '#dateFind', function(){
   var from = '#' + $('#fromDate').val();
   var to = '.' + $('#toDate').val();
-  console.log(from + to);
+  // console.log(from + to);
   jump(from);
   highlihghtConcerts(from, to);
-  console.log('done');
+  // console.log('done');
 });
 
 function jump(scrollTo){
   var speed = 500;
   var target = $(scrollTo == "#" || scrollTo == "" ? 'html' : scrollTo);
-  var position = target.offset().top;
-  $("html, body").animate({scrollTop:position}, speed, "swing");
-  return false;
+  if(target.offset().top != undefined){
+    var position = target.offset().top;
+    $("html, body").animate({scrollTop:position}, speed, "swing");
+    return false;
+  }else{
+    alert("no conc!");
+  }
 };
 
 function highlihghtConcerts(startDate, toDate){

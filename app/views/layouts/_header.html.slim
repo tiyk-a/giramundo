@@ -73,13 +73,21 @@
           span
 
     #loginAlertModal.hidden
-      . style="margin:30px auto;text-align: right;"
+      .spHide.loginAlertModalInner
         .
-          h3 style="color:white;margin:0 0 10px 0;text-align: right;margin: 0 70px;" Log In
-        . style="text-align: right;margin: 0 30px;"
-          .inline-block#signIn style="margin:10px;"
+          h3 Log In
+        .loginAlertModalGuide
+          .inline-block#signIn
             =link_to new_user_session_path do
               i class="fas fa-sign-in-alt fa-2x" style="color: white;"
-          .inline-block#signUp style="margin:10px;"
+          .inline-block#signUp
             =link_to new_user_registration_path do
               i class="fas fa-user-plus fa-2x" style="color: white;"
+      .lpHide.loginAlertModalInner
+        .
+          h3 Please Log In :)
+        .loginAlertModalGuide
+          ul
+            li =link_to "Log In", new_user_session_path
+            li =link_to "Sign Up",new_user_registration_path
+            li.loginAlert Not now!

@@ -78,7 +78,7 @@
 	font-family: 'Oswald',
 	sans-serif;
 	font-size: 18px;
-	padding: 10px 10px 5px 0;
+	padding: 5px 5px 5px 0;
 	color: white;
 }
 // NAV
@@ -237,6 +237,23 @@
 	box-shadow: 0 0 10px lightgray;
 	border: 0.3px inset lightgray;
 	text-shadow: 0.5px 0.5px black;
+	.loginAlertModalInner {
+		margin: 30px auto;
+		text-align: right;
+		div h3 {
+			color: white;
+			margin: 0 0 10px 0;
+			text-align: right;
+			margin: 0 70px;
+		}
+		.loginAlertModalGuide {
+			text-align: right;
+			margin: 0 30px;
+			.inline-block {
+				margin: 10px;
+			}
+		}
+	}
 }
 .loginAlert{
 	cursor:pointer;
@@ -689,5 +706,49 @@
 	    position: fixed;
 	    bottom: 0;
 	    right: 0;
+	}
+	#loginAlertModal {
+		width: 90vw;
+		height: 70vh;
+		border-radius: 0;
+		// position:absolute;
+		// top: 0;
+		// right: 0;
+		margin: 10vh 5vw;
+		background-color: black;
+		opacity: 0.8;
+		cursor: pointer;
+		display: hide;
+		flex-direction: column;
+		// box-shadow: 0 0 10px lightgray;
+		// border: 0.3px inset lightgray;
+		// text-shadow: 0.5px 0.5px black;
+		.loginAlertModalInner {
+			margin: 30px auto;
+			text-align: center;
+			div h3 {
+				color: white;
+				text-align: center;
+				margin: 100px 70px;
+			}
+			.loginAlertModalGuide {
+				ul{
+					li {
+						margin: 20px 0;
+						a {
+							color: white;
+						}
+					}
+					.loginAlert {
+						font-weight: 900;
+					}
+				}
+				text-align: center;
+				margin: 0 30px;
+				.inline-block {
+					margin: 10px;
+				}
+			}
+		}
 	}
 }
