@@ -1,4 +1,7 @@
 # :tada: NotiGiraMundo(Concert Info Collector)
+Top Page:point_right: http://www.notigiramundo.info/
+
+日本語アバウトページ:point_right: http://www.notigiramundo.info/about
 ![NotiGiraMundo](https://github.com/tiyk-a/images/blob/master/ngm.png "image")
 
 NotiGiraMundo collects and bring you the concert/tour information of globally-popular artists.
