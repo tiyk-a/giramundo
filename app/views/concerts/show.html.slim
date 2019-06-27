@@ -65,7 +65,7 @@
                 .concertsShowPerformerImage
                   =image_tag(performer.artist.artist_image, size: "40x40")
                 h4 = link_to performer.artist.artist_name, artist_path(performer.artist), data: {"turbolinks" => false}
-                span = render 'watch_artists/watch_artist', artist: performer.artist
+                span class="watch_artist#{performer.artist_id}" = render 'watch_artists/watch_artist', artist: performer.artist
             -else
               h4 TBC
           .concertsShowTicket
