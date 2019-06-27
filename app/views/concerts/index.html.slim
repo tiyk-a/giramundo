@@ -1,5 +1,5 @@
 - if @focuses.present?
-  .container.onlyForBasicView
+  .container.onlyForBasicView#introjs-step1
     .row.text-center
       .slider-pro#my-slider
         .sp-slides
@@ -28,7 +28,7 @@
                     .sp-thumbnail-description
                       =pick.date.strftime('%b. %d') if pick.date.present?
                       =pick.venue.city if pick.venue.present?
-.container
+.container#introjs-step2
   .row.bg-gray
     .col-lg-2#concertSideBar
       = render 'entries/top', top_entries: @top_entries, entries: @entries
@@ -46,7 +46,7 @@
           / /input#toDate.inline-block type="text" style="margin: 0;" placeholder="HASTA"
           / #dateFind.text-center.btn Search
           / #dateFindClear.btn style="margin-left:10px;" Clear
-      .col-lg-5.inline-block.text-right.m-0
+      .col-lg-5.inline-block.text-right.m-0#introjs-step3
         .inline-block
           #basicSort
             .inline-block
