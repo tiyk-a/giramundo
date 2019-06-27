@@ -146,6 +146,30 @@
 		text-shadow: 0.5px 0.5px black;
 	}
 }
+#tutorial {
+	width: 50px;
+	height: 50px;
+	border-radius:50%;
+	position:absolute;
+	top: 60px;
+	right: 135px;
+	background-color: #E6C3D5;
+	// a{
+	// 	width: 100px;
+	// 	height: 100px;
+	// 	margin: 0;
+	// 	padding: 0;
+	// 	line-height:50px;
+	// 	&:hover{
+	// 		text-decoration:none;
+	// 	}
+	// }
+	&:hover{
+		box-shadow: 0 0 10px lightgray;
+		border: 0.3px inset lightgray;
+		text-shadow: 0.5px 0.5px black;
+	}
+}
 #nav3 {
 	width: 50px;
 	height: 50px;
@@ -220,7 +244,7 @@
 }
 
 #navToConcert p, #navToArtist p, #navToVenues p, #navToUser p,
-#navToLogin p, #navToLogout p, #navToAbout p {
+#navToLogin p, #navToLogout p, #navToAbout p, #tutorial p {
 	display:none;
 }
 // NAV
@@ -633,6 +657,10 @@
 	    position: fixed;
 	    top: 15px;
 	    right: 0;
+	    #sp_tutorial {
+	    	color: white;
+		    font-weight: 600;
+	    }
 	}
 	// HEADER NAVIGATION END
 

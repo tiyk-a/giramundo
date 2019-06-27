@@ -51,6 +51,11 @@ $(document).on('mouseover', '#nav2', function(){
     $('#menu').html('<h3>ARTISTS</h3>');
   });
 // BTN2
+// TUTORIAL
+$(document).on('mouseover', '#tutorial', function(){
+    $('#menu').html('<h3>TUTORIAL</h3>');
+  });
+// TUTORIAL
 // BTN3
 $(document).on('mouseover', '#nav3', function(){
     $('#menu').html('<h3>VENUES</h3>');

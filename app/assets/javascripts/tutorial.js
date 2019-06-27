@@ -45,9 +45,12 @@ $(document).on('click', '#tutorial', function(){
   tutorial();
 });
 
+$(document).on('click', '#sp_tutorial', function(){
+  tutorial();
+});
+
+
 $(function(){
-  // $.cookieでCookieを読み込む
-  // `SampleFlg`というデータがonであれば、チュートリアルを呼び出す
   if (Cookies.get('SampleFlg') != 'on') {
     tutorial();
   }

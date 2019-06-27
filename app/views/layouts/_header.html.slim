@@ -2,7 +2,6 @@
   .row
     #main_header
       p#header-subline 世界中のコンサート情報収集サイト
-      button#tutorial Tutorial
       / a.inline-block href="#footerTop" test
       .inline-block =link_to concerts_path, data: {"turbolinks" => false} do
         h1.header-logo
@@ -23,10 +22,16 @@
         = link_to concerts_path, data: {"turbolinks" => false} do
           i class="fas fa-music fa-2x" style="padding:8px 13px 8px 7px;"
         #navToConcert
-      .nav-items#nav2.hidden
-        = link_to artists_path, data: {"turbolinks" => false} do
-          i class="fab fa-napster fa-2x" style="padding:8px;"
-        #navToArtist
+      -if user_signed_in?
+        .nav-items#nav2.hidden
+          = link_to artists_path, data: {"turbolinks" => false} do
+            i class="fab fa-napster fa-2x" style="padding:8px;"
+          #navToArtist
+      -else
+        .nav-items#tutorial.hidden
+          i class="fas fa-flag  fa-2x" style="padding:8px;"
+          #navToTutorial
+
       .nav-items#nav3.hidden
         = link_to venues_path, data: {"turbolinks" => false} do
           i class="fas fa-map-marked-alt fa-2x" style="padding:8px;"
@@ -58,9 +63,13 @@
         #userId.hidden =current_user.id
       #sp-menu
         ul#spMenu
-          li = link_to "Admin", admin_path, data: {"turbolinks" => false}
           li = link_to "Concerts", concerts_path, data: {"turbolinks" => false}
-          li = link_to "Artists", artists_path, data: {"turbolinks" => false}
+          -if user_signed_in?
+            li = link_to "Artists", artists_path, data: {"turbolinks" => false}
+            -if admin_user?
+              li = link_to "Admin", admin_path, data: {"turbolinks" => false}
+          -else
+            li#sp_tutorial Tutorial
           li = link_to "Venues", venues_path, data: {"turbolinks" => false}
           -if user_signed_in?
             li = link_to "Your Keeps", user_path(current_user), data: {"turbolinks" => false}
