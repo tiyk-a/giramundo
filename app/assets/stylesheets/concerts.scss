@@ -35,7 +35,7 @@
 }
 .concertContainerSources {
 	display: inline-block;
-	padding:0 10px;
+	padding:0;
 }
 .concertContainerAdmin {
 	display: flex;
@@ -48,6 +48,7 @@
 }
 .planColumn {
 	display: inline-block;
+	text-align: center;
 }
 // ADMIN
 .adminDateCheck {
@@ -254,6 +255,9 @@
 		}
 	}
 }
+.hidden {
+	display: none;
+}
 // ************* Concerts#show END *************
 
  /* 〜800px：
@@ -295,7 +299,7 @@
 			text-align: right;
 			}
 		}
-		#concertsConainerBtns {
+		.concertsConainerBtns {
 			display: flex;
 			flex-direction: row;
 		}

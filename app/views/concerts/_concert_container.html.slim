@@ -47,7 +47,7 @@
           #concertContainerDelete = link_to concert, data: { confirm: 'Are you sure?' }, method: :delete do
             i class="fas fa-times fa-lg" style="color: #E6C3D5;"
 
-    #concertsConainerBtns
+    .concertsConainerBtns
       / SOURCE
       -if concert.origin == "Ticket Master"
         .concertContainerSources = link_to concert.source do
