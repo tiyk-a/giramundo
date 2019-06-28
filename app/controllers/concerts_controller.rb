@@ -144,7 +144,7 @@ class ConcertsController < ApplicationController
     @concert_blanks = Concert.all - Concert.full
     @venue_blanks = Venue.all - Venue.details
     @artist_blanks = Artist.all - Artist.full
-    @past_concerts = Concert.only_deleted.order('deleted_at DESC').page(params[:past_concert]).per(5)
+    @past_concerts = Concert.only_deleted.order('deleted_at DESC').page(params[:past_concert]).per(5).includes(:performers, :venue)
     if params[:past_concert].present?
       render :file => "/app/views/concerts/past_concert.js.erb"
     end
