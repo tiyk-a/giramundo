@@ -7,9 +7,9 @@ class ConcertsController < ApplicationController
   # GET /concerts.json
   def index
     if Concert.full.limit(10).present?
-      @focuses = Concert.full.order("RANDOM()").limit(10).includes(:venue)
+      @focuses = Concert.full.order("RANDOM()").limit(10).includes(:venue, :performers)
     end
-    @concerts = Concert.full.page(params[:page]).order('date ASC').includes(:venue)
+    @concerts = Concert.full.page(params[:page]).order('date ASC').includes(:venue, :performers)
     @keep = Keep.new
     @entries = Entry.limit(5).order('id DESC').includes(:feed)
     @top_entries = Entry.where.not(artist_id: nil).limit(5).order('id DESC').includes(:artist, :feed)
@@ -80,6 +80,20 @@ class ConcertsController < ApplicationController
         end
       end
       venue.country = "TBC"
+    end
+
+    if venue.flag.blank? && v.country.present?
+        this = venue.country
+        if this.casecmp("UK") == 0 || this.include?("Great Britain")
+          this = "GB"
+        end
+        if (ISO3166::Country[this]) != nil
+          venue.flag = (ISO3166::Country[this]).emoji_flag
+        elsif (ISO3166::Country.find_country_by_alpha3(this)) != nil
+          venue.flag = (ISO3166::Country.find_country_by_alpha3(this)).emoji_flag
+        elsif (ISO3166::Country.find_country_by_name(this)) != nil
+          venue.flag = (ISO3166::Country.find_country_by_name(this)).emoji_flag
+        end
     end
 
     if venue.city.blank?

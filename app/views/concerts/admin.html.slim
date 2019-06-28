@@ -21,6 +21,9 @@
           = link_to "Date Check", date_check_path, method: :get, remote: true, class: "btn"
           .date_checked_notif
           ul.date_checked
+        .adminFlag
+          h3 Fill Country Flags
+          = link_to "convert", venues_conv_path, method: :post, remote: true
     .col-lg-8
       ul.concert_nameTbody
         = render partial: 'concert_container_admin', collection: @concert_blanks, :as => 'concert', locals: {keep: @keep}
