@@ -1,6 +1,6 @@
 class VenuesController < ApplicationController
   def index
-    @venues = Venue.all.includes([:concerts])
+    @venues = Venue.all
     @venue = Venue.new
     gon.venues = Venue.all
   end
@@ -73,6 +73,24 @@ class VenuesController < ApplicationController
       @venues = Venue.all.order('name asc')
       render :file => "/app/views/venues/sort_2.js.erb"
     end
+  end
+
+  def conv
+    @venues = Venue.all
+    @venues.each do |v|
+      if v.country.present?
+        this = v.country
+        if (ISO3166::Country[this]) != nil
+          v.flag = (ISO3166::Country[this]).emoji_flag
+        elsif (ISO3166::Country.find_country_by_alpha3(this)) != nil
+          v.flag = (ISO3166::Country.find_country_by_alpha3(this)).emoji_flag
+        elsif (ISO3166::Country.find_country_by_name(this)) != nil
+          v.flag = (ISO3166::Country.find_country_by_name(this)).emoji_flag
+        end
+        v.save
+      end
+    end
+    redirect_to venues_path
   end
 
   private

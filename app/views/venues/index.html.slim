@@ -2,6 +2,7 @@
   .row
     .col-lg-10.text-center
       h1 VENUES
+      = link_to "convert", venues_conv_path, method: :post, remote: true
 
 - if @venues.present?
   .container

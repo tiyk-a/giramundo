@@ -86,3 +86,4 @@ group :production do
   gem 'pg'
 end
 gem "aws-sdk-s3", require: false
+gem 'countries'

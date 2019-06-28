@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_26_102712) do
+ActiveRecord::Schema.define(version: 2019_06_28_035730) do
 
   create_table "artists", force: :cascade do |t|
     t.string "artist_name"
@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 2019_05_26_102712) do
     t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "flag"
   end
 
   create_table "watch_artists", force: :cascade do |t|

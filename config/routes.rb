@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   resources :reading_lists, only: [:create, :update, :destroy]
 
   # VENUES
+  post '/venues_conv', to: 'venues#conv', as: :venues_conv
   resources :venues, only: [:index, :show, :create, :destroy]
   patch '/venues/', to: 'venues#refresh', as: :refresh_venue
   post '/venues_sort/:id', to: 'venues#sort', as: :venues_sort
