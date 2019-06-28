@@ -21,6 +21,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    a {
+    	width: 90%;
+	    display: flex;
+	    align-items: center;
+    }
     .adminSpHide {
 		display: flex;
 		justify-content: center;
@@ -28,7 +33,7 @@
     }
 }
 #venueContainerVenueName {
-	width:300px;
+	width:50%;
 	font-size:18px;
 	font-weight:300;
 	display: inline-block;
@@ -40,6 +45,7 @@
 	flex-direction: row;
 	justify-content: flex-end;
 	align-items: center;
+	width: 40%;
 	p {
 		display: inline-block;
     	width: auto;
@@ -62,6 +68,9 @@
 	display: inline-block;
 	font-size:12px;
 	padding: 0 10px 0 0;
+}
+#venueContainerVenueFlag {
+	display: inline-block;
 }
 #venueContainerConcertCount {
 	display: flex;

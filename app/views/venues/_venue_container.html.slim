@@ -3,7 +3,9 @@
 		#venueContainerVenueName class="venueName_#{venue.id} venueName" = venue.name
 		#venueContainerSpFlex
 			#venueContainerVenueCity class="venueCity_#{venue.id}" =venue.city
-			#venueContainerVenueCountry class="venueCountry_#{venue.id}" =venue.country
+			.hidden
+				#venueContainerVenueCountry class="venueCountry_#{venue.id}" =venue.country
+			#venueContainerVenueFlag = venue.flag
 			i class="fas fa-music"
 			p = venue.concerts.count
 		.adminSpHide

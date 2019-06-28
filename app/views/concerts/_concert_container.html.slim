@@ -35,8 +35,8 @@
     .concertsContainerLocations
       #cityCell = concert.venue.city if concert.venue.present?
       .hidden
-        #countryCell = concert.venue.country if concert.venue.present?
-      =concert.venue.flag if concert.venue.flag.present?
+        #countryCell class="venueCountry#{concert.id}" = concert.venue.country if concert.venue.present?
+      #concertsContainerCountryFlag class="venueFlag#{concert.id}" =concert.venue.flag if concert.venue.flag.present?
     .adminSpHide
       .concertContainerAdmin
         -if admin_user?

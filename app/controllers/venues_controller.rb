@@ -80,6 +80,9 @@ class VenuesController < ApplicationController
     @venues.each do |v|
       if v.country.present?
         this = v.country
+        if this.casecmp("UK") == 0 || this.include?("Great Britain")
+          this = "GB"
+        end
         if (ISO3166::Country[this]) != nil
           v.flag = (ISO3166::Country[this]).emoji_flag
         elsif (ISO3166::Country.find_country_by_alpha3(this)) != nil

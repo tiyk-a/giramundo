@@ -39,6 +39,7 @@
     /LOCATION
     .concertsContainerLocations
       #cityCell = concert.venue.city if concert.venue.present?
+      = concert.venue.flag if concert.venue.flag.present?
       #countryCell = concert.venue.country if concert.venue.present?
 
     / FOR ADMIN FUNCTION
