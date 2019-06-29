@@ -40,8 +40,10 @@
 .public_nav {
 	width: 100%;
 	margin: 0;
-	background-color: white;
 	color: black;
+	background: -moz-linear-gradient(top, #FFC778, #d9a7c7);
+	background: -webkit-linear-gradient(top, #FFC778, #d9a7c7);
+	background: linear-gradient(to bottom, #FFC778,#d9a7c7);
 	h1 {
 		padding: 70px 0 0 0;
 		text-shadow:2px 2px 2px darkgrey;
@@ -49,7 +51,6 @@
 	}
 }
  #nav, #navnormal {
-	background-color: white;
 	z-index: 2;
 	//position: fixed;
 	width: 100%;
@@ -57,7 +58,13 @@
 	position:fixed;
 	top:0;
 	width:100%;
-	background-color:black;
+	// REFERENCE
+	// https://uigradients.com/#BrokenHearts
+	// BROKEN HEART... OH!
+	// https://saruwakakun.com/html-css/basic/linear-radial-gradient#section3
+	background: -moz-linear-gradient(top left, #d9a7c7, #FFC778);
+	background: -webkit-linear-gradient(top left, #d9a7c7, #FFC778);
+	background: linear-gradient(to bottom right, #d9a7c7, #FFC778);
 }
 #userModal {
 	background-color: black;
