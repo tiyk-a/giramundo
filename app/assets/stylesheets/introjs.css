@@ -98,9 +98,12 @@ tr.introjs-showElement > th {
   left: -16px;
   z-index: 9999999999 !important;
   padding: 2px;
-  font-family: Arial, verdana, tahoma;
-  font-size: 13px;
-  font-weight: bold;
+  /* ENG */
+  font-family: 'Oswald', sans-serif;
+  /* JP */
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 10px;
+  font-weight: 100;
   color: white;
   text-align: center;
   text-shadow: 1px 1px 1px rgba(0,0,0,.3);
@@ -213,7 +216,7 @@ tr.introjs-showElement > th {
   margin: 0;
   text-decoration: none;
   text-shadow: 1px 1px 0 #fff;
-  font: 11px/normal sans-serif;
+  font: 10px/normal sans-serif;
   color: #333;
   white-space: nowrap;
   cursor: pointer;
@@ -317,6 +320,8 @@ tr.introjs-showElement > th {
   list-style: none;
   float: left;
   margin: 0 2px;
+  box-shadow: none
+  ;
 }
 .introjs-bullets ul li a {
   box-sizing: content-box;

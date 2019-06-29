@@ -4,8 +4,8 @@ function tutorial(){
   introJs().setOptions({
       'nextLabel': '>>',
       'prevLabel': '<<',
-      'skipLabel': 'Skip',
-      'doneLabel': 'x',
+      'skipLabel': 'x',
+      'doneLabel': 'Done',
       'exitOnOverlayClick': false,
       'showStepNumbers': false,
 
@@ -14,20 +14,36 @@ function tutorial(){
         {
           // INTRO: WHAT TO SHOW
           // STEP 0
-          intro: "<b>Hey! I'll guide how to use this site :)</b><br>I guess you are new here"
+          intro: "こんにちは！ご訪問ありがとう♡<br>トップページの使い方を紹介します◡̈"
         },
         {
           // ELEMENT: CONNECTOR (DIRECT BY SELECTOR)
           element: '#introjs-step1',
-          intro: "this is the 1st step"
+          intro: "ここにはピックアップコンサートが流れます。<br>毎度違うコンサートが出るので、大好きなアーティストを見つけてね"
         },
         {
           element: '#introjs-step2',
-          intro: "and this is the 2nd step"
+          intro: "ここには、既に確認済みのコンサート情報が並んでいます。<br>クリックすると詳細に飛べるよ◟̆◞̆♡"
         },
         {
           element: '#introjs-step3',
-          intro: "then finally this is the last, 3rd step. I'll add steps if it's required"
+          intro: "ここで表示のコントロールができます。<br>デフォルトは'Asc'で日付が今日から近い順です。<br>'Desc'を選択すると、一番遠い未来のコンサートから表示されます"
+        },
+        {
+          element: '#introjs-step4',
+          intro: "'Plan'ボタンを押すと、各コンサートのコンフリクトが確認できるようになります！<br>他の気になるコンサートと被ってしまわないか、チェックしてね◟̽◞̽*"
+        },
+        {
+          element: '#introjs-step5',
+          intro: "ここではアーティストに関するニュースを見つけ次第お伝えしています！"
+        },
+        {
+          element: '#introjs-step6',
+          intro: "（会場や都市の情報がわからないとき、ここに住所や会場名を入れると場所情報が出るよ）"
+        },
+        {
+          element: '#introjs-step7',
+          intro: "チュートリアルはここのボタンから見れるよ！"
         },
       ]
       // START CALLS THIS FUNCTION ABOVE

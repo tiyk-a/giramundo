@@ -5,11 +5,12 @@
 // PARTIAL
 #address {
 		margin: 5px 0;
-		width: 100%;
+		width: 90%;
 	}
-	#encodeBtn {
-		margin: 5px auto;
-	}
+#encodeBtn {
+	margin: 5px auto;
+	width: 100%;
+}
 .venueContainer {
 	height:40px;
 	padding: 10px 20px;
@@ -85,9 +86,6 @@
 #mapVenueShow {
 	height: 500px;
     width: 100%;
-}
-#encodeBtn {
-	width:110%;
 }
 .venueColumn {
 	color: white;

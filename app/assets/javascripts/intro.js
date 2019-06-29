@@ -49,9 +49,9 @@
       /* Previous button label in tooltip box */
       prevLabel: '&larr; Back',
       /* Skip button label in tooltip box */
-      skipLabel: 'Skip',
+      skipLabel: 'x',
       /* Done button label in tooltip box */
-      doneLabel: 'Done',
+      doneLabel: 'o',
       /* Hide previous button in the first step? Otherwise, it will be disabled button. */
       hidePrev: false,
       /* Hide next button in the last step? Otherwise, it will be disabled button. */
@@ -83,7 +83,7 @@
        *
        * Options are: 'element' or 'tooltip'
        */
-      scrollTo: 'element',
+      scrollTo: 'tooltip',
       /* Padding to add after scrolling when element is not in the viewport (in pixels) */
       scrollPadding: 30,
       /* Set the overlay opacity */
