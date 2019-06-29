@@ -13,6 +13,7 @@
 	color:white;
 	text-align: center;
 	display: inline-block;
+	text-shadow: black 1px 0 1px;
 }
 .header-logo {
  font-weight: bold;
@@ -20,6 +21,7 @@
  font-family: 'Righteous', cursive;
  color: white;
  margin:0;
+ text-shadow: black 1px 0 1px;
  	.logo-other{
  		margin:0;
  		font-size:30px;
@@ -36,6 +38,9 @@
 	width: 100%;
 	margin: 0;
 	padding: 30px 0;
+}
+.nav-items {
+	box-shadow: white 1px 0 10px;
 }
 .public_nav {
 	width: 100%;
@@ -99,8 +104,8 @@
 	background-color: #E6C3D5;
 	cursor: pointer;
 	&:hover{
-		box-shadow: 0 0 10px lightgray;
-		border: 0.3px inset lightgray;
+		box-shadow: 0 0 10px white;
+		border: 0.3px inset white;
 		text-shadow: 0.5px 0.5px black;
 	}
 }
