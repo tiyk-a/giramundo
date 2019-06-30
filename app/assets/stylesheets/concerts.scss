@@ -12,6 +12,7 @@
 .concertContainerDate {
 	font-size: 18px;
 	width:50px;
+	color: gray;
 }
 .concertName {
 	display: inline-block;
@@ -131,7 +132,7 @@
 // 	margin: 20px 0;
 // 	.onTvNews {
 // 	opacity: 1;
-// 	color: black;
+// 	color: gray;
 // 	}
 // }
 // .simpleViewTd {
@@ -141,7 +142,7 @@
 // }
 #concertsShowDateUl {
 	background-color: lightgray;
-	color: black;
+	color: gray;
 	list-style: none;
 	text-align: center;
 	padding: 20px 25px 15px 25px;

@@ -21,7 +21,7 @@
  font-family: 'Righteous', cursive;
  color: white;
  margin:0;
- text-shadow: black 1px 0 1px;
+ text-shadow: grey 0.1rem 0 0.1rem;
  	.logo-other{
  		margin:0;
  		font-size:30px;
@@ -41,18 +41,23 @@
 }
 .nav-items {
 	box-shadow: white 1px 0 10px;
+	 &:hover {
+		box-shadow: 0 0 15px white;
+		border: 0.3px inset white;
+		text-shadow: 0.5px 0.5px black;
+	 }
 }
 .public_nav {
 	width: 100%;
 	margin: 0;
-	color: black;
+	color: gray;
 	background: -moz-linear-gradient(top, #FFC778, #d9a7c7);
 	background: -webkit-linear-gradient(top, #FFC778, #d9a7c7);
 	background: linear-gradient(to bottom, #FFC778,#d9a7c7);
 	h1 {
 		padding: 70px 0 0 0;
 		text-shadow:2px 2px 2px darkgrey;
-		color: black;
+		color: gray;
 	}
 }
  #nav, #navnormal {
@@ -72,7 +77,7 @@
 	background: linear-gradient(to bottom right, #d9a7c7, #FFC778);
 }
 #userModal {
-	background-color: black;
+	background-color: gray;
 	color: white;
 	width: 200px;
 	margin: 5px 0 5px auto;
@@ -104,7 +109,7 @@
 	background-color: #E6C3D5;
 	cursor: pointer;
 	&:hover{
-		box-shadow: 0 0 10px white;
+		box-shadow: 0 0 15px white;
 		border: 0.3px inset white;
 		text-shadow: 0.5px 0.5px black;
 	}
@@ -129,9 +134,9 @@
 		}
 	}
 	&:hover{
-		box-shadow: 0 0 10px lightgray;
-		border: 0.3px inset lightgray;
-		text-shadow: 0.5px 0.5px black;
+		// box-shadow: 0 0 10px lightgray;
+		// border: 0.3px inset lightgray;
+		// text-shadow: 0.5px 0.5px black;
 	}
 }
 #nav2 {
@@ -153,9 +158,9 @@
 		}
 	}
 	&:hover{
-		box-shadow: 0 0 10px lightgray;
-		border: 0.3px inset lightgray;
-		text-shadow: 0.5px 0.5px black;
+		// box-shadow: 0 0 10px lightgray;
+		// border: 0.3px inset lightgray;
+		// text-shadow: 0.5px 0.5px black;
 	}
 }
 #tutorial {
@@ -166,6 +171,7 @@
 	top: 60px;
 	right: 135px;
 	background-color: #E6C3D5;
+	cursor: pointer;
 	// a{
 	// 	width: 100px;
 	// 	height: 100px;
@@ -177,9 +183,9 @@
 	// 	}
 	// }
 	&:hover{
-		box-shadow: 0 0 10px lightgray;
-		border: 0.3px inset lightgray;
-		text-shadow: 0.5px 0.5px black;
+		// box-shadow: 0 0 10px lightgray;
+		// border: 0.3px inset lightgray;
+		// text-shadow: 0.5px 0.5px black;
 	}
 }
 #nav3 {
@@ -201,9 +207,9 @@
 		}
 	}
 	&:hover{
-		box-shadow: 0 0 10px lightgray;
-		border: 0.3px inset lightgray;
-		text-shadow: 0.5px 0.5px black;
+		// box-shadow: 0 0 10px lightgray;
+		// border: 0.3px inset lightgray;
+		// text-shadow: 0.5px 0.5px black;
 	}
 }
 #nav4-1, #nav4-2 {
@@ -225,9 +231,9 @@
 		}
 	}
 	&:hover{
-		box-shadow: 0 0 10px lightgray;
-		border: 0.3px inset lightgray;
-		text-shadow: 0.5px 0.5px black;
+		// box-shadow: 0 0 10px lightgray;
+		// border: 0.3px inset lightgray;
+		// text-shadow: 0.5px 0.5px black;
 	}
 }
 #nav5-1, #nav5-2 {
@@ -249,9 +255,9 @@
 		}
 	}
 	&:hover{
-		box-shadow: 0 0 10px lightgray;
-		border: 0.3px inset lightgray;
-		text-shadow: 0.5px 0.5px black;
+		// box-shadow: 0 0 10px lightgray;
+		// border: 0.3px inset lightgray;
+		// text-shadow: 0.5px 0.5px black;
 	}
 }
 
@@ -406,19 +412,26 @@
 	cursor: pointer;
 	font-size: 18px;
 	padding: 5px 10px 5px 0;
-	color: black;
+	color: gray;
 	margin-top:55px;
 	font-family: 'Oswald', sans-serif;
 	font-weight: 300;
 	&:hover{
-		box-shadow: 0 0 10px lightgray;
-		border: 0.3px inset lightgray;
+		box-shadow: 0 0 15px white;
+		border: 0.3px inset white;
 		text-shadow: 0.5px 0.5px black;
 	}
 	h3 {
 		position: fixed;
 		bottom: 5px;
 		right: 10px;
+	}
+}
+.adm-nav-items {
+	&:hover {
+		box-shadow: 0 0 15px white;
+		border: 0.3px inset white;
+		text-shadow: 0.5px 0.5px black;
 	}
 }
 #adminNav1 {
@@ -440,11 +453,6 @@
 			text-decoration:none;
 		}
 	}
-	&:hover{
-		box-shadow: 0 0 10px lightgray;
-		border: 0.3px inset lightgray;
-		text-shadow: 0.5px 0.5px black;
-	}
 }
 #adminNav2 {
 	width: 50px;
@@ -463,11 +471,6 @@
 		&:hover{
 			text-decoration:none;
 		}
-	}
-	&:hover{
-		box-shadow: 0 0 10px lightgray;
-		border: 0.3px inset lightgray;
-		text-shadow: 0.5px 0.5px black;
 	}
 }
 #adminNav3 {
@@ -488,11 +491,6 @@
 			text-decoration:none;
 		}
 	}
-	&:hover{
-		box-shadow: 0 0 10px lightgray;
-		border: 0.3px inset lightgray;
-		text-shadow: 0.5px 0.5px black;
-	}
 }
 #adminNav4 {
 	width: 50px;
@@ -512,11 +510,6 @@
 			text-decoration:none;
 		}
 	}
-	&:hover{
-		box-shadow: 0 0 10px lightgray;
-		border: 0.3px inset lightgray;
-		text-shadow: 0.5px 0.5px black;
-	}
 }
 #adminNav5 {
 	width: 50px;
@@ -535,11 +528,6 @@
 		&:hover{
 			text-decoration:none;
 		}
-	}
-	&:hover{
-		box-shadow: 0 0 10px lightgray;
-		border: 0.3px inset lightgray;
-		text-shadow: 0.5px 0.5px black;
 	}
 }
 // FOOTER ADMIN NAV
@@ -651,9 +639,11 @@
 @media screen and (max-width:800px) {
 	#header-subline {
 		font-size: 0.01rem;
+		text-shadow: grey 0.1px 0 0.8px;
 	}
 	.header-logo {
 		font-size:1rem;
+		text-shadow: grey 0.1px 0 0.8px;
 	 	.logo-other{
 	 		font-size:0.6rem;
 	 	}

@@ -63,7 +63,7 @@
 	z-index: 1;
     position: absolute;
     top: 0;
-    color: black;
+    color: gray;
     width: 100%;
     height: 100%;
     display: flex;
@@ -123,7 +123,7 @@
 		top: 0;
 		width: 90%;
 		height: 100%;
-		color: black;
+		color: gray;
 		padding: 50px;
 		font-size: 50px;
 		z-index: 3;
@@ -248,7 +248,7 @@
 		z-index: 1;
 		position: absolute;
 		top: 0;
-		color: black;
+		color: gray;
 		width: 100%;
 		height: 100%;
 		display: flex;
@@ -262,7 +262,7 @@
 			#getStarted {
 				box-shadow: 0 0 10px lightgray;
 				border: 0.3px inset lightgray;
-				color: black;
+				color: gray;
 			}
 		}
 	}
