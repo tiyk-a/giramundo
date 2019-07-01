@@ -1,42 +1,48 @@
-- if @focuses.present?
-  .container.onlyForBasicView#introjs-step1
-    .row.text-center
-      .slider-pro#my-slider
-        .sp-slides
-          - @focuses.each do |pick|
-            .sp-slide
-              =link_to concert_path(pick) do
-                -if pick.image.present?
-                  =image_tag(pick.image, class: "slide_image")
-                -else
-                  =image_tag(pick.performers[0].artist.artist_image, class: "slide_image")
-            .sp-caption
-              = link_to pick.concert_name, concert_path(pick)
+/ - if @focuses.present?
+/   .container.onlyForBasicView#introjs-step1
+/     .row.text-center
+      / .slider-pro#my-slider
+      /   .sp-slides
+      /     - @focuses.each do |pick|
+      /       .sp-slide
+      /         =link_to concert_path(pick) do
+      /           -if pick.image.present?
+      /             =image_tag(pick.image, class: "slide_image")
+      /           -else
+      /             =image_tag(pick.performers[0].artist.artist_image, class: "slide_image")
+      /       .sp-caption
+      /         = link_to pick.concert_name, concert_path(pick)
 
-        .sp-thumbnails
-          - @focuses.each do |pick|
-            .sp-thumbnail
-              .sp-thumbnail-image-container
-                -if pick.image.present?
-                  =image_tag(pick.image, :size => '120x80')
-                -else
-                  =image_tag(pick.performers[0].artist.artist_image, :size => '120x80')
-              .sp-thumbnail-text
-                =link_to concert_path(pick) do
-                  .sp-thumbnail-wrap
-                    .sp-thumbnail-title =pick.concert_name.truncate(25)
-                    .sp-thumbnail-description
-                      =pick.date.strftime('%b. %d') if pick.date.present?
-                      =pick.venue.city if pick.venue.present?
+      /   .sp-thumbnails
+      /     - @focuses.each do |pick|
+      /       .sp-thumbnail
+      /         .sp-thumbnail-image-container
+      /           -if pick.image.present?
+      /             =image_tag(pick.image, :size => '120x80')
+      /           -else
+      /             =image_tag(pick.performers[0].artist.artist_image, :size => '120x80')
+      /         .sp-thumbnail-text
+      /           =link_to concert_path(pick) do
+      /             .sp-thumbnail-wrap
+      /               .sp-thumbnail-title =pick.concert_name.truncate(25)
+      /               .sp-thumbnail-description
+      /                 =pick.date.strftime('%b. %d') if pick.date.present?
+      /                 =pick.venue.city if pick.venue.present?
 
 javascript:
   $( document ).ready(function( $ ) {
     $( '#example2' ).sliderPro({
       width: 300,
-      height: 300,
+      height: 400,
       visibleSize: '100%',
       forceSize: 'fullWidth',
-      autoSlideSize: true
+      autoSlideSize: true,
+      breakpoints: {
+      500: {
+        width: 300,
+        height: 170
+      }
+    }
     });
     // instantiate fancybox when a link is clicked
     $( ".slider-pro" ).each(function(){
@@ -67,6 +73,7 @@ javascript:
       });
     });
   });
+.container.onlyForBasicView#introjs-step1
 #example2.slider-pro
   .sp-slides
     - @focuses.each do |pick|
