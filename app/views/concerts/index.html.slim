@@ -1,33 +1,4 @@
-/ - if @focuses.present?
-/   .container.onlyForBasicView#introjs-step1
-/     .row.text-center
-      / .slider-pro#my-slider
-      /   .sp-slides
-      /     - @focuses.each do |pick|
-      /       .sp-slide
-      /         =link_to concert_path(pick) do
-      /           -if pick.image.present?
-      /             =image_tag(pick.image, class: "slide_image")
-      /           -else
-      /             =image_tag(pick.performers[0].artist.artist_image, class: "slide_image")
-      /       .sp-caption
-      /         = link_to pick.concert_name, concert_path(pick)
 
-      /   .sp-thumbnails
-      /     - @focuses.each do |pick|
-      /       .sp-thumbnail
-      /         .sp-thumbnail-image-container
-      /           -if pick.image.present?
-      /             =image_tag(pick.image, :size => '120x80')
-      /           -else
-      /             =image_tag(pick.performers[0].artist.artist_image, :size => '120x80')
-      /         .sp-thumbnail-text
-      /           =link_to concert_path(pick) do
-      /             .sp-thumbnail-wrap
-      /               .sp-thumbnail-title =pick.concert_name.truncate(25)
-      /               .sp-thumbnail-description
-      /                 =pick.date.strftime('%b. %d') if pick.date.present?
-      /                 =pick.venue.city if pick.venue.present?
 
 javascript:
   $( document ).ready(function( $ ) {
@@ -73,17 +44,17 @@ javascript:
       });
     });
   });
-.container.onlyForBasicView#introjs-step1
-#example2.slider-pro
-  .sp-slides
-    - @focuses.each do |pick|
-      .sp-slide
-        =link_to concert_path(pick) do
-          -if pick.image.present?
-            =image_tag(pick.image, class: "slide_image")
-          -else
-            =image_tag(pick.performers[0].artist.artist_image, class: "slide_image")
-        p.sp-caption = link_to pick.concert_name, concert_path(pick)
+.container#introjs-step1
+  #example2.slider-pro
+    .sp-slides
+      - @focuses.each do |pick|
+        .sp-slide
+          =link_to concert_path(pick) do
+            -if pick.image.present?
+              =image_tag(pick.image, class: "slide_image")
+            -else
+              =image_tag(pick.performers[0].artist.artist_image, class: "slide_image")
+          p.sp-caption = link_to pick.concert_name, concert_path(pick)
 
 .container
   .row.bg-gray

@@ -28,7 +28,7 @@
   position: absolute;
   z-index: 9999998;
   background-color: #FFF;
-  background-color: rgba(255,255,255,.9);
+  background-color: rgba(255,255,255,.1);
   border: 1px solid #777;
   border: 2px solid rgba(117, 117, 117, 1);
   border-radius: 4px;
