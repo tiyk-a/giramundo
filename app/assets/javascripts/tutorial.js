@@ -14,7 +14,17 @@ function tutorial(){
         {
           // INTRO: WHAT TO SHOW
           // STEP 0
-          intro: "こんにちは！ご訪問ありがとう♡<br>トップページの使い方を紹介します◡̈"
+          intro: "こんにちは！ご訪問ありがとう♡<br>このサイトの使い方を紹介します◡̈"
+        },
+        {
+          // INTRO: WHAT TO SHOW
+          // STEP 0
+          intro: "ここは<b>世界中のコンサート情報を検索するサイト</b>です。主な機能は<br>①アーティスト名からのコンサート検索<br>②コンサート情報の確認<br>です。"
+        },
+        {
+          // INTRO: WHAT TO SHOW
+          // STEP 0
+          intro: "このチュートリアルでは、現在のトップページでの<b>①コンサート情報の確認</b>の方法についてご説明します。"
         },
         {
           // ELEMENT: CONNECTOR (DIRECT BY SELECTOR)
@@ -44,6 +54,21 @@ function tutorial(){
         {
           element: '#introjs-step7',
           intro: "チュートリアルはここのボタンから見れるよ！"
+        },
+        {
+          // ELEMENT: CONNECTOR (DIRECT BY SELECTOR)
+          element: '#introjs-menu1',
+          intro: "ここにはピックアップコンサートが流れます。<br>毎度違うコンサートが出るので、大好きなアーティストを見つけてね"
+        },
+        {
+          // ELEMENT: CONNECTOR (DIRECT BY SELECTOR)
+          element: '#introjs-menu2',
+          intro: "ここにはピックアップコンサートが流れます。<br>毎度違うコンサートが出るので、大好きなアーティストを見つけてね"
+        },
+        {
+          // ELEMENT: CONNECTOR (DIRECT BY SELECTOR)
+          element: '#introjs-menu3',
+          intro: "ここにはピックアップコンサートが流れます。<br>毎度違うコンサートが出るので、大好きなアーティストを見つけてね"
         },
       ]
       // START CALLS THIS FUNCTION ABOVE

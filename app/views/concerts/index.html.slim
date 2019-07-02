@@ -1,5 +1,3 @@
-
-
 javascript:
   $( document ).ready(function( $ ) {
     $( '#example2' ).sliderPro({
@@ -45,16 +43,17 @@ javascript:
     });
   });
 .container#introjs-step1
-  #example2.slider-pro
-    .sp-slides
-      - @focuses.each do |pick|
-        .sp-slide
-          =link_to concert_path(pick) do
-            -if pick.image.present?
-              =image_tag(pick.image, class: "slide_image")
-            -else
-              =image_tag(pick.performers[0].artist.artist_image, class: "slide_image")
-          p.sp-caption = link_to pick.concert_name, concert_path(pick)
+  .slideBox
+    #example2.slider-pro
+      .sp-slides
+        - @focuses.each do |pick|
+          .sp-slide
+            =link_to concert_path(pick) do
+              -if pick.image.present?
+                =image_tag(pick.image, class: "slide_image")
+              -else
+                =image_tag(pick.performers[0].artist.artist_image, class: "slide_image")
+            p.sp-caption = link_to pick.concert_name, concert_path(pick)
 
 .container
   .row.bg-gray
