@@ -12,7 +12,7 @@ class ArtistsController < ApplicationController
     if (params.has_key?(:artist))
       searched_name = artist_params[:artist_name]
       found = Artist.all.select{|n| n.artist_name.downcase == searched_name.downcase}
-      if found != nil
+      if found[0] != nil
         @artists = found
       else
         @artists = Artist.all.reverse_order
@@ -23,6 +23,7 @@ class ArtistsController < ApplicationController
     else
       @artists = Artist.all.reverse_order
     end
+    binding.pry
     @artist = Artist.new
     gon.next_artist_id = Artist.with_deleted.last.id + 1
   end
