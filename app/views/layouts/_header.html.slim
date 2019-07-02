@@ -34,9 +34,10 @@
             #navToTutorial
 
       .nav-items#nav3.hidden
-        = link_to venues_path, data: {"turbolinks" => false} do
-          i class="fas fa-map-marked-alt fa-2x" style="padding:8px;"
-        #navToVenues
+        #introjs-menu1
+          = link_to venues_path, data: {"turbolinks" => false} do
+            i class="fas fa-map-marked-alt fa-2x" style="padding:8px;"
+          #navToVenues
       -if user_signed_in?
         .nav-items#nav4-1.hidden
           = link_to user_path(current_user), data: {"turbolinks" => false} do
@@ -44,9 +45,10 @@
           #navToUser
       -else
         .nav-items#nav4-2.hidden
-          = link_to new_user_session_path do
-            i class="fas fa-sign-in-alt fa-2x" style="padding:8px;"
-          #navToLogin
+          #introjs-menu2
+            = link_to new_user_session_path do
+              i class="fas fa-sign-in-alt fa-2x" style="padding:8px;"
+            #navToLogin
       -if user_signed_in?
         .nav-items#nav5-1.hidden
           = link_to destroy_user_session_path, method: :delete do
@@ -54,9 +56,10 @@
           #navToLogout
       -else
         .nav-items#nav5-2.hidden
-          = link_to about_path, data: {"turbolinks" => false} do
-            i class="fas fa-question fa-2x" style="padding:8px 8px 8px 12px;"
-          #navToAbout
+          #introjs-menu3
+            = link_to about_path, data: {"turbolinks" => false} do
+              i class="fas fa-question fa-2x" style="padding:8px 8px 8px 12px;"
+            #navToAbout
 
     / SP MENU
     .sp_menu
