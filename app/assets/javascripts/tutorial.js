@@ -80,6 +80,7 @@ function tutorial(){
 };
 
 function sp_tutorial(){
+  $('#sp-menu').css('display', 'none');
   introJs().setOptions({
       'nextLabel': '>>',
       'prevLabel': '<<',
@@ -93,28 +94,41 @@ function sp_tutorial(){
         {
           // INTRO: WHAT TO SHOW
           // STEP 0
-          intro: "こんにちは！ご訪問ありがとう♡<br>トップページの使い方を紹介します◡̈"
+          intro: "<p style='font-size: 0.8rem;'>こんにちは！ご訪問ありがとう♡<br>このサイトの使い方を紹介します◡̈</p>"
         },
         {
-          // ELEMENT: CONNECTOR (DIRECT BY SELECTOR)
-          element: '#introjs-step1',
-          intro: "ここにはピックアップコンサートが流れます。<br>毎度違うコンサートが出るので、大好きなアーティストを見つけてね"
+          // INTRO: WHAT TO SHOW
+          // STEP 0
+          intro: "<p style='font-size: 0.8rem;'>ここは<b>世界中のコンサート情報を<br>検索するサイト</b>です。主な機能は<br><br>①コンサート情報の確認<br>②アーティストのコンサート検索（要ログイン）<br><br>です。</p>"
+        },
+        {
+          // INTRO: WHAT TO SHOW
+          // STEP 0
+          intro: "<p style='font-size: 0.8rem;'>このチュートリアルでは、<br>現在のトップページにおいての<br><b>①コンサート情報の確認</b>の方法<br>についてご説明します。</p>"
         },
         {
           element: '#introjs-step2',
-          intro: "ここには、既に確認済みのコンサート情報が並んでいます。<br>クリックすると詳細に飛べるよ◟̆◞̆♡"
+          intro: "<p style='font-size: 0.8rem;'>情報確認済みのコンサート情報が並んでいます。<br>クリックすると詳細ページに飛べるよ◟̆◞̆♡</p>"
         },
         {
           element: '#introjs-step3',
-          intro: "ここで表示のコントロールができます。<br>デフォルトは'Asc'で日付が今日から近い順です。<br>'Desc'を選択すると、一番遠い未来のコンサートから表示されます"
+          intro: "<p style='font-size: 0.8rem;'>表示のコントロールができます。<br>デフォルトは'Asc'で<br>日付が今日から近い順です。<br>'Desc'を選択すると、<br>一番遠い未来のコンサートから表示されます</p>"
         },
         {
           element: '#introjs-step4',
-          intro: "'Plan'ボタンを押すと、各コンサートのコンフリクトが確認できるようになります！<br>他の気になるコンサートと被ってしまわないか、チェックしてね◟̽◞̽*"
+          intro: "<p style='font-size: 0.8rem;'>'Plan'ボタンを押すと、<br>各コンサートのコンフリクトが確認できます。<br>他の気になるコンサートと<br>日時が被っていないか、<br>チェックしてね◟̽◞̽*</p>"
         },
         {
-          element: '#introjs-step5',
-          intro: "ここではアーティストに関するニュースを見つけ次第お伝えしています！"
+          intro: "<p style='font-size: 0.8rem;'>emailでユーザー登録＆ログインをすると、<br>アーティスト検索もできるようになります。</p>"
+        },
+        {
+          intro: "<p style='font-size: 0.8rem;'>トップページのチュートリアルはこれで終わりです。<br><br>ログインページには<b>テストユーザーアカウント</b>を用意しているので、<br><br>ユーザー登録は嫌だなぁという方も<br>どうぞおためしください</p>"
+        },
+        {
+          intro: "<p style='font-size: 0.8rem;'>使用方法が分かりにくい点やバグ、<br>認識しております。<br><br>気になる点がございましたら<br>ご意見いただけると幸いです。<br><br><span style='font-size: 0.6rem'>（フォーム未設置なのでお会いできた時に…◟̽◞̽*）</span></p>"
+        },
+        {
+          intro: "<p style='font-size: 2rem; text-align: center; font-weight: 600;'>𝙲𝙸𝙰𝙾!<br><br><span style='font-weight: 300; font-size: 2rem;'>٩(ˊᗜˋ*)و</span></p>"
         },
         // {
         //   element: '#introjs-step6',
@@ -141,12 +155,12 @@ $(document).on('click', '#tutorial', function(){
 });
 
 $(document).on('click', '#sp_tutorial', function(){
-  tutorial();
+  sp_tutorial();
 });
 
 
 $(function(){
-  if (Cookies.get('SampleFlg') != 'on') {
+  if (Cookies.get('SampleFlg') != 'on' && !navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)) {
     tutorial();
   }
 });

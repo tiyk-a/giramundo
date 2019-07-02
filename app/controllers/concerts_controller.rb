@@ -6,8 +6,8 @@ class ConcertsController < ApplicationController
   # GET /concerts
   # GET /concerts.json
   def index
-    if Concert.full.limit(10).present?
-      @focuses = Concert.full.order("RANDOM()").limit(10).includes(:venue, :performers)
+    if Concert.full.limit(9).present?
+      @focuses = Concert.full.order("RANDOM()").limit(9).includes(:venue, :performers)
     end
     @concerts = Concert.full.page(params[:page]).order('date ASC').includes(:venue, :performers)
     @keep = Keep.new

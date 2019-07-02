@@ -1,4 +1,4 @@
-h3 Your Singers
+h4 お気に入りアーティスト
 - if current_user.watch_artists.present?
 	.watchArtistList
 		-current_user.watch_artists.includes(:artist).each do |watch|
