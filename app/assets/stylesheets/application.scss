@@ -392,7 +392,7 @@ input[type="submit"], input[type="button"] {
 }
 
 // AJAX TRANSACTING
-#loading {
+#loading, #testLoading {
   display: table;
   width: 100%;
   height: 100%;
@@ -402,7 +402,7 @@ input[type="submit"], input[type="button"] {
   background-color: lightgray;
   opacity: 0.5;
 }
-#loading .loadingMsg {
+#loading .loadingMsg, .searchRes {
   display: table-cell;
   text-align: center;
   vertical-align: middle;

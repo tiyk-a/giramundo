@@ -2,18 +2,19 @@ require 'rails_helper'
 
 RSpec.describe ConcertsController, type: :controller do
 
-	describe 'TOPページ' do
+	describe 'TOPページACCESS' do
       context "Concerts#Index OK" do
         before do
-          get :index
+        	@concert = FactoryBot.create(:concert)
         end
         it 'REQUEST 200 OK!' do
-          expect(response.status).to eq 200
+        	get :index
+			expect(response.status).to eq 200
         end
       end
     end
 
-    describe 'SHOWページ' do
+    describe 'SHOWページACCESS' do
       context "Concerts#SHOW OK" do
         before do
           @concert = FactoryBot.create(:concert)

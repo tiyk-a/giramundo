@@ -3,7 +3,7 @@ $(function(){
   $('#findConcertButton').on('click', function(){
     var artistName = $('#artistName').text();
     // SHOW LOADING GIF
-    dispLoading("PLEASE WAIT...");
+    dispLoading("SEARCHING ...");
     var key = gon.tm_key
     $.ajax({
       type:"GET",
@@ -15,7 +15,9 @@ $(function(){
         if(data._embedded === undefined){
           // REMOVE LOADING GIF
           removeLoading();
+          searchRes("NOT FOUND");
         }else{
+            dispLoading("CONFIRMING ...");
             ar = (data._embedded.events);
             for(var i = 0; i < ar.length; i ++){
               if(ar[i]._embedded !== undefined && ar[i]._embedded.venues[0] !== undefined && ar[i]._embedded.venues[0].location !== undefined){
@@ -75,15 +77,16 @@ $(function(){
         };
         // REMOVE LOADING GIF
         removeLoading();
+        searchRes("PLEASE WAIT ...");
         window.location.reload();
     }).fail((jqXHR, textStatus, errorThrown) => {
         console.log('fail', jqXHR.status);
         // REMOVE LOADING GIF
         removeLoading();
+        searchRes("NOT FOUND");
     });
   });
 });
-
 
 // END Artists#Show, refresh artists's concert info *** TM ***
 
@@ -92,7 +95,7 @@ $(function(){
   $('#findConcertButtonSK').on('click', function(){
     var artistName = $('#artistName').text();
     // SHOW LOADING GIF
-    dispLoading("PLEASE WAIT...");
+    dispLoading("SEARCHING ...");
     var key = gon.sk_key
     $.ajax({
       type:"GET",
@@ -104,6 +107,7 @@ $(function(){
       if(data.resultsPage.results.event === undefined){
         // REMOVE LOADING GIF
         removeLoading();
+        searchRes("NOT FOUND NEW INFO :(");
       }else{
         ar = (data.resultsPage.results.event);
         for(var i = 0; i < ar.length; i ++){
@@ -131,17 +135,20 @@ $(function(){
                 console.log('fail', jqXHR.status);
                 // REMOVE LOADING GIF
                 removeLoading();
+                searchRes("NOT FOUND NEW INFO :(");
             });
         };
       };
             // POST
       // REMOVE LOADING GIF
       removeLoading();
+      searchRes("PLEASE WAIT ...");
       window.location.reload();
     }).fail((jqXHR, textStatus, errorThrown) => {
         console.log('failed to get info', jqXHR.status);
         // REMOVE LOADING GIF
         removeLoading();
+        searchRes("NOT FOUND NEW INFO :(");
     });
   });
 });
@@ -324,11 +331,13 @@ $(document).on('click', '.foundArtistSave', function(){
                   console.log(data, jqXHR.status);
                   var redirect_to = "/artists/" + next_id
                   removeLoading();
+                  searchRes("PLEASE WAIT ...");
                   window.location.href = redirect_to;
             }).fail((jqXHR, textStatus, errorThrown) => {
                   console.log('fail', jqXHR.status);
                   var redirect_to = "/artists/" + next_id
                   removeLoading();
+                  searchRes("NOT FOUND ...");
                   window.location.href = redirect_to;
             });
         // POST
@@ -345,10 +354,12 @@ $(document).on('click', '.foundArtistSave', function(){
             }).done((data, textStatus, jqXHR) => {
                   var redirect_to = "/artists/" + next_id
                   removeLoading();
+                  searchRes("PLEASE WAIT ...");
                   window.location.href = redirect_to;
              }).fail((jqXHR, textStatus, errorThrown) => {
                   var redirect_to = "/artists/" + next_id
                   removeLoading();
+                  searchRes("NOT FOUND ...");
                   window.location.href = redirect_to;
             });
         // POST

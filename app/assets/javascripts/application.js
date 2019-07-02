@@ -177,6 +177,14 @@ function removeLoading(){
 //REFERENCE ---> https://webllica.com/jquery-now-loading/
 // *** FINISH LOADING ***
 
+function searchRes(msg){
+  $("body").append("<div id='testLoading'><div class='searchRes'></div></div>");
+  $(".searchRes").html("<h1>" + msg + "</h1>");
+  $("#testLoading:not(:animated)").fadeIn("slow",function(){
+    $(this).delay(2000).fadeOut("slow");
+  });
+};
+
 // GOOGLE MAP
 function initMap(mapId, latCenter, lngCenter, markerSources, zoomSize) {
   var map = new google.maps.Map(document.getElementById(mapId), {

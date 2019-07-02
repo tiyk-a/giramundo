@@ -46,5 +46,5 @@
           -else
             =render 'artist_index_basic', artists: @artists
   .container.hidden#artistCount =@artists.count
-  .container.hidden#artistLast =@artists.first.id if @artists.exists?
+  .container.hidden#artistLast =@artists.first.id if @artists.present?
 

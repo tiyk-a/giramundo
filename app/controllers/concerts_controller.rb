@@ -82,7 +82,7 @@ class ConcertsController < ApplicationController
       venue.country = "TBC"
     end
 
-    if venue.flag.blank? && v.country.present?
+    if venue.flag.blank? && venue.country.present?
         this = venue.country
         if this.casecmp("UK") == 0 || this.include?("Great Britain")
           this = "GB"
