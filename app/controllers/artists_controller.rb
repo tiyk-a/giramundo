@@ -14,22 +14,12 @@ class ArtistsController < ApplicationController
       found = Artist.all.select{|n| n.artist_name.downcase == searched_name.downcase}
       if found != nil
         @artists = found
-        binding.pry
       else
         @artists = Artist.all.reverse_order
         require 'musicbrainz'
         @foundArtists = MusicBrainz::Artist.search(artist_params[:artist_name])
         # GEM GITHUB => https://github.com/localhots/musicbrainz
       end
-
-      # if Artist.where(artist_name: artist_params[:artist_name]).present?
-      #   @artists = Artist.where(artist_name: artist_params[:artist_name])
-      # else
-      #   @artists = Artist.all.reverse_order
-      #   require 'musicbrainz'
-      #   @foundArtists = MusicBrainz::Artist.search(artist_params[:artist_name])
-      #   # GEM GITHUB => https://github.com/localhots/musicbrainz
-      # end
     else
       @artists = Artist.all.reverse_order
     end

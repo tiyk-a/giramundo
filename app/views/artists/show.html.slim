@@ -49,10 +49,10 @@
 		.col-lg-8
 			h3 Concerts of this artist
 			ul
-				-if @artist.performers.present?
-					-@artist.performers.each do |perform|
-						-if perform.concert.present?
-							-unless perform.concert.date.nil?
+				-if @artist.performers.includes({concert: [:venue]}).present?
+					-@artist.performers.includes({concert: [:venue]}).each do |perform|
+						-if perform.concert.present? && perform.concert.venue.present?
+							- unless perform.concert.date.nil?
 								= render 'concerts/concert_container', concert:perform.concert, keep: @keep
 
 javascript:
