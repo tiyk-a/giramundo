@@ -38,6 +38,19 @@
 	display: inline-block;
 	width: auto;
 }
+.testAccount {
+	background: -webkit-linear-gradient(top, #FFC778, #d9a7c7);
+    background: linear-gradient(to bottom, #FFC778,#d9a7c7);
+    width: 70%;
+    margin: 20px auto;
+    padding: 20px 0;
+    border-radius: 20px;
+	h3, h4, p {
+		text-align: center;
+		color: white;
+		font-weight: 100;
+	}
+}
 //******************* ABOUT *******************
 //******************* ABOUT *******************
 #aboutFillMargin {
