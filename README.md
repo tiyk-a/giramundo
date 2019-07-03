@@ -44,6 +44,12 @@ With this "refresh artist's concert info", users can update that artists' inform
 ログインしたユーザーは"refresh artist' concert info"のボタンを押すことができます。ゲストユーザーには制限がかかっている機能です。
 このボタンでユーザーはお気に入りアーティストのコンサート情報が更新されていないか確認することができ、さらに確認された情報は他のユーザーにも共有されます。
 
+## テストユーザーアカウント
+**`email: test@test`**
+**`password: test123`**
+
+上記アカウントで普通ユーザーとして使用することができます。
+
 ### :paperclip: Keep and compare. Plan your travel
 #### 気になるコンサートはキープして、比較、プランしてフライトへ。
 Users can keep concerts that you were interested in. On my page, those kept concerts are listed, and mapped on the world map.
