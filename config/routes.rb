@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   # USERS
   devise_for :users
-  resources :users, only: [:index, :show, :edit, :destroy]
+  resources :users, only: [:index, :show, :destroy]
   post '/add_admin/:id', to: 'users#add_admin', as: :add_admin
   post '/destroy_admin/:id', to: 'users#destroy_admin', as: :destroy_admin
 
