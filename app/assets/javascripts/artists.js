@@ -248,36 +248,8 @@ MOVED TO ARTISTS#SHOW PAGE
 // ARTISTS#INDEX SEARCHED ARTISTS SELECT
 $(document).on('mouseover', '.showNext', function(){
   $(this).next().removeClass('hidden');
-  // sel = $(this);
-  // var artistName = $(this).text();
-  // onlyGetYtThumb(artistName);
 });
 // ARTISTS#INDEX SEARCHED ARTISTS SELECT
-
-// YOUTUBE IMAGE FUNCTION ********* TEST *********
-// function onlyGetYtThumb(artistName) {
-//   var key = gon.gg_key
-//     $.ajax({
-//       type:"GET",
-//       url:"https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=" + artistName + "&type=channel&key=" + key,
-//       async:true,
-//       dataType: "json",
-//     }).done(async function (data){
-//       await console.log(data);
-//       if(data.items[0].snippet.thumbnails.high !== undefined){
-//           var artistImg = (data.items[0].snippet.thumbnails.high.url);
-//         }else{
-//           var artistImg = (data.items[0].snippet.thumbnails.default.url);
-//         }
-//         // SHOW
-
-//         // SHOW
-//     }).fail((jqXHR, textStatus, errorThrown) => {
-//          alert('fail');
-//     });
-// }
-// YOUTUBE IMAGE FUNCTION  ********* TEST *********
-
 
 // ARTISTS#INDEX ADD NEW ARTIST FUNCTION
 $(document).on('click', '.foundArtistSave', function(){
@@ -288,18 +260,6 @@ $(document).on('click', '.foundArtistSave', function(){
   getYtThumb(artistName, mb_id);
 });
 // ARTISTS#INDEX ADD NEW ARTIST FUNCTION
-
-// ARTISTS#SHOW ADD ARTISTS'S IMAGE FUNCTION (RESCUE Function as normally image could be found automatically)
-// *********** AS THIS FUNCTION LOOKS TO BE JUST DOUBLED, ELIMINATING FOR FUNCTION TEST ***********
-
-// $(document).on('click', '#findArtistImage', function(){
-//   var artistName = $('#artistName').text();
-//   var mb_id = $('#artistMbId').text();
-//   getYtThumb(artistName, mb_id);
-//   window.location.reload();
-// });
-// *********** AS THIS FUNCTION LOOKS TO BE JUST DOUBLED, ELIMINATING FOR FUNCTION TEST ***********
-// ARTISTS#SHOW ADD ARTISTS'S IMAGE FUNCTION (RESCUE as normally image could be found automatically)
 
 // YOUTUBE IMAGE FUNCTION
   function getYtThumb(artistName, mb_id) {
@@ -383,9 +343,6 @@ $(document).on('click','.createWatch', function(){
   }).done((data, textStatus, jqXHR) => {
     alert('successfully saved :)');
     $(clicked).html("<%= j(render partial: 'watch_artists/destroy_button', locals: {}) %>");
-    // $(clicked).val('would be id');
-    // $(clicked).removeClass('createWatch');
-    // $(clicked).addClass('removeWatch');
   })
   .fail((jqXHR, textStatus, errorThrown) => {
     alert('E R R O R');

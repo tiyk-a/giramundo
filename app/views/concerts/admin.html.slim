@@ -27,8 +27,6 @@
     .col-lg-8
       ul.concert_nameTbody
         = render partial: 'concert_container_admin', collection: @concert_blanks, :as => 'concert', locals: {keep: @keep}
-      / .concert_blanks_pagination
-      /   = paginate @concert_blanks, :remote => true
 
 .container
   .row
@@ -45,7 +43,6 @@
     .col-lg-8
       ul
         = render partial: 'venues/venue_container', collection: @venue_blanks, :as => 'venue'
-        /= paginate @venues_blanks, :remote => true
 
 .container
   .row
@@ -59,8 +56,6 @@
     .col-lg-8
       ul.past_concertsTbody
           = render partial: 'concerts/concert_container_admin', collection: @past_concerts, :as => 'concert'
-      //.past_concert_pagination
-        = paginate @past_concerts, param_name: 'past_concert', :remote => true
 
 
 .admin-nav

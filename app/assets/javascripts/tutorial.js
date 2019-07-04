@@ -130,14 +130,6 @@ function sp_tutorial(){
         {
           intro: "<p style='font-size: 2rem; text-align: center; font-weight: 600;'>𝙲𝙸𝙰𝙾!<br><br><span style='font-weight: 300; font-size: 2rem;'>٩(ˊᗜˋ*)و</span></p>"
         },
-        // {
-        //   element: '#introjs-step6',
-        //   intro: "（会場や都市の情報がわからないとき、ここに住所や会場名を入れると場所情報が出るよ）"
-        // },
-        // {
-        //   element: '#introjs-step7',
-        //   intro: "チュートリアルはここのボタンから見れるよ！"
-        // },
       ]
       // START CALLS THIS FUNCTION ABOVE
     }).start().onexit(function() {

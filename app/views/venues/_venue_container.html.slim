@@ -16,11 +16,3 @@
 		span class="venueAddress_#{venue.id} hidden" =venue.address
 		span class="venueLat_#{venue.id} hidden" =venue.latitude
 		span class="venueLng_#{venue.id} hidden" =venue.longitude
-		/ #venueContainerConcertCount
-		/ 	i class="fas fa-music"
-		/ 	p = venue.concerts.count
-	/ .adminSpHide
-	/ 	- if admin_user?
-	/ 		span style="width:60px;"= button_tag "Edit?", class: "btn editVenue", value: venue.id
-	/ 		span style="width:50px;"= link_to venue, method: :delete, data: { confirm: 'Are you sure?' }, remote: true do
-	/ 			i class="fas fa-times" style="color: #E6C3D5;"

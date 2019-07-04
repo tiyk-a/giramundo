@@ -27,22 +27,6 @@ class ArtistsController < ApplicationController
     gon.next_artist_id = Artist.with_deleted.last.id + 1
   end
 
-  # def id_refresh
-  #   artists = Artist.where(mb_id: nil)
-  #   require 'musicbrainz'
-  #   artists.each do |a|
-  #     @found = MusicBrainz::Artist.search(a.artist_name)
-  #     if @found.present? && @found[0][:name] == a.artist_name
-  #       a.mb_id = @found[0][:mbid]
-  #     else
-  #       a.mb_id = "TBC"
-  #     end
-  #     a.save
-  #   end
-  #   @artists = Artist.where(updated_at: Time.zone.now.beginning_of_day)
-  #   render :file => "/app/views/artists/id_refresh.js.erb"
-  # end
-
   # GET /artists/1
   # GET /artists/1.json
   def show
@@ -61,8 +45,6 @@ class ArtistsController < ApplicationController
     @artist = Artist.find_or_create_by(artist_name: artist_params[:artist_name])
     @artist.update(artist_params)
     gon.artist = @artist
-    # render :file => "/app/views/artists/show.js.erb"
-    # redirect_to artist_path(artist)
   end
 
   def update

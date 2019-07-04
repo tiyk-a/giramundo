@@ -22,12 +22,6 @@
 //= require turbolinks
 //= require_tree .
 
-// if(typeof jQuery != "undefined"){ //jQueryの読み込み確認
-//     $(function(){
-//         alert('jQuery is ready.')
-//     });
-// }
-
 //******************** HEADER ********************
 //******************** HEADER ********************
 // HEADER NAV
@@ -201,15 +195,6 @@ function initMap(mapId, latCenter, lngCenter, markerSources, zoomSize) {
     map: map
   });
 
-  // var infowindow = new google.maps.InfoWindow();
-  // google.maps.event.addListener(marker, 'mouseover', (function(marker) {
-  //  return function() {
-  //    infowindow.setContent(centerContentString);
-  //    infowindow.open(map, marker);
-  //      }
-  // })(marker));
-  // CENTER MARKER
-
   var markers = []
 
   // MARKERS FOR INDEX PAGES
@@ -257,11 +242,6 @@ function initMap(mapId, latCenter, lngCenter, markerSources, zoomSize) {
           latlng
       );
 
-      //マーカーからマウスを降ろしたときのイベント
-      // marker.addListener('mouseout', function() {
-      //     if(hoverinfo)
-      //         hoverinfo.close();
-      // });
     });
   }
     // MARKERS FOR INDEX PAGES
@@ -270,8 +250,6 @@ function initMap(mapId, latCenter, lngCenter, markerSources, zoomSize) {
 
 // GOOGLE MAP SEARCH BY TEXT
 function codeAddress(inputAddress, mapId){
-  // // 入力を取得
-  // let inputAddress = document.getElementById('address').value;
 
   var map = new google.maps.Map(document.getElementById(mapId), {
     center: {lat: -34.397, lng: 150.644},

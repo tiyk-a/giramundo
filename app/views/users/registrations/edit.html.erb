@@ -8,67 +8,50 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-<table id="userEditTable">
-  <tr>
-  <td class="left_td">
-    <%= f.label :email, class: "inline-block col-lg-3 text-right" %>
-  </td>
-  <td class="right_td">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "inline-block col-lg-3 input-lg" %>
-  </td>
-</tr>
-<tr>
-  <td>
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-</td>
-<tr>
-  <td class="left_td">
- <!-- <div class="container">
-  <div class="row field">
-    <div class="inline-block col-lg-3 text-right"> -->
-      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
-      <% if @minimum_password_length %>
-        <br />
-        <em><%= @minimum_password_length %> characters minimum</em>
+  <table id="userEditTable">
+    <tr>
+      <td class="left_td">
+        <%= f.label :email, class: "inline-block col-lg-3 text-right" %>
+      </td>
+      <td class="right_td">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "inline-block col-lg-3 input-lg" %>
+      </td>
+    </tr>
+    <tr>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <td>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        </td>
       <% end %>
-    </td>
-    <td class="right_td">
-    <!-- </div> -->
-      <%= f.password_field :password, autocomplete: "new-password", class: "inline-block col-lg-3" %>
-    </td>
-<!--   </div>
-</div> -->
-</tr>
-<tr>
-  <td class="left_td">
-<!--  <div class="container">
-  <div class="row field"> -->
-    <%= f.label :password_confirmation, class: "inline-block col-lg-3 text-right" %>
-  </td>
-  <td class="right_td">
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "inline-block col-lg-3 input-lg" %>
-<!--   </div>
-</div> -->
-</td>
-</tr>
+      <td class="left_td">
+        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
+        <% if @minimum_password_length %>
+          <br />
+          <em><%= @minimum_password_length %> characters minimum</em>
+        <% end %>
+      </td>
+      <td class="right_td">
+        <%= f.password_field :password, autocomplete: "new-password", class: "inline-block col-lg-3" %>
+      </td>
+    </tr>
+    <tr>
+      <td class="left_td">
+        <%= f.label :password_confirmation, class: "inline-block col-lg-3 text-right" %>
+      </td>
+      <td class="right_td">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "inline-block col-lg-3 input-lg" %>
+      </td>
+    </tr>
+    <tr>
+      <td class="left_td">
+        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
+      </td>
+      <td class="right_td">
+        <%= f.password_field :current_password, autocomplete: "current-password", class: "inline-block col-lg-3 input-lg" %>
+      </td>
+    </tr>
+  </table>
 
-<tr>
-  <td class="left_td">
-<!-- <div class="container">
-  <div class="row field">
-    <div class="inline-block col-lg-3 text-right"> -->
-      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
-    </td>
-    <!-- </div> -->
-    <td class="right_td">
-    <%= f.password_field :current_password, autocomplete: "current-password", class: "inline-block col-lg-3 input-lg" %>
-  </td>
-</tr>
-<!--   </div>
-</div> -->
-</table>
   <div class="container">
     <div class="row">
       <div class="col-lg-3"></div>

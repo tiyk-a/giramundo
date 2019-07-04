@@ -6,14 +6,6 @@
     br
     span.inline-block.text-center style="width:100%;" = concert.date.strftime('%d')
 
-  / PERFORMER (HIDDEN)
-  / .pr-narrow.hidden#artistCell style="font-size: 10px;"
-  /   - concert.performers.includes(:artist).each do |performer|
-  /     = link_to performer.artist.artist_name, artist_path(performer.artist), class: "small mb-0 pb-0 font-light", data: {"turbolinks" => false}
-  /     div class="hidden concertPerformer_#{concert.id}"
-  /       = performer.artist_id
-  /     br
-
   / IMAGE
   .inline-block.pl-narrow#imageCell style="width:80px;"
     = link_to concert_path(concert), data: {"turbolinks" => false} do

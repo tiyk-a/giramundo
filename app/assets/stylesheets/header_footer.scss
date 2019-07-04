@@ -139,11 +139,6 @@
 			text-decoration:none;
 		}
 	}
-	&:hover{
-		// box-shadow: 0 0 10px lightgray;
-		// border: 0.3px inset lightgray;
-		// text-shadow: 0.5px 0.5px black;
-	}
 }
 #nav2 {
 	width: 50px;
@@ -163,11 +158,6 @@
 			text-decoration:none;
 		}
 	}
-	&:hover{
-		// box-shadow: 0 0 10px lightgray;
-		// border: 0.3px inset lightgray;
-		// text-shadow: 0.5px 0.5px black;
-	}
 }
 #tutorial {
 	width: 50px;
@@ -178,21 +168,6 @@
 	right: 135px;
 	background-color: #E6C3D5;
 	cursor: pointer;
-	// a{
-	// 	width: 100px;
-	// 	height: 100px;
-	// 	margin: 0;
-	// 	padding: 0;
-	// 	line-height:50px;
-	// 	&:hover{
-	// 		text-decoration:none;
-	// 	}
-	// }
-	&:hover{
-		// box-shadow: 0 0 10px lightgray;
-		// border: 0.3px inset lightgray;
-		// text-shadow: 0.5px 0.5px black;
-	}
 }
 #nav3 {
 	width: 50px;
@@ -211,11 +186,6 @@
 		&:hover{
 			text-decoration:none;
 		}
-	}
-	&:hover{
-		// box-shadow: 0 0 10px lightgray;
-		// border: 0.3px inset lightgray;
-		// text-shadow: 0.5px 0.5px black;
 	}
 }
 #nav4-1, #nav4-2 {
@@ -236,11 +206,6 @@
 			text-decoration:none;
 		}
 	}
-	&:hover{
-		// box-shadow: 0 0 10px lightgray;
-		// border: 0.3px inset lightgray;
-		// text-shadow: 0.5px 0.5px black;
-	}
 }
 #nav5-1, #nav5-2 {
 	width: 50px;
@@ -259,11 +224,6 @@
 		&:hover{
 			text-decoration:none;
 		}
-	}
-	&:hover{
-		// box-shadow: 0 0 10px lightgray;
-		// border: 0.3px inset lightgray;
-		// text-shadow: 0.5px 0.5px black;
 	}
 }
 
@@ -747,18 +707,12 @@
 		width: 90vw;
 		height: 70vh;
 		border-radius: 0;
-		// position:absolute;
-		// top: 0;
-		// right: 0;
 		margin: 10vh 5vw;
 		background-color: black;
 		opacity: 0.8;
 		cursor: pointer;
 		display: hide;
 		flex-direction: column;
-		// box-shadow: 0 0 10px lightgray;
-		// border: 0.3px inset lightgray;
-		// text-shadow: 0.5px 0.5px black;
 		.loginAlertModalInner {
 			margin: 30px auto;
 			text-align: center;
