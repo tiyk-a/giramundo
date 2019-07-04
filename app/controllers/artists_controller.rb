@@ -23,7 +23,6 @@ class ArtistsController < ApplicationController
     else
       @artists = Artist.all.reverse_order
     end
-    binding.pry
     @artist = Artist.new
     gon.next_artist_id = Artist.with_deleted.last.id + 1
   end
