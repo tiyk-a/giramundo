@@ -25,6 +25,8 @@
               i class="fas fa-pencil-alt"
             span Manual Input
           = render 'form', artist: @artist
+      - elsif user_signed_in?
+        .userSpHide =render 'users/watch_list'
     .col-lg-8
       .id_refresh_results
       -if @foundArtists.present?
