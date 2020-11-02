@@ -20,6 +20,7 @@ class VenuesController < ApplicationController
   def show
     @venue = Venue.find(params[:id])
     gon.venue = Venue.find(params[:id])
+    gon.gc_url = ENV['GC_URL']
     @keep = Keep.new
     @artists = Artist.all
     @newVenue = Venue.new

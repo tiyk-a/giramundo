@@ -67,7 +67,7 @@ $(document).on('click', '.getMap', async function(){
         console.log('SEARCHING WIZ ADDRESS');
         $.ajax({
           type:"GET",
-          url:"https://maps.googleapis.com/maps/api/geocode/json?address=" + venue_address + "&key=" + key,
+          url: gon.gc_url + venue_address + "&key=" + key,
           async:true,
           dataType: "json",
         }).done(async function (data){
@@ -106,7 +106,7 @@ $(document).on('click', '.getMap', async function(){
       console.log('SEARCHING WIZ VENUE NAME');
       $.ajax({
         type:"GET",
-        url:"https://maps.googleapis.com/maps/api/geocode/json?address=" + venue_name + "&key=" + key,
+        url: gon.gc_url + venue_name + "&key=" + key,
         async:true,
         dataType: "json",
       }).done(async function (data){
@@ -149,7 +149,7 @@ function locationSearch(key) {
   var api_key = gon.gg_key
   $.ajax({
     type:"GET",
-    url:"https://maps.googleapis.com/maps/api/geocode/json?address=" + key + "&key=" + api_key,
+    url: gon.gc_url + key + "&key=" + api_key,
     async:true,
     dataType: "json",
   }).done(async function (data){

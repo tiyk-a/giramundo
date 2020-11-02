@@ -69,7 +69,7 @@ javascript:
 		var artistName = $('#artistName').text();
 		$.ajax({
 			type:"GET",
-			url:"https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=" + artistName + "&type=video&key=" + gon.gg_key,
+			url: gon.yt_url + artistName + "&type=video&key=" + gon.gg_key,
 			async:true,
 			dataType: "json",
 		}).done(async function (data){

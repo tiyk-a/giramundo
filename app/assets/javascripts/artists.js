@@ -7,7 +7,7 @@ $(function(){
     var key = gon.tm_key
     $.ajax({
       type:"GET",
-      url:"https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + artistName + "&size=15&sort=date,asc&apikey=" + key,
+      url: gon.tm_url + ".json?keyword=" + artistName + "&size=15&sort=date,asc&apikey=" + key,
       async:true,
       dataType: "json",
     }).done(async function (data){
@@ -99,7 +99,7 @@ $(function(){
     var key = gon.sk_key
     $.ajax({
       type:"GET",
-      url:"https://api.songkick.com/api/3.0/artists/mbid:" + gon.artist.mb_id + "/calendar.json?per_page=10&apikey=" + key,
+      url:gon.sk_url + gon.artist.mb_id + "/calendar.json?per_page=10&apikey=" + key,
       async:true,
       dataType: "json",
     }).done(async function (data){
@@ -201,7 +201,7 @@ $(document).on('click', '#concertShowLocalTimeUpdate', function(){
 
       $.ajax({
         type:"GET",
-        url:"http://api.timezonedb.com/v2.1/get-time-zone?key=" + key +"&format=json&by=position&lat=" +
+        url: gon.tz_url + key +"&format=json&by=position&lat=" +
               lat + "&lng=" + lng + "&time=" + datetime,
         async:true,
         dataType: "json",
@@ -268,7 +268,7 @@ $(document).on('click', '.foundArtistSave', function(){
     console.log(next_id);
       $.ajax({
         type:"GET",
-        url:"https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=" + artistName + "&type=channel&key=" + key,
+        url: gon.yt_url + artistName + "&type=channel&key=" + key,
         async:true,
         dataType: "json",
       }).done(async function (data){

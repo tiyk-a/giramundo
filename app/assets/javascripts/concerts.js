@@ -49,7 +49,7 @@ $(function(){
     var key = gon.tz_key
     $.ajax({
       type:"GET",
-      url:"https://app.ticketmaster.com/discovery/v2/events/" + id + ".json?apikey=" + key,
+      url: gon.tm_url + "/" + id + ".json?apikey=" + key,
       async:true,
       dataType: "json",
     }).done(function (data){

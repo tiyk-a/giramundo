@@ -43,6 +43,10 @@ class ArtistsController < ApplicationController
     @concert = Concert.new
     gon.sk_key = ENV['SK_API']
     gon.tm_key = ENV['TM_API']
+    gon.tm_url = ENV['TM_URL']
+    gon.sk_url = ENV['SK_URL']
+    gon.tz_url = ENV['TZ_URL']
+    gon.yt_url = ENV['YT_URL']
   end
 
   # アーティスト登録

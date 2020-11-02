@@ -75,6 +75,7 @@ gem 'slim-rails'
 gem 'html2slim'
 gem 'devise'
 gem 'ticketmaster-sdk'
+# https://github.com/localhots/musicbrainz
 gem 'musicbrainz', '0.5.2'
 gem 'feedjira'
 gem "paranoia", "~> 2.2"
