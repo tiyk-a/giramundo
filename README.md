@@ -83,7 +83,22 @@ Compare the conditions - Venues, dates, etc. - and plan your travel. With a clic
 :bow: To Be Updated.
 Author is making the effort to provide the accurate information
 
+## 実行方法
+1. Clone application
+```
+$ git clone 
+```
+
+2. Bundle install
+```
+$ bundle i
+```
+
+3. Migrate data
+```
+bin/rails db:migrate RAILS_ENV=development
+```
 
 ## Framework
-- :gem: Ruby 2.5.5
+- :gem: Ruby 2.6.3
 - :railway_car: Rails 5.2.3
