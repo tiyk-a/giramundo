@@ -3,11 +3,12 @@ class ConcertsController < ApplicationController
   before_action :set_concert, only: [:show, :update, :destroy]
   before_action :set_admin, only: [:edit]
 
+  # コンサート一覧ページ
   # GET /concerts
   # GET /concerts.json
   def index
     if Concert.full.limit(9).present?
-      @focuses = Concert.full.order("RANDOM()").limit(9).includes(:venue, :performers)
+      @focuses = Concert.full.order("RAND()").limit(9).includes(:venue, :performers)
     end
     @concerts = Concert.full.page(params[:page]).order('date ASC').includes(:venue, :performers)
     @keep = Keep.new
@@ -22,6 +23,7 @@ class ConcertsController < ApplicationController
     end
   end
 
+  # コンサート詳細ページ
   # GET /concerts/1
   # GET /concerts/1.json
   def show
@@ -33,6 +35,7 @@ class ConcertsController < ApplicationController
     @keep = Keep.new
   end
 
+  # コンサート登録ページ
   # POST /concerts
   # POST /concerts.json
   def create
@@ -94,6 +97,7 @@ class ConcertsController < ApplicationController
         elsif (ISO3166::Country.find_country_by_name(this)) != nil
           venue.flag = (ISO3166::Country.find_country_by_name(this)).emoji_flag
         end
+        
     end
 
     if venue.city.blank?
@@ -117,6 +121,7 @@ class ConcertsController < ApplicationController
     end
   end
 
+  # コンサート更新
   def update
     @concert = Concert.find(params[:id])
     @concert.update(concert_params)
@@ -129,6 +134,7 @@ class ConcertsController < ApplicationController
     redirect_to concert_path(@concert)
   end
 
+  # コンサート削除
   # DELETE /concerts/1
   # DELETE /concerts/1.json
   def destroy
@@ -155,6 +161,7 @@ class ConcertsController < ApplicationController
     @venue = Venue.new
   end
 
+  # コンサート並び替え
   def sort
     @keep = Keep.new
     if params[:id] == "1"
@@ -175,6 +182,7 @@ class ConcertsController < ApplicationController
     end
   end
 
+  # シンプルビュー並び替え
   def simple_sort
     @keep = Keep.new
     if params[:id] == "1"
@@ -186,6 +194,7 @@ class ConcertsController < ApplicationController
     end
   end
 
+  # 日付チェック
   def date_check
     concerts = Concert.all.includes(:keeps)
     concerts.each do |c|

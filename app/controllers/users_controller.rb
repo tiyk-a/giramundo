@@ -2,12 +2,14 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update, :destroy]
   before_action :set_admin, only: [:index]
 
+  # ユーザー一覧ページ
   # GET /users
   # GET /users.json
   def index
     @users = User.all
   end
 
+  # ユーザー詳細ページ
   # GET /users/1
   # GET /users/1.json
   def show
@@ -20,6 +22,7 @@ class UsersController < ApplicationController
     end
   end
 
+  # ユーザー削除
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
@@ -30,12 +33,14 @@ class UsersController < ApplicationController
     end
   end
 
+  # Adminに追加
   def add_admin
     @user = User.find(params[:id])
     @user.update_column(:admin, true)
     redirect_to users_path
   end
 
+  # Adminから削除
   def destroy_admin
     @user = User.find(params[:id])
     @user.update_column(:admin, false)

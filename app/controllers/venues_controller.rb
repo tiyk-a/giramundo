@@ -1,10 +1,13 @@
 class VenuesController < ApplicationController
+
+  # 会場一覧ページ
   def index
     @venues = Venue.all.includes({concerts: [{performers: [:artist]}]})
     @venue = Venue.new
     gon.venues = Venue.all
   end
 
+  # 会場登録
   def create
     if venue_params[:name].present?
       venue = Venue.find_or_create_by(name: venue_params[:name])
@@ -13,6 +16,7 @@ class VenuesController < ApplicationController
     redirect_to venue_path(venue)
   end
 
+  # 会場詳細ページ
   def show
     @venue = Venue.find(params[:id])
     gon.venue = Venue.find(params[:id])
@@ -21,6 +25,7 @@ class VenuesController < ApplicationController
     @newVenue = Venue.new
   end
 
+  #
   def refresh
     venues = Venue.all
     venues.each do |venue|
@@ -55,6 +60,7 @@ class VenuesController < ApplicationController
     redirect_to venues_path
   end
 
+  # 会場削除
   def destroy
     @venue = Venue.find(params[:id])
     @venue.destroy
@@ -64,6 +70,7 @@ class VenuesController < ApplicationController
     end
   end
 
+  # 並び替え
   def sort
     gon.venues = Venue.all
     if params[:id] == "1"
@@ -75,6 +82,7 @@ class VenuesController < ApplicationController
     end
   end
 
+  # 国を表示
   def conv
     @venues = Venue.all
     @venues.each do |v|

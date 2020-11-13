@@ -1,4 +1,6 @@
 class KeepsController < ApplicationController
+
+  # お気に入り追加
   def add_keep
     keep = Keep.new(concert_id: params[:id], user_id: current_user.id)
     concert_id = params[:id]
@@ -7,6 +9,7 @@ class KeepsController < ApplicationController
     render :file => "/app/views/keeps/keep.js.erb"
   end
 
+  # お気に入り削除
   def destroy_keep
     keep = Keep.find_by(user_id: current_user, concert_id: params[:id])
     concert_id = params[:id]

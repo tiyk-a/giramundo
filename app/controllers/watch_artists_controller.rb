@@ -1,4 +1,5 @@
 class WatchArtistsController < ApplicationController
+  # watchアーティスト登録
   def add_watch_artist
     watch_artist = WatchArtist.new(artist_id: params[:id], user_id: current_user.id)
     artist_id = params[:id]
@@ -7,6 +8,7 @@ class WatchArtistsController < ApplicationController
     render :file => "/app/views/watch_artists/watch_artist.js.erb"
   end
 
+  # watchアーティスト削除
   def destroy_watch_artist
     watch_artist = WatchArtist.find_by(artist_id: params[:id], user_id: current_user.id)
     deleted_artist_id = params[:id]

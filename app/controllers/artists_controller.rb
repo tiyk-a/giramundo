@@ -6,6 +6,7 @@ class ArtistsController < ApplicationController
   # GEM https://github.com/peterwillcn/rails4-autocomplete
   # FRIENDLY REFERENCE: https://techblog.kyamanak.com/entry/2018/06/03/170603
 
+  # アーティスト一覧ページ
   # GET /artists
   # GET /artists.json
   def index
@@ -24,9 +25,14 @@ class ArtistsController < ApplicationController
       @artists = Artist.all.reverse_order
     end
     @artist = Artist.new
-    gon.next_artist_id = Artist.with_deleted.last.id + 1
+    if (Artist.with_deleted.present?)
+      gon.next_artist_id = Artist.with_deleted.last.id + 1
+    else
+      gon.next_artist_id = 0
+    end
   end
 
+  # アーティスト詳細ページ
   # GET /artists/1
   # GET /artists/1.json
   def show
@@ -39,6 +45,7 @@ class ArtistsController < ApplicationController
     gon.tm_key = ENV['TM_API']
   end
 
+  # アーティスト登録
   # POST /artists
   # POST /artists.json
   def create
@@ -47,6 +54,7 @@ class ArtistsController < ApplicationController
     gon.artist = @artist
   end
 
+  # アーティスト情報更新
   def update
     respond_to do |format|
       if @artist.update(artist_params)
@@ -59,6 +67,7 @@ class ArtistsController < ApplicationController
     end
   end
 
+  # アーティスト削除
   # DELETE /artists/1
   # DELETE /artists/1.json
   def destroy

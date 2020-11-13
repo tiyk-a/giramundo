@@ -1,62 +1,64 @@
-h4#pickupDirection ピックアップコンサート
+-if @focuses.present?
+  h4#pickupDirection ピックアップコンサート
 
-javascript:
-  $( document ).ready(function( $ ) {
-    $( '#example2' ).sliderPro({
-      width: 300,
-      height: 400,
-      visibleSize: '100%',
-      forceSize: 'none',
-      autoSlideSize: true,
-      breakpoints: {
-      500: {
+-if @focuses.present?
+  javascript:
+    $( document ).ready(function( $ ) {
+      $( '#example2' ).sliderPro({
         width: 300,
-        height: 170
-      }
-    }
-    });
-    // instantiate fancybox when a link is clicked
-    $( ".slider-pro" ).each(function(){
-      var slider = $( this );
-      slider.find( ".sp-image" ).parent( "a" ).on( "click", function( event ) {
-        event.preventDefault();
-
-        if ( slider.hasClass( "sp-swiping" ) === false ) {
-          var sliderInstance = slider.data( "sliderPro" ),
-            isAutoplay = sliderInstance.settings.autoplay;
-          $.fancybox.open( slider.find( ".sp-image" ).parent( "a" ), {
-            index: $( this ).parents( ".sp-slide" ).index(),
-            afterShow: function() {
-              if ( isAutoplay === true ) {
-                sliderInstance.settings.autoplay = false;
-                sliderInstance.stopAutoplay();
-              }
-            },
-            afterClose: function() {
-              if ( isAutoplay === true ) {
-                sliderInstance.settings.autoplay = true;
-                sliderInstance.startAutoplay();
-              }
-            }
-
-          });
+        height: 400,
+        visibleSize: '100%',
+        forceSize: 'none',
+        autoSlideSize: true,
+        breakpoints: {
+        500: {
+          width: 300,
+          height: 170
         }
+      }
+      });
+      // instantiate fancybox when a link is clicked
+      $( ".slider-pro" ).each(function(){
+        var slider = $( this );
+        slider.find( ".sp-image" ).parent( "a" ).on( "click", function( event ) {
+          event.preventDefault();
+
+          if ( slider.hasClass( "sp-swiping" ) === false ) {
+            var sliderInstance = slider.data( "sliderPro" ),
+              isAutoplay = sliderInstance.settings.autoplay;
+            $.fancybox.open( slider.find( ".sp-image" ).parent( "a" ), {
+              index: $( this ).parents( ".sp-slide" ).index(),
+              afterShow: function() {
+                if ( isAutoplay === true ) {
+                  sliderInstance.settings.autoplay = false;
+                  sliderInstance.stopAutoplay();
+                }
+              },
+              afterClose: function() {
+                if ( isAutoplay === true ) {
+                  sliderInstance.settings.autoplay = true;
+                  sliderInstance.startAutoplay();
+                }
+              }
+
+            });
+          }
+        });
       });
     });
-  });
-.container#introjs-step1
-  .slideBox
-    #example2.slider-pro
-      .sp-slides
-        - if @focuses.present?
-          - @focuses.each do |pick|
-            .sp-slide
-              =link_to concert_path(pick) do
-                -if pick.image.present?
-                  =image_tag(pick.image, class: "slide_image")
-                -else
-                  =image_tag(pick.performers[0].artist.artist_image, class: "slide_image")
-              p.sp-caption = link_to pick.concert_name, concert_path(pick)
+  .container#introjs-step1
+    .slideBox
+      #example2.slider-pro
+        .sp-slides
+          - if @focuses.present?
+            - @focuses.each do |pick|
+              .sp-slide
+                =link_to concert_path(pick) do
+                  -if pick.image.present?
+                    =image_tag(pick.image, class: "slide_image")
+                  -else
+                    =image_tag(pick.performers[0].artist.artist_image, class: "slide_image")
+                p.sp-caption = link_to pick.concert_name, concert_path(pick)
 
 .container
   .row.bg-gray
@@ -71,17 +73,22 @@ javascript:
       .spHide#introjs-step6 = render 'venues/geocodeBox'
     .col-lg-8
       .col-lg-4.inline-block
-        .text-center.flex
-          h4 コンサート一覧
+        -if @concerts.present?
+          .text-center.flex
+            h4 コンサート一覧
+        - else
+          .text-center.flex
+            h4 コンサート情報がありません
       .col-lg-5.inline-block.text-right.m-0
-        .inline-block
-          #basicSort
-            .inline-block#introjs-step3
-              = link_to 'Asc', concerts_sort_path(1), method: :post, class: 'post_button btn', id: "sortAsc", remote: true
-            .inline-block
-              = link_to 'Desc', concerts_sort_path(2), method: :post, class: 'post_button btn', id: "sortDesc", remote: true
-            .inline-block#introjs-step4
-              p.btn#planBtn Plan
+        -if @concerts.present?
+          .inline-block
+            #basicSort
+              .inline-block#introjs-step3
+                = link_to 'Asc', concerts_sort_path(1), method: :post, class: 'post_button btn', id: "sortAsc", remote: true
+              .inline-block
+                = link_to 'Desc', concerts_sort_path(2), method: :post, class: 'post_button btn', id: "sortDesc", remote: true
+              .inline-block#introjs-step4
+                p.btn#planBtn Plan
 
       -if @concerts.present?
         .text-left#swichWindow
