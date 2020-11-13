@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>README - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-3Atada-3A+NotiGiraMundo-28Concert+Info+Collector-29">:tada: NotiGiraMundo(Concert Info Collector)</a>
+    <li><a href="#label-3Amusical_score-3A+Description">:musical_score: Description</a>
+    <li><a href="#label-3Apoint_up-3A+Concert+search+app+that+centerizes+Artist-2C+not+Location.">:point_up: Concert search app that centerizes Artist, not Location.</a>
+    <li><a href="#label-E3-82-A2-E3-83-BC-E3-83-86-E3-82-A3-E3-82-B9-E3-83-88-E3-83-BB-E3-83-95-E3-82-A1-E3-83-BC-E3-82-B9-E3-83-88-E3-81-AA-E3-82-B3-E3-83-B3-E3-82-B5-E3-83-BC-E3-83-88-E3-83-BB-E3-82-B5-E3-83-BC-E3-83-81">アーティスト・ファーストなコンサート・サーチ</a>
+    <li><a href="#label-3Ano_good-3A+No+City+select">:no_good: No City select</a>
+    <li><a href="#label-E9-83-BD-E5-B8-82-E9-81-B8-E6-8A-9E-E3-81-8C-E4-B8-8D-E8-A6-81">都市選択が不要</a>
+    <li><a href="#label-3Astar2-3A+Enrich+information+with+users">:star2: Enrich information with users</a>
+    <li><a href="#label-E3-83-A6-E3-83-BC-E3-82-B6-E3-83-BC-E3-81-A8-E4-BD-9C-E3-82-8A-E4-B8-8A-E3-81-92-E3-82-89-E3-82-8C-E3-82-8B-E3-82-B3-E3-83-B3-E3-82-B5-E3-83-BC-E3-83-88-E6-83-85-E5-A0-B1">ユーザーと作り上げられるコンサート情報</a>
+    <li><a href="#label-E3-83-86-E3-82-B9-E3-83-88-E3-83-A6-E3-83-BC-E3-82-B6-E3-83-BC-E3-82-A2-E3-82-AB-E3-82-A6-E3-83-B3-E3-83-88">テストユーザーアカウント</a>
+    <li><a href="#label-3Apaperclip-3A+Keep+and+compare.+Plan+your+travel">:paperclip: Keep and compare. Plan your travel</a>
+    <li><a href="#label-E6-B0-97-E3-81-AB-E3-81-AA-E3-82-8B-E3-82-B3-E3-83-B3-E3-82-B5-E3-83-BC-E3-83-88-E3-81-AF-E3-82-AD-E3-83-BC-E3-83-97-E3-81-97-E3-81-A6-E3-80-81-E6-AF-94-E8-BC-83-E3-80-81-E3-83-97-E3-83-A9-E3-83-B3-E3-81-97-E3-81-A6-E3-83-95-E3-83-A9-E3-82-A4-E3-83-88-E3-81-B8-E3-80-82">気になるコンサートはキープして、比較、プランしてフライトへ。</a>
+    <li><a href="#label-Function">Function</a>
+    <li><a href="#label-3Aheart_eyes-3A+Artists+Page">:heart_eyes: Artists Page</a>
+    <li><a href="#label-3Amicrophone-3A+Concerts+Page">:microphone: Concerts Page</a>
+    <li><a href="#label-Requirement">Requirement</a>
+    <li><a href="#label-E5-AE-9F-E8-A1-8C-E6-96-B9-E6-B3-95">実行方法</a>
+    <li><a href="#label-DB-E3-81-AB-E5-85-A5-E3-82-8B">DBに入る</a>
+    <li><a href="#label-Framework">Framework</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Gemfile.html">Gemfile</a>
+  
+    <li><a href="./Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="./README_md.html">README</a>
+  
+    <li><a href="./Rakefile.html">Rakefile</a>
+  
+    <li><a href="./app/assets/config/manifest_js.html">manifest.js</a>
+  
+    <li><a href="./app/assets/javascripts/application_js.html">application.js</a>
+  
+    <li><a href="./app/assets/javascripts/artists_js.html">artists.js</a>
+  
+    <li><a href="./app/assets/javascripts/cable_js.html">cable.js</a>
+  
+    <li><a href="./app/assets/javascripts/concerts_js.html">concerts.js</a>
+  
+    <li><a href="./app/assets/javascripts/feeds_js.html">feeds.js</a>
+  
+    <li><a href="./app/assets/javascripts/infinite-scroll_pkgd_min_js.html">infinite-scroll.pkgd.min.js</a>
+  
+    <li><a href="./app/assets/javascripts/intro_js.html">intro.js</a>
+  
+    <li><a href="./app/assets/javascripts/jquery_sliderPro_min_js.html">jquery.sliderPro.min.js</a>
+  
+    <li><a href="./app/assets/javascripts/tutorial_js.html">tutorial.js</a>
+  
+    <li><a href="./app/assets/javascripts/underscore_js.html">underscore.js</a>
+  
+    <li><a href="./app/assets/javascripts/venues_js.html">venues.js</a>
+  
+    <li><a href="./app/assets/stylesheets/application_scss.html">application.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/artists_scss.html">artists.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/concerts_scss.html">concerts.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/entries_scss.html">entries.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/feeds_scss.html">feeds.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/header_footer_scss.html">header_footer.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/introjs-nassim_css.html">introjs-nassim.css</a>
+  
+    <li><a href="./app/assets/stylesheets/introjs_css.html">introjs.css</a>
+  
+    <li><a href="./app/assets/stylesheets/keeps_scss.html">keeps.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/performers_scss.html">performers.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/slider-pro_min_css.html">slider-pro.min.css</a>
+  
+    <li><a href="./app/assets/stylesheets/users_scss.html">users.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/venues_scss.html">venues.scss</a>
+  
+    <li><a href="./app/assets/stylesheets/watch_artists_scss.html">watch_artists.scss</a>
+  
+    <li><a href="./app/views/artists/_artist_json_jbuilder.html">_artist.json.jbuilder</a>
+  
+    <li><a href="./app/views/artists/_artist_container_html_slim.html">_artist_container.html.slim</a>
+  
+    <li><a href="./app/views/artists/_artist_index_admin_html_slim.html">_artist_index_admin.html.slim</a>
+  
+    <li><a href="./app/views/artists/_artist_index_basic_html_slim.html">_artist_index_basic.html.slim</a>
+  
+    <li><a href="./app/views/artists/_form_html_slim.html">_form.html.slim</a>
+  
+    <li><a href="./app/views/artists/index_html_slim.html">index.html.slim</a>
+  
+    <li><a href="./app/views/artists/index_json_jbuilder.html">index.json.jbuilder</a>
+  
+    <li><a href="./app/views/artists/show_html_slim.html">show.html.slim</a>
+  
+    <li><a href="./app/views/artists/show_json_jbuilder.html">show.json.jbuilder</a>
+  
+    <li><a href="./app/views/concerts/_basic_view_html_slim.html">_basic_view.html.slim</a>
+  
+    <li><a href="./app/views/concerts/_concert_json_jbuilder.html">_concert.json.jbuilder</a>
+  
+    <li><a href="./app/views/concerts/_concert_container_html_slim.html">_concert_container.html.slim</a>
+  
+    <li><a href="./app/views/concerts/_concert_container_admin_html_slim.html">_concert_container_admin.html.slim</a>
+  
+    <li><a href="./app/views/concerts/_concert_container_venues_html_slim.html">_concert_container_venues.html.slim</a>
+  
+    <li><a href="./app/views/concerts/_date_checked_html_slim.html">_date_checked.html.slim</a>
+  
+    <li><a href="./app/views/concerts/_form_html_slim.html">_form.html.slim</a>
+  
+    <li><a href="./app/views/concerts/_pagination_html_slim.html">_pagination.html.slim</a>
+  
+    <li><a href="./app/views/concerts/admin_html_slim.html">admin.html.slim</a>
+  
+    <li><a href="./app/views/concerts/index_html_slim.html">index.html.slim</a>
+  
+    <li><a href="./app/views/concerts/index_json_jbuilder.html">index.json.jbuilder</a>
+  
+    <li><a href="./app/views/concerts/show_html_slim.html">show.html.slim</a>
+  
+    <li><a href="./app/views/concerts/show_json_jbuilder.html">show.json.jbuilder</a>
+  
+    <li><a href="./app/views/entries/_top_html_slim.html">_top.html.slim</a>
+  
+    <li><a href="./app/views/entries/all_html_slim.html">all.html.slim</a>
+  
+    <li><a href="./app/views/entries/index_html_slim.html">index.html.slim</a>
+  
+    <li><a href="./app/views/entries/top_html_slim.html">top.html.slim</a>
+  
+    <li><a href="./app/views/feeds/_feed_json_jbuilder.html">_feed.json.jbuilder</a>
+  
+    <li><a href="./app/views/feeds/_form_html_slim.html">_form.html.slim</a>
+  
+    <li><a href="./app/views/feeds/index_html_slim.html">index.html.slim</a>
+  
+    <li><a href="./app/views/feeds/index_json_jbuilder.html">index.json.jbuilder</a>
+  
+    <li><a href="./app/views/feeds/show_json_jbuilder.html">show.json.jbuilder</a>
+  
+    <li><a href="./app/views/keeps/_keep_html_slim.html">_keep.html.slim</a>
+  
+    <li><a href="./app/views/keeps/_keep_lg_html_slim.html">_keep_lg.html.slim</a>
+  
+    <li><a href="./app/views/layouts/_footer_html_slim.html">_footer.html.slim</a>
+  
+    <li><a href="./app/views/layouts/_header_html_slim.html">_header.html.slim</a>
+  
+    <li><a href="./app/views/layouts/application_html_slim.html">application.html.slim</a>
+  
+    <li><a href="./app/views/users/_form_html_slim.html">_form.html.slim</a>
+  
+    <li><a href="./app/views/users/_watch_list_html_slim.html">_watch_list.html.slim</a>
+  
+    <li><a href="./app/views/users/about_html_slim.html">about.html.slim</a>
+  
+    <li><a href="./app/views/users/edit_html_slim.html">edit.html.slim</a>
+  
+    <li><a href="./app/views/users/index_html_slim.html">index.html.slim</a>
+  
+    <li><a href="./app/views/users/new_html_slim.html">new.html.slim</a>
+  
+    <li><a href="./app/views/users/show_html_slim.html">show.html.slim</a>
+  
+    <li><a href="./app/views/venues/_form_html_slim.html">_form.html.slim</a>
+  
+    <li><a href="./app/views/venues/_geocodeBox_html_slim.html">_geocodeBox.html.slim</a>
+  
+    <li><a href="./app/views/venues/_venue_json_jbuilder.html">_venue.json.jbuilder</a>
+  
+    <li><a href="./app/views/venues/_venue_container_html_slim.html">_venue_container.html.slim</a>
+  
+    <li><a href="./app/views/venues/_venue_container_column_html_slim.html">_venue_container_column.html.slim</a>
+  
+    <li><a href="./app/views/venues/index_html_slim.html">index.html.slim</a>
+  
+    <li><a href="./app/views/venues/index_json_jbuilder.html">index.json.jbuilder</a>
+  
+    <li><a href="./app/views/venues/show_html_slim.html">show.html.slim</a>
+  
+    <li><a href="./app/views/venues/show_json_jbuilder.html">show.json.jbuilder</a>
+  
+    <li><a href="./app/views/watch_artists/_watch_artist_html_slim.html">_watch_artist.html.slim</a>
+  
+    <li><a href="./app/views/watch_artists/_watch_artist_lg_html_slim.html">_watch_artist_lg.html.slim</a>
+  
+    <li><a href="./artists.html">artists</a>
+  
+    <li><a href="./config_ru.html">config.ru</a>
+  
+    <li><a href="./config/credentials_yml_enc.html">credentials.yml.enc</a>
+  
+    <li><a href="./lib/tasks/sync_rake.html">sync.rake</a>
+  
+    <li><a href="./log/bullet_log.html">bullet.log</a>
+  
+    <li><a href="./log/development_log.html">development.log</a>
+  
+    <li><a href="./package_json.html">package.json</a>
+  
+    <li><a href="./public/404_html.html">404.html</a>
+  
+    <li><a href="./public/422_html.html">422.html</a>
+  
+    <li><a href="./public/500_html.html">500.html</a>
+  
+    <li><a href="./public/apple-touch-icon-precomposed_png.html">apple-touch-icon-precomposed.png</a>
+  
+    <li><a href="./public/apple-touch-icon_png.html">apple-touch-icon.png</a>
+  
+    <li><a href="./public/favicon_ico.html">favicon.ico</a>
+  
+    <li><a href="./public/robots_txt.html">robots</a>
+  
+    <li><a href="./tmp/development_secret_txt.html">development_secret</a>
+  
+    <li><a href="./tmp/restart_txt.html">restart</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page README.md">
+
+<h1 id="label-3Atada-3A+NotiGiraMundo-28Concert+Info+Collector-29">:tada: NotiGiraMundo(Concert Info Collector)<span><a href="#label-3Atada-3A+NotiGiraMundo-28Concert+Info+Collector-29">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>Top Page:point_right: <a href="http://www.notigiramundo.info">www.notigiramundo.info</a>/</p>
+
+<p>日本語アバウトページ:point_right: <a href="http://www.notigiramundo.info/about">www.notigiramundo.info/about</a> <img src="https://github.com/tiyk-a/images/blob/master/ngm_20190702.png"></p>
+
+<p>NotiGiraMundo collects and bring you the concert/tour information of globally-popular artists.</p>
+
+<p>NotiGiraMundoは世界で人気のあるアーティスト達のコンサート＆ツアー情報をお知らせします。</p>
+
+<p>“Gira” means “Tour” in Spanish.</p>
+
+<p>For music/concert geeks around the world :)</p>
+
+<h2 id="label-3Amusical_score-3A+Description">:musical_score: Description<span><a href="#label-3Amusical_score-3A+Description">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-3Apoint_up-3A+Concert+search+app+that+centerizes+Artist-2C+not+Location.">:point_up: <a href="Concert.html"><code>Concert</code></a> search app that centerizes <a href="Artist.html"><code>Artist</code></a>, not Location.<span><a href="#label-3Apoint_up-3A+Concert+search+app+that+centerizes+Artist-2C+not+Location.">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<h4 id="label-E3-82-A2-E3-83-BC-E3-83-86-E3-82-A3-E3-82-B9-E3-83-88-E3-83-BB-E3-83-95-E3-82-A1-E3-83-BC-E3-82-B9-E3-83-88-E3-81-AA-E3-82-B3-E3-83-B3-E3-82-B5-E3-83-BC-E3-83-88-E3-83-BB-E3-82-B5-E3-83-BC-E3-83-81">アーティスト・ファーストなコンサート・サーチ<span><a href="#label-E3-82-A2-E3-83-BC-E3-83-86-E3-82-A3-E3-82-B9-E3-83-88-E3-83-BB-E3-83-95-E3-82-A1-E3-83-BC-E3-82-B9-E3-83-88-E3-81-AA-E3-82-B3-E3-83-B3-E3-82-B5-E3-83-BC-E3-83-88-E3-83-BB-E3-82-B5-E3-83-BC-E3-83-81">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p>This app collects any concerts of your favorite artist.</p>
+
+<p>ユーザーのお気に入りアーティストが開催する世界各地のコンサートを集めます。</p>
+
+<h3 id="label-3Ano_good-3A+No+City+select">:no_good: No City select<span><a href="#label-3Ano_good-3A+No+City+select">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<h4 id="label-E9-83-BD-E5-B8-82-E9-81-B8-E6-8A-9E-E3-81-8C-E4-B8-8D-E8-A6-81">都市選択が不要<span><a href="#label-E9-83-BD-E5-B8-82-E9-81-B8-E6-8A-9E-E3-81-8C-E4-B8-8D-E8-A6-81">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p>When you search concerts on ticket providers&#39; website, you are required to set your current city or search area. That&#39;s reasonable as normally concerts are planned to see local fans.</p>
+
+<p>チケットサイトでコンサートを検索する際は、必ずと言っていいほど現在地や検索都市を指定することが要求されます。これは、コンサートが地元のファンとアーティストの交流の場であることを考えれば当然なことです。</p>
+
+<p>HOWEVER, it makes it unconvenient for geeks who are planning to travel for concerts to search – They aren&#39;t sure IN WHICH CITY they&#39;ll join concerts. Each concert of a global tour can have different ticket providers. Geeks have to crawl many websites to check dates, venues, transportations, accommodations.… etc.</p>
+
+<p>しかし、コンサートのために遠征を考えているオタクにとってはこの機能がとても不都合です。オタクはどのコンサートにでも行けるのです。遠征オタクはいくつものサイトを確認してそれぞれのコンサートの日時、会場、アクセス、宿泊場所など…を比較しなければならないのです。一つのツアーであっても国によりチケットサイトが異なることもあり、検索にはとても時間がかかります。</p>
+
+<p>With NotiGiraMundo, you can find your favorite artists&#39; concerts without selecting location.</p>
+
+<p>NotiGiraMundoでは、アーティストのコンサート情報を都市選択なしで一括検索することができます。</p>
+
+<h3 id="label-3Astar2-3A+Enrich+information+with+users">:star2: Enrich information with users<span><a href="#label-3Astar2-3A+Enrich+information+with+users">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<h4 id="label-E3-83-A6-E3-83-BC-E3-82-B6-E3-83-BC-E3-81-A8-E4-BD-9C-E3-82-8A-E4-B8-8A-E3-81-92-E3-82-89-E3-82-8C-E3-82-8B-E3-82-B3-E3-83-B3-E3-82-B5-E3-83-BC-E3-83-88-E6-83-85-E5-A0-B1">ユーザーと作り上げられるコンサート情報<span><a href="#label-E3-83-A6-E3-83-BC-E3-82-B6-E3-83-BC-E3-81-A8-E4-BD-9C-E3-82-8A-E4-B8-8A-E3-81-92-E3-82-89-E3-82-8C-E3-82-8B-E3-82-B3-E3-83-B3-E3-82-B5-E3-83-BC-E3-83-88-E6-83-85-E5-A0-B1">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p>Users who have account can “refresh artist&#39; concert info”. It&#39;s not open for guest users. With this “refresh artist&#39;s concert info”, users can update that artists&#39; information.</p>
+
+<p>ログインしたユーザーは“refresh artist&#39; concert info”のボタンを押すことができます。ゲストユーザーには制限がかかっている機能です。 このボタンでユーザーはお気に入りアーティストのコンサート情報が更新されていないか確認することができ、さらに確認された情報は他のユーザーにも共有されます。</p>
+
+<h2 id="label-E3-83-86-E3-82-B9-E3-83-88-E3-83-A6-E3-83-BC-E3-82-B6-E3-83-BC-E3-82-A2-E3-82-AB-E3-82-A6-E3-83-B3-E3-83-88">テストユーザーアカウント<span><a href="#label-E3-83-86-E3-82-B9-E3-83-88-E3-83-A6-E3-83-BC-E3-82-B6-E3-83-BC-E3-82-A2-E3-82-AB-E3-82-A6-E3-83-B3-E3-83-88">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p><strong><code>email: test@test</code></strong> <strong><code>password: test123</code></strong></p>
+
+<p>上記アカウントで普通ユーザーとして使用することができます。</p>
+
+<h3 id="label-3Apaperclip-3A+Keep+and+compare.+Plan+your+travel">:paperclip: <a href="Keep.html"><code>Keep</code></a> and compare. Plan your travel<span><a href="#label-3Apaperclip-3A+Keep+and+compare.+Plan+your+travel">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<h4 id="label-E6-B0-97-E3-81-AB-E3-81-AA-E3-82-8B-E3-82-B3-E3-83-B3-E3-82-B5-E3-83-BC-E3-83-88-E3-81-AF-E3-82-AD-E3-83-BC-E3-83-97-E3-81-97-E3-81-A6-E3-80-81-E6-AF-94-E8-BC-83-E3-80-81-E3-83-97-E3-83-A9-E3-83-B3-E3-81-97-E3-81-A6-E3-83-95-E3-83-A9-E3-82-A4-E3-83-88-E3-81-B8-E3-80-82">気になるコンサートはキープして、比較、プランしてフライトへ。<span><a href="#label-E6-B0-97-E3-81-AB-E3-81-AA-E3-82-8B-E3-82-B3-E3-83-B3-E3-82-B5-E3-83-BC-E3-83-88-E3-81-AF-E3-82-AD-E3-83-BC-E3-83-97-E3-81-97-E3-81-A6-E3-80-81-E6-AF-94-E8-BC-83-E3-80-81-E3-83-97-E3-83-A9-E3-83-B3-E3-81-97-E3-81-A6-E3-83-95-E3-83-A9-E3-82-A4-E3-83-88-E3-81-B8-E3-80-82">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p>Users can keep concerts that you were interested in. On my page, those kept concerts are listed, and mapped on the world map. Compare the conditions - Venues, dates, etc. - and plan your travel. With a click you can jump to the ticket provider&#39;s buy-ticket page.</p>
+
+<p>ログインしたユーザーは気になるコンサートをキープすることができます。マイページに移動すると、これまでにお気に入りしたコンサートが一覧の表で表示され、また世界地図の上にもロケーションが表示されます。会場、日付などの条件を比較して、旅行を計画しましょう。また、１クリックでチケットプロバイダーによるチケット購入サイトに飛ぶこともできます。</p>
+
+<h2 id="label-Function">Function<span><a href="#label-Function">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>:bow: To Be Updated</p>
+
+<h3 id="label-3Aheart_eyes-3A+Artists+Page">:heart_eyes: Artists Page<span><a href="#label-3Aheart_eyes-3A+Artists+Page">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Please search your favorite artists&#39; name. If the singer was already registered on the app, his/her icon would be appeared. If not, the search results of MusicBrainz would be shown. What you only have to do is click his/her correct name. If there was any description of the artist available, with your mouseover it would be on the page. 好きなアーティストの名前を検索してみてください。すでにそのアーティストがアプリに登録されている場合は、アイコンが表示されます。まだ登録されていない場合はMusicBrainzのデータベースからのサーチ結果がテキストで表示されます。複数の検索結果から、適当なアーティスト名をクリックしてください。アーティストの詳細情報が入手できていた場合はアーティスト名へのマウスオーバーで詳細情報が表示されます。</p>
+</li><li>
+<p>On artist page, let&#39;s check his/her information. Please click “TicketMaster” or “Songkick” logo on the left column. The artist&#39;s concerts would be searched on those ticket providors&#39; database and would be saved on this app. If you don&#39;t find any update from those platforms but knowing any information, please input manually those information(Only permitted for admin users) アーティスト詳細ページでコンサート情報を探しましょう。世界中のチケット情報を入手できる“TicketMaster”と“Songkick”、２つのチケットサイトが用意されています。左のカラムにあるロゴをクリックしてください。そのアーティストのコンサート情報をアプリが検索し、結果を表示します。もし、どちらのチケットサイトからも発見されなかったコンサートの情報をあなたがご存知の場合は、手作業でコンサート情報を入力することもできます（管理者アカウントのみ対応可能）。</p>
+</li></ul>
+
+<h3 id="label-3Amicrophone-3A+Concerts+Page">:microphone: Concerts Page<span><a href="#label-3Amicrophone-3A+Concerts+Page">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Concerts page is the top page. Concerts that have enought information to show on the top page are listed. Admin users will confirm other concerts that lack any data and those would be added soon. You can use Asc/Desc sort by date. With the “Plan” button, you&#39;ll check date-confricts of concerts. コンサート一覧ページはトップページです。リストするのに十分な情報の揃っているコンサートのみがトップページに表示されています。アプリ管理者が順次、不足情報のみられるコンサート情報のデータを確認し、完了次第トップページに追加されます。トップページではコンサートの日付を今日から近い順/遠い順に並び替えることが可能です。また、“Plan”ボタンを利用すると、気になるコンサートと日程の重複がある他のコンサートをハイライトで確認することができます。</p>
+</li><li>
+<p>On each concert page, you see those basic data of the concert, like date and venue. If the local time wasn&#39;t provided, please try to click “Check local time” button. 各コンサート情報のページでは、日付や会場などの基本情報を確認することができます。もしトップにローカルタイムが表示されていない場合は“Check local time”ボタンを押してください。ローカルタイムを確認し、表示します。</p>
+</li></ul>
+
+<h2 id="label-Requirement">Requirement<span><a href="#label-Requirement">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>:bow: To Be Updated. Author is making the effort to provide the accurate information</p>
+
+<h2 id="label-E5-AE-9F-E8-A1-8C-E6-96-B9-E6-B3-95">実行方法<span><a href="#label-E5-AE-9F-E8-A1-8C-E6-96-B9-E6-B3-95">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ol><li>
+<p>Clone application <code> $ git clone  </code></p>
+</li><li>
+<p>Bundle install <code> $ bundle i </code></p>
+</li><li>
+<p>Create database <code> rails db:create </code></p>
+</li><li>
+<p>Migrate schema <code> bin/rails db:migrate RAILS_ENV=development </code></p>
+</li><li>
+<p>Run app <code> $ rails s </code></p>
+</li></ol>
+
+<h4 id="label-DB-E3-81-AB-E5-85-A5-E3-82-8B">DBに入る<span><a href="#label-DB-E3-81-AB-E5-85-A5-E3-82-8B">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p>rails default <strong>sqlite3</strong>を使用 <code> $ rails db </code></p>
+
+<h2 id="label-Framework">Framework<span><a href="#label-Framework">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>:gem: Ruby 2.6.3</p>
+</li><li>
+<p>:railway_car: Rails 5.2.3</p>
+</li></ul>
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

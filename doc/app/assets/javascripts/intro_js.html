@@ -1,0 +1,2813 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>intro.js - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../";
+  var index_rel_prefix = "../../../";
+</script>
+
+<script src="../../../js/jquery.js"></script>
+<script src="../../../js/darkfish.js"></script>
+
+<link href="../../../css/fonts.css" rel="stylesheet">
+<link href="../../../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../../table_of_contents.html#pages">Pages</a>
+    <a href="../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../../../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../../../README_md.html">README</a>
+  
+    <li><a href="../../../Rakefile.html">Rakefile</a>
+  
+    <li><a href="../../../app/assets/config/manifest_js.html">manifest.js</a>
+  
+    <li><a href="../../../app/assets/javascripts/application_js.html">application.js</a>
+  
+    <li><a href="../../../app/assets/javascripts/artists_js.html">artists.js</a>
+  
+    <li><a href="../../../app/assets/javascripts/cable_js.html">cable.js</a>
+  
+    <li><a href="../../../app/assets/javascripts/concerts_js.html">concerts.js</a>
+  
+    <li><a href="../../../app/assets/javascripts/feeds_js.html">feeds.js</a>
+  
+    <li><a href="../../../app/assets/javascripts/infinite-scroll_pkgd_min_js.html">infinite-scroll.pkgd.min.js</a>
+  
+    <li><a href="../../../app/assets/javascripts/intro_js.html">intro.js</a>
+  
+    <li><a href="../../../app/assets/javascripts/jquery_sliderPro_min_js.html">jquery.sliderPro.min.js</a>
+  
+    <li><a href="../../../app/assets/javascripts/tutorial_js.html">tutorial.js</a>
+  
+    <li><a href="../../../app/assets/javascripts/underscore_js.html">underscore.js</a>
+  
+    <li><a href="../../../app/assets/javascripts/venues_js.html">venues.js</a>
+  
+    <li><a href="../../../app/assets/stylesheets/application_scss.html">application.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/artists_scss.html">artists.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/concerts_scss.html">concerts.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/entries_scss.html">entries.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/feeds_scss.html">feeds.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/header_footer_scss.html">header_footer.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/introjs-nassim_css.html">introjs-nassim.css</a>
+  
+    <li><a href="../../../app/assets/stylesheets/introjs_css.html">introjs.css</a>
+  
+    <li><a href="../../../app/assets/stylesheets/keeps_scss.html">keeps.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/performers_scss.html">performers.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/slider-pro_min_css.html">slider-pro.min.css</a>
+  
+    <li><a href="../../../app/assets/stylesheets/users_scss.html">users.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/venues_scss.html">venues.scss</a>
+  
+    <li><a href="../../../app/assets/stylesheets/watch_artists_scss.html">watch_artists.scss</a>
+  
+    <li><a href="../../../app/views/artists/_artist_json_jbuilder.html">_artist.json.jbuilder</a>
+  
+    <li><a href="../../../app/views/artists/_artist_container_html_slim.html">_artist_container.html.slim</a>
+  
+    <li><a href="../../../app/views/artists/_artist_index_admin_html_slim.html">_artist_index_admin.html.slim</a>
+  
+    <li><a href="../../../app/views/artists/_artist_index_basic_html_slim.html">_artist_index_basic.html.slim</a>
+  
+    <li><a href="../../../app/views/artists/_form_html_slim.html">_form.html.slim</a>
+  
+    <li><a href="../../../app/views/artists/index_html_slim.html">index.html.slim</a>
+  
+    <li><a href="../../../app/views/artists/index_json_jbuilder.html">index.json.jbuilder</a>
+  
+    <li><a href="../../../app/views/artists/show_html_slim.html">show.html.slim</a>
+  
+    <li><a href="../../../app/views/artists/show_json_jbuilder.html">show.json.jbuilder</a>
+  
+    <li><a href="../../../app/views/concerts/_basic_view_html_slim.html">_basic_view.html.slim</a>
+  
+    <li><a href="../../../app/views/concerts/_concert_json_jbuilder.html">_concert.json.jbuilder</a>
+  
+    <li><a href="../../../app/views/concerts/_concert_container_html_slim.html">_concert_container.html.slim</a>
+  
+    <li><a href="../../../app/views/concerts/_concert_container_admin_html_slim.html">_concert_container_admin.html.slim</a>
+  
+    <li><a href="../../../app/views/concerts/_concert_container_venues_html_slim.html">_concert_container_venues.html.slim</a>
+  
+    <li><a href="../../../app/views/concerts/_date_checked_html_slim.html">_date_checked.html.slim</a>
+  
+    <li><a href="../../../app/views/concerts/_form_html_slim.html">_form.html.slim</a>
+  
+    <li><a href="../../../app/views/concerts/_pagination_html_slim.html">_pagination.html.slim</a>
+  
+    <li><a href="../../../app/views/concerts/admin_html_slim.html">admin.html.slim</a>
+  
+    <li><a href="../../../app/views/concerts/index_html_slim.html">index.html.slim</a>
+  
+    <li><a href="../../../app/views/concerts/index_json_jbuilder.html">index.json.jbuilder</a>
+  
+    <li><a href="../../../app/views/concerts/show_html_slim.html">show.html.slim</a>
+  
+    <li><a href="../../../app/views/concerts/show_json_jbuilder.html">show.json.jbuilder</a>
+  
+    <li><a href="../../../app/views/entries/_top_html_slim.html">_top.html.slim</a>
+  
+    <li><a href="../../../app/views/entries/all_html_slim.html">all.html.slim</a>
+  
+    <li><a href="../../../app/views/entries/index_html_slim.html">index.html.slim</a>
+  
+    <li><a href="../../../app/views/entries/top_html_slim.html">top.html.slim</a>
+  
+    <li><a href="../../../app/views/feeds/_feed_json_jbuilder.html">_feed.json.jbuilder</a>
+  
+    <li><a href="../../../app/views/feeds/_form_html_slim.html">_form.html.slim</a>
+  
+    <li><a href="../../../app/views/feeds/index_html_slim.html">index.html.slim</a>
+  
+    <li><a href="../../../app/views/feeds/index_json_jbuilder.html">index.json.jbuilder</a>
+  
+    <li><a href="../../../app/views/feeds/show_json_jbuilder.html">show.json.jbuilder</a>
+  
+    <li><a href="../../../app/views/keeps/_keep_html_slim.html">_keep.html.slim</a>
+  
+    <li><a href="../../../app/views/keeps/_keep_lg_html_slim.html">_keep_lg.html.slim</a>
+  
+    <li><a href="../../../app/views/layouts/_footer_html_slim.html">_footer.html.slim</a>
+  
+    <li><a href="../../../app/views/layouts/_header_html_slim.html">_header.html.slim</a>
+  
+    <li><a href="../../../app/views/layouts/application_html_slim.html">application.html.slim</a>
+  
+    <li><a href="../../../app/views/users/_form_html_slim.html">_form.html.slim</a>
+  
+    <li><a href="../../../app/views/users/_watch_list_html_slim.html">_watch_list.html.slim</a>
+  
+    <li><a href="../../../app/views/users/about_html_slim.html">about.html.slim</a>
+  
+    <li><a href="../../../app/views/users/edit_html_slim.html">edit.html.slim</a>
+  
+    <li><a href="../../../app/views/users/index_html_slim.html">index.html.slim</a>
+  
+    <li><a href="../../../app/views/users/new_html_slim.html">new.html.slim</a>
+  
+    <li><a href="../../../app/views/users/show_html_slim.html">show.html.slim</a>
+  
+    <li><a href="../../../app/views/venues/_form_html_slim.html">_form.html.slim</a>
+  
+    <li><a href="../../../app/views/venues/_geocodeBox_html_slim.html">_geocodeBox.html.slim</a>
+  
+    <li><a href="../../../app/views/venues/_venue_json_jbuilder.html">_venue.json.jbuilder</a>
+  
+    <li><a href="../../../app/views/venues/_venue_container_html_slim.html">_venue_container.html.slim</a>
+  
+    <li><a href="../../../app/views/venues/_venue_container_column_html_slim.html">_venue_container_column.html.slim</a>
+  
+    <li><a href="../../../app/views/venues/index_html_slim.html">index.html.slim</a>
+  
+    <li><a href="../../../app/views/venues/index_json_jbuilder.html">index.json.jbuilder</a>
+  
+    <li><a href="../../../app/views/venues/show_html_slim.html">show.html.slim</a>
+  
+    <li><a href="../../../app/views/venues/show_json_jbuilder.html">show.json.jbuilder</a>
+  
+    <li><a href="../../../app/views/watch_artists/_watch_artist_html_slim.html">_watch_artist.html.slim</a>
+  
+    <li><a href="../../../app/views/watch_artists/_watch_artist_lg_html_slim.html">_watch_artist_lg.html.slim</a>
+  
+    <li><a href="../../../artists.html">artists</a>
+  
+    <li><a href="../../../config_ru.html">config.ru</a>
+  
+    <li><a href="../../../config/credentials_yml_enc.html">credentials.yml.enc</a>
+  
+    <li><a href="../../../lib/tasks/sync_rake.html">sync.rake</a>
+  
+    <li><a href="../../../log/bullet_log.html">bullet.log</a>
+  
+    <li><a href="../../../log/development_log.html">development.log</a>
+  
+    <li><a href="../../../package_json.html">package.json</a>
+  
+    <li><a href="../../../public/404_html.html">404.html</a>
+  
+    <li><a href="../../../public/422_html.html">422.html</a>
+  
+    <li><a href="../../../public/500_html.html">500.html</a>
+  
+    <li><a href="../../../public/apple-touch-icon-precomposed_png.html">apple-touch-icon-precomposed.png</a>
+  
+    <li><a href="../../../public/apple-touch-icon_png.html">apple-touch-icon.png</a>
+  
+    <li><a href="../../../public/favicon_ico.html">favicon.ico</a>
+  
+    <li><a href="../../../public/robots_txt.html">robots</a>
+  
+    <li><a href="../../../tmp/development_secret_txt.html">development_secret</a>
+  
+    <li><a href="../../../tmp/restart_txt.html">restart</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page app/assets/javascripts/intro.js">
+
+<pre>Intro.js v2.9.3
+https://github.com/usablica/intro.js
+
+Copyright (C) 2017 Afshin Mehrabani (@afshinmeh)</pre>
+
+<p>(function(f) {</p>
+
+<pre>if (typeof exports === &quot;object&quot; &amp;&amp; typeof module !== &quot;undefined&quot;) {
+    module.exports = f();
+    // deprecated function
+    // @since 2.8.0
+    module.exports.introJs = function () {
+      console.warn(&#39;Deprecated: please use require(&quot;intro.js&quot;) directly, instead of the introJs method of the function&#39;);
+      // introJs()
+      return f().apply(this, arguments);
+    };
+} else if (typeof define === &quot;function&quot; &amp;&amp; define.amd) {
+    define([], f);
+} else {
+    var g;
+    if (typeof window !== &quot;undefined&quot;) {
+        g = window;
+    } else if (typeof global !== &quot;undefined&quot;) {
+        g = global;
+    } else if (typeof self !== &quot;undefined&quot;) {
+        g = self;
+    } else {
+        g = this;
+    }
+    g.introJs = f();
+}</pre>
+
+<p>})(function () {</p>
+
+<pre> //Default config/variables
+ var VERSION = &#39;2.9.3&#39;;
+
+    IntroJs main class
+
+    @class IntroJs
+   /
+ function IntroJs(obj) {
+   this._targetElement = obj;
+   this._introItems = [];
+
+   this._options = {
+     /* Next button label in tooltip box   
+     nextLabel: &#39;Next &amp;rarr;&#39;,
+     /* Previous button label in tooltip box */
+     prevLabel: &#39;&amp;larr; Back&#39;,
+     /* Skip button label in tooltip box */
+     skipLabel: &#39;x&#39;,
+     /* Done button label in tooltip box */
+     doneLabel: &#39;o&#39;,
+     /* Hide previous button in the first step? Otherwise, it will be disabled button. */
+     hidePrev: false,
+     /* Hide next button in the last step? Otherwise, it will be disabled button. */
+     hideNext: false,
+     /* Default tooltip box position */
+     tooltipPosition: &#39;bottom&#39;,
+     /* Next CSS class for tooltip boxes */
+     tooltipClass: &#39;&#39;,
+     /* CSS class that is added to the helperLayer */
+     highlightClass: &#39;&#39;,
+     /* Close introduction when pressing Escape button? */
+     exitOnEsc: true,
+     /* Close introduction when clicking on overlay layer? */
+     exitOnOverlayClick: true,
+     /* Show step numbers in introduction? */
+     showStepNumbers: true,
+     /* Let user use keyboard to navigate the tour? */
+     keyboardNavigation: true,
+     /* Show tour control buttons? */
+     showButtons: true,
+     /* Show tour bullets? */
+     showBullets: true,
+     /* Show tour progress? */
+     showProgress: false,
+     /* Scroll to highlighted element? */
+     scrollToElement: true,
+     /*
+        Should we scroll the tooltip or target element?
+
+        Options are: &#39;element&#39; or &#39;tooltip&#39;
+       /
+     scrollTo: &#39;tooltip&#39;,
+     /* Padding to add after scrolling when element is not in the viewport (in pixels) */
+     scrollPadding: 30,
+     /* Set the overlay opacity */
+     overlayOpacity: 0.8,
+     /* Precedence of positions, when auto is enabled */
+     positionPrecedence: [&quot;bottom&quot;, &quot;top&quot;, &quot;right&quot;, &quot;left&quot;],
+     /* Disable an interaction with element? */
+     disableInteraction: false,
+     /* Set how much padding to be used around helper element */
+     helperElementPadding: 10,
+     /* Default hint position */
+     hintPosition: &#39;top-middle&#39;,
+     /* Hint button label */
+     hintButtonLabel: &#39;Got it&#39;,
+     /* Adding animation to hints? */
+     hintAnimation: true,
+     /* additional classes to put on the buttons */
+     buttonClass: &quot;introjs-button&quot;
+   };
+ }
+
+ /**
+    Initiate a new introduction/guide from an element in the page
+
+    @api private
+    @method _introForElement
+    @param {Object} targetElm
+    @param {String} group
+    @returns {Boolean} Success or not?
+   /
+ function _introForElement(targetElm, group) {
+   var allIntroSteps = targetElm.querySelectorAll(&quot;*[data-intro]&quot;),
+       introItems = [];
+
+   if (this._options.steps) {
+     //use steps passed programmatically
+     _forEach(this._options.steps, function (step) {
+       var currentItem = _cloneObject(step);
+
+       //set the step
+       currentItem.step = introItems.length + 1;
+
+       //use querySelector function only when developer used CSS selector
+       if (typeof (currentItem.element) === &#39;string&#39;) {
+         //grab the element with given selector from the page
+         currentItem.element = document.querySelector(currentItem.element);
+       }
+
+       //intro without element
+       if (typeof (currentItem.element) === &#39;undefined&#39; || currentItem.element === null) {
+         var floatingElementQuery = document.querySelector(&quot;.introjsFloatingElement&quot;);
+
+         if (floatingElementQuery === null) {
+           floatingElementQuery = document.createElement(&#39;div&#39;);
+           floatingElementQuery.className = &#39;introjsFloatingElement&#39;;
+
+           document.body.appendChild(floatingElementQuery);
+         }
+
+         currentItem.element  = floatingElementQuery;
+         currentItem.position = &#39;floating&#39;;
+       }
+
+       currentItem.scrollTo = currentItem.scrollTo || this._options.scrollTo;
+
+       if (typeof (currentItem.disableInteraction) === &#39;undefined&#39;) {
+         currentItem.disableInteraction = this._options.disableInteraction;
+       }
+
+       if (currentItem.element !== null) {
+         introItems.push(currentItem);
+       }        
+     }.bind(this));
+
+   } else {
+     //use steps from data-* annotations
+     var elmsLength = allIntroSteps.length;
+     var disableInteraction;
+
+     //if there&#39;s no element to intro
+     if (elmsLength &lt; 1) {
+       return false;
+     }
+
+     _forEach(allIntroSteps, function (currentElement) {
+
+       // PR #80
+       // start intro for groups of elements
+       if (group &amp;&amp; (currentElement.getAttribute(&quot;data-intro-group&quot;) !== group)) {
+         return;
+       }
+
+       // skip hidden elements
+       if (currentElement.style.display === &#39;none&#39;) {
+         return;
+       }
+
+       var step = parseInt(currentElement.getAttribute(&#39;data-step&#39;), 10);
+
+       if (typeof (currentElement.getAttribute(&#39;data-disable-interaction&#39;)) !== &#39;undefined&#39;) {
+         disableInteraction = !!currentElement.getAttribute(&#39;data-disable-interaction&#39;);
+       } else {
+         disableInteraction = this._options.disableInteraction;
+       }
+
+       if (step &gt; 0) {
+         introItems[step - 1] = {
+           element: currentElement,
+           intro: currentElement.getAttribute(&#39;data-intro&#39;),
+           step: parseInt(currentElement.getAttribute(&#39;data-step&#39;), 10),
+           tooltipClass: currentElement.getAttribute(&#39;data-tooltipclass&#39;),
+           highlightClass: currentElement.getAttribute(&#39;data-highlightclass&#39;),
+           position: currentElement.getAttribute(&#39;data-position&#39;) || this._options.tooltipPosition,
+           scrollTo: currentElement.getAttribute(&#39;data-scrollto&#39;) || this._options.scrollTo,
+           disableInteraction: disableInteraction
+         };
+       }
+     }.bind(this));
+
+     //next add intro items without data-step
+     //todo: we need a cleanup here, two loops are redundant
+     var nextStep = 0;
+
+     _forEach(allIntroSteps, function (currentElement) {
+
+       // PR #80
+       // start intro for groups of elements
+       if (group &amp;&amp; (currentElement.getAttribute(&quot;data-intro-group&quot;) !== group)) {
+         return;
+       }
+
+       if (currentElement.getAttribute(&#39;data-step&#39;) === null) {
+
+         while (true) {
+           if (typeof introItems[nextStep] === &#39;undefined&#39;) {
+             break;
+           } else {
+             nextStep++;
+           }
+         } 
+
+         if (typeof (currentElement.getAttribute(&#39;data-disable-interaction&#39;)) !== &#39;undefined&#39;) {
+           disableInteraction = !!currentElement.getAttribute(&#39;data-disable-interaction&#39;);
+         } else {
+           disableInteraction = this._options.disableInteraction;
+         }
+
+         introItems[nextStep] = {
+           element: currentElement,
+           intro: currentElement.getAttribute(&#39;data-intro&#39;),
+           step: nextStep + 1,
+           tooltipClass: currentElement.getAttribute(&#39;data-tooltipclass&#39;),
+           highlightClass: currentElement.getAttribute(&#39;data-highlightclass&#39;),
+           position: currentElement.getAttribute(&#39;data-position&#39;) || this._options.tooltipPosition,
+           scrollTo: currentElement.getAttribute(&#39;data-scrollto&#39;) || this._options.scrollTo,
+           disableInteraction: disableInteraction
+         };
+       }
+     }.bind(this));
+   }
+
+   //removing undefined/null elements
+   var tempIntroItems = [];
+   for (var z = 0; z &lt; introItems.length; z++) {
+     if (introItems[z]) {
+       // copy non-falsy values to the end of the array
+       tempIntroItems.push(introItems[z]);  
+     } 
+   }
+
+   introItems = tempIntroItems;
+
+   //Ok, sort all items with given steps
+   introItems.sort(function (a, b) {
+     return a.step - b.step;
+   });
+
+   //set it to the introJs object
+   this._introItems = introItems;
+
+   //add overlay layer to the page
+   if(_addOverlayLayer.call(this, targetElm)) {
+     //then, start the show
+     _nextStep.call(this);
+
+     if (this._options.keyboardNavigation) {
+       DOMEvent.on(window, &#39;keydown&#39;, _onKeyDown, this, true);
+     }
+     //for window resize
+     DOMEvent.on(window, &#39;resize&#39;, _onResize, this, true);
+   }
+   return false;
+ }
+
+ function _onResize () {
+   this.refresh.call(this);
+ }
+
+ /**
+   on keyCode:
+   https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode
+   This feature has been removed from the Web standards.
+   Though some browsers may still support it, it is in
+   the process of being dropped.
+   Instead, you should use KeyboardEvent.code,
+   if it&#39;s implemented.
+
+   jQuery&#39;s approach is to test for
+     (1) e.which, then
+     (2) e.charCode, then
+     (3) e.keyCode
+   https://github.com/jquery/jquery/blob/a6b0705294d336ae2f63f7276de0da1195495363/src/event.js#L638
+
+   @param type var
+   @return type
+  /
+ function _onKeyDown (e) {
+   var code = (e.code === null) ? e.which : e.code;
+
+   // if code/e.which is null
+   if (code === null) {
+     code = (e.charCode === null) ? e.keyCode : e.charCode;
+   }
+
+   if ((code === &#39;Escape&#39; || code === 27) &amp;&amp; this._options.exitOnEsc === true) {
+     //escape key pressed, exit the intro
+     //check if exit callback is defined
+     _exitIntro.call(this, this._targetElement);
+   } else if (code === &#39;ArrowLeft&#39; || code === 37) {
+     //left arrow
+     _previousStep.call(this);
+   } else if (code === &#39;ArrowRight&#39; || code === 39) {
+     //right arrow
+     _nextStep.call(this);
+   } else if (code === &#39;Enter&#39; || code === 13) {
+     //srcElement === ie
+     var target = e.target || e.srcElement;
+     if (target &amp;&amp; target.className.match(&#39;introjs-prevbutton&#39;)) {
+       //user hit enter while focusing on previous button
+       _previousStep.call(this);
+     } else if (target &amp;&amp; target.className.match(&#39;introjs-skipbutton&#39;)) {
+       //user hit enter while focusing on skip button
+       if (this._introItems.length - 1 === this._currentStep &amp;&amp; typeof (this._introCompleteCallback) === &#39;function&#39;) {
+           this._introCompleteCallback.call(this);
+       }
+
+       _exitIntro.call(this, this._targetElement);
+     } else if (target &amp;&amp; target.getAttribute(&#39;data-stepnumber&#39;)) {
+       // user hit enter while focusing on step bullet
+       target.click();
+     } else {
+       //default behavior for responding to enter
+       _nextStep.call(this);
+     }
+
+     //prevent default behaviour on hitting Enter, to prevent steps being skipped in some browsers
+     if(e.preventDefault) {
+       e.preventDefault();
+     } else {
+       e.returnValue = false;
+     }
+   }
+ }
+
+/*
+    makes a copy of the object
+    @api private
+    @method _cloneObject
+  /
+ function _cloneObject(object) {
+     if (object === null || typeof (object) !== &#39;object&#39; || typeof (object.nodeType) !== &#39;undefined&#39;) {
+       return object;
+     }
+     var temp = {};
+     for (var key in object) {
+       if (typeof(window.jQuery) !== &#39;undefined&#39; &amp;&amp; object[key] instanceof window.jQuery) {
+         temp[key] = object[key];
+       } else {
+         temp[key] = _cloneObject(object[key]);
+       }
+     }
+     return temp;
+ }
+ /**
+    Go to specific step of introduction
+
+    @api private
+    @method _goToStep
+   /
+ function _goToStep(step) {
+   //because steps starts with zero
+   this._currentStep = step - 2;
+   if (typeof (this._introItems) !== &#39;undefined&#39;) {
+     _nextStep.call(this);
+   }
+ }
+
+ /**
+    Go to the specific step of introduction with the explicit [data-step] number
+
+    @api private
+    @method _goToStepNumber
+   /
+ function _goToStepNumber(step) {
+   this._currentStepNumber = step;
+   if (typeof (this._introItems) !== &#39;undefined&#39;) {
+     _nextStep.call(this);
+   }
+ }
+
+ /**
+    Go to next step on intro
+
+    @api private
+    @method _nextStep
+   /
+ function _nextStep() {
+   this._direction = &#39;forward&#39;;
+
+   if (typeof (this._currentStepNumber) !== &#39;undefined&#39;) {
+     _forEach(this._introItems, function (item, i) {
+       if( item.step === this._currentStepNumber ) {
+         this._currentStep = i - 1;
+         this._currentStepNumber = undefined;
+       }
+     }.bind(this));
+   }
+
+   if (typeof (this._currentStep) === &#39;undefined&#39;) {
+     this._currentStep = 0;
+   } else {
+     ++this._currentStep;
+   }
+
+   var nextStep = this._introItems[this._currentStep];
+   var continueStep = true;
+
+   if (typeof (this._introBeforeChangeCallback) !== &#39;undefined&#39;) {
+     continueStep = this._introBeforeChangeCallback.call(this, nextStep.element);
+   }
+
+   // if `onbeforechange` returned `false`, stop displaying the element
+   if (continueStep === false) {
+     --this._currentStep;
+     return false;
+   }
+
+   if ((this._introItems.length) &lt;= this._currentStep) {
+     //end of the intro
+     //check if any callback is defined
+     if (typeof (this._introCompleteCallback) === &#39;function&#39;) {
+       this._introCompleteCallback.call(this);
+     }
+     _exitIntro.call(this, this._targetElement);
+     return;
+   }
+
+   _showElement.call(this, nextStep);
+ }
+
+ /**
+    Go to previous step on intro
+
+    @api private
+    @method _previousStep
+   /
+ function _previousStep() {
+   this._direction = &#39;backward&#39;;
+
+   if (this._currentStep === 0) {
+     return false;
+   }
+
+   --this._currentStep;
+
+   var nextStep = this._introItems[this._currentStep];
+   var continueStep = true;
+
+   if (typeof (this._introBeforeChangeCallback) !== &#39;undefined&#39;) {
+     continueStep = this._introBeforeChangeCallback.call(this, nextStep.element);
+   }
+
+   // if `onbeforechange` returned `false`, stop displaying the element
+   if (continueStep === false) {
+     ++this._currentStep;
+     return false;
+   }
+
+   _showElement.call(this, nextStep);
+ }
+
+ /**
+    Update placement of the intro objects on the screen
+    @api private
+   /
+ function _refresh() {
+   // re-align intros
+   _setHelperLayerPosition.call(this, document.querySelector(&#39;.introjs-helperLayer&#39;));
+   _setHelperLayerPosition.call(this, document.querySelector(&#39;.introjs-tooltipReferenceLayer&#39;));
+   _setHelperLayerPosition.call(this, document.querySelector(&#39;.introjs-disableInteraction&#39;));
+
+   // re-align tooltip
+   if(this._currentStep !== undefined &amp;&amp; this._currentStep !== null) {
+     var oldHelperNumberLayer = document.querySelector(&#39;.introjs-helperNumberLayer&#39;),
+       oldArrowLayer        = document.querySelector(&#39;.introjs-arrow&#39;),
+       oldtooltipContainer  = document.querySelector(&#39;.introjs-tooltip&#39;);
+     _placeTooltip.call(this, this._introItems[this._currentStep].element, oldtooltipContainer, oldArrowLayer, oldHelperNumberLayer);
+   }
+
+   //re-align hints
+   _reAlignHints.call(this);
+   return this;
+ }
+
+ /**
+    Exit from intro
+
+    @api private
+    @method _exitIntro
+    @param {Object} targetElement
+    @param {Boolean} force - Setting to `true` will skip the result of beforeExit callback
+   /
+ function _exitIntro(targetElement, force) {
+   var continueExit = true;
+
+   // calling onbeforeexit callback
+   //
+   // If this callback return `false`, it would halt the process
+   if (this._introBeforeExitCallback !== undefined) {
+     continueExit = this._introBeforeExitCallback.call(this);
+   }
+
+   // skip this check if `force` parameter is `true`
+   // otherwise, if `onbeforeexit` returned `false`, don&#39;t exit the intro
+   if (!force &amp;&amp; continueExit === false) return;
+
+   //remove overlay layers from the page
+   var overlayLayers = targetElement.querySelectorAll(&#39;.introjs-overlay&#39;);
+
+   if (overlayLayers &amp;&amp; overlayLayers.length) {
+     _forEach(overlayLayers, function (overlayLayer) {
+       overlayLayer.style.opacity = 0;
+       window.setTimeout(function () {
+         if (this.parentNode) {
+           this.parentNode.removeChild(this);
+         }
+       }.bind(overlayLayer), 500);
+     }.bind(this));
+   }
+
+   //remove all helper layers
+   var helperLayer = targetElement.querySelector(&#39;.introjs-helperLayer&#39;);
+   if (helperLayer) {
+     helperLayer.parentNode.removeChild(helperLayer);
+   }
+
+   var referenceLayer = targetElement.querySelector(&#39;.introjs-tooltipReferenceLayer&#39;);
+   if (referenceLayer) {
+     referenceLayer.parentNode.removeChild(referenceLayer);
+   }
+
+   //remove disableInteractionLayer
+   var disableInteractionLayer = targetElement.querySelector(&#39;.introjs-disableInteraction&#39;);
+   if (disableInteractionLayer) {
+     disableInteractionLayer.parentNode.removeChild(disableInteractionLayer);
+   }
+
+   //remove intro floating element
+   var floatingElement = document.querySelector(&#39;.introjsFloatingElement&#39;);
+   if (floatingElement) {
+     floatingElement.parentNode.removeChild(floatingElement);
+   }
+
+   _removeShowElement();
+
+   //remove `introjs-fixParent` class from the elements
+   var fixParents = document.querySelectorAll(&#39;.introjs-fixParent&#39;);
+   _forEach(fixParents, function (parent) {
+     _removeClass(parent, /introjs-fixParent/g);
+   });
+
+   //clean listeners
+   DOMEvent.off(window, &#39;keydown&#39;, _onKeyDown, this, true);
+   DOMEvent.off(window, &#39;resize&#39;, _onResize, this, true);
+
+   //check if any callback is defined
+   if (this._introExitCallback !== undefined) {
+     this._introExitCallback.call(this);
+   }
+
+   //set the step to zero
+   this._currentStep = undefined;
+ }
+
+ /**
+    Render tooltip box in the page
+
+    @api private
+    @method _placeTooltip
+    @param {HTMLElement} targetElement
+    @param {HTMLElement} tooltipLayer
+    @param {HTMLElement} arrowLayer
+    @param {HTMLElement} helperNumberLayer
+    @param {Boolean} hintMode
+   /
+ function _placeTooltip(targetElement, tooltipLayer, arrowLayer, helperNumberLayer, hintMode) {
+   var tooltipCssClass = &#39;&#39;,
+       currentStepObj,
+       tooltipOffset,
+       targetOffset,
+       windowSize,
+       currentTooltipPosition;
+
+   hintMode = hintMode || false;
+
+   //reset the old style
+   tooltipLayer.style.top        = null;
+   tooltipLayer.style.right      = null;
+   tooltipLayer.style.bottom     = null;
+   tooltipLayer.style.left       = null;
+   tooltipLayer.style.marginLeft = null;
+   tooltipLayer.style.marginTop  = null;
+
+   arrowLayer.style.display = &#39;inherit&#39;;
+
+   if (typeof(helperNumberLayer) !== &#39;undefined&#39; &amp;&amp; helperNumberLayer !== null) {
+     helperNumberLayer.style.top  = null;
+     helperNumberLayer.style.left = null;
+   }
+
+   //prevent error when `this._currentStep` is undefined
+   if (!this._introItems[this._currentStep]) return;
+
+   //if we have a custom css class for each step
+   currentStepObj = this._introItems[this._currentStep];
+   if (typeof (currentStepObj.tooltipClass) === &#39;string&#39;) {
+     tooltipCssClass = currentStepObj.tooltipClass;
+   } else {
+     tooltipCssClass = this._options.tooltipClass;
+   }
+
+   tooltipLayer.className = (&#39;introjs-tooltip &#39; + tooltipCssClass).replace(/^\s+|\s+$/g, &#39;&#39;);
+   tooltipLayer.setAttribute(&#39;role&#39;, &#39;dialog&#39;);
+
+   currentTooltipPosition = this._introItems[this._currentStep].position;
+
+   // Floating is always valid, no point in calculating
+   if (currentTooltipPosition !== &quot;floating&quot;) { 
+     currentTooltipPosition = _determineAutoPosition.call(this, targetElement, tooltipLayer, currentTooltipPosition);
+   }
+
+   var tooltipLayerStyleLeft;
+   targetOffset  = _getOffset(targetElement);
+   tooltipOffset = _getOffset(tooltipLayer);
+   windowSize    = _getWinSize();
+
+   _addClass(tooltipLayer, &#39;introjs-&#39; + currentTooltipPosition);
+
+   switch (currentTooltipPosition) {
+     case &#39;top-right-aligned&#39;:
+       arrowLayer.className      = &#39;introjs-arrow bottom-right&#39;;
+
+       var tooltipLayerStyleRight = 0;
+       _checkLeft(targetOffset, tooltipLayerStyleRight, tooltipOffset, tooltipLayer);
+       tooltipLayer.style.bottom    = (targetOffset.height +  20) + &#39;px&#39;;
+       break;
+
+     case &#39;top-middle-aligned&#39;:
+       arrowLayer.className      = &#39;introjs-arrow bottom-middle&#39;;
+
+       var tooltipLayerStyleLeftRight = targetOffset.width / 2 - tooltipOffset.width / 2;
+
+       // a fix for middle aligned hints
+       if (hintMode) {
+         tooltipLayerStyleLeftRight += 5;
+       }
+
+       if (_checkLeft(targetOffset, tooltipLayerStyleLeftRight, tooltipOffset, tooltipLayer)) {
+         tooltipLayer.style.right = null;
+         _checkRight(targetOffset, tooltipLayerStyleLeftRight, tooltipOffset, windowSize, tooltipLayer);
+       }
+       tooltipLayer.style.bottom = (targetOffset.height + 20) + &#39;px&#39;;
+       break;
+
+     case &#39;top-left-aligned&#39;:
+     // top-left-aligned is the same as the default top
+     case &#39;top&#39;:
+       arrowLayer.className = &#39;introjs-arrow bottom&#39;;
+
+       tooltipLayerStyleLeft = (hintMode) ? 0 : 15;
+
+       _checkRight(targetOffset, tooltipLayerStyleLeft, tooltipOffset, windowSize, tooltipLayer);
+       tooltipLayer.style.bottom = (targetOffset.height +  20) + &#39;px&#39;;
+       break;
+     case &#39;right&#39;:
+       tooltipLayer.style.left = (targetOffset.width + 20) + &#39;px&#39;;
+       if (targetOffset.top + tooltipOffset.height &gt; windowSize.height) {
+         // In this case, right would have fallen below the bottom of the screen.
+         // Modify so that the bottom of the tooltip connects with the target
+         arrowLayer.className = &quot;introjs-arrow left-bottom&quot;;
+         tooltipLayer.style.top = &quot;-&quot; + (tooltipOffset.height - targetOffset.height - 20) + &quot;px&quot;;
+       } else {
+         arrowLayer.className = &#39;introjs-arrow left&#39;;
+       }
+       break;
+     case &#39;left&#39;:
+       if (!hintMode &amp;&amp; this._options.showStepNumbers === true) {
+         tooltipLayer.style.top = &#39;15px&#39;;
+       }
+
+       if (targetOffset.top + tooltipOffset.height &gt; windowSize.height) {
+         // In this case, left would have fallen below the bottom of the screen.
+         // Modify so that the bottom of the tooltip connects with the target
+         tooltipLayer.style.top = &quot;-&quot; + (tooltipOffset.height - targetOffset.height - 20) + &quot;px&quot;;
+         arrowLayer.className = &#39;introjs-arrow right-bottom&#39;;
+       } else {
+         arrowLayer.className = &#39;introjs-arrow right&#39;;
+       }
+       tooltipLayer.style.right = (targetOffset.width + 20) + &#39;px&#39;;
+
+       break;
+     case &#39;floating&#39;:
+       arrowLayer.style.display = &#39;none&#39;;
+
+       //we have to adjust the top and left of layer manually for intro items without element
+       tooltipLayer.style.left   = &#39;50%&#39;;
+       tooltipLayer.style.top    = &#39;50%&#39;;
+       tooltipLayer.style.marginLeft = &#39;-&#39; + (tooltipOffset.width / 2)  + &#39;px&#39;;
+       tooltipLayer.style.marginTop  = &#39;-&#39; + (tooltipOffset.height / 2) + &#39;px&#39;;
+
+       if (typeof(helperNumberLayer) !== &#39;undefined&#39; &amp;&amp; helperNumberLayer !== null) {
+         helperNumberLayer.style.left = &#39;-&#39; + ((tooltipOffset.width / 2) + 18) + &#39;px&#39;;
+         helperNumberLayer.style.top  = &#39;-&#39; + ((tooltipOffset.height / 2) + 18) + &#39;px&#39;;
+       }
+
+       break;
+     case &#39;bottom-right-aligned&#39;:
+       arrowLayer.className      = &#39;introjs-arrow top-right&#39;;
+
+       tooltipLayerStyleRight = 0;
+       _checkLeft(targetOffset, tooltipLayerStyleRight, tooltipOffset, tooltipLayer);
+       tooltipLayer.style.top    = (targetOffset.height +  20) + &#39;px&#39;;
+       break;
+
+     case &#39;bottom-middle-aligned&#39;:
+       arrowLayer.className      = &#39;introjs-arrow top-middle&#39;;
+
+       tooltipLayerStyleLeftRight = targetOffset.width / 2 - tooltipOffset.width / 2;
+
+       // a fix for middle aligned hints
+       if (hintMode) {
+         tooltipLayerStyleLeftRight += 5;
+       }
+
+       if (_checkLeft(targetOffset, tooltipLayerStyleLeftRight, tooltipOffset, tooltipLayer)) {
+         tooltipLayer.style.right = null;
+         _checkRight(targetOffset, tooltipLayerStyleLeftRight, tooltipOffset, windowSize, tooltipLayer);
+       }
+       tooltipLayer.style.top = (targetOffset.height + 20) + &#39;px&#39;;
+       break;
+
+     // case &#39;bottom-left-aligned&#39;:
+     // Bottom-left-aligned is the same as the default bottom
+     // case &#39;bottom&#39;:
+     // Bottom going to follow the default behavior
+     default:
+       arrowLayer.className = &#39;introjs-arrow top&#39;;
+
+       tooltipLayerStyleLeft = 0;
+       _checkRight(targetOffset, tooltipLayerStyleLeft, tooltipOffset, windowSize, tooltipLayer);
+       tooltipLayer.style.top    = (targetOffset.height +  20) + &#39;px&#39;;
+   }
+ }
+
+ /**
+    Set tooltip left so it doesn&#39;t go off the right side of the window
+
+    @return boolean true, if tooltipLayerStyleLeft is ok.  false, otherwise.
+   /
+ function _checkRight(targetOffset, tooltipLayerStyleLeft, tooltipOffset, windowSize, tooltipLayer) {
+   if (targetOffset.left + tooltipLayerStyleLeft + tooltipOffset.width &gt; windowSize.width) {
+     // off the right side of the window
+     tooltipLayer.style.left = (windowSize.width - tooltipOffset.width - targetOffset.left) + &#39;px&#39;;
+     return false;
+   }
+   tooltipLayer.style.left = tooltipLayerStyleLeft + &#39;px&#39;;
+   return true;
+ }
+
+ /**
+    Set tooltip right so it doesn&#39;t go off the left side of the window
+
+    @return boolean true, if tooltipLayerStyleRight is ok.  false, otherwise.
+   /
+ function _checkLeft(targetOffset, tooltipLayerStyleRight, tooltipOffset, tooltipLayer) {
+   if (targetOffset.left + targetOffset.width - tooltipLayerStyleRight - tooltipOffset.width &lt; 0) {
+     // off the left side of the window
+     tooltipLayer.style.left = (-targetOffset.left) + &#39;px&#39;;
+     return false;
+   }
+   tooltipLayer.style.right = tooltipLayerStyleRight + &#39;px&#39;;
+   return true;
+ }
+
+ /**
+    Determines the position of the tooltip based on the position precedence and availability
+    of screen space.
+
+    @param {Object}    targetElement
+    @param {Object}    tooltipLayer
+    @param {String}    desiredTooltipPosition
+    @return {String}   calculatedPosition
+   /
+ function _determineAutoPosition(targetElement, tooltipLayer, desiredTooltipPosition) {
+
+   // Take a clone of position precedence. These will be the available
+   var possiblePositions = this._options.positionPrecedence.slice();
+
+   var windowSize = _getWinSize();
+   var tooltipHeight = _getOffset(tooltipLayer).height + 10;
+   var tooltipWidth = _getOffset(tooltipLayer).width + 20;
+   var targetElementRect = targetElement.getBoundingClientRect();
+
+   // If we check all the possible areas, and there are no valid places for the tooltip, the element
+   // must take up most of the screen real estate. Show the tooltip floating in the middle of the screen.
+   var calculatedPosition = &quot;floating&quot;;
+
+   /*
+     auto determine position 
+    /
+
+   // Check for space below
+   if (targetElementRect.bottom + tooltipHeight &gt; windowSize.height) {
+     _removeEntry(possiblePositions, &quot;bottom&quot;);
+   }
+
+   // Check for space above
+   if (targetElementRect.top - tooltipHeight &lt; 0) {
+     _removeEntry(possiblePositions, &quot;top&quot;);
+   }
+
+   // Check for space to the right
+   if (targetElementRect.right + tooltipWidth &gt; windowSize.width) {
+     _removeEntry(possiblePositions, &quot;right&quot;);
+   }
+
+   // Check for space to the left
+   if (targetElementRect.left - tooltipWidth &lt; 0) {
+     _removeEntry(possiblePositions, &quot;left&quot;);
+   }
+
+   // @var {String}  ex: &#39;right-aligned&#39;
+   var desiredAlignment = (function (pos) {
+     var hyphenIndex = pos.indexOf(&#39;-&#39;);
+     if (hyphenIndex !== -1) {
+       // has alignment
+       return pos.substr(hyphenIndex);
+     }
+     return &#39;&#39;;
+   })(desiredTooltipPosition || &#39;&#39;);
+
+   // strip alignment from position
+   if (desiredTooltipPosition) {
+     // ex: &quot;bottom-right-aligned&quot;
+     // should return &#39;bottom&#39;
+     desiredTooltipPosition = desiredTooltipPosition.split(&#39;-&#39;)[0];
+   }
+
+   if (possiblePositions.length) {
+     if (desiredTooltipPosition !== &quot;auto&quot; &amp;&amp;
+         possiblePositions.indexOf(desiredTooltipPosition) &gt; -1) {
+       // If the requested position is in the list, choose that
+       calculatedPosition = desiredTooltipPosition;
+     } else {
+       // Pick the first valid position, in order
+       calculatedPosition = possiblePositions[0];
+     }
+   }
+
+   // only top and bottom positions have optional alignments
+   if ([&#39;top&#39;, &#39;bottom&#39;].indexOf(calculatedPosition) !== -1) {
+     calculatedPosition += _determineAutoAlignment(targetElementRect.left, tooltipWidth, windowSize, desiredAlignment);
+   }
+
+   return calculatedPosition;
+ }
+
+ /**
+   auto-determine alignment
+   @param {Integer}  offsetLeft
+   @param {Integer}  tooltipWidth
+   @param {Object}   windowSize
+   @param {String}   desiredAlignment
+   @return {String}  calculatedAlignment
+  /
+ function _determineAutoAlignment (offsetLeft, tooltipWidth, windowSize, desiredAlignment) {
+   var halfTooltipWidth = tooltipWidth / 2,
+     winWidth = Math.min(windowSize.width, window.screen.width),
+     possibleAlignments = [&#39;-left-aligned&#39;, &#39;-middle-aligned&#39;, &#39;-right-aligned&#39;],
+     calculatedAlignment = &#39;&#39;;
+
+   // valid left must be at least a tooltipWidth
+   // away from right side
+   if (winWidth - offsetLeft &lt; tooltipWidth) {
+     _removeEntry(possibleAlignments, &#39;-left-aligned&#39;);
+   }
+
+   // valid middle must be at least half 
+   // width away from both sides
+   if (offsetLeft &lt; halfTooltipWidth || 
+     winWidth - offsetLeft &lt; halfTooltipWidth) {
+     _removeEntry(possibleAlignments, &#39;-middle-aligned&#39;);
+   }
+
+   // valid right must be at least a tooltipWidth
+   // width away from left side
+   if (offsetLeft &lt; tooltipWidth) {
+     _removeEntry(possibleAlignments, &#39;-right-aligned&#39;);
+   }
+
+   if (possibleAlignments.length) {
+     if (possibleAlignments.indexOf(desiredAlignment) !== -1) {
+       // the desired alignment is valid
+       calculatedAlignment = desiredAlignment;
+     } else {
+       // pick the first valid position, in order
+       calculatedAlignment = possibleAlignments[0];
+     }
+   } else {
+     // if screen width is too small 
+     // for ANY alignment, middle is 
+     // probably the best for visibility
+     calculatedAlignment = &#39;-middle-aligned&#39;;
+   }
+
+   return calculatedAlignment;
+ }
+
+ /**
+    Remove an entry from a string array if it&#39;s there, does nothing if it isn&#39;t there.
+
+    @param {Array} stringArray
+    @param {String} stringToRemove
+   /
+ function _removeEntry(stringArray, stringToRemove) {
+   if (stringArray.indexOf(stringToRemove) &gt; -1) {
+     stringArray.splice(stringArray.indexOf(stringToRemove), 1);
+   }
+ }
+
+ /**
+    Update the position of the helper layer on the screen
+
+    @api private
+    @method _setHelperLayerPosition
+    @param {Object} helperLayer
+   /
+ function _setHelperLayerPosition(helperLayer) {
+   if (helperLayer) {
+     //prevent error when `this._currentStep` in undefined
+     if (!this._introItems[this._currentStep]) return;
+
+     var currentElement  = this._introItems[this._currentStep],
+         elementPosition = _getOffset(currentElement.element),
+         widthHeightPadding = this._options.helperElementPadding;
+
+     // If the target element is fixed, the tooltip should be fixed as well.
+     // Otherwise, remove a fixed class that may be left over from the previous
+     // step.
+     if (_isFixed(currentElement.element)) {
+       _addClass(helperLayer, &#39;introjs-fixedTooltip&#39;);
+     } else {
+       _removeClass(helperLayer, &#39;introjs-fixedTooltip&#39;);
+     }
+
+     if (currentElement.position === &#39;floating&#39;) {
+       widthHeightPadding = 0;
+     }
+
+     //set new position to helper layer
+     helperLayer.style.cssText = &#39;width: &#39; + (elementPosition.width  + widthHeightPadding)  + &#39;px; &#39; +
+                                       &#39;height:&#39; + (elementPosition.height + widthHeightPadding)  + &#39;px; &#39; +
+                                       &#39;top:&#39;    + (elementPosition.top    - widthHeightPadding / 2)   + &#39;px;&#39; +
+                                       &#39;left: &#39;  + (elementPosition.left   - widthHeightPadding / 2)   + &#39;px;&#39;;
+
+   }
+ }
+
+ /**
+    Add disableinteraction layer and adjust the size and position of the layer
+
+    @api private
+    @method _disableInteraction
+   /
+ function _disableInteraction() {
+   var disableInteractionLayer = document.querySelector(&#39;.introjs-disableInteraction&#39;);
+
+   if (disableInteractionLayer === null) {
+     disableInteractionLayer = document.createElement(&#39;div&#39;);
+     disableInteractionLayer.className = &#39;introjs-disableInteraction&#39;;
+     this._targetElement.appendChild(disableInteractionLayer);
+   }
+
+   _setHelperLayerPosition.call(this, disableInteractionLayer);
+ }
+
+ /**
+    Setting anchors to behave like buttons
+
+    @api private
+    @method _setAnchorAsButton
+   /
+ function _setAnchorAsButton(anchor){
+   anchor.setAttribute(&#39;role&#39;, &#39;button&#39;);
+   anchor.tabIndex = 0;
+ }
+
+ /**
+    Show an element on the page
+
+    @api private
+    @method _showElement
+    @param {Object} targetElement
+   /
+ function _showElement(targetElement) {
+   if (typeof (this._introChangeCallback) !== &#39;undefined&#39;) {
+     this._introChangeCallback.call(this, targetElement.element);
+   }
+
+   var self = this,
+       oldHelperLayer = document.querySelector(&#39;.introjs-helperLayer&#39;),
+       oldReferenceLayer = document.querySelector(&#39;.introjs-tooltipReferenceLayer&#39;),
+       highlightClass = &#39;introjs-helperLayer&#39;,
+       nextTooltipButton,
+       prevTooltipButton,
+       skipTooltipButton,
+       scrollParent;
+
+   //check for a current step highlight class
+   if (typeof (targetElement.highlightClass) === &#39;string&#39;) {
+     highlightClass += (&#39; &#39; + targetElement.highlightClass);
+   }
+   //check for options highlight class
+   if (typeof (this._options.highlightClass) === &#39;string&#39;) {
+     highlightClass += (&#39; &#39; + this._options.highlightClass);
+   }
+
+   if (oldHelperLayer !== null) {
+     var oldHelperNumberLayer = oldReferenceLayer.querySelector(&#39;.introjs-helperNumberLayer&#39;),
+         oldtooltipLayer      = oldReferenceLayer.querySelector(&#39;.introjs-tooltiptext&#39;),
+         oldArrowLayer        = oldReferenceLayer.querySelector(&#39;.introjs-arrow&#39;),
+         oldtooltipContainer  = oldReferenceLayer.querySelector(&#39;.introjs-tooltip&#39;);
+
+     skipTooltipButton    = oldReferenceLayer.querySelector(&#39;.introjs-skipbutton&#39;);
+     prevTooltipButton    = oldReferenceLayer.querySelector(&#39;.introjs-prevbutton&#39;);
+     nextTooltipButton    = oldReferenceLayer.querySelector(&#39;.introjs-nextbutton&#39;);
+
+     //update or reset the helper highlight class
+     oldHelperLayer.className = highlightClass;
+     //hide the tooltip
+     oldtooltipContainer.style.opacity = 0;
+     oldtooltipContainer.style.display = &quot;none&quot;;
+
+     if (oldHelperNumberLayer !== null) {
+       var lastIntroItem = this._introItems[(targetElement.step - 2 &gt;= 0 ? targetElement.step - 2 : 0)];
+
+       if (lastIntroItem !== null &amp;&amp; (this._direction === &#39;forward&#39; &amp;&amp; lastIntroItem.position === &#39;floating&#39;) || (this._direction === &#39;backward&#39; &amp;&amp; targetElement.position === &#39;floating&#39;)) {
+         oldHelperNumberLayer.style.opacity = 0;
+       }
+     }
+
+     // scroll to element
+     scrollParent = _getScrollParent( targetElement.element );
+
+     if (scrollParent !== document.body) {
+       // target is within a scrollable element
+       _scrollParentToElement(scrollParent, targetElement.element);
+     }
+
+     // set new position to helper layer
+     _setHelperLayerPosition.call(self, oldHelperLayer);
+     _setHelperLayerPosition.call(self, oldReferenceLayer);
+
+     //remove `introjs-fixParent` class from the elements
+     var fixParents = document.querySelectorAll(&#39;.introjs-fixParent&#39;);
+     _forEach(fixParents, function (parent) {
+       _removeClass(parent, /introjs-fixParent/g);
+     });
+
+     //remove old classes if the element still exist
+     _removeShowElement();
+
+     //we should wait until the CSS3 transition is competed (it&#39;s 0.3 sec) to prevent incorrect `height` and `width` calculation
+     if (self._lastShowElementTimer) {
+       window.clearTimeout(self._lastShowElementTimer);
+     }
+
+     self._lastShowElementTimer = window.setTimeout(function() {
+       //set current step to the label
+       if (oldHelperNumberLayer !== null) {
+         oldHelperNumberLayer.innerHTML = targetElement.step;
+       }
+       //set current tooltip text
+       oldtooltipLayer.innerHTML = targetElement.intro;
+       //set the tooltip position
+       oldtooltipContainer.style.display = &quot;block&quot;;
+       _placeTooltip.call(self, targetElement.element, oldtooltipContainer, oldArrowLayer, oldHelperNumberLayer);
+
+       //change active bullet
+       if (self._options.showBullets) {
+           oldReferenceLayer.querySelector(&#39;.introjs-bullets li &gt; a.active&#39;).className = &#39;&#39;;
+           oldReferenceLayer.querySelector(&#39;.introjs-bullets li &gt; a[data-stepnumber=&quot;&#39; + targetElement.step + &#39;&quot;]&#39;).className = &#39;active&#39;;
+       }
+       oldReferenceLayer.querySelector(&#39;.introjs-progress .introjs-progressbar&#39;).style.cssText = &#39;width:&#39; + _getProgress.call(self) + &#39;%;&#39;;
+       oldReferenceLayer.querySelector(&#39;.introjs-progress .introjs-progressbar&#39;).setAttribute(&#39;aria-valuenow&#39;, _getProgress.call(self));
+
+       //show the tooltip
+       oldtooltipContainer.style.opacity = 1;
+       if (oldHelperNumberLayer) oldHelperNumberLayer.style.opacity = 1;
+
+       //reset button focus
+       if (typeof skipTooltipButton !== &quot;undefined&quot; &amp;&amp; skipTooltipButton !== null &amp;&amp; /introjs-donebutton/gi.test(skipTooltipButton.className)) {
+         // skip button is now &quot;done&quot; button
+         skipTooltipButton.focus();
+       } else if (typeof nextTooltipButton !== &quot;undefined&quot; &amp;&amp; nextTooltipButton !== null) {
+         //still in the tour, focus on next
+         nextTooltipButton.focus();
+       }
+
+       // change the scroll of the window, if needed
+       _scrollTo.call(self, targetElement.scrollTo, targetElement, oldtooltipLayer);
+     }, 350);
+
+     // end of old element if-else condition
+   } else {
+     var helperLayer       = document.createElement(&#39;div&#39;),
+         referenceLayer    = document.createElement(&#39;div&#39;),
+         arrowLayer        = document.createElement(&#39;div&#39;),
+         tooltipLayer      = document.createElement(&#39;div&#39;),
+         tooltipTextLayer  = document.createElement(&#39;div&#39;),
+         bulletsLayer      = document.createElement(&#39;div&#39;),
+         progressLayer     = document.createElement(&#39;div&#39;),
+         buttonsLayer      = document.createElement(&#39;div&#39;);
+
+     helperLayer.className = highlightClass;
+     referenceLayer.className = &#39;introjs-tooltipReferenceLayer&#39;;
+
+     // scroll to element
+     scrollParent = _getScrollParent( targetElement.element );
+
+     if (scrollParent !== document.body) {
+       // target is within a scrollable element
+       _scrollParentToElement(scrollParent, targetElement.element);
+     }
+
+     //set new position to helper layer
+     _setHelperLayerPosition.call(self, helperLayer);
+     _setHelperLayerPosition.call(self, referenceLayer);
+
+     //add helper layer to target element
+     this._targetElement.appendChild(helperLayer);
+     this._targetElement.appendChild(referenceLayer);
+
+     arrowLayer.className = &#39;introjs-arrow&#39;;
+
+     tooltipTextLayer.className = &#39;introjs-tooltiptext&#39;;
+     tooltipTextLayer.innerHTML = targetElement.intro;
+
+     bulletsLayer.className = &#39;introjs-bullets&#39;;
+
+     if (this._options.showBullets === false) {
+       bulletsLayer.style.display = &#39;none&#39;;
+     }
+
+     var ulContainer = document.createElement(&#39;ul&#39;);
+     ulContainer.setAttribute(&#39;role&#39;, &#39;tablist&#39;);
+
+     var anchorClick = function () {
+         self.goToStep(this.getAttribute(&#39;data-stepnumber&#39;));
+     };
+
+     _forEach(this._introItems, function (item, i) {
+       var innerLi    = document.createElement(&#39;li&#39;);
+       var anchorLink = document.createElement(&#39;a&#39;);
+
+       innerLi.setAttribute(&#39;role&#39;, &#39;presentation&#39;);
+       anchorLink.setAttribute(&#39;role&#39;, &#39;tab&#39;);
+
+       anchorLink.onclick = anchorClick;
+
+       if (i === (targetElement.step-1)) {
+         anchorLink.className = &#39;active&#39;;
+       } 
+
+       _setAnchorAsButton(anchorLink);
+       anchorLink.innerHTML = &quot;&amp;nbsp;&quot;;
+       anchorLink.setAttribute(&#39;data-stepnumber&#39;, item.step);
+
+       innerLi.appendChild(anchorLink);
+       ulContainer.appendChild(innerLi);
+     });
+
+     bulletsLayer.appendChild(ulContainer);
+
+     progressLayer.className = &#39;introjs-progress&#39;;
+
+     if (this._options.showProgress === false) {
+       progressLayer.style.display = &#39;none&#39;;
+     }
+     var progressBar = document.createElement(&#39;div&#39;);
+     progressBar.className = &#39;introjs-progressbar&#39;;
+     progressBar.setAttribute(&#39;role&#39;, &#39;progress&#39;);
+     progressBar.setAttribute(&#39;aria-valuemin&#39;, 0);
+     progressBar.setAttribute(&#39;aria-valuemax&#39;, 100);
+     progressBar.setAttribute(&#39;aria-valuenow&#39;, _getProgress.call(this));
+     progressBar.style.cssText = &#39;width:&#39; + _getProgress.call(this) + &#39;%;&#39;;
+
+     progressLayer.appendChild(progressBar);
+
+     buttonsLayer.className = &#39;introjs-tooltipbuttons&#39;;
+     if (this._options.showButtons === false) {
+       buttonsLayer.style.display = &#39;none&#39;;
+     }
+
+     tooltipLayer.className = &#39;introjs-tooltip&#39;;
+     tooltipLayer.appendChild(tooltipTextLayer);
+     tooltipLayer.appendChild(bulletsLayer);
+     tooltipLayer.appendChild(progressLayer);
+
+     //add helper layer number
+     var helperNumberLayer = document.createElement(&#39;span&#39;);
+     if (this._options.showStepNumbers === true) {
+       helperNumberLayer.className = &#39;introjs-helperNumberLayer&#39;;
+       helperNumberLayer.innerHTML = targetElement.step;
+       referenceLayer.appendChild(helperNumberLayer);
+     }
+
+     tooltipLayer.appendChild(arrowLayer);
+     referenceLayer.appendChild(tooltipLayer);
+
+     //next button
+     nextTooltipButton = document.createElement(&#39;a&#39;);
+
+     nextTooltipButton.onclick = function() {
+       if (self._introItems.length - 1 !== self._currentStep) {
+         _nextStep.call(self);
+       }
+     };
+
+     _setAnchorAsButton(nextTooltipButton);
+     nextTooltipButton.innerHTML = this._options.nextLabel;
+
+     //previous button
+     prevTooltipButton = document.createElement(&#39;a&#39;);
+
+     prevTooltipButton.onclick = function() {
+       if (self._currentStep !== 0) {
+         _previousStep.call(self);
+       }
+     };
+
+     _setAnchorAsButton(prevTooltipButton);
+     prevTooltipButton.innerHTML = this._options.prevLabel;
+
+     //skip button
+     skipTooltipButton = document.createElement(&#39;a&#39;);
+     skipTooltipButton.className = this._options.buttonClass + &#39; introjs-skipbutton &#39;;
+     _setAnchorAsButton(skipTooltipButton);
+     skipTooltipButton.innerHTML = this._options.skipLabel;
+
+     skipTooltipButton.onclick = function() {
+       if (self._introItems.length - 1 === self._currentStep &amp;&amp; typeof (self._introCompleteCallback) === &#39;function&#39;) {
+         self._introCompleteCallback.call(self);
+       }
+
+       if (self._introItems.length - 1 !== self._currentStep &amp;&amp; typeof (self._introExitCallback) === &#39;function&#39;) {
+         self._introExitCallback.call(self);
+       }
+
+       if (typeof(self._introSkipCallback) === &#39;function&#39;) {
+         self._introSkipCallback.call(self);
+       }
+
+       _exitIntro.call(self, self._targetElement);
+     };
+
+     buttonsLayer.appendChild(skipTooltipButton);
+
+     //in order to prevent displaying next/previous button always
+     if (this._introItems.length &gt; 1) {
+       buttonsLayer.appendChild(prevTooltipButton);
+       buttonsLayer.appendChild(nextTooltipButton);
+     }
+
+     tooltipLayer.appendChild(buttonsLayer);
+
+     //set proper position
+     _placeTooltip.call(self, targetElement.element, tooltipLayer, arrowLayer, helperNumberLayer);
+
+     // change the scroll of the window, if needed
+     _scrollTo.call(this, targetElement.scrollTo, targetElement, tooltipLayer);
+
+     //end of new element if-else condition
+   }
+
+   // removing previous disable interaction layer
+   var disableInteractionLayer = self._targetElement.querySelector(&#39;.introjs-disableInteraction&#39;);
+   if (disableInteractionLayer) {
+     disableInteractionLayer.parentNode.removeChild(disableInteractionLayer);
+   }
+
+   //disable interaction
+   if (targetElement.disableInteraction) {
+     _disableInteraction.call(self);
+   }
+
+   // when it&#39;s the first step of tour
+   if (this._currentStep === 0 &amp;&amp; this._introItems.length &gt; 1) {
+     if (typeof skipTooltipButton !== &quot;undefined&quot; &amp;&amp; skipTooltipButton !== null) {
+       skipTooltipButton.className = this._options.buttonClass + &#39; introjs-skipbutton&#39;;
+     }
+     if (typeof nextTooltipButton !== &quot;undefined&quot; &amp;&amp; nextTooltipButton !== null) {
+       nextTooltipButton.className = this._options.buttonClass + &#39; introjs-nextbutton&#39;;
+     }
+
+     if (this._options.hidePrev === true) {
+       if (typeof prevTooltipButton !== &quot;undefined&quot; &amp;&amp; prevTooltipButton !== null) {
+         prevTooltipButton.className = this._options.buttonClass + &#39; introjs-prevbutton introjs-hidden&#39;;
+       }
+       if (typeof nextTooltipButton !== &quot;undefined&quot; &amp;&amp; nextTooltipButton !== null) {
+         _addClass(nextTooltipButton, &#39;introjs-fullbutton&#39;);
+       }
+     } else {
+       if (typeof prevTooltipButton !== &quot;undefined&quot; &amp;&amp; prevTooltipButton !== null) {
+         prevTooltipButton.className = this._options.buttonClass + &#39; introjs-prevbutton introjs-disabled&#39;;
+       }
+     }
+
+     if (typeof skipTooltipButton !== &quot;undefined&quot; &amp;&amp; skipTooltipButton !== null) {
+       skipTooltipButton.innerHTML = this._options.skipLabel;
+     }
+   } else if (this._introItems.length - 1 === this._currentStep || this._introItems.length === 1) {
+     // last step of tour
+     if (typeof skipTooltipButton !== &quot;undefined&quot; &amp;&amp; skipTooltipButton !== null) {
+       skipTooltipButton.innerHTML = this._options.doneLabel;
+       // adding donebutton class in addition to skipbutton
+       _addClass(skipTooltipButton, &#39;introjs-donebutton&#39;);
+     }
+     if (typeof prevTooltipButton !== &quot;undefined&quot; &amp;&amp; prevTooltipButton !== null) {
+       prevTooltipButton.className = this._options.buttonClass + &#39; introjs-prevbutton&#39;;
+     }
+
+     if (this._options.hideNext === true) {
+       if (typeof nextTooltipButton !== &quot;undefined&quot; &amp;&amp; nextTooltipButton !== null) {
+         nextTooltipButton.className = this._options.buttonClass + &#39; introjs-nextbutton introjs-hidden&#39;;
+       }
+       if (typeof prevTooltipButton !== &quot;undefined&quot; &amp;&amp; prevTooltipButton !== null) {
+         _addClass(prevTooltipButton, &#39;introjs-fullbutton&#39;);
+       }
+     } else {
+       if (typeof nextTooltipButton !== &quot;undefined&quot; &amp;&amp; nextTooltipButton !== null) {
+         nextTooltipButton.className = this._options.buttonClass + &#39; introjs-nextbutton introjs-disabled&#39;;
+       }
+     }
+   } else {
+     // steps between start and end
+     if (typeof skipTooltipButton !== &quot;undefined&quot; &amp;&amp; skipTooltipButton !== null) {
+       skipTooltipButton.className = this._options.buttonClass + &#39; introjs-skipbutton&#39;;
+     }
+     if (typeof prevTooltipButton !== &quot;undefined&quot; &amp;&amp; prevTooltipButton !== null) {
+       prevTooltipButton.className = this._options.buttonClass + &#39; introjs-prevbutton&#39;;
+     }
+     if (typeof nextTooltipButton !== &quot;undefined&quot; &amp;&amp; nextTooltipButton !== null) {
+       nextTooltipButton.className = this._options.buttonClass + &#39; introjs-nextbutton&#39;;
+     }
+     if (typeof skipTooltipButton !== &quot;undefined&quot; &amp;&amp; skipTooltipButton !== null) {
+       skipTooltipButton.innerHTML = this._options.skipLabel;
+     }
+   }
+
+   prevTooltipButton.setAttribute(&#39;role&#39;, &#39;button&#39;);
+   nextTooltipButton.setAttribute(&#39;role&#39;, &#39;button&#39;);
+   skipTooltipButton.setAttribute(&#39;role&#39;, &#39;button&#39;);
+
+   //Set focus on &quot;next&quot; button, so that hitting Enter always moves you onto the next step
+   if (typeof nextTooltipButton !== &quot;undefined&quot; &amp;&amp; nextTooltipButton !== null) {
+     nextTooltipButton.focus();
+   }
+
+   _setShowElement(targetElement);
+
+   if (typeof (this._introAfterChangeCallback) !== &#39;undefined&#39;) {
+     this._introAfterChangeCallback.call(this, targetElement.element);
+   }
+ }
+
+ /**
+    To change the scroll of `window` after highlighting an element
+
+    @api private
+    @method _scrollTo
+    @param {String} scrollTo
+    @param {Object} targetElement
+    @param {Object} tooltipLayer
+   /
+ function _scrollTo(scrollTo, targetElement, tooltipLayer) {
+   if (scrollTo === &#39;off&#39;) return;  
+   var rect;
+
+   if (!this._options.scrollToElement) return;
+
+   if (scrollTo === &#39;tooltip&#39;) {
+     rect = tooltipLayer.getBoundingClientRect();
+   } else {
+     rect = targetElement.element.getBoundingClientRect();
+   }
+
+   if (!_elementInViewport(targetElement.element)) {
+     var winHeight = _getWinSize().height;
+     var top = rect.bottom - (rect.bottom - rect.top);
+
+     // TODO (afshinm): do we need scroll padding now?
+     // I have changed the scroll option and now it scrolls the window to
+     // the center of the target element or tooltip.
+
+     if (top &lt; 0 || targetElement.element.clientHeight &gt; winHeight) {
+       window.scrollBy(0, rect.top - ((winHeight / 2) -  (rect.height / 2)) - this._options.scrollPadding); // 30px padding from edge to look nice
+
+     //Scroll down
+     } else {
+       window.scrollBy(0, rect.top - ((winHeight / 2) -  (rect.height / 2)) + this._options.scrollPadding); // 30px padding from edge to look nice
+     }
+   }
+ }
+
+ /**
+    To remove all show element(s)
+
+    @api private
+    @method _removeShowElement
+   /
+ function _removeShowElement() {
+   var elms = document.querySelectorAll(&#39;.introjs-showElement&#39;);
+
+   _forEach(elms, function (elm) {
+     _removeClass(elm, /introjs-[a-zA-Z]+/g);
+   });
+ }
+
+ /**
+    To set the show element
+    This function set a relative (in most cases) position and changes the z-index
+
+    @api private
+    @method _setShowElement
+    @param {Object} targetElement
+   /
+ function _setShowElement(targetElement) {
+   var parentElm;
+   // we need to add this show element class to the parent of SVG elements
+   // because the SVG elements can&#39;t have independent z-index
+   if (targetElement.element instanceof SVGElement) {
+     parentElm = targetElement.element.parentNode;
+
+     while (targetElement.element.parentNode !== null) {
+       if (!parentElm.tagName || parentElm.tagName.toLowerCase() === &#39;body&#39;) break;
+
+       if (parentElm.tagName.toLowerCase() === &#39;svg&#39;) {
+         _addClass(parentElm, &#39;introjs-showElement introjs-relativePosition&#39;);
+       }
+
+       parentElm = parentElm.parentNode;
+     }
+   }
+
+   _addClass(targetElement.element, &#39;introjs-showElement&#39;);
+
+   var currentElementPosition = _getPropValue(targetElement.element, &#39;position&#39;);
+   if (currentElementPosition !== &#39;absolute&#39; &amp;&amp;
+       currentElementPosition !== &#39;relative&#39; &amp;&amp;
+       currentElementPosition !== &#39;fixed&#39;) {
+     //change to new intro item
+     _addClass(targetElement.element, &#39;introjs-relativePosition&#39;);
+   }
+
+   parentElm = targetElement.element.parentNode;
+   while (parentElm !== null) {
+     if (!parentElm.tagName || parentElm.tagName.toLowerCase() === &#39;body&#39;) break;
+
+     //fix The Stacking Context problem.
+     //More detail: https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Understanding_z_index/The_stacking_context
+     var zIndex = _getPropValue(parentElm, &#39;z-index&#39;);
+     var opacity = parseFloat(_getPropValue(parentElm, &#39;opacity&#39;));
+     var transform = _getPropValue(parentElm, &#39;transform&#39;) || _getPropValue(parentElm, &#39;-webkit-transform&#39;) || _getPropValue(parentElm, &#39;-moz-transform&#39;) || _getPropValue(parentElm, &#39;-ms-transform&#39;) || _getPropValue(parentElm, &#39;-o-transform&#39;);
+     if (/[0-9]+/.test(zIndex) || opacity &lt; 1 || (transform !== &#39;none&#39; &amp;&amp; transform !== undefined)) {
+       _addClass(parentElm, &#39;introjs-fixParent&#39;);
+     }
+
+     parentElm = parentElm.parentNode;
+   }
+ }
+
+ /**
+   Iterates arrays
+
+   @param {Array} arr
+   @param {Function} forEachFnc
+   @param {Function} completeFnc
+   @return {Null}
+  /
+ function _forEach(arr, forEachFnc, completeFnc) {
+   // in case arr is an empty query selector node list
+   if (arr) {
+     for (var i = 0, len = arr.length; i &lt; len; i++) {
+       forEachFnc(arr[i], i);
+     }
+   }
+
+   if (typeof(completeFnc) === &#39;function&#39;) {
+     completeFnc();
+   }
+ }
+
+ /**
+   Mark any object with an incrementing number
+   used for keeping track of objects
+
+   @param Object obj   Any object or DOM Element
+   @param String key
+   @return Object
+  /
+ var _stamp = (function () {
+   var keys = {};
+   return function stamp (obj, key) {
+
+     // get group key
+     key = key || &#39;introjs-stamp&#39;;
+
+     // each group increments from 0
+     keys[key] = keys[key] || 0;
+
+     // stamp only once per object
+     if (obj[key] === undefined) {
+       // increment key for each new object
+       obj[key] = keys[key]++;
+     }
+
+     return obj[key];
+   };
+ })();
+
+ /**
+   DOMEvent Handles all DOM events
+
+   methods:
+
+   on - add event handler
+   off - remove event
+  /
+ var DOMEvent = (function () {
+   function DOMEvent () {
+     var events_key = &#39;introjs_event&#39;;
+
+     /**
+       Gets a unique ID for an event listener
+
+       @param Object obj
+       @param String type        event type
+       @param Function listener
+       @param Object context
+       @return String
+      /
+     this._id = function (obj, type, listener, context) {
+       return type + _stamp(listener) + (context ? &#39;_&#39; + _stamp(context) : &#39;&#39;);
+     };
+
+     /**
+       Adds event listener
+
+       @param Object obj
+       @param String type        event type
+       @param Function listener
+       @param Object context
+       @param Boolean useCapture
+       @return null
+      /
+     this.on = function (obj, type, listener, context, useCapture) {
+       var id = this._id.apply(this, arguments),
+           handler = function (e) {
+             return listener.call(context || obj, e || window.event);
+           };
+
+       if (&#39;addEventListener&#39; in obj) {
+         obj.addEventListener(type, handler, useCapture);
+       } else if (&#39;attachEvent&#39; in obj) {
+         obj.attachEvent(&#39;on&#39; + type, handler);
+       }
+
+       obj[events_key] = obj[events_key] || {};
+       obj[events_key][id] = handler;
+     };
+
+     /**
+       Removes event listener
+
+       @param Object obj
+       @param String type        event type
+       @param Function listener
+       @param Object context
+       @param Boolean useCapture
+       @return null
+      /
+     this.off = function (obj, type, listener, context, useCapture) {
+       var id = this._id.apply(this, arguments),
+           handler = obj[events_key] &amp;&amp; obj[events_key][id];
+
+       if (!handler) {
+         return;
+       }
+
+       if (&#39;removeEventListener&#39; in obj) {
+         obj.removeEventListener(type, handler, useCapture);
+       } else if (&#39;detachEvent&#39; in obj) {
+         obj.detachEvent(&#39;on&#39; + type, handler);
+       }
+
+       obj[events_key][id] = null;
+     };
+   }
+
+   return new DOMEvent();
+ })();
+
+ /**
+    Append a class to an element
+
+    @api private
+    @method _addClass
+    @param {Object} element
+    @param {String} className
+    @returns null
+   /
+ function _addClass(element, className) {
+   if (element instanceof SVGElement) {
+     // svg
+     var pre = element.getAttribute(&#39;class&#39;) || &#39;&#39;;
+
+     element.setAttribute(&#39;class&#39;, pre + &#39; &#39; + className);
+   } else {
+     if (element.classList !== undefined) {
+       // check for modern classList property
+       var classes = className.split(&#39; &#39;);
+       _forEach(classes, function (cls) {
+         element.classList.add( cls );
+       });
+     } else if (!element.className.match( className )) {
+       // check if element doesn&#39;t already have className
+       element.className += &#39; &#39; + className;
+     }
+   }
+ }
+
+ /**
+    Remove a class from an element
+
+    @api private
+    @method _removeClass
+    @param {Object} element
+    @param {RegExp|String} classNameRegex can be regex or string
+    @returns null
+   /
+ function _removeClass(element, classNameRegex) {
+   if (element instanceof SVGElement) {
+     var pre = element.getAttribute(&#39;class&#39;) || &#39;&#39;;
+
+     element.setAttribute(&#39;class&#39;, pre.replace(classNameRegex, &#39;&#39;).replace(/^\s+|\s+$/g, &#39;&#39;));
+   } else {
+     element.className = element.className.replace(classNameRegex, &#39;&#39;).replace(/^\s+|\s+$/g, &#39;&#39;);
+   }
+ }
+
+ /**
+    Get an element CSS property on the page
+    Thanks to JavaScript Kit: http://www.javascriptkit.com/dhtmltutors/dhtmlcascade4.shtml
+
+    @api private
+    @method _getPropValue
+    @param {Object} element
+    @param {String} propName
+    @returns Element&#39;s property value
+   /
+ function _getPropValue (element, propName) {
+   var propValue = &#39;&#39;;
+   if (element.currentStyle) { //IE
+     propValue = element.currentStyle[propName];
+   } else if (document.defaultView &amp;&amp; document.defaultView.getComputedStyle) { //Others
+     propValue = document.defaultView.getComputedStyle(element, null).getPropertyValue(propName);
+   }
+
+   //Prevent exception in IE
+   if (propValue &amp;&amp; propValue.toLowerCase) {
+     return propValue.toLowerCase();
+   } else {
+     return propValue;
+   }
+ }
+
+ /**
+    Checks to see if target element (or parents) position is fixed or not
+
+    @api private
+    @method _isFixed
+    @param {Object} element
+    @returns Boolean
+   /
+ function _isFixed (element) {
+   var p = element.parentNode;
+
+   if (!p || p.nodeName === &#39;HTML&#39;) {
+     return false;
+   }
+
+   if (_getPropValue(element, &#39;position&#39;) === &#39;fixed&#39;) {
+     return true;
+   }
+
+   return _isFixed(p);
+ }
+
+ /**
+    Provides a cross-browser way to get the screen dimensions
+    via: http://stackoverflow.com/questions/5864467/internet-explorer-innerheight
+
+    @api private
+    @method _getWinSize
+    @returns {Object} width and height attributes
+   /
+ function _getWinSize() {
+   if (window.innerWidth !== undefined) {
+     return { width: window.innerWidth, height: window.innerHeight };
+   } else {
+     var D = document.documentElement;
+     return { width: D.clientWidth, height: D.clientHeight };
+   }
+ }
+
+ /**
+    Check to see if the element is in the viewport or not
+    http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+
+    @api private
+    @method _elementInViewport
+    @param {Object} el
+   /
+ function _elementInViewport(el) {
+   var rect = el.getBoundingClientRect();
+
+   return (
+     rect.top &gt;= 0 &amp;&amp;
+     rect.left &gt;= 0 &amp;&amp;
+     (rect.bottom+80) &lt;= window.innerHeight &amp;&amp; // add 80 to get the text right
+     rect.right &lt;= window.innerWidth
+   );
+ }
+
+ /**
+    Add overlay layer to the page
+
+    @api private
+    @method _addOverlayLayer
+    @param {Object} targetElm
+   /
+ function _addOverlayLayer(targetElm) {
+   var overlayLayer = document.createElement(&#39;div&#39;),
+       styleText = &#39;&#39;,
+       self = this;
+
+   //set css class name
+   overlayLayer.className = &#39;introjs-overlay&#39;;
+
+   //check if the target element is body, we should calculate the size of overlay layer in a better way
+   if (!targetElm.tagName || targetElm.tagName.toLowerCase() === &#39;body&#39;) {
+     styleText += &#39;top: 0;bottom: 0; left: 0;right: 0;position: fixed;&#39;;
+     overlayLayer.style.cssText = styleText;
+   } else {
+     //set overlay layer position
+     var elementPosition = _getOffset(targetElm);
+     if (elementPosition) {
+       styleText += &#39;width: &#39; + elementPosition.width + &#39;px; height:&#39; + elementPosition.height + &#39;px; top:&#39; + elementPosition.top + &#39;px;left: &#39; + elementPosition.left + &#39;px;&#39;;
+       overlayLayer.style.cssText = styleText;
+     }
+   }
+
+   targetElm.appendChild(overlayLayer);
+
+   overlayLayer.onclick = function() {
+     if (self._options.exitOnOverlayClick === true) {
+       _exitIntro.call(self, targetElm);
+     }
+   };
+
+   window.setTimeout(function() {
+     styleText += &#39;opacity: &#39; + self._options.overlayOpacity.toString() + &#39;;&#39;;
+     overlayLayer.style.cssText = styleText;
+   }, 10);
+
+   return true;
+ }
+
+ /**
+    Removes open hint (tooltip hint)
+
+    @api private
+    @method _removeHintTooltip
+   /
+ function _removeHintTooltip() {
+   var tooltip = document.querySelector(&#39;.introjs-hintReference&#39;);
+
+   if (tooltip) {
+     var step = tooltip.getAttribute(&#39;data-step&#39;);
+     tooltip.parentNode.removeChild(tooltip);
+     return step;
+   }
+ }
+
+ /**
+    Start parsing hint items
+
+    @api private
+    @param {Object} targetElm
+    @method _startHint
+   /
+ function _populateHints(targetElm) {
+
+   this._introItems = [];
+
+   if (this._options.hints) {
+     _forEach(this._options.hints, function (hint) {
+       var currentItem = _cloneObject(hint);
+
+       if (typeof(currentItem.element) === &#39;string&#39;) {
+         //grab the element with given selector from the page
+         currentItem.element = document.querySelector(currentItem.element);
+       }
+
+       currentItem.hintPosition = currentItem.hintPosition || this._options.hintPosition;
+       currentItem.hintAnimation = currentItem.hintAnimation || this._options.hintAnimation;
+
+       if (currentItem.element !== null) {
+         this._introItems.push(currentItem);
+       }
+     }.bind(this));
+   } else {
+     var hints = targetElm.querySelectorAll(&#39;*[data-hint]&#39;);
+
+     if (!hints || !hints.length) {
+       return false;
+     }
+
+     //first add intro items with data-step
+     _forEach(hints, function (currentElement) {
+       // hint animation
+       var hintAnimation = currentElement.getAttribute(&#39;data-hintanimation&#39;);
+
+       if (hintAnimation) {
+         hintAnimation = (hintAnimation === &#39;true&#39;);
+       } else {
+         hintAnimation = this._options.hintAnimation;
+       }
+
+       this._introItems.push({
+         element: currentElement,
+         hint: currentElement.getAttribute(&#39;data-hint&#39;),
+         hintPosition: currentElement.getAttribute(&#39;data-hintposition&#39;) || this._options.hintPosition,
+         hintAnimation: hintAnimation,
+         tooltipClass: currentElement.getAttribute(&#39;data-tooltipclass&#39;),
+         position: currentElement.getAttribute(&#39;data-position&#39;) || this._options.tooltipPosition
+       });
+     }.bind(this));
+   }
+
+   _addHints.call(this);
+
+   /* 
+   todo:
+   these events should be removed at some point 
+    /
+   DOMEvent.on(document, &#39;click&#39;, _removeHintTooltip, this, false);
+   DOMEvent.on(window, &#39;resize&#39;, _reAlignHints, this, true);
+ }
+
+ /**
+    Re-aligns all hint elements
+
+    @api private
+    @method _reAlignHints
+   /
+ function _reAlignHints() {
+   _forEach(this._introItems, function (item) {
+     if (typeof(item.targetElement) === &#39;undefined&#39;) {
+       return;
+     }
+
+     _alignHintPosition.call(this, item.hintPosition, item.element, item.targetElement);
+   }.bind(this));
+ }
+
+ /**
+   Get a queryselector within the hint wrapper
+
+   @param {String} selector
+   @return {NodeList|Array}
+  /
+ function _hintQuerySelectorAll(selector) {
+   var hintsWrapper = document.querySelector(&#39;.introjs-hints&#39;);
+   return (hintsWrapper) ? hintsWrapper.querySelectorAll(selector) : [];
+ }
+
+ /**
+    Hide a hint
+
+    @api private
+    @method _hideHint
+   /
+ function _hideHint(stepId) {
+   var hint = _hintQuerySelectorAll(&#39;.introjs-hint[data-step=&quot;&#39; + stepId + &#39;&quot;]&#39;)[0];
+
+   _removeHintTooltip.call(this);
+
+   if (hint) {
+     _addClass(hint, &#39;introjs-hidehint&#39;);
+   }
+
+   // call the callback function (if any)
+   if (typeof (this._hintCloseCallback) !== &#39;undefined&#39;) {
+     this._hintCloseCallback.call(this, stepId);
+   }
+ }
+
+ /**
+    Hide all hints
+
+    @api private
+    @method _hideHints
+   /
+ function _hideHints() {
+   var hints = _hintQuerySelectorAll(&#39;.introjs-hint&#39;);
+
+   _forEach(hints, function (hint) {
+     _hideHint.call(this, hint.getAttribute(&#39;data-step&#39;));
+   }.bind(this));
+ }
+
+ /**
+    Show all hints
+
+    @api private
+    @method _showHints
+   /
+ function _showHints() {
+   var hints = _hintQuerySelectorAll(&#39;.introjs-hint&#39;);
+
+   if (hints &amp;&amp; hints.length) {
+     _forEach(hints, function (hint) {
+       _showHint.call(this, hint.getAttribute(&#39;data-step&#39;));
+     }.bind(this));
+   } else {
+     _populateHints.call(this, this._targetElement);
+   }
+ }
+
+ /**
+    Show a hint
+
+    @api private
+    @method _showHint
+   /
+ function _showHint(stepId) {
+   var hint = _hintQuerySelectorAll(&#39;.introjs-hint[data-step=&quot;&#39; + stepId + &#39;&quot;]&#39;)[0];
+
+   if (hint) {
+     _removeClass(hint, /introjs-hidehint/g);
+   }
+ }
+
+ /**
+    Removes all hint elements on the page
+    Useful when you want to destroy the elements and add them again (e.g. a modal or popup)
+
+    @api private
+    @method _removeHints
+   /
+ function _removeHints() {
+   var hints = _hintQuerySelectorAll(&#39;.introjs-hint&#39;);
+
+   _forEach(hints, function (hint) {
+     _removeHint.call(this, hint.getAttribute(&#39;data-step&#39;));
+   }.bind(this));
+ }
+
+ /**
+    Remove one single hint element from the page
+    Useful when you want to destroy the element and add them again (e.g. a modal or popup)
+    Use removeHints if you want to remove all elements.
+
+    @api private
+    @method _removeHint
+   /
+ function _removeHint(stepId) {
+   var hint = _hintQuerySelectorAll(&#39;.introjs-hint[data-step=&quot;&#39; + stepId + &#39;&quot;]&#39;)[0];
+
+   if (hint) {
+     hint.parentNode.removeChild(hint);
+   }
+ }
+
+ /**
+    Add all available hints to the page
+
+    @api private
+    @method _addHints
+   /
+ function _addHints() {
+   var self = this;
+
+   var hintsWrapper = document.querySelector(&#39;.introjs-hints&#39;);
+
+   if (hintsWrapper === null) {
+     hintsWrapper = document.createElement(&#39;div&#39;);
+     hintsWrapper.className = &#39;introjs-hints&#39;;
+   }
+
+   /**
+     Returns an event handler unique to the hint iteration
+
+     @param {Integer} i
+     @return {Function}
+    /
+   var getHintClick = function (i) {
+     return function(e) {
+       var evt = e ? e : window.event;
+
+       if (evt.stopPropagation) {
+         evt.stopPropagation();
+       }
+
+       if (evt.cancelBubble !== null) {
+         evt.cancelBubble = true;
+       }
+
+       _showHintDialog.call(self, i);
+     };
+   };
+
+   _forEach(this._introItems, function(item, i) {
+     // avoid append a hint twice
+     if (document.querySelector(&#39;.introjs-hint[data-step=&quot;&#39; + i + &#39;&quot;]&#39;)) {
+       return;
+     }
+
+     var hint = document.createElement(&#39;a&#39;);
+     _setAnchorAsButton(hint);
+
+     hint.onclick = getHintClick(i);
+
+     hint.className = &#39;introjs-hint&#39;;
+
+     if (!item.hintAnimation) {
+       _addClass(hint, &#39;introjs-hint-no-anim&#39;);
+     }
+
+     // hint&#39;s position should be fixed if the target element&#39;s position is fixed
+     if (_isFixed(item.element)) {
+       _addClass(hint, &#39;introjs-fixedhint&#39;);
+     }
+
+     var hintDot = document.createElement(&#39;div&#39;);
+     hintDot.className = &#39;introjs-hint-dot&#39;;
+     var hintPulse = document.createElement(&#39;div&#39;);
+     hintPulse.className = &#39;introjs-hint-pulse&#39;;
+
+     hint.appendChild(hintDot);
+     hint.appendChild(hintPulse);
+     hint.setAttribute(&#39;data-step&#39;, i);
+
+     // we swap the hint element with target element
+     // because _setHelperLayerPosition uses `element` property
+     item.targetElement = item.element;
+     item.element = hint;
+
+     // align the hint position
+     _alignHintPosition.call(this, item.hintPosition, hint, item.targetElement);
+
+     hintsWrapper.appendChild(hint);
+   }.bind(this));
+
+   // adding the hints wrapper
+   document.body.appendChild(hintsWrapper);
+
+   // call the callback function (if any)
+   if (typeof (this._hintsAddedCallback) !== &#39;undefined&#39;) {
+     this._hintsAddedCallback.call(this);
+   }
+ }
+
+ /**
+    Aligns hint position
+
+    @api private
+    @method _alignHintPosition
+    @param {String} position
+    @param {Object} hint
+    @param {Object} element
+   /
+ function _alignHintPosition(position, hint, element) {
+   // get/calculate offset of target element
+   var offset = _getOffset.call(this, element);
+   var iconWidth = 20;
+   var iconHeight = 20;
+
+   // align the hint element
+   switch (position) {
+     default:
+     case &#39;top-left&#39;:
+       hint.style.left = offset.left + &#39;px&#39;;
+       hint.style.top = offset.top + &#39;px&#39;;
+       break;
+     case &#39;top-right&#39;:
+       hint.style.left = (offset.left + offset.width - iconWidth) + &#39;px&#39;;
+       hint.style.top = offset.top + &#39;px&#39;;
+       break;
+     case &#39;bottom-left&#39;:
+       hint.style.left = offset.left + &#39;px&#39;;
+       hint.style.top = (offset.top + offset.height - iconHeight) + &#39;px&#39;;
+       break;
+     case &#39;bottom-right&#39;:
+       hint.style.left = (offset.left + offset.width - iconWidth) + &#39;px&#39;;
+       hint.style.top = (offset.top + offset.height - iconHeight) + &#39;px&#39;;
+       break;
+     case &#39;middle-left&#39;:
+       hint.style.left = offset.left + &#39;px&#39;;
+       hint.style.top = (offset.top + (offset.height - iconHeight) / 2) + &#39;px&#39;;
+       break;
+     case &#39;middle-right&#39;:
+       hint.style.left = (offset.left + offset.width - iconWidth) + &#39;px&#39;;
+       hint.style.top = (offset.top + (offset.height - iconHeight) / 2) + &#39;px&#39;;
+       break;
+     case &#39;middle-middle&#39;:
+       hint.style.left = (offset.left + (offset.width - iconWidth) / 2) + &#39;px&#39;;
+       hint.style.top = (offset.top + (offset.height - iconHeight) / 2) + &#39;px&#39;;
+       break;
+     case &#39;bottom-middle&#39;:
+       hint.style.left = (offset.left + (offset.width - iconWidth) / 2) + &#39;px&#39;;
+       hint.style.top = (offset.top + offset.height - iconHeight) + &#39;px&#39;;
+       break;
+     case &#39;top-middle&#39;:
+       hint.style.left = (offset.left + (offset.width - iconWidth) / 2) + &#39;px&#39;;
+       hint.style.top = offset.top + &#39;px&#39;;
+       break;
+   }
+ }
+
+ /**
+    Triggers when user clicks on the hint element
+
+    @api private
+    @method _showHintDialog
+    @param {Number} stepId
+   /
+ function _showHintDialog(stepId) {
+   var hintElement = document.querySelector(&#39;.introjs-hint[data-step=&quot;&#39; + stepId + &#39;&quot;]&#39;);
+   var item = this._introItems[stepId];
+
+   // call the callback function (if any)
+   if (typeof (this._hintClickCallback) !== &#39;undefined&#39;) {
+     this._hintClickCallback.call(this, hintElement, item, stepId);
+   }
+
+   // remove all open tooltips
+   var removedStep = _removeHintTooltip.call(this);
+
+   // to toggle the tooltip
+   if (parseInt(removedStep, 10) === stepId) {
+     return;
+   }
+
+   var tooltipLayer = document.createElement(&#39;div&#39;);
+   var tooltipTextLayer = document.createElement(&#39;div&#39;);
+   var arrowLayer = document.createElement(&#39;div&#39;);
+   var referenceLayer = document.createElement(&#39;div&#39;);
+
+   tooltipLayer.className = &#39;introjs-tooltip&#39;;
+
+   tooltipLayer.onclick = function (e) {
+     //IE9 &amp; Other Browsers
+     if (e.stopPropagation) {
+       e.stopPropagation();
+     }
+     //IE8 and Lower
+     else {
+       e.cancelBubble = true;
+     }
+   };
+
+   tooltipTextLayer.className = &#39;introjs-tooltiptext&#39;;
+
+   var tooltipWrapper = document.createElement(&#39;p&#39;);
+   tooltipWrapper.innerHTML = item.hint;
+
+   var closeButton = document.createElement(&#39;a&#39;);
+   closeButton.className = this._options.buttonClass;
+   closeButton.setAttribute(&#39;role&#39;, &#39;button&#39;);
+   closeButton.innerHTML = this._options.hintButtonLabel;
+   closeButton.onclick = _hideHint.bind(this, stepId);
+
+   tooltipTextLayer.appendChild(tooltipWrapper);
+   tooltipTextLayer.appendChild(closeButton);
+
+   arrowLayer.className = &#39;introjs-arrow&#39;;
+   tooltipLayer.appendChild(arrowLayer);
+
+   tooltipLayer.appendChild(tooltipTextLayer);
+
+   // set current step for _placeTooltip function
+   this._currentStep = hintElement.getAttribute(&#39;data-step&#39;);
+
+   // align reference layer position
+   referenceLayer.className = &#39;introjs-tooltipReferenceLayer introjs-hintReference&#39;;
+   referenceLayer.setAttribute(&#39;data-step&#39;, hintElement.getAttribute(&#39;data-step&#39;));
+   _setHelperLayerPosition.call(this, referenceLayer);
+
+   referenceLayer.appendChild(tooltipLayer);
+   document.body.appendChild(referenceLayer);
+
+   //set proper position
+   _placeTooltip.call(this, hintElement, tooltipLayer, arrowLayer, null, true);
+ }
+
+ /**
+    Get an element position on the page
+    Thanks to `meouw`: http://stackoverflow.com/a/442474/375966
+
+    @api private
+    @method _getOffset
+    @param {Object} element
+    @returns Element&#39;s position info
+   /
+ function _getOffset(element) {
+   var body = document.body;
+   var docEl = document.documentElement;
+   var scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
+   var scrollLeft = window.pageXOffset || docEl.scrollLeft || body.scrollLeft;
+   var x = element.getBoundingClientRect();
+   return {
+     top: x.top + scrollTop,
+     width: x.width,
+     height: x.height,
+     left: x.left + scrollLeft
+   };
+ }
+
+ /**
+   Find the nearest scrollable parent
+   copied from https://stackoverflow.com/questions/35939886/find-first-scrollable-parent
+
+   @param Element element
+   @return Element
+  /
+ function _getScrollParent(element) {
+   var style = window.getComputedStyle(element);
+   var excludeStaticParent = (style.position === &quot;absolute&quot;);
+   var overflowRegex = /(auto|scroll)/;
+
+   if (style.position === &quot;fixed&quot;) return document.body;
+
+   for (var parent = element; (parent = parent.parentElement);) {
+     style = window.getComputedStyle(parent);
+     if (excludeStaticParent &amp;&amp; style.position === &quot;static&quot;) {
+       continue;
+     }
+     if (overflowRegex.test(style.overflow + style.overflowY + style.overflowX)) return parent;
+   }
+
+   return document.body;
+ }
+
+ /**
+   scroll a scrollable element to a child element
+
+   @param Element parent
+   @param Element element
+   @return Null
+  /
+ function _scrollParentToElement (parent, element) {
+   parent.scrollTop = element.offsetTop - parent.offsetTop;
+ }
+
+ /**
+    Gets the current progress percentage
+
+    @api private
+    @method _getProgress
+    @returns current progress percentage
+   /
+ function _getProgress() {
+   // Steps are 0 indexed
+   var currentStep = parseInt((this._currentStep + 1), 10);
+   return ((currentStep / this._introItems.length) * 100);
+ }
+
+ /**
+    Overwrites obj1&#39;s values with obj2&#39;s and adds obj2&#39;s if non existent in obj1
+    via: http://stackoverflow.com/questions/171251/how-can-i-merge-properties-of-two-javascript-objects-dynamically
+
+    @param obj1
+    @param obj2
+    @returns obj3 a new object based on obj1 and obj2
+   /
+ function _mergeOptions(obj1,obj2) {
+   var obj3 = {},
+     attrname;
+   for (attrname in obj1) { obj3[attrname] = obj1[attrname]; }
+   for (attrname in obj2) { obj3[attrname] = obj2[attrname]; }
+   return obj3;
+ }
+
+ var introJs = function (targetElm) {
+   var instance;
+
+   if (typeof (targetElm) === &#39;object&#39;) {
+     //Ok, create a new instance
+     instance = new IntroJs(targetElm);
+
+   } else if (typeof (targetElm) === &#39;string&#39;) {
+     //select the target element with query selector
+     var targetElement = document.querySelector(targetElm);
+
+     if (targetElement) {
+       instance = new IntroJs(targetElement);
+     } else {
+       throw new Error(&#39;There is no element with given selector.&#39;);
+     }
+   } else {
+     instance = new IntroJs(document.body);
+   }
+   // add instance to list of _instances
+   // passing group to _stamp to increment
+   // from 0 onward somewhat reliably
+   introJs.instances[ _stamp(instance, &#39;introjs-instance&#39;) ] = instance;
+
+   return instance;
+ };
+
+ /**
+    Current IntroJs version
+
+    @property version
+    @type String
+   /
+ introJs.version = VERSION;
+
+ /**
+   key-val object helper for introJs instances
+
+   @property instances
+   @type Object
+  /
+ introJs.instances = {};
+
+ //Prototype
+ introJs.fn = IntroJs.prototype = {
+   clone: function () {
+     return new IntroJs(this);
+   },
+   setOption: function(option, value) {
+     this._options[option] = value;
+     return this;
+   },
+   setOptions: function(options) {
+     this._options = _mergeOptions(this._options, options);
+     return this;
+   },
+   start: function (group) {
+     _introForElement.call(this, this._targetElement, group);
+     return this;
+   },
+   goToStep: function(step) {
+     _goToStep.call(this, step);
+     return this;
+   },
+   addStep: function(options) {
+     if (!this._options.steps) {
+       this._options.steps = [];
+     }
+
+     this._options.steps.push(options);
+
+     return this;
+   },
+   addSteps: function(steps) {
+     if (!steps.length) return;
+
+     for(var index = 0; index &lt; steps.length; index++) {
+       this.addStep(steps[index]);
+     }
+
+     return this;
+   },
+   goToStepNumber: function(step) {
+     _goToStepNumber.call(this, step);
+
+     return this;
+   },
+   nextStep: function() {
+     _nextStep.call(this);
+     return this;
+   },
+   previousStep: function() {
+     _previousStep.call(this);
+     return this;
+   },
+   exit: function(force) {
+     _exitIntro.call(this, this._targetElement, force);
+     return this;
+   },
+   refresh: function() {
+     _refresh.call(this);
+     return this;
+   },
+   onbeforechange: function(providedCallback) {
+     if (typeof (providedCallback) === &#39;function&#39;) {
+       this._introBeforeChangeCallback = providedCallback;
+     } else {
+       throw new Error(&#39;Provided callback for onbeforechange was not a function&#39;);
+     }
+     return this;
+   },
+   onchange: function(providedCallback) {
+     if (typeof (providedCallback) === &#39;function&#39;) {
+       this._introChangeCallback = providedCallback;
+     } else {
+       throw new Error(&#39;Provided callback for onchange was not a function.&#39;);
+     }
+     return this;
+   },
+   onafterchange: function(providedCallback) {
+     if (typeof (providedCallback) === &#39;function&#39;) {
+       this._introAfterChangeCallback = providedCallback;
+     } else {
+       throw new Error(&#39;Provided callback for onafterchange was not a function&#39;);
+     }
+     return this;
+   },
+   oncomplete: function(providedCallback) {
+     if (typeof (providedCallback) === &#39;function&#39;) {
+       this._introCompleteCallback = providedCallback;
+     } else {
+       throw new Error(&#39;Provided callback for oncomplete was not a function.&#39;);
+     }
+     return this;
+   },
+   onhintsadded: function(providedCallback) {
+     if (typeof (providedCallback) === &#39;function&#39;) {
+       this._hintsAddedCallback = providedCallback;
+     } else {
+       throw new Error(&#39;Provided callback for onhintsadded was not a function.&#39;);
+     }
+     return this;
+   },
+   onhintclick: function(providedCallback) {
+     if (typeof (providedCallback) === &#39;function&#39;) {
+       this._hintClickCallback = providedCallback;
+     } else {
+       throw new Error(&#39;Provided callback for onhintclick was not a function.&#39;);
+     }
+     return this;
+   },
+   onhintclose: function(providedCallback) {
+     if (typeof (providedCallback) === &#39;function&#39;) {
+       this._hintCloseCallback = providedCallback;
+     } else {
+       throw new Error(&#39;Provided callback for onhintclose was not a function.&#39;);
+     }
+     return this;
+   },
+   onexit: function(providedCallback) {
+     if (typeof (providedCallback) === &#39;function&#39;) {
+       this._introExitCallback = providedCallback;
+     } else {
+       throw new Error(&#39;Provided callback for onexit was not a function.&#39;);
+     }
+     return this;
+   },
+   onskip: function(providedCallback) {
+     if (typeof (providedCallback) === &#39;function&#39;) {
+       this._introSkipCallback = providedCallback;
+     } else {
+       throw new Error(&#39;Provided callback for onskip was not a function.&#39;);
+     }
+     return this;
+   },
+   onbeforeexit: function(providedCallback) {
+     if (typeof (providedCallback) === &#39;function&#39;) {
+       this._introBeforeExitCallback = providedCallback;
+     } else {
+       throw new Error(&#39;Provided callback for onbeforeexit was not a function.&#39;);
+     }
+     return this;
+   },
+   addHints: function() {
+     _populateHints.call(this, this._targetElement);
+     return this;
+   },
+   hideHint: function (stepId) {
+     _hideHint.call(this, stepId);
+     return this;
+   },
+   hideHints: function () {
+     _hideHints.call(this);
+     return this;
+   },
+   showHint: function (stepId) {
+     _showHint.call(this, stepId);
+     return this;
+   },
+   showHints: function () {
+     _showHints.call(this);
+     return this;
+   },
+   removeHints: function () {
+     _removeHints.call(this);
+     return this;
+   },
+   removeHint: function (stepId) {
+     _removeHint.call(this, stepId);
+     return this;
+   },
+   showHintDialog: function (stepId) {
+     _showHintDialog.call(this, stepId);
+     return this;
+   }
+ };
+
+ return introJs;</pre>
+
+<p>});</p>
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
