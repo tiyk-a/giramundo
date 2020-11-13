@@ -116,6 +116,14 @@ rails default **sqlite3**を使用
 $ rails db
 ```
 
+#### RDocを使う
+
+下記パスへブラウザからアクセス
+
+```
+レポジトリへのパス/doc/index.html
+```
+
 ## Framework
 - :gem: Ruby 2.6.3
 - :railway_car: Rails 5.2.3
