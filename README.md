@@ -94,9 +94,26 @@ $ git clone
 $ bundle i
 ```
 
-3. Migrate data
+3. Create database
+```
+rails db:create
+```
+
+1. Migrate schema
 ```
 bin/rails db:migrate RAILS_ENV=development
+```
+
+5. Run app
+```
+$ rails s
+```
+
+
+#### DBに入る
+rails default **sqlite3**を使用
+```
+$ rails db
 ```
 
 ## Framework

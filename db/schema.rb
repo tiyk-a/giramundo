@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_06_28_035730) do
 
-  create_table "artists", force: :cascade do |t|
+  create_table "artists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "artist_name"
     t.string "artist_image"
     t.datetime "deleted_at"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2019_06_28_035730) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "concerts", force: :cascade do |t|
+  create_table "concerts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "concert_name"
     t.text "source"
     t.string "image"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2019_06_28_035730) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "entries", force: :cascade do |t|
+  create_table "entries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.datetime "published"
     t.text "content"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2019_06_28_035730) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "feeds", force: :cascade do |t|
+  create_table "feeds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "url"
     t.text "description"
@@ -56,21 +56,21 @@ ActiveRecord::Schema.define(version: 2019_06_28_035730) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "keeps", force: :cascade do |t|
+  create_table "keeps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "concert_id"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "performers", force: :cascade do |t|
+  create_table "performers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "concert_id"
     t.integer "artist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 2019_06_28_035730) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "venues", force: :cascade do |t|
+  create_table "venues", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.float "latitude"
     t.float "longitude"
@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 2019_06_28_035730) do
     t.string "flag"
   end
 
-  create_table "watch_artists", force: :cascade do |t|
+  create_table "watch_artists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "artist_id"
     t.datetime "created_at", null: false
