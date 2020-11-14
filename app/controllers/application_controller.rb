@@ -28,6 +28,6 @@ class ApplicationController < ActionController::Base
 
   # google mapのキーを環境変数から設定
   def gg_key
-    gon.gg_key = ENV['GMap']
+    gon.gg_key = GMap
   end
 end

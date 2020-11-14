@@ -32,7 +32,7 @@ class ConcertsController < ApplicationController
     gon.venue = set_concert.venue
     p ENV['TimeZone']
     gon.tz_key = ENV['TimeZone']
-    gon.tm_url = ENV['TM_URL']
+    gon.tm_url = TM_URL
     @keep = Keep.new
   end
 
