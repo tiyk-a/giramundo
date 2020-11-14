@@ -10,6 +10,29 @@ class ArtistsController < ApplicationController
   # GET /artists
   # GET /artists.json
   def index
+    require 'httpclient'
+    require 'json'
+
+    # パラメータがある場合、検索する
+    unless request.query_string.blank?
+      q = request.query_string
+      artist = q.split("=")[1]
+      a = artist.to_s.split("&")[0]
+      @query = artist.to_s.split("&")[0]
+      uri = MB_URL + a + "&limit=10&fmt=json"
+
+      client = HTTPClient.new
+      request =  client.get(uri)
+      result = JSON.parse(request.body.force_encoding('UTF-8'))
+      words = {}
+      result['artists'].each do |r|
+        key = r['id']
+        value = r['name']
+        words[key] = value
+      end
+      @foundArtists = words
+    end
+
     if (params.has_key?(:artist))
       searched_name = artist_params[:artist_name]
       found = Artist.all.select{|n| n.artist_name.downcase == searched_name.downcase}
@@ -17,14 +40,12 @@ class ArtistsController < ApplicationController
         @artists = found
       else
         @artists = Artist.all.reverse_order
-        require 'musicbrainz'
-        @foundArtists = MusicBrainz::Artist.search(artist_params[:artist_name])
-        # GEM GITHUB => https://github.com/localhots/musicbrainz
       end
     else
       @artists = Artist.all.reverse_order
     end
     @artist = Artist.new
+    gon.mb_url = MB_URL
     if (Artist.with_deleted.present?)
       gon.next_artist_id = Artist.with_deleted.last.id + 1
     else

@@ -31,11 +31,10 @@
       .id_refresh_results
       -if @foundArtists.present?
         ul
-          - @foundArtists.each do |s|
+          - @foundArtists.each do |k,v|
             li
-              span.textBtn.showNext.foundArtistSave =s[:name]
-              span.hidden style="font-family: 'Roboto', sans-serif; font-weight:100;" = s[:desc]
-              span.hidden =s[:mbid]
+              span.textBtn.showNext.foundArtistSave =v
+              span.hidden =k
       . style="width:100%;"
         = form_tag(artists_path, method: :get, enforce_utf8: false) do
           = autocomplete_field_tag 'artist[artist_name]', nil,  autocomplete_artist_artist_name_artists_path, style: "width:60%; display:inline-block;", placeholder: "SEARCH ARTIST"
