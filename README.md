@@ -1,5 +1,7 @@
 # :tada: NotiGiraMundo(Concert Info Collector)
-Top Page:point_right: http://www.notigiramundo.info/
+Top Page❌:point_right: http://www.notigiramundo.info/
+Top Page:https://giramundo.herokuapp.com/concerts
+→2022/08/29 Herokuサーバーを閉じました。公開サーバーなし
 
 日本語アバウトページ:point_right: http://www.notigiramundo.info/about
 ![NotiGiraMundo](https://github.com/tiyk-a/images/blob/master/ngm_20190702.png "image")
