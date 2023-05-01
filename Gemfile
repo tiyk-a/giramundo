@@ -82,7 +82,7 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'gon'
 gem 'pry-rails'
-gem 'jquery-ui-rails', '5.0.5'
+gem 'jquery-ui-rails', '6.0.0'
 gem 'rails4-autocomplete'
 group :production do
   gem 'pg'
